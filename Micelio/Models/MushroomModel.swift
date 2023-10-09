@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct MushroomModel {
+    let id: UUID = UUID()
+}
