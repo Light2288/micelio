@@ -22,14 +22,14 @@ struct ContentView: View {
                     Label("Identify", image: "mushroom-identify")
                 }
             
-            Text("Tab 3")
+            MushroomCatalog()
                 .tabItem {
                     Label("Catalog", image: "catalog")
                 }
+//                .toolbarBackground(Color("CustomSecondaryColor"), for: .tabBar)
+//                .toolbarBackground(.visible, for: .tabBar)
         }
-        
     }
-    
 }
 
 #Preview {
