@@ -13,7 +13,15 @@
 		6B0FBC432ACB677C00FDAA89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B0FBC422ACB677C00FDAA89 /* Preview Assets.xcassets */; };
 		6B0FBC452ACB677C00FDAA89 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FBC442ACB677C00FDAA89 /* Persistence.swift */; };
 		6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FBC462ACB677C00FDAA89 /* Micelio.xcdatamodeld */; };
-		6BA8B4C12AD4BDFD005272D2 /* MushroomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C02AD4BDFD005272D2 /* MushroomModel.swift */; };
+		6BA8B4C12AD4BDFD005272D2 /* Mushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C02AD4BDFD005272D2 /* Mushroom.swift */; };
+		6BA8B4C32AD586A7005272D2 /* Edibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C22AD586A7005272D2 /* Edibility.swift */; };
+		6BA8B4C52AD5875E005272D2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C42AD5875E005272D2 /* Environment.swift */; };
+		6BA8B4C72AD588E4005272D2 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C62AD588E4005272D2 /* Season.swift */; };
+		6BA8B4CA2AD60D14005272D2 /* MushroomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C92AD60D14005272D2 /* MushroomData.swift */; };
+		6BA8B4CC2AD60F0F005272D2 /* MushroomMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4CB2AD60F0F005272D2 /* MushroomMock.swift */; };
+		6BA8B4D22AD75B29005272D2 /* MushroomCatalogRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4D12AD75B29005272D2 /* MushroomCatalogRow.swift */; };
+		6BA8B4D42AD8B828005272D2 /* MushroomCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4D32AD8B828005272D2 /* MushroomCatalog.swift */; };
+		6BA8B4D72AD8BA8E005272D2 /* MushroomDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4D62AD8BA8E005272D2 /* MushroomDetail.swift */; };
 		6BA95D402ACC21C600D7D700 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 6BA95D3F2ACC21C600D7D700 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +33,15 @@
 		6B0FBC422ACB677C00FDAA89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B0FBC442ACB677C00FDAA89 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		6B0FBC472ACB677C00FDAA89 /* Micelio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Micelio.xcdatamodel; sourceTree = "<group>"; };
-		6BA8B4C02AD4BDFD005272D2 /* MushroomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomModel.swift; sourceTree = "<group>"; };
+		6BA8B4C02AD4BDFD005272D2 /* Mushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mushroom.swift; sourceTree = "<group>"; };
+		6BA8B4C22AD586A7005272D2 /* Edibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edibility.swift; sourceTree = "<group>"; };
+		6BA8B4C42AD5875E005272D2 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		6BA8B4C62AD588E4005272D2 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
+		6BA8B4C92AD60D14005272D2 /* MushroomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomData.swift; sourceTree = "<group>"; };
+		6BA8B4CB2AD60F0F005272D2 /* MushroomMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomMock.swift; sourceTree = "<group>"; };
+		6BA8B4D12AD75B29005272D2 /* MushroomCatalogRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomCatalogRow.swift; sourceTree = "<group>"; };
+		6BA8B4D32AD8B828005272D2 /* MushroomCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomCatalog.swift; sourceTree = "<group>"; };
+		6BA8B4D62AD8BA8E005272D2 /* MushroomDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomDetail.swift; sourceTree = "<group>"; };
 		6BA95D3F2ACC21C600D7D700 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,9 +75,10 @@
 		6B0FBC3A2ACB677B00FDAA89 /* Micelio */ = {
 			isa = PBXGroup;
 			children = (
+				6BA8B4CD2AD75799005272D2 /* Views */,
+				6BA8B4C82AD60D01005272D2 /* Data */,
 				6BA8B4BF2AD4BDEF005272D2 /* Models */,
 				6B0FBC3B2ACB677B00FDAA89 /* MicelioApp.swift */,
-				6B0FBC3D2ACB677B00FDAA89 /* ContentView.swift */,
 				6B0FBC3F2ACB677C00FDAA89 /* Assets.xcassets */,
 				6B0FBC442ACB677C00FDAA89 /* Persistence.swift */,
 				6B0FBC462ACB677C00FDAA89 /* Micelio.xcdatamodeld */,
@@ -82,9 +99,48 @@
 		6BA8B4BF2AD4BDEF005272D2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6BA8B4C02AD4BDFD005272D2 /* MushroomModel.swift */,
+				6BA8B4C02AD4BDFD005272D2 /* Mushroom.swift */,
+				6BA8B4C22AD586A7005272D2 /* Edibility.swift */,
+				6BA8B4C42AD5875E005272D2 /* Environment.swift */,
+				6BA8B4C62AD588E4005272D2 /* Season.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6BA8B4C82AD60D01005272D2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6BA8B4C92AD60D14005272D2 /* MushroomData.swift */,
+				6BA8B4CB2AD60F0F005272D2 /* MushroomMock.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6BA8B4CD2AD75799005272D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6BA8B4CE2AD757BD005272D2 /* MushroomCatalog */,
+				6B0FBC3D2ACB677B00FDAA89 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6BA8B4CE2AD757BD005272D2 /* MushroomCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				6BA8B4D52AD8BA7B005272D2 /* MushroomDetail */,
+				6BA8B4D12AD75B29005272D2 /* MushroomCatalogRow.swift */,
+				6BA8B4D32AD8B828005272D2 /* MushroomCatalog.swift */,
+			);
+			path = MushroomCatalog;
+			sourceTree = "<group>";
+		};
+		6BA8B4D52AD8BA7B005272D2 /* MushroomDetail */ = {
+			isa = PBXGroup;
+			children = (
+				6BA8B4D62AD8BA8E005272D2 /* MushroomDetail.swift */,
+			);
+			path = MushroomDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,11 +215,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BA8B4C72AD588E4005272D2 /* Season.swift in Sources */,
+				6BA8B4D42AD8B828005272D2 /* MushroomCatalog.swift in Sources */,
 				6B0FBC452ACB677C00FDAA89 /* Persistence.swift in Sources */,
+				6BA8B4D72AD8BA8E005272D2 /* MushroomDetail.swift in Sources */,
 				6B0FBC3E2ACB677B00FDAA89 /* ContentView.swift in Sources */,
 				6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */,
+				6BA8B4C52AD5875E005272D2 /* Environment.swift in Sources */,
+				6BA8B4CA2AD60D14005272D2 /* MushroomData.swift in Sources */,
 				6B0FBC3C2ACB677B00FDAA89 /* MicelioApp.swift in Sources */,
-				6BA8B4C12AD4BDFD005272D2 /* MushroomModel.swift in Sources */,
+				6BA8B4CC2AD60F0F005272D2 /* MushroomMock.swift in Sources */,
+				6BA8B4C12AD4BDFD005272D2 /* Mushroom.swift in Sources */,
+				6BA8B4D22AD75B29005272D2 /* MushroomCatalogRow.swift in Sources */,
+				6BA8B4C32AD586A7005272D2 /* Edibility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

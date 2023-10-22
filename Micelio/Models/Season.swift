@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+enum Season: CaseIterable {
+    case spring
+    case summer
+    case autumn
+    case winter
+}

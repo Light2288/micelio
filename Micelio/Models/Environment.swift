@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+enum Environment: CaseIterable {
+    case lignicolous
+    case field
+    case broadLeavedForest
+    case coniferousForest
+}

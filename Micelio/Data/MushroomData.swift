@@ -6,3 +6,5 @@
 //
 
 import Foundation
+
+let mushroomData: [Mushroom] = generateMockMushroomArray(length: 20)

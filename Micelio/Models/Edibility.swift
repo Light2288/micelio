@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+enum Edibility: CaseIterable {
+    case edible
+    case edibleAfterCooking
+    case edibleWithoutAlcohol
+    case noValue
+    case poisonous
+    case deadlyPoisonous 
+}

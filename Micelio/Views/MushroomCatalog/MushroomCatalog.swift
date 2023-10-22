@@ -8,8 +8,34 @@
 import SwiftUI
 
 struct MushroomCatalog: View {
+    let mushrooms: [Mushroom] = mushroomData
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List {
+                ForEach(mushrooms) { mushroom in
+                    NavigationLink {
+                        MushroomDetail(mushroom: mushroom)
+                    } label: {
+                        MushroomCatalogRow(mushroom: mushroom)
+                            .padding(4)
+                    }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+
+                    } label: {
+                        Image(systemName: "info.circle")
+                    }
+                    .transaction { transaction in
+                        transaction.animation = nil
+                    }
+                }
+            }
+            .navigationTitle("Mushroom Catalog")
+        }
     }
 }
 
