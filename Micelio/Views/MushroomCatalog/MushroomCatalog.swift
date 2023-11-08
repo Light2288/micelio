@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MushroomCatalog: View {
-    let mushrooms: [Mushroom] = mushroomData
+    let mushrooms: [Mushroom] = mushroomMockData
+    @State private var showLegend: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -22,10 +23,13 @@ struct MushroomCatalog: View {
                     }
                 }
             }
+            .sheet(isPresented: $showLegend, content: {
+                Legend(showLegend: $showLegend)
+            })
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-
+                        showLegend.toggle()
                     } label: {
                         Image(systemName: "info.circle")
                     }

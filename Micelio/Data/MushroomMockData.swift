@@ -7,4 +7,4 @@
 
 import Foundation
 
-let mushroomData: [Mushroom] = generateMockMushroomArray(length: 20)
+let mushroomMockData: [Mushroom] = generateMockMushroomArray(length: 20)

@@ -32,5 +32,5 @@ struct MushroomCatalogRow: View {
 }
 
 #Preview {
-    MushroomCatalogRow(mushroom: mushroomData[0])
+    MushroomCatalogRow(mushroom: mushroomMockData[0])
 }
