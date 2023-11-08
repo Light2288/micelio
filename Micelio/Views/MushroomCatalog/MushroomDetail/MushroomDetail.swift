@@ -83,7 +83,7 @@ struct MushroomDetail: View {
 
 #Preview {
     NavigationView(content: {
-        MushroomDetail(mushroom: mushroomData[0])
+        MushroomDetail(mushroom: mushroomMockData[0])
     })
     
 }

@@ -13,5 +13,5 @@ enum Edibility: CaseIterable {
     case edibleWithoutAlcohol
     case noValue
     case poisonous
-    case deadlyPoisonous 
+    case deadly
 }
