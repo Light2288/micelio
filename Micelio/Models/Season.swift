@@ -7,7 +7,10 @@
 
 import Foundation
 
-enum Season: CaseIterable {
+enum Season: String, CaseIterable, Identifiable {
+    
+    var id: String { return self.rawValue }
+    
     case spring
     case summer
     case autumn

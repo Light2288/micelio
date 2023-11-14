@@ -7,7 +7,10 @@
 
 import Foundation
 
-enum Environment: CaseIterable {
+enum Environment: String, CaseIterable, Identifiable {
+    
+    var id: String { return self.rawValue }
+    
     case lignicolous
     case field
     case broadLeavedForest

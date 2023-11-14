@@ -23,33 +23,23 @@ struct MushroomDetail: View {
 //        NavigationView {
             ScrollView(.vertical) {
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
-                    // Image view
-                    Color("CustomSecondaryColor")
-                        .frame(height: 440)
+                    ZStack(alignment: .bottom) {
+                        MainImage()
+                        TitleAndDetails(mushroom: mushroom)
+                    }
                     
-                    VStack(alignment: .leading, spacing: 20, content: {
+                    VStack(alignment: .leading, spacing: 25, content: {
+                        Spacer(minLength: 50)
+                                                
+                        ShortDescription(text: mushroom.shortDescription)
                         
-                        Text(mushroom.name)
-                            .font(.largeTitle)
-                            .fontWeight(.heavy)
-                            .foregroundStyle(Color(.accent))
+                        MushroomDetailSection(title: "Descrizione", content: mushroom.description)
                         
-                        // Season, edibility, environment view
+                        MushroomDetailSection(title: "Commestibilità", content: mushroom.environmentDescription)
                         
-                        Text(mushroom.shortDescription)
-                            .font(.headline)
-                            .multilineTextAlignment(.leading)
+                        MushroomDetailSection(title: "Habitat", content: mushroom.environmentDescription)
                         
-                        // Section for long description
-                        DisclosureGroup("Description") {
-                            Text(mushroom.description)
-                        }
-                        
-                        // Section for environment description
-                        
-                        // Section for edibility description
-                        
-                        // Section for trivia
+                        MushroomDetailSection(title: "Curiosità", content: mushroom.trivia)
                         
                         // Section for additional images
                         
