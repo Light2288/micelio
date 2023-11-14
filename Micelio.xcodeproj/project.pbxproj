@@ -13,6 +13,15 @@
 		6B0FBC432ACB677C00FDAA89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B0FBC422ACB677C00FDAA89 /* Preview Assets.xcassets */; };
 		6B0FBC452ACB677C00FDAA89 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FBC442ACB677C00FDAA89 /* Persistence.swift */; };
 		6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FBC462ACB677C00FDAA89 /* Micelio.xcdatamodeld */; };
+		6B78357A2AFBDD9100166DB3 /* MainImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7835792AFBDD9100166DB3 /* MainImage.swift */; };
+		6B78357C2AFBDDDC00166DB3 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B78357B2AFBDDDC00166DB3 /* Title.swift */; };
+		6B78357E2AFBDE4700166DB3 /* ShortDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B78357D2AFBDE4700166DB3 /* ShortDescription.swift */; };
+		6B7835802AFBE1F400166DB3 /* MushroomDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B78357F2AFBE1F400166DB3 /* MushroomDetailSection.swift */; };
+		6B7835832AFD98EC00166DB3 /* DisclosureGroupCustomStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7835822AFD98EC00166DB3 /* DisclosureGroupCustomStyle.swift */; };
+		6B7835852AFE464400166DB3 /* TitleAndDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7835842AFE464400166DB3 /* TitleAndDetails.swift */; };
+		6B7835872AFE46DE00166DB3 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7835862AFE46DE00166DB3 /* Details.swift */; };
+		6B7835892AFE497C00166DB3 /* DetailGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7835882AFE497C00166DB3 /* DetailGrid.swift */; };
+		6B78358C2AFE6F6A00166DB3 /* LegendItemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B78358B2AFE6F6A00166DB3 /* LegendItemImage.swift */; };
 		6BA8B4C12AD4BDFD005272D2 /* Mushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C02AD4BDFD005272D2 /* Mushroom.swift */; };
 		6BA8B4C32AD586A7005272D2 /* Edibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C22AD586A7005272D2 /* Edibility.swift */; };
 		6BA8B4C52AD5875E005272D2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C42AD5875E005272D2 /* Environment.swift */; };
@@ -40,6 +49,15 @@
 		6B0FBC422ACB677C00FDAA89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B0FBC442ACB677C00FDAA89 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		6B0FBC472ACB677C00FDAA89 /* Micelio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Micelio.xcdatamodel; sourceTree = "<group>"; };
+		6B7835792AFBDD9100166DB3 /* MainImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImage.swift; sourceTree = "<group>"; };
+		6B78357B2AFBDDDC00166DB3 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
+		6B78357D2AFBDE4700166DB3 /* ShortDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortDescription.swift; sourceTree = "<group>"; };
+		6B78357F2AFBE1F400166DB3 /* MushroomDetailSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomDetailSection.swift; sourceTree = "<group>"; };
+		6B7835822AFD98EC00166DB3 /* DisclosureGroupCustomStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureGroupCustomStyle.swift; sourceTree = "<group>"; };
+		6B7835842AFE464400166DB3 /* TitleAndDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndDetails.swift; sourceTree = "<group>"; };
+		6B7835862AFE46DE00166DB3 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		6B7835882AFE497C00166DB3 /* DetailGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGrid.swift; sourceTree = "<group>"; };
+		6B78358B2AFE6F6A00166DB3 /* LegendItemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendItemImage.swift; sourceTree = "<group>"; };
 		6BA8B4C02AD4BDFD005272D2 /* Mushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mushroom.swift; sourceTree = "<group>"; };
 		6BA8B4C22AD586A7005272D2 /* Edibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edibility.swift; sourceTree = "<group>"; };
 		6BA8B4C42AD5875E005272D2 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -89,6 +107,7 @@
 		6B0FBC3A2ACB677B00FDAA89 /* Micelio */ = {
 			isa = PBXGroup;
 			children = (
+				6B7835812AFD98D600166DB3 /* Styles */,
 				6BA8B4CD2AD75799005272D2 /* Views */,
 				6BA8B4C82AD60D01005272D2 /* Data */,
 				6BA8B4BF2AD4BDEF005272D2 /* Models */,
@@ -108,6 +127,22 @@
 				6B0FBC422ACB677C00FDAA89 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6B7835812AFD98D600166DB3 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				6B7835822AFD98EC00166DB3 /* DisclosureGroupCustomStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		6B78358A2AFE6F2000166DB3 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				6B78358B2AFE6F6A00166DB3 /* LegendItemImage.swift */,
+			);
+			path = CommonViews;
 			sourceTree = "<group>";
 		};
 		6BA8B4BF2AD4BDEF005272D2 /* Models */ = {
@@ -146,6 +181,7 @@
 		6BA8B4CE2AD757BD005272D2 /* MushroomCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				6B78358A2AFE6F2000166DB3 /* CommonViews */,
 				6BA8B4D52AD8BA7B005272D2 /* MushroomDetail */,
 				6BA8B4D12AD75B29005272D2 /* MushroomCatalogRow.swift */,
 				6BA8B4D32AD8B828005272D2 /* MushroomCatalog.swift */,
@@ -158,6 +194,13 @@
 			isa = PBXGroup;
 			children = (
 				6BA8B4D62AD8BA8E005272D2 /* MushroomDetail.swift */,
+				6B7835792AFBDD9100166DB3 /* MainImage.swift */,
+				6B78357B2AFBDDDC00166DB3 /* Title.swift */,
+				6B78357D2AFBDE4700166DB3 /* ShortDescription.swift */,
+				6B78357F2AFBE1F400166DB3 /* MushroomDetailSection.swift */,
+				6B7835842AFE464400166DB3 /* TitleAndDetails.swift */,
+				6B7835862AFE46DE00166DB3 /* Details.swift */,
+				6B7835882AFE497C00166DB3 /* DetailGrid.swift */,
 			);
 			path = MushroomDetail;
 			sourceTree = "<group>";
@@ -246,16 +289,25 @@
 			files = (
 				6BA8B4C72AD588E4005272D2 /* Season.swift in Sources */,
 				6BA8B4D42AD8B828005272D2 /* MushroomCatalog.swift in Sources */,
+				6B78357C2AFBDDDC00166DB3 /* Title.swift in Sources */,
 				6BBEC8C52AF46C52000720FF /* LegendListSection.swift in Sources */,
+				6B7835832AFD98EC00166DB3 /* DisclosureGroupCustomStyle.swift in Sources */,
 				6B0FBC452ACB677C00FDAA89 /* Persistence.swift in Sources */,
+				6B78357E2AFBDE4700166DB3 /* ShortDescription.swift in Sources */,
 				6BA8B4D72AD8BA8E005272D2 /* MushroomDetail.swift in Sources */,
 				6B0FBC3E2ACB677B00FDAA89 /* ContentView.swift in Sources */,
 				6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */,
 				6BBEC8C72AF46D10000720FF /* LegendListRow.swift in Sources */,
 				6BA8B4C52AD5875E005272D2 /* Environment.swift in Sources */,
+				6B7835892AFE497C00166DB3 /* DetailGrid.swift in Sources */,
 				6BBEC8C92AF46F49000720FF /* LegendSection.swift in Sources */,
+				6B7835802AFBE1F400166DB3 /* MushroomDetailSection.swift in Sources */,
+				6B78358C2AFE6F6A00166DB3 /* LegendItemImage.swift in Sources */,
+				6B7835872AFE46DE00166DB3 /* Details.swift in Sources */,
 				6BA8B4CA2AD60D14005272D2 /* MushroomMockData.swift in Sources */,
+				6B7835852AFE464400166DB3 /* TitleAndDetails.swift in Sources */,
 				6B0FBC3C2ACB677B00FDAA89 /* MicelioApp.swift in Sources */,
+				6B78357A2AFBDD9100166DB3 /* MainImage.swift in Sources */,
 				6BA8B4CC2AD60F0F005272D2 /* MushroomMock.swift in Sources */,
 				6BBEC8BE2AF459C1000720FF /* Legend.swift in Sources */,
 				6BBEC8CB2AF4705E000720FF /* LegendSections.swift in Sources */,

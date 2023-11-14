@@ -9,13 +9,13 @@ import SwiftUI
 
 let legendItems: [LegendItem] = [
     LegendItem(icon: "edible", iconColor: Color("CustomSecondaryColor"), text: "Commestibile", legendSection: legendSections[0]),
-    LegendItem(icon: "edible-after-cooking", iconColor: Color("CustomSecondaryColor"), text: "Commestibile dopo cottura", legendSection: legendSections[0]),
-    LegendItem(icon: "edible-without-alcohol", iconColor: Color("CustomSecondaryColor"), text: "Commestibile senza alcolici", legendSection: legendSections[0]),
-    LegendItem(icon: "no-value", iconColor: .orange, text: "Nessun valore", legendSection: legendSections[0]),
+    LegendItem(icon: "edibleAfterCooking", iconColor: Color("CustomSecondaryColor"), text: "Commestibile dopo cottura", legendSection: legendSections[0]),
+    LegendItem(icon: "edibleWithoutAlcohol", iconColor: Color("CustomSecondaryColor"), text: "Commestibile senza alcolici", legendSection: legendSections[0]),
+    LegendItem(icon: "noValue", iconColor: .orange, text: "Nessun valore", legendSection: legendSections[0]),
     LegendItem(icon: "poisonous", iconColor: .red, text: "Velenoso", legendSection: legendSections[0]),
     LegendItem(icon: "deadly", iconColor: .red, text: "Velenoso mortale", legendSection: legendSections[0]),
-    LegendItem(icon: "broad-leaved-forest", iconColor: Color("CustomSecondaryColor"), text: "Foreste di latifoglie", legendSection: legendSections[1]),
-    LegendItem(icon: "coniferous-forest", iconColor: Color("CustomSecondaryColor"), text: "Foreste di conifere", legendSection: legendSections[1]),
+    LegendItem(icon: "broadLeavedForest", iconColor: Color("CustomSecondaryColor"), text: "Foreste di latifoglie", legendSection: legendSections[1]),
+    LegendItem(icon: "coniferousForest", iconColor: Color("CustomSecondaryColor"), text: "Foreste di conifere", legendSection: legendSections[1]),
     LegendItem(icon: "field", iconColor: Color("CustomSecondaryColor"), text: "Prati", legendSection: legendSections[1]),
     LegendItem(icon: "lignicolous", iconColor: Color("CustomSecondaryColor"), text: "Lignicolo", legendSection: legendSections[1]),
     LegendItem(icon: "spring", iconColor: Color("CustomSecondaryColor"), text: "Primavera", legendSection: legendSections[2]),

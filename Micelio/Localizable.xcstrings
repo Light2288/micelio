@@ -17,9 +17,6 @@
     "Close" : {
 
     },
-    "Description" : {
-
-    },
     "Identify" : {
       "localizations" : {
         "it" : {
@@ -43,7 +40,13 @@
         }
       }
     },
+    "Mostra" : {
+
+    },
     "Mushroom Catalog" : {
+
+    },
+    "Nascondi" : {
 
     },
     "Tab 1" : {

@@ -7,7 +7,10 @@
 
 import Foundation
 
-enum Edibility: CaseIterable {
+enum Edibility: String, CaseIterable, Identifiable {
+    
+    var id: String { return self.rawValue }
+    
     case edible
     case edibleAfterCooking
     case edibleWithoutAlcohol
