@@ -22,7 +22,7 @@ struct ContentView: View {
                     Label("Identify", image: "mushroom-identify")
                 }
             
-            MushroomCatalog()
+            MushroomCatalogView()
                 .tabItem {
                     Label("Catalog", image: "catalog")
                 }
