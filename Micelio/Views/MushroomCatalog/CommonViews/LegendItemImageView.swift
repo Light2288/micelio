@@ -10,9 +10,9 @@ import SwiftUI
 struct LegendItemImageView: View {
     let legendItem: LegendItem
     let dimension: CGFloat
-    var padding: CGFloat = 8
-    var cornerSize: CGSize = CGSize(width: 20, height: 10)
-    var lineWidth: CGFloat = 2
+    var padding: CGFloat = Constants.CommonViews.LegendItemImage.defaultPadding
+    var cornerSize: CGSize = Constants.CommonViews.LegendItemImage.defaultCornerSize
+    var lineWidth: CGFloat = Constants.CommonViews.LegendItemImage.defaultLineWidth
     
     var body: some View {
         Image(legendItem.icon)

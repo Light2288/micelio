@@ -12,7 +12,7 @@ struct LegendListRowView: View {
     
     var body: some View {
         HStack {
-            LegendItemImageView(legendItem: legendItem, dimension: 60)
+            LegendItemImageView(legendItem: legendItem, dimension: Constants.Legend.LegendListRow.imageSize)
             Spacer()
             Text(legendItem.text)
         }

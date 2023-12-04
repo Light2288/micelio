@@ -18,11 +18,11 @@ struct TitleAndDetailsView: View {
             DetailsView(mushroom: mushroom)
         }
         .background(
-            RoundedRectangle(cornerSize: CGSize(width: 20, height: 10), style: .continuous)
+            RoundedRectangle(cornerSize: Constants.MushroomCatalog.TitleAndDetails.backgroundCornerSize, style: .continuous)
                 .fill(.background)
-                .shadow(color: .gray, radius: 5, x: 0, y: 3)
+                .shadow(color: .gray, radius: Constants.MushroomCatalog.TitleAndDetails.shadowRadius, y: Constants.MushroomCatalog.TitleAndDetails.shadowY)
         )
-        .offset(CGSize(width: 0.0, height: offset))
+        .offset(y: offset)
     }
 }
 

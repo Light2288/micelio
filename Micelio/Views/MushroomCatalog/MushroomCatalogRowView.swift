@@ -13,14 +13,14 @@ struct MushroomCatalogRowView: View {
     var body: some View {
         
         HStack(alignment: .center, content: {
-            Image(mushroom.image)
+            Image(mushroom.images[0])
                 .renderingMode(.original)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 80, height: 80)
-                .clipShape(RoundedRectangle(cornerSize: CGSize(width: 20, height: 10)))
-            VStack(alignment: .leading, spacing: 20, content: {
-                Text(mushroom.name)
+                .frame(width: Constants.MushroomCatalog.MushroomCatalogRow.imageFrameSize, height: Constants.MushroomCatalog.MushroomCatalogRow.imageFrameSize)
+                .clipShape(RoundedRectangle(cornerSize: Constants.MushroomCatalog.MushroomCatalogRow.clipShapeCornerSize))
+            VStack(alignment: .leading, spacing: Constants.MushroomCatalog.MushroomCatalogRow.vStackSpacing, content: {
+                Text(mushroom.name.capitalized)
                     .font(.title2)
                     .fontWeight(.bold)
                 Text(mushroom.shortDescription)

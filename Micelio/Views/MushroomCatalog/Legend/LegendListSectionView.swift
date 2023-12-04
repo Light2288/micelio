@@ -12,7 +12,7 @@ struct LegendListSectionView: View {
     let legendItems: [LegendItem]
     
     var body: some View {
-        Section(header: Text(title).padding(.top, 10)) {
+        Section(header: Text(title).padding(.top, Constants.Legend.LegendListSection.headerPaddingTop)) {
             ForEach(legendItems) { legendItem in
                 LegendListRowView(legendItem: legendItem)
             }

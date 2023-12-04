@@ -13,17 +13,17 @@ struct DetailGridView: View {
         items.count == 1 ? 1 : 2
     }
     var maxWidth: CGFloat {
-        items.count == 1 ? 60 : 120
+        items.count == 1 ? Constants.MushroomCatalog.TitleAndDetails.DetailGrid.oneColumnMaxWidth : Constants.MushroomCatalog.TitleAndDetails.DetailGrid.twoColumnsMaxWidth
     }
     
     var columns: Array<GridItem> {
-        Array(repeating: GridItem(.flexible(minimum: 50, maximum: 50)), count: numberOfColumns)
+        Array(repeating: GridItem(.fixed(Constants.MushroomCatalog.TitleAndDetails.DetailGrid.gridItemWidth)), count: numberOfColumns)
     }
     
     var body: some View {
         LazyVGrid(columns: columns, content: {
             ForEach(items, id: \.self) { item in
-                LegendItemImageView(legendItem: legendItems.filter { $0.icon == item }.first!, dimension: 40, padding: 4, cornerSize: CGSize(width: 5, height: 5), lineWidth: 1)
+                LegendItemImageView(legendItem: legendItems.filter { $0.icon == item }.first!, dimension: Constants.MushroomCatalog.TitleAndDetails.DetailGrid.imageSize, padding: Constants.MushroomCatalog.TitleAndDetails.DetailGrid.imagePadding, cornerSize: Constants.MushroomCatalog.TitleAndDetails.DetailGrid.imageCornerSize, lineWidth: Constants.MushroomCatalog.TitleAndDetails.DetailGrid.imageLineWidth)
             }
         })
         .frame(maxWidth: maxWidth)

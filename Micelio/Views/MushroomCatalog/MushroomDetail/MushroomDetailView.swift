@@ -22,15 +22,14 @@ struct MushroomDetailView: View {
     var body: some View {
         GeometryReader { proxy in
             ScrollView(.vertical) {
-                
-                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
+                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: Constants.MushroomCatalog.MushroomDetail.externalVStackSpacing, content: {
                     ZStack(alignment: .bottom) {
-                        MainAndAdditionalImagesView(images: mushroom.additionalImages)
-                        TitleAndDetailsView(mushroom: mushroom, offset: proxy.size.width - 70)
+                        MainAndAllImagesView(images: mushroom.images)
+                        TitleAndDetailsView(mushroom: mushroom, offset: proxy.size.width - Constants.MushroomCatalog.MushroomDetail.titleAndDetailOffsetCorrection)
                     }
                     
-                    VStack(alignment: .leading, spacing: 25, content: {
-                        Spacer(minLength: proxy.size.width - 60)
+                    VStack(alignment: .leading, spacing: Constants.MushroomCatalog.MushroomDetail.internalVStackSpacing, content: {
+                        Spacer(minLength: proxy.size.width - Constants.MushroomCatalog.MushroomDetail.spacerMinLengthCorrection)
                         
                         ShortDescriptionView(text: mushroom.shortDescription)
                         
@@ -42,10 +41,9 @@ struct MushroomDetailView: View {
                         
                         MushroomDetailSectionView(title: "Curiosità", content: mushroom.trivia)
                     })
-                    .padding(.horizontal, 20)
-                    .padding(.bottom, 50)
-                    .frame(maxWidth: 640, alignment: .center)
-                    
+                    .padding(.horizontal, Constants.MushroomCatalog.MushroomDetail.internalVStackHorizontalPadding)
+                    .padding(.bottom, Constants.MushroomCatalog.MushroomDetail.internalVStackBottomPadding)
+                    .frame(maxWidth: Constants.MushroomCatalog.MushroomDetail.internalVStackFrameMaxWidth, alignment: .center)
                 })
                 .background(GeometryReader { geometry in
                     Color.clear
@@ -59,8 +57,6 @@ struct MushroomDetailView: View {
                         self.initialScrollValue = self.scrollPosition.y
                     }
                 }
-                
-                
             }
             .scrollIndicators(.hidden)
             .navigationTitle("")

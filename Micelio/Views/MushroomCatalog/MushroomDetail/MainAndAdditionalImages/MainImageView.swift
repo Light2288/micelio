@@ -18,5 +18,5 @@ struct MainImageView: View {
 }
 
 #Preview {
-    MainImageView(image: mushroomMockData[0].additionalImages[0])
+    MainImageView(image: mushroomMockData[0].images[0])
 }

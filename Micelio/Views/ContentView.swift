@@ -26,8 +26,6 @@ struct ContentView: View {
                 .tabItem {
                     Label("Catalog", image: "catalog")
                 }
-//                .toolbarBackground(Color("CustomSecondaryColor"), for: .tabBar)
-//                .toolbarBackground(.visible, for: .tabBar)
         }
     }
 }

@@ -11,7 +11,6 @@ struct Mushroom: Identifiable {
     let id: UUID = UUID()
     let name: String
     let shortDescription: String
-    let image: String
     let edibility: Edibility
     let environments: [Environment]
     let seasons: [Season]
@@ -19,5 +18,5 @@ struct Mushroom: Identifiable {
     let environmentDescription: String
     let edibilityDescription: String
     let trivia: String
-    let additionalImages: [String]
+    let images: [String]
 }

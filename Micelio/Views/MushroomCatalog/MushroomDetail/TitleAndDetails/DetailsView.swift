@@ -31,7 +31,7 @@ struct DetailsView: View {
                     .map{ $0.rawValue }
             )
         }
-        .padding(.bottom, 8)
+        .padding(.bottom, Constants.MushroomCatalog.TitleAndDetails.Details.bottomPadding)
     }
 }
 

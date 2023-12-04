@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PhotoThumbnailView: View {
     let imageUrl: URL
-    var resizeFactor: CGFloat = 1
     let width: CGFloat
     let height: CGFloat
     

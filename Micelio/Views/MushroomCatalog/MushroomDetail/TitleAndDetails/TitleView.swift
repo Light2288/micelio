@@ -11,7 +11,7 @@ struct TitleView: View {
     let mushroom: Mushroom
     
     var body: some View {
-        Text(mushroom.name)
+        Text(mushroom.name.capitalized)
             .font(.largeTitle)
             .fontWeight(.heavy)
             .foregroundStyle(Color(.accent))

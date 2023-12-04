@@ -19,7 +19,7 @@ struct MushroomCatalogView: View {
                         MushroomDetailView(mushroom: mushroom)
                     } label: {
                         MushroomCatalogRowView(mushroom: mushroom)
-                            .padding(4)
+                            .padding(Constants.MushroomCatalog.NavigationLink.padding)
                     }
                 }
             }
