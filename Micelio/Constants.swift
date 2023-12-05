@@ -69,8 +69,9 @@ enum Constants {
             
             enum MainAndAdditionalImage {
                 enum AllImagesContainer {
-                    public static let smallImageSizeCorrectionFactor: Int = 3
+                    public static let smallImageSizeCorrectionFactor: Int = 5
                     public static let backgroundRectangleHeightCorrection: CGFloat = 20
+                    public static let backgroundRectangleWidthCorrectionFactor: Int = 2
                     public static let backgroundRectangleShadowRadius: CGFloat = 20
                     public static let backgroundRectangleShadowX: CGFloat = -10
                 }

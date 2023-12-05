@@ -12,6 +12,9 @@ struct AllImagesView: View {
     let width: CGFloat
     let height: CGFloat
     
+    @Binding var selectedImage: String
+    @State var isExpanded: Bool = true
+    
     var columns: Array<GridItem> {
         Array(
             repeating: GridItem(
@@ -21,8 +24,6 @@ struct AllImagesView: View {
         )
     }
     
-    @State var isExpanded: Bool = true
-    
     var body: some View {
         LazyVGrid(
             columns: columns,
@@ -30,12 +31,13 @@ struct AllImagesView: View {
         ) {
             ForEach(images, id: \.self) { image in
                 Button {
-                    
+                    selectedImage = image
                 } label: {
                     PhotoThumbnailView(
                         imageUrl: Bundle.main.url(forResource: image, withExtension: "jpeg")!,
                         width: width, height: height
                     )
+                    .border(image == selectedImage ? .accent : .clear, width: 4)
                 }
             }
         }
@@ -43,5 +45,7 @@ struct AllImagesView: View {
 }
 
 #Preview {
-    return AllImagesView(images: mushroomMockData[0].images, width: 100, height: 100)
+    return ScrollView {
+        AllImagesView(images: mushroomMockData[0].images, width: 100, height: 100, selectedImage: .constant(mushroomMockData[0].images[0]))
+    }
 }

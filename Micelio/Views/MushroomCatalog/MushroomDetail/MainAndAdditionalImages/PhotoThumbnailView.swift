@@ -24,6 +24,7 @@ struct PhotoThumbnailView: View {
                 .clipped()
         } placeholder: {
             ProgressView()
+                .frame(width: width, height: height)
         }
         .aspectRatio(1, contentMode: .fit)
     }

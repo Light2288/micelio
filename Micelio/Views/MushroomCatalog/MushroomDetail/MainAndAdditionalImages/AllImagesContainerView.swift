@@ -11,6 +11,8 @@ struct AllImagesContainerView: View {
     let images: [String]
     let proxyWidth: CGFloat
     
+    @Binding var selectedImage: String
+    
     var smallImageSize: CGFloat {
         proxyWidth/CGFloat(images.count + Constants.MushroomCatalog.MushroomDetail.MainAndAdditionalImage.AllImagesContainer.smallImageSizeCorrectionFactor)
     }
@@ -20,7 +22,7 @@ struct AllImagesContainerView: View {
     }
     
     var allImagesRectangleBackgroundWidth: CGFloat {
-        proxyWidth/CGFloat(images.count)
+        proxyWidth/CGFloat(images.count + Constants.MushroomCatalog.MushroomDetail.MainAndAdditionalImage.AllImagesContainer.backgroundRectangleWidthCorrectionFactor)
     }
     
     var allImagesRectangleBackgroundHeight: CGFloat {
@@ -31,9 +33,9 @@ struct AllImagesContainerView: View {
             HStack {
                 Spacer(minLength: proxyWidth - allImagesRectangleBackgroundWidth)
                 VStack() {
-                    Spacer(minLength: (proxyWidth - allImagesRectangleBackgroundHeight)/2)
+                    Spacer(minLength: proxyWidth - allImagesRectangleBackgroundHeight)
                     
-                    AllImagesView(images: images, width: smallImageSize, height: smallImageSize)
+                    AllImagesView(images: images, width: smallImageSize, height: smallImageSize, selectedImage: $selectedImage)
                         .background {
                             Rectangle()
                                 .frame(width: allImagesRectangleBackgroundWidth, height: allImagesRectangleBackgroundHeight)
@@ -49,6 +51,6 @@ struct AllImagesContainerView: View {
 
 #Preview {
     GeometryReader { proxy in
-        AllImagesContainerView(images: mushroomMockData[0].images, proxyWidth: proxy.size.width)
+        AllImagesContainerView(images: mushroomMockData[0].images, proxyWidth: proxy.size.width, selectedImage: .constant(mushroomMockData[0].images[0]))
     }
 }

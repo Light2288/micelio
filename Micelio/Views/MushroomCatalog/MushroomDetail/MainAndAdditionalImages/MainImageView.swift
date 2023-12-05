@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainImageView: View {
-    let image: String
+    @Binding var image: String
     
     var body: some View {
         GeometryReader { proxy in
@@ -18,5 +18,5 @@ struct MainImageView: View {
 }
 
 #Preview {
-    MainImageView(image: mushroomMockData[0].images[0])
+    MainImageView(image: .constant(mushroomMockData[0].images[0]))
 }
