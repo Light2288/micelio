@@ -33,13 +33,13 @@ struct MushroomDetailView: View {
                         
                         ShortDescriptionView(text: mushroom.shortDescription)
                         
-                        MushroomDetailSectionView(title: "Descrizione", content: mushroom.description)
+                        MushroomDetailSectionView(title: "Descrizione", content: mushroom.description, image: "disclosuregroup-description")
                         
-                        MushroomDetailSectionView(title: "Commestibilità", content: mushroom.environmentDescription)
+                        MushroomDetailSectionView(title: "Commestibilità", content: mushroom.environmentDescription, image: "disclosuregroup-edibility")
                         
-                        MushroomDetailSectionView(title: "Habitat", content: mushroom.environmentDescription)
+                        MushroomDetailSectionView(title: "Habitat", content: mushroom.environmentDescription, image: "disclosuregroup-habitat")
                         
-                        MushroomDetailSectionView(title: "Curiosità", content: mushroom.trivia)
+                        MushroomDetailSectionView(title: "Curiosità", content: mushroom.trivia, image: "disclosuregroup-trivia")
                     })
                     .padding(.horizontal, Constants.MushroomCatalog.MushroomDetail.internalVStackHorizontalPadding)
                     .padding(.bottom, Constants.MushroomCatalog.MushroomDetail.internalVStackBottomPadding)
