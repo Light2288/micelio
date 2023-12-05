@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DisclosureGroupCustomStyle: DisclosureGroupStyle {
+    var image: String
+    
     func makeBody(configuration: Configuration) -> some View {
         VStack {
             Button {
@@ -15,7 +17,12 @@ struct DisclosureGroupCustomStyle: DisclosureGroupStyle {
                     configuration.isExpanded.toggle()
                 }
             } label: {
-                HStack(alignment: .firstTextBaseline) {
+                HStack(alignment: .center) {
+                    Image(image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: Constants.Styles.DisclosureGroupCustomStyle.imageDimension, height: Constants.Styles.DisclosureGroupCustomStyle.imageDimension)
+                        .foregroundStyle(.accent)
                     configuration.label
                         .foregroundStyle(.accent)
                     Spacer()

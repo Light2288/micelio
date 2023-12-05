@@ -8,6 +8,11 @@
 import Foundation
 
 enum Constants {
+    enum Styles {
+        enum DisclosureGroupCustomStyle {
+            public static let imageDimension: CGFloat = 30
+        }
+    }
     
     enum CommonViews {
         enum LegendItemImage {

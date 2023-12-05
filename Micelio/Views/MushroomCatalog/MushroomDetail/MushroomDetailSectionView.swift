@@ -10,15 +10,16 @@ import SwiftUI
 struct MushroomDetailSectionView: View {
     let title: String
     let content: String
+    let image: String
     
     var body: some View {
         DisclosureGroup(title) {
             Text(content)
         }
-        .disclosureGroupStyle(DisclosureGroupCustomStyle())
+        .disclosureGroupStyle(DisclosureGroupCustomStyle(image: image))
     }
 }
 
 #Preview {
-    MushroomDetailSectionView(title: "Description", content: mushroomMockData[0].description)
+    MushroomDetailSectionView(title: "Description", content: mushroomMockData[0].description, image: "disclosuregroup-description")
 }
