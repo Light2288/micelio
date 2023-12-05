@@ -16,10 +16,9 @@ func generateMockMushroomArray(length: Int) -> [Mushroom] {
     return mushroomArray
 }
 
-private func generateMockMushroom() -> Mushroom {
-    let name = generateRandomString(length: 12)
+func generateMockMushroom(mushroomName: String? = nil) -> Mushroom {
+    let name = mushroomName ?? generateRandomString(length: 12)
     let shortDescription = generateParagraph(numberOfWords: 20)
-    let image = generateRandomString(length: 8)
     let edibility = generateRandomEdibility()
     let environments = generateRandomEnvironments()
     let seasons = generateRandomSeasons()
@@ -27,8 +26,9 @@ private func generateMockMushroom() -> Mushroom {
     let environmentDescription = generateParagraph(numberOfWords: 40)
     let edibilityDescription = generateParagraph(numberOfWords: 50)
     let trivia = generateParagraph(numberOfWords: 80)
+    let images = (0...9).map { "\(name)_\($0)" }
     
-    return Mushroom(name: name, shortDescription: shortDescription, image: image, edibility: edibility, environments: environments, seasons: seasons, description: description, environmentDescription: environmentDescription, edibilityDescription: edibilityDescription, trivia: trivia, additionalImages: [])
+    return Mushroom(name: name, shortDescription: shortDescription, edibility: edibility, environments: environments, seasons: seasons, description: description, environmentDescription: environmentDescription, edibilityDescription: edibilityDescription, trivia: trivia, images: images)
 }
 
 private func generateRandomString(length: Int) -> String {

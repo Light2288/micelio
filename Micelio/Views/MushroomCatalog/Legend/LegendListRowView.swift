@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct LegendListRow: View {
+struct LegendListRowView: View {
     let legendItem: LegendItem
     
     var body: some View {
         HStack {
-            LegendItemImage(legendItem: legendItem, dimension: 60)
+            LegendItemImageView(legendItem: legendItem, dimension: Constants.Legend.LegendListRow.imageSize)
             Spacer()
             Text(legendItem.text)
         }
@@ -21,5 +21,5 @@ struct LegendListRow: View {
 }
 
 #Preview {
-    LegendListRow(legendItem: legendItems[0])
+    LegendListRowView(legendItem: legendItems[0])
 }

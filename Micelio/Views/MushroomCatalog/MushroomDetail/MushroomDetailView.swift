@@ -14,38 +14,36 @@ struct ScrollOffsetPreferenceKey: PreferenceKey {
     }
 }
 
-struct MushroomDetail: View {
+struct MushroomDetailView: View {
     let mushroom: Mushroom
     @State private var initialScrollValue: CGFloat = .zero
     @State private var scrollPosition: CGPoint = .zero
     
     var body: some View {
-//        NavigationView {
+        GeometryReader { proxy in
             ScrollView(.vertical) {
-                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
+                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: Constants.MushroomCatalog.MushroomDetail.externalVStackSpacing, content: {
                     ZStack(alignment: .bottom) {
-                        MainImage()
-                        TitleAndDetails(mushroom: mushroom)
+                        MainAndAllImagesView(images: mushroom.images, selectedImage: mushroom.images[0])
+                        TitleAndDetailsView(mushroom: mushroom, offset: proxy.size.width - Constants.MushroomCatalog.MushroomDetail.titleAndDetailOffsetCorrection)
                     }
                     
-                    VStack(alignment: .leading, spacing: 25, content: {
-                        Spacer(minLength: 50)
-                                                
-                        ShortDescription(text: mushroom.shortDescription)
+                    VStack(alignment: .leading, spacing: Constants.MushroomCatalog.MushroomDetail.internalVStackSpacing, content: {
+                        Spacer(minLength: proxy.size.width - Constants.MushroomCatalog.MushroomDetail.spacerMinLengthCorrection)
                         
-                        MushroomDetailSection(title: "Descrizione", content: mushroom.description)
+                        ShortDescriptionView(text: mushroom.shortDescription)
                         
-                        MushroomDetailSection(title: "Commestibilità", content: mushroom.environmentDescription)
+                        MushroomDetailSectionView(title: "Descrizione", content: mushroom.description)
                         
-                        MushroomDetailSection(title: "Habitat", content: mushroom.environmentDescription)
+                        MushroomDetailSectionView(title: "Commestibilità", content: mushroom.environmentDescription)
                         
-                        MushroomDetailSection(title: "Curiosità", content: mushroom.trivia)
+                        MushroomDetailSectionView(title: "Habitat", content: mushroom.environmentDescription)
                         
-                        // Section for additional images
-                        
+                        MushroomDetailSectionView(title: "Curiosità", content: mushroom.trivia)
                     })
-                    .padding(.horizontal, 20)
-                    .frame(maxWidth: 640, alignment: .center)
+                    .padding(.horizontal, Constants.MushroomCatalog.MushroomDetail.internalVStackHorizontalPadding)
+                    .padding(.bottom, Constants.MushroomCatalog.MushroomDetail.internalVStackBottomPadding)
+                    .frame(maxWidth: Constants.MushroomCatalog.MushroomDetail.internalVStackFrameMaxWidth, alignment: .center)
                 })
                 .background(GeometryReader { geometry in
                     Color.clear
@@ -66,6 +64,7 @@ struct MushroomDetail: View {
             .toolbarBackground(scrollPosition.y > initialScrollValue - 1 ? .hidden : .visible, for: .navigationBar)
             .ignoresSafeArea(edges: .top)
             .coordinateSpace(name: "scroll")
+        }
     }
 }
 
@@ -73,7 +72,7 @@ struct MushroomDetail: View {
 
 #Preview {
     NavigationView(content: {
-        MushroomDetail(mushroom: mushroomMockData[0])
+        MushroomDetailView(mushroom: mushroomMockData[0])
     })
     
 }

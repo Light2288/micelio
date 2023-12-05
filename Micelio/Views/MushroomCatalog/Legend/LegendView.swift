@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct Legend: View {
+struct LegendView: View {
     @Binding var showLegend: Bool
     
     var body: some View {
         NavigationStack {
             List {
                 ForEach(legendSections) { legendSection in
-                    LegendListSection(title: legendSection.title, legendItems: legendItems.filter{ $0.legendSection.id == legendSection.id }
+                    LegendListSectionView(title: legendSection.title, legendItems: legendItems.filter{ $0.legendSection.id == legendSection.id }
                     )
                     .alignmentGuide(.listRowSeparatorLeading) { _ in
                         return 0
@@ -37,5 +37,5 @@ struct Legend: View {
 }
 
 #Preview {
-    Legend(showLegend: .constant(true))
+    LegendView(showLegend: .constant(true))
 }

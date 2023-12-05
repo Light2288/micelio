@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ShortDescription: View {
+struct ShortDescriptionView: View {
     let text: String
     
     var body: some View {
@@ -18,5 +18,5 @@ struct ShortDescription: View {
 }
 
 #Preview {
-    ShortDescription(text: mushroomMockData[0].shortDescription)
+    ShortDescriptionView(text: mushroomMockData[0].shortDescription)
 }

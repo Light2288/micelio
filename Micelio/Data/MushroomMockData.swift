@@ -7,4 +7,11 @@
 
 import Foundation
 
-let mushroomMockData: [Mushroom] = generateMockMushroomArray(length: 20)
+var mushroomMockData: [Mushroom] {
+    var data: [Mushroom] = []
+    var porcino = generateMockMushroom(mushroomName: "porcino")
+    data.append(porcino)
+    data.append(contentsOf: generateMockMushroomArray(length: 20))
+    
+    return data
+}

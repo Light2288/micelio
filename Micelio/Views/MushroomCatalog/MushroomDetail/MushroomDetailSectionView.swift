@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MushroomDetailSection: View {
+struct MushroomDetailSectionView: View {
     let title: String
     let content: String
     
@@ -16,10 +16,9 @@ struct MushroomDetailSection: View {
             Text(content)
         }
         .disclosureGroupStyle(DisclosureGroupCustomStyle())
-//        .padding(.bottom, 8)
     }
 }
 
 #Preview {
-    MushroomDetailSection(title: "Description", content: mushroomMockData[0].description)
+    MushroomDetailSectionView(title: "Description", content: mushroomMockData[0].description)
 }

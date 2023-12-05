@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct Title: View {
+struct TitleView: View {
     let mushroom: Mushroom
     
     var body: some View {
-        Text(mushroom.name)
+        Text(mushroom.name.capitalized)
             .font(.largeTitle)
             .fontWeight(.heavy)
             .foregroundStyle(Color(.accent))
@@ -19,5 +19,5 @@ struct Title: View {
 }
 
 #Preview {
-    Title(mushroom: mushroomMockData[0])
+    TitleView(mushroom: mushroomMockData[0])
 }

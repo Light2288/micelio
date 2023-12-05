@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MushroomCatalog: View {
+struct MushroomCatalogView: View {
     let mushrooms: [Mushroom] = mushroomMockData
     @State private var showLegend: Bool = false
     
@@ -16,15 +16,15 @@ struct MushroomCatalog: View {
             List {
                 ForEach(mushrooms) { mushroom in
                     NavigationLink {
-                        MushroomDetail(mushroom: mushroom)
+                        MushroomDetailView(mushroom: mushroom)
                     } label: {
-                        MushroomCatalogRow(mushroom: mushroom)
-                            .padding(4)
+                        MushroomCatalogRowView(mushroom: mushroom)
+                            .padding(Constants.MushroomCatalog.NavigationLink.padding)
                     }
                 }
             }
             .sheet(isPresented: $showLegend, content: {
-                Legend(showLegend: $showLegend)
+                LegendView(showLegend: $showLegend)
             })
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -44,5 +44,5 @@ struct MushroomCatalog: View {
 }
 
 #Preview {
-    MushroomCatalog()
+    MushroomCatalogView()
 }
