@@ -12,7 +12,7 @@ struct MainImageView: View {
     
     var body: some View {
         GeometryReader { proxy in
-            PhotoThumbnailView(imageUrl: Bundle.main.url(forResource: image, withExtension: "jpeg")!, width: proxy.size.width, height: proxy.size.width)
+            PhotoThumbnailView(imageUrl: Bundle.main.url(forResource: image, withExtension: "jpeg") ?? URL(filePath: ""), width: proxy.size.width, height: proxy.size.width)
         }
     }
 }

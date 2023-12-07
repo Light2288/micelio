@@ -9,8 +9,10 @@ import Foundation
 
 var mushroomMockData: [Mushroom] {
     var data: [Mushroom] = []
-    var porcino = generateMockMushroom(mushroomName: "porcino")
+    let porcino = generateMockMushroom(mushroomName: "porcino")
     data.append(porcino)
+    let porcino2 = generateMockMushroom(mushroomName: "porcino")
+    data.append(porcino2)
     data.append(contentsOf: generateMockMushroomArray(length: 20))
     
     return data

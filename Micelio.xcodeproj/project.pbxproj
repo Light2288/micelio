@@ -21,7 +21,6 @@
 		6B7835892AFE497C00166DB3 /* DetailGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7835882AFE497C00166DB3 /* DetailGridView.swift */; };
 		6B78358C2AFE6F6A00166DB3 /* LegendItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B78358B2AFE6F6A00166DB3 /* LegendItemImageView.swift */; };
 		6B7835902B043FAD00166DB3 /* ShortDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B78358F2B043FAD00166DB3 /* ShortDescriptionView.swift */; };
-		6B7835922B04403B00166DB3 /* PhotoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7835912B04403B00166DB3 /* PhotoThumbnailView.swift */; };
 		6B7835B22B06D8BC00166DB3 /* AllImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7835B12B06D8BC00166DB3 /* AllImagesView.swift */; };
 		6B7CC3462B0EE8E50042A8E4 /* porcino_5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B7CC33C2B0EE8E50042A8E4 /* porcino_5.jpeg */; };
 		6B7CC3472B0EE8E50042A8E4 /* porcino_7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B7CC33D2B0EE8E50042A8E4 /* porcino_7.jpeg */; };
@@ -37,6 +36,7 @@
 		6B7CC3542B141ACE0042A8E4 /* AllImagesContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC3532B141ACE0042A8E4 /* AllImagesContainerView.swift */; };
 		6B7CC3562B141B9B0042A8E4 /* MainAndAllImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC3552B141B9B0042A8E4 /* MainAndAllImagesView.swift */; };
 		6B7CC3592B19134D0042A8E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC3582B19134D0042A8E4 /* Constants.swift */; };
+		6B8209C12B21504500724555 /* PhotoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8209C02B21504500724555 /* PhotoThumbnailView.swift */; };
 		6BA8B4C12AD4BDFD005272D2 /* Mushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C02AD4BDFD005272D2 /* Mushroom.swift */; };
 		6BA8B4C32AD586A7005272D2 /* Edibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C22AD586A7005272D2 /* Edibility.swift */; };
 		6BA8B4C52AD5875E005272D2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C42AD5875E005272D2 /* Environment.swift */; };
@@ -72,7 +72,6 @@
 		6B7835882AFE497C00166DB3 /* DetailGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGridView.swift; sourceTree = "<group>"; };
 		6B78358B2AFE6F6A00166DB3 /* LegendItemImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendItemImageView.swift; sourceTree = "<group>"; };
 		6B78358F2B043FAD00166DB3 /* ShortDescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortDescriptionView.swift; sourceTree = "<group>"; };
-		6B7835912B04403B00166DB3 /* PhotoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoThumbnailView.swift; sourceTree = "<group>"; };
 		6B7835B12B06D8BC00166DB3 /* AllImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllImagesView.swift; sourceTree = "<group>"; };
 		6B7CC33C2B0EE8E50042A8E4 /* porcino_5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = porcino_5.jpeg; sourceTree = "<group>"; };
 		6B7CC33D2B0EE8E50042A8E4 /* porcino_7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = porcino_7.jpeg; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		6B7CC3532B141ACE0042A8E4 /* AllImagesContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllImagesContainerView.swift; sourceTree = "<group>"; };
 		6B7CC3552B141B9B0042A8E4 /* MainAndAllImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAndAllImagesView.swift; sourceTree = "<group>"; };
 		6B7CC3582B19134D0042A8E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6B8209C02B21504500724555 /* PhotoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoThumbnailView.swift; sourceTree = "<group>"; };
 		6BA8B4C02AD4BDFD005272D2 /* Mushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mushroom.swift; sourceTree = "<group>"; };
 		6BA8B4C22AD586A7005272D2 /* Edibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edibility.swift; sourceTree = "<group>"; };
 		6BA8B4C42AD5875E005272D2 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -173,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				6B78358B2AFE6F6A00166DB3 /* LegendItemImageView.swift */,
+				6B8209C02B21504500724555 /* PhotoThumbnailView.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -216,7 +217,6 @@
 		6B7CC3572B141E3C0042A8E4 /* MainAndAdditionalImages */ = {
 			isa = PBXGroup;
 			children = (
-				6B7835912B04403B00166DB3 /* PhotoThumbnailView.swift */,
 				6B7835B12B06D8BC00166DB3 /* AllImagesView.swift */,
 				6B7CC3532B141ACE0042A8E4 /* AllImagesContainerView.swift */,
 				6B7CC3512B141A210042A8E4 /* MainImageView.swift */,
@@ -376,7 +376,6 @@
 			files = (
 				6BA8B4C72AD588E4005272D2 /* Season.swift in Sources */,
 				6B7CC3592B19134D0042A8E4 /* Constants.swift in Sources */,
-				6B7835922B04403B00166DB3 /* PhotoThumbnailView.swift in Sources */,
 				6BA8B4D42AD8B828005272D2 /* MushroomCatalogView.swift in Sources */,
 				6B7CC3542B141ACE0042A8E4 /* AllImagesContainerView.swift in Sources */,
 				6B7835B22B06D8BC00166DB3 /* AllImagesView.swift in Sources */,
@@ -384,6 +383,7 @@
 				6BBEC8C52AF46C52000720FF /* LegendListSectionView.swift in Sources */,
 				6B7835832AFD98EC00166DB3 /* DisclosureGroupCustomStyle.swift in Sources */,
 				6B0FBC452ACB677C00FDAA89 /* Persistence.swift in Sources */,
+				6B8209C12B21504500724555 /* PhotoThumbnailView.swift in Sources */,
 				6BA8B4D72AD8BA8E005272D2 /* MushroomDetailView.swift in Sources */,
 				6B0FBC3E2ACB677B00FDAA89 /* ContentView.swift in Sources */,
 				6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */,
