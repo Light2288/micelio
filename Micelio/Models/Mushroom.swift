@@ -10,6 +10,7 @@ import Foundation
 struct Mushroom: Identifiable {
     let id: UUID = UUID()
     let name: String
+    let veryShortDescription: String
     let shortDescription: String
     let edibility: Edibility
     let environments: [Environment]

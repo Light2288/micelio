@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum Constants {
     enum Styles {
@@ -40,7 +41,9 @@ enum Constants {
         enum MushroomCatalogRow {
             public static let imageFrameSize: CGFloat = 80
             public static let clipShapeCornerSize: CGSize = CGSize(width: 20, height: 10)
-            public static let vStackSpacing: CGFloat = 20
+            public static let vStackSpacing: CGFloat = 10
+            public static let vStackPadding: CGFloat = 10
+            public static let rowEdgeInsets: EdgeInsets = EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10)
         }
         
         enum TitleAndDetails {

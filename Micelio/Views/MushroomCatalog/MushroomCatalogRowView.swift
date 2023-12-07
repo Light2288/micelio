@@ -9,28 +9,24 @@ import SwiftUI
 
 struct MushroomCatalogRowView: View {
     let mushroom: Mushroom
+    let imageSize: CGFloat
     
     var body: some View {
-        
         HStack(alignment: .center, content: {
-            Image(mushroom.images[0])
-                .renderingMode(.original)
-                .resizable()
-                .scaledToFit()
-                .frame(width: Constants.MushroomCatalog.MushroomCatalogRow.imageFrameSize, height: Constants.MushroomCatalog.MushroomCatalogRow.imageFrameSize)
-                .clipShape(RoundedRectangle(cornerSize: Constants.MushroomCatalog.MushroomCatalogRow.clipShapeCornerSize))
+            PhotoThumbnailView(imageUrl: Bundle.main.url(forResource: mushroom.images[0], withExtension: "jpeg") ?? URL(filePath: ""), width: imageSize, height: imageSize)
             VStack(alignment: .leading, spacing: Constants.MushroomCatalog.MushroomCatalogRow.vStackSpacing, content: {
                 Text(mushroom.name.capitalized)
                     .font(.title2)
                     .fontWeight(.bold)
-                Text(mushroom.shortDescription)
+                Text(mushroom.veryShortDescription)
                     .font(.caption)
                     .foregroundStyle(Color.secondary)
             })
+            .padding(.vertical, Constants.MushroomCatalog.MushroomCatalogRow.vStackPadding)
         })
     }
 }
 
 #Preview {
-    MushroomCatalogRowView(mushroom: mushroomMockData[0])
+    MushroomCatalogRowView(mushroom: mushroomMockData[0], imageSize: 100)
 }

@@ -13,14 +13,17 @@ struct MushroomCatalogView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(mushrooms) { mushroom in
-                    NavigationLink {
-                        MushroomDetailView(mushroom: mushroom)
-                    } label: {
-                        MushroomCatalogRowView(mushroom: mushroom)
-                            .padding(Constants.MushroomCatalog.NavigationLink.padding)
+            GeometryReader { proxy in
+                List {
+                    ForEach(mushrooms) { mushroom in
+                        NavigationLink {
+                            MushroomDetailView(mushroom: mushroom)
+                        } label: {
+                            
+                            MushroomCatalogRowView(mushroom: mushroom, imageSize: proxy.size.width/3)
+                        }
                     }
+                    .listRowInsets(Constants.MushroomCatalog.MushroomCatalogRow.rowEdgeInsets)
                 }
             }
             .sheet(isPresented: $showLegend, content: {

@@ -18,7 +18,8 @@ func generateMockMushroomArray(length: Int) -> [Mushroom] {
 
 func generateMockMushroom(mushroomName: String? = nil) -> Mushroom {
     let name = mushroomName ?? generateRandomString(length: 12)
-    let shortDescription = generateParagraph(numberOfWords: 20)
+    let veryShortDescription = generateParagraph(numberOfWords: 5)
+    let shortDescription = generateParagraph(numberOfWords: 10)
     let edibility = generateRandomEdibility()
     let environments = generateRandomEnvironments()
     let seasons = generateRandomSeasons()
@@ -28,7 +29,7 @@ func generateMockMushroom(mushroomName: String? = nil) -> Mushroom {
     let trivia = generateParagraph(numberOfWords: 80)
     let images = (0...9).map { "\(name)_\($0)" }
     
-    return Mushroom(name: name, shortDescription: shortDescription, edibility: edibility, environments: environments, seasons: seasons, description: description, environmentDescription: environmentDescription, edibilityDescription: edibilityDescription, trivia: trivia, images: images)
+    return Mushroom(name: name, veryShortDescription: veryShortDescription, shortDescription: shortDescription, edibility: edibility, environments: environments, seasons: seasons, description: description, environmentDescription: environmentDescription, edibilityDescription: edibilityDescription, trivia: trivia, images: images)
 }
 
 private func generateRandomString(length: Int) -> String {

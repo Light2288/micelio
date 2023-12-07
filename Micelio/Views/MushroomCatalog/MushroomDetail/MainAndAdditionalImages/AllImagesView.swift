@@ -34,7 +34,7 @@ struct AllImagesView: View {
                     selectedImage = image
                 } label: {
                     PhotoThumbnailView(
-                        imageUrl: Bundle.main.url(forResource: image, withExtension: "jpeg")!,
+                        imageUrl: Bundle.main.url(forResource: image, withExtension: "jpeg") ?? URL(filePath: ""),
                         width: width, height: height
                     )
                     .border(image == selectedImage ? .accent : .clear, width: 4)
