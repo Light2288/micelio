@@ -17,7 +17,7 @@ struct ContentView: View {
                     Label("Map", image: "mushroom-map")
                 }
             
-            Text("Tab 2")
+            RecogniseView()
                 .tabItem {
                     Label("Identify", image: "mushroom-identify")
                 }
