@@ -17,7 +17,8 @@ struct RecogniseView: View {
             ButtonsHStackView(image: $image, isSheetVisible: $isSheetVisible)
         }
         .sheet(isPresented: $isSheetVisible, content: {
-            CameraView()
+            CameraView(selectedImage: $image, isSheetVisible: $isSheetVisible)
+                .background(.black)
         })
     }
 }
