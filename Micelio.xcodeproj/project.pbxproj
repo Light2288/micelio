@@ -39,7 +39,10 @@
 		6B8209C12B21504500724555 /* PhotoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8209C02B21504500724555 /* PhotoThumbnailView.swift */; };
 		6B820A802B2BB6FB00724555 /* RecogniseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820A7F2B2BB6FB00724555 /* RecogniseView.swift */; };
 		6B820A822B2BB80100724555 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820A812B2BB80100724555 /* CameraView.swift */; };
-		6B820A842B2BB80F00724555 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820A832B2BB80F00724555 /* GalleryView.swift */; };
+		6B820A862B2CB24500724555 /* ShapeButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820A852B2CB24500724555 /* ShapeButtonStyle.swift */; };
+		6B820A882B2CC00500724555 /* ImageRecogniseContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820A872B2CC00500724555 /* ImageRecogniseContainerView.swift */; };
+		6B820A8A2B2CC12C00724555 /* ButtonsHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820A892B2CC12C00724555 /* ButtonsHStackView.swift */; };
+		6B820A8E2B3088CC00724555 /* ImageWithShapeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820A8D2B3088CC00724555 /* ImageWithShapeBackground.swift */; };
 		6BA8B4C12AD4BDFD005272D2 /* Mushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C02AD4BDFD005272D2 /* Mushroom.swift */; };
 		6BA8B4C32AD586A7005272D2 /* Edibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C22AD586A7005272D2 /* Edibility.swift */; };
 		6BA8B4C52AD5875E005272D2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C42AD5875E005272D2 /* Environment.swift */; };
@@ -93,7 +96,10 @@
 		6B8209C02B21504500724555 /* PhotoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoThumbnailView.swift; sourceTree = "<group>"; };
 		6B820A7F2B2BB6FB00724555 /* RecogniseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecogniseView.swift; sourceTree = "<group>"; };
 		6B820A812B2BB80100724555 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		6B820A832B2BB80F00724555 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		6B820A852B2CB24500724555 /* ShapeButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeButtonStyle.swift; sourceTree = "<group>"; };
+		6B820A872B2CC00500724555 /* ImageRecogniseContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecogniseContainerView.swift; sourceTree = "<group>"; };
+		6B820A892B2CC12C00724555 /* ButtonsHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsHStackView.swift; sourceTree = "<group>"; };
+		6B820A8D2B3088CC00724555 /* ImageWithShapeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithShapeBackground.swift; sourceTree = "<group>"; };
 		6BA8B4C02AD4BDFD005272D2 /* Mushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mushroom.swift; sourceTree = "<group>"; };
 		6BA8B4C22AD586A7005272D2 /* Edibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edibility.swift; sourceTree = "<group>"; };
 		6BA8B4C42AD5875E005272D2 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -171,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				6B7835822AFD98EC00166DB3 /* DisclosureGroupCustomStyle.swift */,
+				6B820A852B2CB24500724555 /* ShapeButtonStyle.swift */,
+				6B820A8D2B3088CC00724555 /* ImageWithShapeBackground.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -236,7 +244,8 @@
 			children = (
 				6B820A7F2B2BB6FB00724555 /* RecogniseView.swift */,
 				6B820A812B2BB80100724555 /* CameraView.swift */,
-				6B820A832B2BB80F00724555 /* GalleryView.swift */,
+				6B820A872B2CC00500724555 /* ImageRecogniseContainerView.swift */,
+				6B820A892B2CC12C00724555 /* ButtonsHStackView.swift */,
 			);
 			path = Recognise;
 			sourceTree = "<group>";
@@ -394,10 +403,11 @@
 				6BA8B4C72AD588E4005272D2 /* Season.swift in Sources */,
 				6B7CC3592B19134D0042A8E4 /* Constants.swift in Sources */,
 				6B820A802B2BB6FB00724555 /* RecogniseView.swift in Sources */,
+				6B820A862B2CB24500724555 /* ShapeButtonStyle.swift in Sources */,
 				6B820A822B2BB80100724555 /* CameraView.swift in Sources */,
-				6B820A842B2BB80F00724555 /* GalleryView.swift in Sources */,
 				6BA8B4D42AD8B828005272D2 /* MushroomCatalogView.swift in Sources */,
 				6B7CC3542B141ACE0042A8E4 /* AllImagesContainerView.swift in Sources */,
+				6B820A882B2CC00500724555 /* ImageRecogniseContainerView.swift in Sources */,
 				6B7835B22B06D8BC00166DB3 /* AllImagesView.swift in Sources */,
 				6B78357C2AFBDDDC00166DB3 /* TitleView.swift in Sources */,
 				6BBEC8C52AF46C52000720FF /* LegendListSectionView.swift in Sources */,
@@ -407,6 +417,7 @@
 				6BA8B4D72AD8BA8E005272D2 /* MushroomDetailView.swift in Sources */,
 				6B0FBC3E2ACB677B00FDAA89 /* ContentView.swift in Sources */,
 				6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */,
+				6B820A8A2B2CC12C00724555 /* ButtonsHStackView.swift in Sources */,
 				6BBEC8C72AF46D10000720FF /* LegendListRowView.swift in Sources */,
 				6B7CC3562B141B9B0042A8E4 /* MainAndAllImagesView.swift in Sources */,
 				6BA8B4C52AD5875E005272D2 /* Environment.swift in Sources */,
@@ -415,6 +426,7 @@
 				6BBEC8C92AF46F49000720FF /* LegendSection.swift in Sources */,
 				6B7835802AFBE1F400166DB3 /* MushroomDetailSectionView.swift in Sources */,
 				6B78358C2AFE6F6A00166DB3 /* LegendItemImageView.swift in Sources */,
+				6B820A8E2B3088CC00724555 /* ImageWithShapeBackground.swift in Sources */,
 				6B7CC3522B141A210042A8E4 /* MainImageView.swift in Sources */,
 				6B7835872AFE46DE00166DB3 /* DetailsView.swift in Sources */,
 				6BA8B4CA2AD60D14005272D2 /* MushroomMockData.swift in Sources */,
