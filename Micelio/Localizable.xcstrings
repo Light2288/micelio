@@ -20,9 +20,6 @@
     "Close" : {
 
     },
-    "Gallery" : {
-
-    },
     "Identify" : {
       "localizations" : {
         "it" : {
@@ -53,6 +50,12 @@
 
     },
     "Nascondi" : {
+
+    },
+    "Riconosci fungo" : {
+
+    },
+    "Scatta una foto o seleziona un'immagine per procedere con il riconoscimento" : {
 
     },
     "Tab 1" : {
