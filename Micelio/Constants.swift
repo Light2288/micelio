@@ -13,6 +13,14 @@ enum Constants {
         enum DisclosureGroupCustomStyle {
             public static let imageDimension: CGFloat = 30
         }
+        
+        enum ResizableImageWithShapeBackground {
+            public static let padding: CGFloat = 6
+        }
+        
+        enum ViewWithShapeBackground {
+            public static let shadowRadius: CGFloat = 8
+        }
     }
     
     enum CommonViews {
@@ -30,6 +38,13 @@ enum Constants {
         
         enum LegendListRow {
             public static let imageSize: CGFloat = 60
+        }
+    }
+    
+    enum Recognise {
+        enum ButtonHStack {
+            public static let roundButtonSize: CGFloat = 80
+            public static let capsuleButtonWidth: CGFloat = 200
         }
     }
     

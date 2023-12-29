@@ -24,7 +24,6 @@ struct ImageRecogniseContainerView: View {
                     .padding()
             }
         }
-        .ignoresSafeArea()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
