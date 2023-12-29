@@ -12,6 +12,7 @@ struct ButtonsHStackView: View {
     @Binding var image: UIImage?
     @Binding var isSheetVisible: Bool
     @State private var selectedItem: PhotosPickerItem? = nil
+    let detectMushroom: (UIImage) -> Void
     
     var body: some View {
         HStack(content: {
@@ -19,20 +20,22 @@ struct ButtonsHStackView: View {
                 isSheetVisible.toggle()
             }, label: {
                 Image("recognise-camera")
+                    .resizableImageWithShapeBackground(shape: AnyShape(Circle()), frameWidth: Constants.Recognise.ButtonHStack.roundButtonSize, frameHeight: Constants.Recognise.ButtonHStack.roundButtonSize)
             })
-            .buttonStyle(ShapeButtonStyle(shape: AnyShape(Circle())))
             
             Button(action: {
-                
+                if let image = image {
+                    detectMushroom(image)
+                }
             }, label: {
                 Text("Riconosci fungo")
+                    .viewWithShapeBackground(shape: AnyShape(Capsule()), width: Constants.Recognise.ButtonHStack.capsuleButtonWidth, height: Constants.Recognise.ButtonHStack.roundButtonSize)
             })
-            .buttonStyle(ShapeButtonStyle(shape: AnyShape(Capsule())))
             .disabled(image == nil)
             
             PhotosPicker(selection: $selectedItem, matching: .images) {
                 Image("recognise-gallery")
-                    .imageWithShapeBackground(shape: AnyShape(Circle()))
+                    .resizableImageWithShapeBackground(shape: AnyShape(Circle()), frameWidth: Constants.Recognise.ButtonHStack.roundButtonSize, frameHeight: Constants.Recognise.ButtonHStack.roundButtonSize)
             }
             .onChange(of: selectedItem, perform: { value in
                 Task {
@@ -48,5 +51,5 @@ struct ButtonsHStackView: View {
 }
 
 #Preview {
-    ButtonsHStackView(image: .constant(nil), isSheetVisible: .constant(false))
+    ButtonsHStackView(image: .constant(nil), isSheetVisible: .constant(false), detectMushroom: {_ in })
 }
