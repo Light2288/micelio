@@ -42,7 +42,7 @@
 		6B820A802B2BB6FB00724555 /* RecogniseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820A7F2B2BB6FB00724555 /* RecogniseView.swift */; };
 		6B820A822B2BB80100724555 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820A812B2BB80100724555 /* CameraView.swift */; };
 		6B820A882B2CC00500724555 /* ImageRecogniseContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820A872B2CC00500724555 /* ImageRecogniseContainerView.swift */; };
-		6B820A8A2B2CC12C00724555 /* ButtonsHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820A892B2CC12C00724555 /* ButtonsHStackView.swift */; };
+		6B820A8A2B2CC12C00724555 /* AddPhotoButtonsHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820A892B2CC12C00724555 /* AddPhotoButtonsHStackView.swift */; };
 		6B820A8E2B3088CC00724555 /* ViewWithShapeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820A8D2B3088CC00724555 /* ViewWithShapeBackground.swift */; };
 		6B820B162B3A48A300724555 /* MicelioMushroomClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6B820B152B3A48A300724555 /* MicelioMushroomClassifier.mlmodel */; };
 		6B820B182B3A4BE500724555 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820B172B3A4BE500724555 /* Classifier.swift */; };
@@ -65,6 +65,8 @@
 		6BBEC8C92AF46F49000720FF /* LegendSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBEC8C82AF46F49000720FF /* LegendSection.swift */; };
 		6BBEC8CB2AF4705E000720FF /* LegendSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBEC8CA2AF4705E000720FF /* LegendSections.swift */; };
 		6BCFB90D2B3E41D000C6246E /* ResizableImageWithShapeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFB90C2B3E41D000C6246E /* ResizableImageWithShapeBackground.swift */; };
+		6BCFB9472B438AC000C6246E /* RecogniseMushroomResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFB9462B438AC000C6246E /* RecogniseMushroomResultView.swift */; };
+		6BCFB94B2B462BE600C6246E /* RecogniseImageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFB94A2B462BE600C6246E /* RecogniseImageStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,7 +106,7 @@
 		6B820A7F2B2BB6FB00724555 /* RecogniseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecogniseView.swift; sourceTree = "<group>"; };
 		6B820A812B2BB80100724555 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		6B820A872B2CC00500724555 /* ImageRecogniseContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecogniseContainerView.swift; sourceTree = "<group>"; };
-		6B820A892B2CC12C00724555 /* ButtonsHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsHStackView.swift; sourceTree = "<group>"; };
+		6B820A892B2CC12C00724555 /* AddPhotoButtonsHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoButtonsHStackView.swift; sourceTree = "<group>"; };
 		6B820A8D2B3088CC00724555 /* ViewWithShapeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithShapeBackground.swift; sourceTree = "<group>"; };
 		6B820B152B3A48A300724555 /* MicelioMushroomClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MicelioMushroomClassifier.mlmodel; sourceTree = "<group>"; };
 		6B820B172B3A4BE500724555 /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
@@ -127,6 +129,8 @@
 		6BBEC8C82AF46F49000720FF /* LegendSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendSection.swift; sourceTree = "<group>"; };
 		6BBEC8CA2AF4705E000720FF /* LegendSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendSections.swift; sourceTree = "<group>"; };
 		6BCFB90C2B3E41D000C6246E /* ResizableImageWithShapeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableImageWithShapeBackground.swift; sourceTree = "<group>"; };
+		6BCFB9462B438AC000C6246E /* RecogniseMushroomResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecogniseMushroomResultView.swift; sourceTree = "<group>"; };
+		6BCFB94A2B462BE600C6246E /* RecogniseImageStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecogniseImageStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +203,7 @@
 				6B7835822AFD98EC00166DB3 /* DisclosureGroupCustomStyle.swift */,
 				6B820A8D2B3088CC00724555 /* ViewWithShapeBackground.swift */,
 				6BCFB90C2B3E41D000C6246E /* ResizableImageWithShapeBackground.swift */,
+				6BCFB94A2B462BE600C6246E /* RecogniseImageStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -265,7 +270,8 @@
 				6B820A7F2B2BB6FB00724555 /* RecogniseView.swift */,
 				6B820A812B2BB80100724555 /* CameraView.swift */,
 				6B820A872B2CC00500724555 /* ImageRecogniseContainerView.swift */,
-				6B820A892B2CC12C00724555 /* ButtonsHStackView.swift */,
+				6B820A892B2CC12C00724555 /* AddPhotoButtonsHStackView.swift */,
+				6BCFB9462B438AC000C6246E /* RecogniseMushroomResultView.swift */,
 			);
 			path = Recognise;
 			sourceTree = "<group>";
@@ -451,7 +457,7 @@
 				6BA8B4D72AD8BA8E005272D2 /* MushroomDetailView.swift in Sources */,
 				6B0FBC3E2ACB677B00FDAA89 /* ContentView.swift in Sources */,
 				6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */,
-				6B820A8A2B2CC12C00724555 /* ButtonsHStackView.swift in Sources */,
+				6B820A8A2B2CC12C00724555 /* AddPhotoButtonsHStackView.swift in Sources */,
 				6BBEC8C72AF46D10000720FF /* LegendListRowView.swift in Sources */,
 				6B7CC3562B141B9B0042A8E4 /* MainAndAllImagesView.swift in Sources */,
 				6BA8B4C52AD5875E005272D2 /* Environment.swift in Sources */,
@@ -468,6 +474,7 @@
 				6B7835852AFE464400166DB3 /* TitleAndDetailsView.swift in Sources */,
 				6B0FBC3C2ACB677B00FDAA89 /* MicelioApp.swift in Sources */,
 				6BA8B4CC2AD60F0F005272D2 /* MushroomMockGenerator.swift in Sources */,
+				6BCFB94B2B462BE600C6246E /* RecogniseImageStyle.swift in Sources */,
 				6BBEC8BE2AF459C1000720FF /* LegendView.swift in Sources */,
 				6BBEC8CB2AF4705E000720FF /* LegendSections.swift in Sources */,
 				6BA8B4C12AD4BDFD005272D2 /* Mushroom.swift in Sources */,
@@ -476,6 +483,7 @@
 				6BBEC8C22AF467CC000720FF /* LegendItems.swift in Sources */,
 				6BA8B4D22AD75B29005272D2 /* MushroomCatalogRowView.swift in Sources */,
 				6BA8B4C32AD586A7005272D2 /* Edibility.swift in Sources */,
+				6BCFB9472B438AC000C6246E /* RecogniseMushroomResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

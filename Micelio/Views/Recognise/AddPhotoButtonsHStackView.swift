@@ -1,5 +1,5 @@
 //
-//  ButtonsHStackView.swift
+//  AddPhotoButtonsHStackView.swift
 //  Micelio
 //
 //  Created by Davide Aliti on 15/12/23.
@@ -8,11 +8,10 @@
 import SwiftUI
 import PhotosUI
 
-struct ButtonsHStackView: View {
+struct AddPhotoButtonsHStackView: View {
     @Binding var image: UIImage?
     @Binding var isSheetVisible: Bool
     @State private var selectedItem: PhotosPickerItem? = nil
-    let detectMushroom: (UIImage) -> Void
     
     var body: some View {
         HStack(content: {
@@ -23,15 +22,7 @@ struct ButtonsHStackView: View {
                     .resizableImageWithShapeBackground(shape: AnyShape(Circle()), frameWidth: Constants.Recognise.ButtonHStack.roundButtonSize, frameHeight: Constants.Recognise.ButtonHStack.roundButtonSize)
             })
             
-            Button(action: {
-                if let image = image {
-                    detectMushroom(image)
-                }
-            }, label: {
-                Text("Riconosci fungo")
-                    .viewWithShapeBackground(shape: AnyShape(Capsule()), width: Constants.Recognise.ButtonHStack.capsuleButtonWidth, height: Constants.Recognise.ButtonHStack.roundButtonSize)
-            })
-            .disabled(image == nil)
+            Spacer()
             
             PhotosPicker(selection: $selectedItem, matching: .images) {
                 Image("recognise-gallery")
@@ -46,10 +37,10 @@ struct ButtonsHStackView: View {
             })
             
         })
-        .padding(.bottom, 20)
+        .padding([.horizontal, .bottom], 20)
     }
 }
 
 #Preview {
-    ButtonsHStackView(image: .constant(nil), isSheetVisible: .constant(false), detectMushroom: {_ in })
+    AddPhotoButtonsHStackView(image: .constant(nil), isSheetVisible: .constant(false))
 }
