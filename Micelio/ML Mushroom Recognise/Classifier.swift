@@ -14,24 +14,22 @@ struct Classifier {
     private(set) var results: [RecognisedMushroom] = []
     
     mutating func detect(ciImage: CIImage) {
-        
         guard let model = try? VNCoreMLModel(for: MicelioMushroomClassifier(configuration: MLModelConfiguration()).model)
         else {
             return
         }
-        
+                
         let request = VNCoreMLRequest(model: model)
         
         let handler = VNImageRequestHandler(ciImage: ciImage, options: [:])
         
         try? handler.perform([request])
-        
+                
         guard let results = request.results as? [VNClassificationObservation] else {
             return
         }
-        
-        self.results = results.map { RecognisedMushroom(id: $0.uuid, mushroomIdentifier: $0.identifier, confidence: $0.confidence.roundTo(places: 4))}
-        
+                
+        self.results = results.map { RecognisedMushroom(id: $0.uuid, mushroomIdentifier: $0.identifier, confidence: $0.confidence)}
     }
     
 }

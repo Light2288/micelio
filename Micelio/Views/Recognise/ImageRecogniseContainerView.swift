@@ -14,9 +14,8 @@ struct ImageRecogniseContainerView: View {
         Group {
             if let image = image {
                 Image(uiImage: image)
-                    .resizable()
-                    .scaledToFit()
-                    .padding()
+                    .recogniseImageStyle()
+                    
             } else {
                 Text("Scatta una foto o seleziona un'immagine per procedere con il riconoscimento")
                     .multilineTextAlignment(.center)

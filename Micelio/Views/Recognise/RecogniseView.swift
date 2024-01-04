@@ -14,20 +14,29 @@ struct RecogniseView: View {
     @ObservedObject var classifier = MushroomClassifier()
     
     var body: some View {
-        VStack {
-            ImageRecogniseContainerView(image: $image)
-            ForEach(classifier.recognisedMushrooms) { recognisedMushroom in
-                HStack {
-                    Text(recognisedMushroom.mushroomIdentifier)
-                    Text(recognisedMushroom.confidencePercentage)
+        NavigationStack {
+            VStack {
+                ImageRecogniseContainerView(image: $image)
+                if (image != nil) {
+                    VStack(content: {
+                        NavigationLink(destination: RecogniseMushroomResultView(image: image!)) {
+                            Text("Riconosci fungo")
+                                .viewWithShapeBackground(shape: AnyShape(Capsule()), width: Constants.Recognise.ButtonHStack.capsuleButtonWidth, height: Constants.Recognise.ButtonHStack.roundButtonSize)
+                        }
+                        Spacer()
+                        Text("oppure scegli un'altra fotografia:")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .padding()
+                    })
                 }
+                AddPhotoButtonsHStackView(image: $image, isSheetVisible: $isSheetVisible)
             }
-            ButtonsHStackView(image: $image, isSheetVisible: $isSheetVisible, detectMushroom: classifier.detectMushroom)
-        }
-        .sheet(isPresented: $isSheetVisible, content: {
-            CameraView(selectedImage: $image, isSheetVisible: $isSheetVisible)
-                .background(.black)
+            .sheet(isPresented: $isSheetVisible, content: {
+                CameraView(selectedImage: $image, isSheetVisible: $isSheetVisible)
+                    .background(.black)
         })
+        }
     }
 }
 

@@ -12,6 +12,6 @@ struct RecognisedMushroom: Identifiable {
     let mushroomIdentifier: String
     let confidence: Float
     var confidencePercentage: String {
-        "\(confidence * 100)%"
+        "\((confidence * 100).roundTo(places: 2))%"
     }
 }
