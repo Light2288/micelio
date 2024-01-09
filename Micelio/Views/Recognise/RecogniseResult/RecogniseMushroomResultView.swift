@@ -21,6 +21,8 @@ struct RecogniseMushroomResultView: View {
                     Text(recognisedMushroom.confidencePercentage)
                 }
             }
+            Spacer()
+            RecogniseDisclaimerView()
         })
         .task {
             classifier.detectMushroom(uiImage: image)

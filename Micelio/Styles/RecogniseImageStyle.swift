@@ -13,7 +13,7 @@ extension Image {
         self
             .resizable()
             .scaledToFit()
-            .clipShape(RoundedRectangle(cornerSize: CGSize(width: 20, height: 10)))
+            .clipShape(RoundedRectangle(cornerSize: Constants.Styles.RecogniseImageStyle.cornerRadius))
             .padding()
     }
 }

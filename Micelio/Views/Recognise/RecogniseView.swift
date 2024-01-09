@@ -10,6 +10,7 @@ import SwiftUI
 struct RecogniseView: View {
     @State var image: UIImage?
     @State var isSheetVisible: Bool = false
+    @State private var navigateToResultPage: Bool = false
     
     @ObservedObject var classifier = MushroomClassifier()
     
@@ -17,25 +18,20 @@ struct RecogniseView: View {
         NavigationStack {
             VStack {
                 ImageRecogniseContainerView(image: $image)
-                if (image != nil) {
+                if let image = image {
                     VStack(content: {
-                        NavigationLink(destination: RecogniseMushroomResultView(image: image!)) {
-                            Text("Riconosci fungo")
-                                .viewWithShapeBackground(shape: AnyShape(Capsule()), width: Constants.Recognise.ButtonHStack.capsuleButtonWidth, height: Constants.Recognise.ButtonHStack.roundButtonSize)
-                        }
+                        RecogniseButtonView(image: image)
                         Spacer()
-                        Text("oppure scegli un'altra fotografia:")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            .padding()
+                        ChooseAnotherPhotoTextView()
                     })
                 }
+                
                 AddPhotoButtonsHStackView(image: $image, isSheetVisible: $isSheetVisible)
             }
             .sheet(isPresented: $isSheetVisible, content: {
                 CameraView(selectedImage: $image, isSheetVisible: $isSheetVisible)
                     .background(.black)
-        })
+            })
         }
     }
 }
@@ -43,5 +39,3 @@ struct RecogniseView: View {
 #Preview {
     RecogniseView()
 }
-
-
