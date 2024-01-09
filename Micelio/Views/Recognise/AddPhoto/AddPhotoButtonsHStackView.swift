@@ -19,14 +19,14 @@ struct AddPhotoButtonsHStackView: View {
                 isSheetVisible.toggle()
             }, label: {
                 Image("recognise-camera")
-                    .resizableImageWithShapeBackground(shape: AnyShape(Circle()), frameWidth: Constants.Recognise.ButtonHStack.roundButtonSize, frameHeight: Constants.Recognise.ButtonHStack.roundButtonSize)
+                    .resizableImageWithShapeBackground(shape: AnyShape(Circle()), frameWidth: Constants.Recognise.AddPhotoButtons.roundButtonSize, frameHeight: Constants.Recognise.AddPhotoButtons.roundButtonSize)
             })
             
             Spacer()
             
             PhotosPicker(selection: $selectedItem, matching: .images) {
                 Image("recognise-gallery")
-                    .resizableImageWithShapeBackground(shape: AnyShape(Circle()), frameWidth: Constants.Recognise.ButtonHStack.roundButtonSize, frameHeight: Constants.Recognise.ButtonHStack.roundButtonSize)
+                    .resizableImageWithShapeBackground(shape: AnyShape(Circle()), frameWidth: Constants.Recognise.AddPhotoButtons.roundButtonSize, frameHeight: Constants.Recognise.AddPhotoButtons.roundButtonSize)
             }
             .onChange(of: selectedItem, perform: { value in
                 Task {
@@ -37,7 +37,7 @@ struct AddPhotoButtonsHStackView: View {
             })
             
         })
-        .padding([.horizontal, .bottom], 20)
+        .padding([.horizontal, .bottom], Constants.Recognise.AddPhotoButtons.horizontalBottomPadding)
     }
 }
 

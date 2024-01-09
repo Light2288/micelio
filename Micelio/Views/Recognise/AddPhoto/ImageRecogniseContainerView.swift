@@ -21,7 +21,6 @@ struct ImageRecogniseContainerView: View {
                 .font(.title2)
                 .padding()
             RecogniseDisclaimerView()
-                .padding()
             Spacer()
             
         }

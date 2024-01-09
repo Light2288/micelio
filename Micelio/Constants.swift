@@ -46,9 +46,23 @@ enum Constants {
     }
     
     enum Recognise {
-        enum ButtonHStack {
+        enum AddPhotoButtons {
+            public static let roundButtonSize: CGFloat = 80
+            public static let horizontalBottomPadding: CGFloat = 20
+        }
+        
+        enum RecogniseButton {
             public static let roundButtonSize: CGFloat = 80
             public static let capsuleButtonWidth: CGFloat = 200
+        }
+        
+        enum RecogniseDisclaimer {
+            public static let backgroundRectangleCornerSize: CGSize = CGSize(width: 20, height: 20)
+            public static let backgroundRectangleStrokeLineWidth: CGFloat = 1.5
+            
+            enum Title {
+                public static let bottomPadding: CGFloat = 3
+            }
         }
     }
     

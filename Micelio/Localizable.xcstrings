@@ -4,9 +4,6 @@
     "" : {
 
     },
-    "Annulla" : {
-
-    },
     "Attenzione!" : {
 
     },
@@ -36,9 +33,6 @@
         }
       }
     },
-    "L'app proverà a riconoscere la specie del fungo dalla foto. Fai attenzione! Il riconoscimento automatico non è infallibile, e non tutte le specie di funghi sono identificate dalla app; alcuni funghi commestibili sono molto simili a funghi tossici, e l'app potrebbe confonderli.\n%@" : {
-
-    },
     "Legenda" : {
 
     },
@@ -62,9 +56,6 @@
 
     },
     "oppure scegli un'altra fotografia:" : {
-
-    },
-    "Prosegui" : {
 
     },
     "Riconosci fungo" : {
