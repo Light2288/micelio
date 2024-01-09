@@ -11,19 +11,20 @@ struct ImageRecogniseContainerView: View {
     @Binding var image: UIImage?
     
     var body: some View {
-        Group {
-            if let image = image {
-                Image(uiImage: image)
-                    .recogniseImageStyle()
-                    
-            } else {
-                Text("Scatta una foto o seleziona un'immagine per procedere con il riconoscimento")
-                    .multilineTextAlignment(.center)
-                    .font(.title2)
-                    .padding()
-            }
+        if let image = image {
+            Image(uiImage: image)
+                .recogniseImageStyle()
+            
+        } else {
+            Text("Scatta una foto o seleziona un'immagine per procedere con il riconoscimento")
+                .multilineTextAlignment(.center)
+                .font(.title2)
+                .padding()
+            RecogniseDisclaimerView()
+                .padding()
+            Spacer()
+            
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

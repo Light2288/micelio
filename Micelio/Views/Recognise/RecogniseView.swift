@@ -10,6 +10,8 @@ import SwiftUI
 struct RecogniseView: View {
     @State var image: UIImage?
     @State var isSheetVisible: Bool = false
+    @State var showWarningAlert: Bool = false
+    @State private var navigateToResultPage: Bool = false
     
     @ObservedObject var classifier = MushroomClassifier()
     
@@ -17,25 +19,33 @@ struct RecogniseView: View {
         NavigationStack {
             VStack {
                 ImageRecogniseContainerView(image: $image)
-                if (image != nil) {
+                if let image = image {
                     VStack(content: {
-                        NavigationLink(destination: RecogniseMushroomResultView(image: image!)) {
-                            Text("Riconosci fungo")
-                                .viewWithShapeBackground(shape: AnyShape(Capsule()), width: Constants.Recognise.ButtonHStack.capsuleButtonWidth, height: Constants.Recognise.ButtonHStack.roundButtonSize)
-                        }
+                        RecogniseButtonView(showWarningAlert: $showWarningAlert)
                         Spacer()
-                        Text("oppure scegli un'altra fotografia:")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            .padding()
+                        ChooseAnotherPhotoTextView()
                     })
+                    .navigationDestination(isPresented: $navigateToResultPage) {
+                        RecogniseMushroomResultView(image: image)
+                    }
                 }
+                
                 AddPhotoButtonsHStackView(image: $image, isSheetVisible: $isSheetVisible)
+            }
+            .alert("Attenzione!", isPresented: $showWarningAlert) {
+                Button("Prosegui") {
+                    DispatchQueue.main.async {
+                        self.navigateToResultPage = true
+                    }
+                }
+                Button("Annulla", role: .cancel) { }
+            } message: {
+                Text("L'app proverà a riconoscere la specie del fungo dalla foto. Fai attenzione! Il riconoscimento automatico non è infallibile, e non tutte le specie di funghi sono identificate dalla app; alcuni funghi commestibili sono molto simili a funghi tossici, e l'app potrebbe confonderli.\n\("Non mangiare mai un fungo senza averlo fatto riconoscere da un esperto per essere certo che sia commestibile!".uppercased())")
             }
             .sheet(isPresented: $isSheetVisible, content: {
                 CameraView(selectedImage: $image, isSheetVisible: $isSheetVisible)
                     .background(.black)
-        })
+            })
         }
     }
 }
@@ -43,5 +53,3 @@ struct RecogniseView: View {
 #Preview {
     RecogniseView()
 }
-
-

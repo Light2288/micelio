@@ -21,6 +21,10 @@ enum Constants {
         enum ViewWithShapeBackground {
             public static let shadowRadius: CGFloat = 8
         }
+        
+        enum RecogniseImageStyle {
+            public static let cornerRadius: CGSize = CGSize(width: 20, height: 10)
+        }
     }
     
     enum CommonViews {

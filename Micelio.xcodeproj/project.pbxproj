@@ -67,6 +67,9 @@
 		6BCFB90D2B3E41D000C6246E /* ResizableImageWithShapeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFB90C2B3E41D000C6246E /* ResizableImageWithShapeBackground.swift */; };
 		6BCFB9472B438AC000C6246E /* RecogniseMushroomResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFB9462B438AC000C6246E /* RecogniseMushroomResultView.swift */; };
 		6BCFB94B2B462BE600C6246E /* RecogniseImageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFB94A2B462BE600C6246E /* RecogniseImageStyle.swift */; };
+		6BCFB96E2B47810D00C6246E /* RecogniseButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFB96D2B47810D00C6246E /* RecogniseButtonView.swift */; };
+		6BCFB9702B47817400C6246E /* RecogniseDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFB96F2B47817400C6246E /* RecogniseDisclaimerView.swift */; };
+		6BCFB9722B47819C00C6246E /* ChooseAnotherPhotoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFB9712B47819C00C6246E /* ChooseAnotherPhotoTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +134,9 @@
 		6BCFB90C2B3E41D000C6246E /* ResizableImageWithShapeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableImageWithShapeBackground.swift; sourceTree = "<group>"; };
 		6BCFB9462B438AC000C6246E /* RecogniseMushroomResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecogniseMushroomResultView.swift; sourceTree = "<group>"; };
 		6BCFB94A2B462BE600C6246E /* RecogniseImageStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecogniseImageStyle.swift; sourceTree = "<group>"; };
+		6BCFB96D2B47810D00C6246E /* RecogniseButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecogniseButtonView.swift; sourceTree = "<group>"; };
+		6BCFB96F2B47817400C6246E /* RecogniseDisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecogniseDisclaimerView.swift; sourceTree = "<group>"; };
+		6BCFB9712B47819C00C6246E /* ChooseAnotherPhotoTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAnotherPhotoTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +278,9 @@
 				6B820A872B2CC00500724555 /* ImageRecogniseContainerView.swift */,
 				6B820A892B2CC12C00724555 /* AddPhotoButtonsHStackView.swift */,
 				6BCFB9462B438AC000C6246E /* RecogniseMushroomResultView.swift */,
+				6BCFB96D2B47810D00C6246E /* RecogniseButtonView.swift */,
+				6BCFB96F2B47817400C6246E /* RecogniseDisclaimerView.swift */,
+				6BCFB9712B47819C00C6246E /* ChooseAnotherPhotoTextView.swift */,
 			);
 			path = Recognise;
 			sourceTree = "<group>";
@@ -442,7 +451,9 @@
 				6B820A802B2BB6FB00724555 /* RecogniseView.swift in Sources */,
 				6B820B182B3A4BE500724555 /* Classifier.swift in Sources */,
 				6B820A822B2BB80100724555 /* CameraView.swift in Sources */,
+				6BCFB96E2B47810D00C6246E /* RecogniseButtonView.swift in Sources */,
 				6BA8B4D42AD8B828005272D2 /* MushroomCatalogView.swift in Sources */,
+				6BCFB9722B47819C00C6246E /* ChooseAnotherPhotoTextView.swift in Sources */,
 				6B7CC3542B141ACE0042A8E4 /* AllImagesContainerView.swift in Sources */,
 				6B820A882B2CC00500724555 /* ImageRecogniseContainerView.swift in Sources */,
 				6B7835B22B06D8BC00166DB3 /* AllImagesView.swift in Sources */,
@@ -468,6 +479,7 @@
 				6B7835802AFBE1F400166DB3 /* MushroomDetailSectionView.swift in Sources */,
 				6B78358C2AFE6F6A00166DB3 /* LegendItemImageView.swift in Sources */,
 				6B820A8E2B3088CC00724555 /* ViewWithShapeBackground.swift in Sources */,
+				6BCFB9702B47817400C6246E /* RecogniseDisclaimerView.swift in Sources */,
 				6B7CC3522B141A210042A8E4 /* MainImageView.swift in Sources */,
 				6B7835872AFE46DE00166DB3 /* DetailsView.swift in Sources */,
 				6BA8B4CA2AD60D14005272D2 /* MushroomMockData.swift in Sources */,
