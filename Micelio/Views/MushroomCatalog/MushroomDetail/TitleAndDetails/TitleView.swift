@@ -11,10 +11,14 @@ struct TitleView: View {
     let mushroom: Mushroom
     
     var body: some View {
-        Text(mushroom.name.capitalized)
-            .font(.largeTitle)
-            .fontWeight(.heavy)
-            .foregroundStyle(Color(.accent))
+        VStack {
+            Text(mushroom.scientificName.capitalized)
+                .font(.largeTitle)
+            Text("(\(mushroom.commonName.capitalized))")
+                .font(.title2)
+        }
+        .fontWeight(.heavy)
+        .foregroundStyle(Color(.accent))
     }
 }
 

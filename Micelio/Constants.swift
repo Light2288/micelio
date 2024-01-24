@@ -9,6 +9,10 @@ import Foundation
 import SwiftUI
 
 enum Constants {
+    enum MushroomClassifier {
+        public static let minConfidence: Float = 0.05
+    }
+    
     enum Styles {
         enum DisclosureGroupCustomStyle {
             public static let imageDimension: CGFloat = 30
@@ -46,6 +50,8 @@ enum Constants {
     }
     
     enum Recognise {
+        public static let maxWidth: CGFloat = 600
+        
         enum AddPhotoButtons {
             public static let roundButtonSize: CGFloat = 80
             public static let horizontalBottomPadding: CGFloat = 20
@@ -62,6 +68,38 @@ enum Constants {
             
             enum Title {
                 public static let bottomPadding: CGFloat = 3
+            }
+        }
+        
+        enum Results {
+            public static let imageFrameMaxHeight: CGFloat = 200
+            public static let vStackFrameMaxHeight: CGFloat = 600
+            
+            enum ResultList {
+                enum MainResult {
+                    public static let vStackBottomPadding: CGFloat = 30
+                    public static let titleBottomPadding: CGFloat = 6
+                }
+                
+                enum OtherResults {
+                    public static let titleBottomPadding: CGFloat = 3
+                    public static let resultTextMaxHeight: CGFloat = 80
+                }
+                
+                enum ResultItem {
+                    public static let defaultMaxHeight: CGFloat = 100
+                    public static let overlayCornerRadius: CGFloat = 20
+                    public static let overlayLineWidth: CGFloat = 2
+                    
+                    enum MushroomNameText {
+                        public static let padding: CGFloat = 3
+                    }
+                    
+                    enum MushroomConfidenceText {
+                        public static let lowConfidenceUpperLimit: Float = 0.2
+                        public static let midConfidenceUpperLimit: Float = 0.7
+                    }
+                }
             }
         }
     }

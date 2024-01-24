@@ -12,6 +12,7 @@ struct ChooseAnotherPhotoTextView: View {
         Text("oppure scegli un'altra fotografia:")
             .font(.title2)
             .fontWeight(.semibold)
+            .multilineTextAlignment(.center)
             .padding()
     }
 }

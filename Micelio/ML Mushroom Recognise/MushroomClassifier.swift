@@ -12,7 +12,7 @@ class MushroomClassifier: ObservableObject {
     @Published private var classifier = Classifier()
     
     var recognisedMushrooms: [RecognisedMushroom] {
-        classifier.results
+        classifier.results.filter { $0.confidence > Constants.MushroomClassifier.minConfidence }
     }
     
     func detectMushroom(uiImage: UIImage) {
