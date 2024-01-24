@@ -25,9 +25,10 @@ struct RecogniseView: View {
                         ChooseAnotherPhotoTextView()
                     })
                 }
-                
+                Spacer()
                 AddPhotoButtonsHStackView(image: $image, isSheetVisible: $isSheetVisible)
             }
+            .frame(maxWidth: Constants.Recognise.maxWidth)
             .sheet(isPresented: $isSheetVisible, content: {
                 CameraView(selectedImage: $image, isSheetVisible: $isSheetVisible)
                     .background(.black)

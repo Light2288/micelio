@@ -12,20 +12,23 @@ struct RecogniseMushroomResultView: View {
     @ObservedObject var classifier = MushroomClassifier()
     
     var body: some View {
-        VStack(content: {
-            Image(uiImage: image)
-                .recogniseImageStyle()
-            ForEach(classifier.recognisedMushrooms) { recognisedMushroom in
-                HStack {
-                    Text(recognisedMushroom.mushroomIdentifier)
-                    Text(recognisedMushroom.confidencePercentage)
+        ScrollView {
+            HStack {
+                Spacer()
+                VStack(content: {
+                    Image(uiImage: image)
+                        .recogniseImageStyle()
+                        .frame(maxHeight: Constants.Recognise.Results.imageFrameMaxHeight)
+                    ResultsListView(recognisedMushrooms: classifier.recognisedMushrooms)
+                    RecogniseDisclaimerView()
+                    
+                })
+                .frame(maxWidth: Constants.Recognise.Results.vStackFrameMaxHeight)
+                .onAppear {
+                    classifier.detectMushroom(uiImage: image)
                 }
+                Spacer()
             }
-            Spacer()
-            RecogniseDisclaimerView()
-        })
-        .task {
-            classifier.detectMushroom(uiImage: image)
         }
     }
 }

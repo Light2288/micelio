@@ -15,7 +15,7 @@ struct MushroomCatalogRowView: View {
         HStack(alignment: .center, content: {
             PhotoThumbnailView(imageUrl: Bundle.main.url(forResource: mushroom.images[0], withExtension: "jpeg") ?? URL(filePath: ""), width: imageSize, height: imageSize)
             VStack(alignment: .leading, spacing: Constants.MushroomCatalog.MushroomCatalogRow.vStackSpacing, content: {
-                Text(mushroom.name.capitalized)
+                Text(mushroom.scientificName.capitalized)
                     .font(.title2)
                     .fontWeight(.bold)
                 Text(mushroom.veryShortDescription)

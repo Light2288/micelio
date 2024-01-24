@@ -14,14 +14,19 @@ struct ImageRecogniseContainerView: View {
         if let image = image {
             Image(uiImage: image)
                 .recogniseImageStyle()
+                .frame(maxHeight: Constants.Recognise.Results.imageFrameMaxHeight)
             
         } else {
-            Text("Scatta una foto o seleziona un'immagine per procedere con il riconoscimento")
-                .multilineTextAlignment(.center)
-                .font(.title2)
-                .padding()
-            RecogniseDisclaimerView()
-            Spacer()
+            VStack {
+                Spacer()
+                Text("Scatta una foto o seleziona un'immagine per procedere con il riconoscimento")
+                    .multilineTextAlignment(.center)
+                    .font(.title2)
+                    .padding()
+                Spacer()
+                RecogniseDisclaimerView()
+                Spacer()
+            }
             
         }
     }
