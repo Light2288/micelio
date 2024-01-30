@@ -11,6 +11,17 @@ import SwiftUI
 enum Constants {
     enum MushroomClassifier {
         public static let minConfidence: Float = 0.05
+        
+        // Maps all MobileNetV2 classifications related to mushrooms
+        public static let mobileNetMushroomClassifications: [String] = [
+            "agaric",
+            "mushroom",
+            "polyporus",
+            "earthstar",
+            "bolete",
+            "fungus",
+            "gyromitra"
+        ]
     }
     
     enum Styles {

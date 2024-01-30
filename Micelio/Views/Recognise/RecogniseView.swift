@@ -13,6 +13,7 @@ struct RecogniseView: View {
     @State private var navigateToResultPage: Bool = false
     
     @ObservedObject var classifier = MushroomClassifier()
+    @ObservedObject var mushroomDetector = MushroomDetector()
     
     var body: some View {
         NavigationStack {
@@ -20,6 +21,9 @@ struct RecogniseView: View {
                 ImageRecogniseContainerView(image: $image)
                 if let image = image {
                     VStack(content: {
+                        if !mushroomDetector.mushroomDetected {
+                            MushroomNotDetectedTextView()
+                        }
                         RecogniseButtonView(image: image)
                         Spacer()
                         ChooseAnotherPhotoTextView()
@@ -27,6 +31,11 @@ struct RecogniseView: View {
                 }
                 Spacer()
                 AddPhotoButtonsHStackView(image: $image, isSheetVisible: $isSheetVisible)
+            }
+            .onChange(of: image) { newValue in
+                if let image = image {
+                    mushroomDetector.detectMushroom(uiImage: image)
+                }
             }
             .frame(maxWidth: Constants.Recognise.maxWidth)
             .sheet(isPresented: $isSheetVisible, content: {
