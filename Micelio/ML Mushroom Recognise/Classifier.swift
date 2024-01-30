@@ -13,7 +13,7 @@ struct Classifier {
     
     private(set) var results: [RecognisedMushroom] = []
     
-    mutating func detect(ciImage: CIImage) {
+    mutating func recognise(ciImage: CIImage) {
         guard let model = try? VNCoreMLModel(for: MicelioMushroomClassifier_v3(configuration: MLModelConfiguration()).model)
         else {
             return

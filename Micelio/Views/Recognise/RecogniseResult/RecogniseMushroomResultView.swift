@@ -25,7 +25,7 @@ struct RecogniseMushroomResultView: View {
                 })
                 .frame(maxWidth: Constants.Recognise.Results.vStackFrameMaxHeight)
                 .onAppear {
-                    classifier.detectMushroom(uiImage: image)
+                    classifier.recogniseMushroom(uiImage: image)
                 }
                 Spacer()
             }

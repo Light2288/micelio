@@ -82,6 +82,9 @@
     "Scatta una foto o seleziona un'immagine per procedere con il riconoscimento" : {
 
     },
+    "Sembra che la foto scelta non contenga funghi.\nPuoi procedere lo stesso con il riconoscimento, ma i risultati potrebbero essere poco attendibili." : {
+
+    },
     "Tab 1" : {
 
     }

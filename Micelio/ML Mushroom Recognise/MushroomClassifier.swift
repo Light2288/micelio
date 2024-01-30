@@ -15,9 +15,9 @@ class MushroomClassifier: ObservableObject {
         classifier.results.filter { $0.confidence > Constants.MushroomClassifier.minConfidence }
     }
     
-    func detectMushroom(uiImage: UIImage) {
+    func recogniseMushroom(uiImage: UIImage) {
         guard let ciImage = CIImage (image: uiImage) else { return }
-        classifier.detect(ciImage: ciImage)
+        classifier.recognise(ciImage: ciImage)
     }
     
 }
