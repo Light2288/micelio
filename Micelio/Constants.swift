@@ -60,6 +60,12 @@ enum Constants {
         }
     }
     
+    enum Map {
+        enum LocalizationButton {
+            public static let frameSize: CGFloat = 50
+        }
+    }
+    
     enum Recognise {
         public static let maxWidth: CGFloat = 600
         

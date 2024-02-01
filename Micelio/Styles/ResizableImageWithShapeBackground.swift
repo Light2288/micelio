@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 
 extension Image {
-    func resizableImageWithShapeBackground(shape: AnyShape, frameWidth: CGFloat, frameHeight: CGFloat) -> some View {
+    func resizableImageWithShapeBackground(shape: AnyShape, frameWidth: CGFloat, frameHeight: CGFloat, padding: CGFloat = Constants.Styles.ResizableImageWithShapeBackground.padding) -> some View {
         self
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .padding(Constants.Styles.ResizableImageWithShapeBackground.padding)
+            .padding(padding)
             .viewWithShapeBackground(shape: shape, width: frameWidth, height: frameHeight)
     }
 }
