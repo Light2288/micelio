@@ -60,9 +60,23 @@ enum Constants {
         }
     }
     
-    enum Map {
-        enum LocalizationButton {
+    enum MushroomMap {
+        enum Map {
+            public static let longPressMinimumDuration: Double = 0.25
+            public static let dragGestureMinimumDistance: Double = 10
+        }
+        
+        enum CenterMapButton {
             public static let frameSize: CGFloat = 50
+        }
+        
+        enum AddPinButton {
+            public static let frameSize: CGFloat = 50
+        }
+        
+        enum AddMushroomLocationText {
+            public static let maxWidthCorrectionRatio: Double = 1.3
+            public static let maxWidth: CGFloat = 400
         }
     }
     

@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            MapView()
+            MushroomMapView()
                 .tabItem {
                     Label("Map", image: "mushroom-map")
                 }
