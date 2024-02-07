@@ -13,7 +13,14 @@
 		6B0FBC432ACB677C00FDAA89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B0FBC422ACB677C00FDAA89 /* Preview Assets.xcassets */; };
 		6B0FBC452ACB677C00FDAA89 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FBC442ACB677C00FDAA89 /* Persistence.swift */; };
 		6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FBC462ACB677C00FDAA89 /* Micelio.xcdatamodeld */; };
-		6B3126522B6AB2C10016D701 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3126512B6AB2C10016D701 /* MapView.swift */; };
+		6B239E0C2B6C581F00D7D8EB /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E0B2B6C581E00D7D8EB /* MapAnnotation.swift */; };
+		6B239E0E2B72F79E00D7D8EB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E0D2B72F79E00D7D8EB /* MapView.swift */; };
+		6B239E102B72FA1D00D7D8EB /* MapOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E0F2B72FA1D00D7D8EB /* MapOverlayView.swift */; };
+		6B239E132B72FA7000D7D8EB /* AddMushroomLocationTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E122B72FA7000D7D8EB /* AddMushroomLocationTextView.swift */; };
+		6B239E152B72FB6400D7D8EB /* MapButtonsHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E142B72FB6400D7D8EB /* MapButtonsHStackView.swift */; };
+		6B239E172B72FB9200D7D8EB /* CenterMapButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E162B72FB9200D7D8EB /* CenterMapButtonView.swift */; };
+		6B239E192B72FB9E00D7D8EB /* AddPinButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E182B72FB9E00D7D8EB /* AddPinButtonView.swift */; };
+		6B3126522B6AB2C10016D701 /* MushroomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3126512B6AB2C10016D701 /* MushroomMapView.swift */; };
 		6B3126542B6AF1900016D701 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3126532B6AF1900016D701 /* LocationManager.swift */; };
 		6B3363BB2B3CF00B002FBAEF /* RecognisedMushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3363BA2B3CF00B002FBAEF /* RecognisedMushroom.swift */; };
 		6B3363BE2B3CF5E8002FBAEF /* Float+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3363BD2B3CF5E8002FBAEF /* Float+Rounded.swift */; };
@@ -98,7 +105,14 @@
 		6B0FBC422ACB677C00FDAA89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B0FBC442ACB677C00FDAA89 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		6B0FBC472ACB677C00FDAA89 /* Micelio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Micelio.xcdatamodel; sourceTree = "<group>"; };
-		6B3126512B6AB2C10016D701 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		6B239E0B2B6C581E00D7D8EB /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		6B239E0D2B72F79E00D7D8EB /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		6B239E0F2B72FA1D00D7D8EB /* MapOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOverlayView.swift; sourceTree = "<group>"; };
+		6B239E122B72FA7000D7D8EB /* AddMushroomLocationTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMushroomLocationTextView.swift; sourceTree = "<group>"; };
+		6B239E142B72FB6400D7D8EB /* MapButtonsHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButtonsHStackView.swift; sourceTree = "<group>"; };
+		6B239E162B72FB9200D7D8EB /* CenterMapButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterMapButtonView.swift; sourceTree = "<group>"; };
+		6B239E182B72FB9E00D7D8EB /* AddPinButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinButtonView.swift; sourceTree = "<group>"; };
+		6B3126512B6AB2C10016D701 /* MushroomMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomMapView.swift; sourceTree = "<group>"; };
 		6B3126532B6AF1900016D701 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		6B3363BA2B3CF00B002FBAEF /* RecognisedMushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognisedMushroom.swift; sourceTree = "<group>"; };
 		6B3363BD2B3CF5E8002FBAEF /* Float+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Rounded.swift"; sourceTree = "<group>"; };
@@ -231,10 +245,24 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		6B239E112B72FA4600D7D8EB /* MapOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				6B239E122B72FA7000D7D8EB /* AddMushroomLocationTextView.swift */,
+				6B239E142B72FB6400D7D8EB /* MapButtonsHStackView.swift */,
+				6B239E162B72FB9200D7D8EB /* CenterMapButtonView.swift */,
+				6B239E182B72FB9E00D7D8EB /* AddPinButtonView.swift */,
+			);
+			path = MapOverlay;
+			sourceTree = "<group>";
+		};
 		6B3126502B6AB2B40016D701 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				6B3126512B6AB2C10016D701 /* MapView.swift */,
+				6B239E112B72FA4600D7D8EB /* MapOverlay */,
+				6B3126512B6AB2C10016D701 /* MushroomMapView.swift */,
+				6B239E0D2B72F79E00D7D8EB /* MapView.swift */,
+				6B239E0F2B72FA1D00D7D8EB /* MapOverlayView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -351,6 +379,7 @@
 				6BBEC8BF2AF466D7000720FF /* LegendItem.swift */,
 				6BBEC8C82AF46F49000720FF /* LegendSection.swift */,
 				6B3126532B6AF1900016D701 /* LocationManager.swift */,
+				6B239E0B2B6C581E00D7D8EB /* MapAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -539,11 +568,13 @@
 				6B7A1FEF2B5F367400B62640 /* MainResultView.swift in Sources */,
 				6B7A20072B6330AE00B62640 /* MushroomDetector.swift in Sources */,
 				6B820A802B2BB6FB00724555 /* RecogniseView.swift in Sources */,
+				6B239E0E2B72F79E00D7D8EB /* MapView.swift in Sources */,
 				6BCFBA232B4CCBDC00C6246E /* RecogniseDisclaimerBodyView.swift in Sources */,
 				6B820B182B3A4BE500724555 /* Classifier.swift in Sources */,
 				6B820A822B2BB80100724555 /* CameraView.swift in Sources */,
 				6BCFBA212B4CCB1F00C6246E /* RecogniseDisclaimerTitleView.swift in Sources */,
 				6BCFB96E2B47810D00C6246E /* RecogniseButtonView.swift in Sources */,
+				6B239E192B72FB9E00D7D8EB /* AddPinButtonView.swift in Sources */,
 				6BA8B4D42AD8B828005272D2 /* MushroomCatalogView.swift in Sources */,
 				6BCFB9722B47819C00C6246E /* ChooseAnotherPhotoTextView.swift in Sources */,
 				6BCFBAAB2B52001200C6246E /* ResultItemView.swift in Sources */,
@@ -562,14 +593,17 @@
 				6B0FBC452ACB677C00FDAA89 /* Persistence.swift in Sources */,
 				6B820B1A2B3A4E2400724555 /* MushroomClassifier.swift in Sources */,
 				6B8209C12B21504500724555 /* PhotoThumbnailView.swift in Sources */,
+				6B239E152B72FB6400D7D8EB /* MapButtonsHStackView.swift in Sources */,
 				6B3363BB2B3CF00B002FBAEF /* RecognisedMushroom.swift in Sources */,
 				6BA8B4D72AD8BA8E005272D2 /* MushroomDetailView.swift in Sources */,
+				6B239E0C2B6C581F00D7D8EB /* MapAnnotation.swift in Sources */,
 				6B0FBC3E2ACB677B00FDAA89 /* ContentView.swift in Sources */,
 				6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */,
 				6B820A8A2B2CC12C00724555 /* AddPhotoButtonsHStackView.swift in Sources */,
 				6BBEC8C72AF46D10000720FF /* LegendListRowView.swift in Sources */,
 				6B7CC3562B141B9B0042A8E4 /* MainAndAllImagesView.swift in Sources */,
 				6BA8B4C52AD5875E005272D2 /* Environment.swift in Sources */,
+				6B239E132B72FA7000D7D8EB /* AddMushroomLocationTextView.swift in Sources */,
 				6B7A1FF12B5F370800B62640 /* OtherResultsView.swift in Sources */,
 				6B7835902B043FAD00166DB3 /* ShortDescriptionView.swift in Sources */,
 				6B7835892AFE497C00166DB3 /* DetailGridView.swift in Sources */,
@@ -592,9 +626,11 @@
 				6B7A1FF52B5F3D0C00B62640 /* ResultItemTextView.swift in Sources */,
 				6BBEC8BE2AF459C1000720FF /* LegendView.swift in Sources */,
 				6BBEC8CB2AF4705E000720FF /* LegendSections.swift in Sources */,
+				6B239E102B72FA1D00D7D8EB /* MapOverlayView.swift in Sources */,
 				6BA8B4C12AD4BDFD005272D2 /* Mushroom.swift in Sources */,
-				6B3126522B6AB2C10016D701 /* MapView.swift in Sources */,
+				6B3126522B6AB2C10016D701 /* MushroomMapView.swift in Sources */,
 				6BBEC8C02AF466D7000720FF /* LegendItem.swift in Sources */,
+				6B239E172B72FB9200D7D8EB /* CenterMapButtonView.swift in Sources */,
 				6BBEC8C22AF467CC000720FF /* LegendItems.swift in Sources */,
 				6BA8B4D22AD75B29005272D2 /* MushroomCatalogRowView.swift in Sources */,
 				6B7A20012B63288800B62640 /* CGImagePropertyOrientation+Init.swift in Sources */,
