@@ -66,12 +66,18 @@ enum Constants {
             public static let dragGestureMinimumDistance: Double = 10
         }
         
+        enum MushroomPin {
+            public static let shadowRadius: CGFloat = 3
+            public static let frameHeight: CGFloat = 60
+        }
+        
         enum CenterMapButton {
             public static let frameSize: CGFloat = 50
         }
         
         enum AddPinButton {
             public static let frameSize: CGFloat = 50
+            public static let padding: CGFloat = -5
         }
         
         enum AddMushroomLocationText {

@@ -13,12 +13,13 @@ struct MapOverlayView: View {
     var centerOnUserPosition: () -> Void
     
     @Binding var mushroomLocations: [MushroomMapAnnotation]
+    @Binding var showSheet: Bool
     
     var body: some View {
         VStack {
             AddMushroomLocationTextView(size: size)
             Spacer()
-            MapButtonsHStackView(addPinToMapCenter: addPinToMapCenter, centerOnUserPosition: centerOnUserPosition, size: size, mushroomLocations: $mushroomLocations)
+            MapButtonsHStackView(addPinToMapCenter: addPinToMapCenter, centerOnUserPosition: centerOnUserPosition, size: size, mushroomLocations: $mushroomLocations, showSheet: $showSheet)
         }
         .padding()
     }
@@ -32,6 +33,6 @@ struct MapOverlayView: View {
     func centerOnUserPosition() { }
     
     return GeometryReader { proxy in
-        MapOverlayView(size: proxy.size, addPinToMapCenter: addPinToMapCenter, centerOnUserPosition: centerOnUserPosition, mushroomLocations: .constant([]))
+        MapOverlayView(size: proxy.size, addPinToMapCenter: addPinToMapCenter, centerOnUserPosition: centerOnUserPosition, mushroomLocations: .constant([]), showSheet: .constant(false))
     }
 }
