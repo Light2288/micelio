@@ -13,12 +13,13 @@ struct MapButtonsHStackView: View {
     var size: CGSize
     
     @Binding var mushroomLocations: [MushroomMapAnnotation]
+    @Binding var showSheet: Bool
     
     var body: some View {
         HStack {
             CenterMapButtonView(centerOnUserPosition: centerOnUserPosition)
             Spacer()
-            AddPinButtonView(mushroomLocations: $mushroomLocations, addPinToMapCenter: addPinToMapCenter, size: size)
+            AddPinButtonView(mushroomLocations: $mushroomLocations, showSheet: $showSheet, addPinToMapCenter: addPinToMapCenter, size: size)
         }
     }
 }
@@ -31,7 +32,7 @@ struct MapButtonsHStackView: View {
     }
     
     return GeometryReader { proxy in
-        MapButtonsHStackView(addPinToMapCenter: addPinToMapCenter, centerOnUserPosition: centerOnUserPosition, size: proxy.size, mushroomLocations: .constant([]))
+        MapButtonsHStackView(addPinToMapCenter: addPinToMapCenter, centerOnUserPosition: centerOnUserPosition, size: proxy.size, mushroomLocations: .constant([]), showSheet: .constant(false))
     }
         
 }

@@ -13,7 +13,6 @@ final class LocationManager: NSObject, ObservableObject {
     @Published var region = MKCoordinateRegion()
     
     override init() {
-        print("calling init")
         super.init()
         
         self.locationManager.delegate = self
@@ -22,7 +21,6 @@ final class LocationManager: NSObject, ObservableObject {
     }
     
     func setup() {
-        print("calling setup")
         switch locationManager.authorizationStatus {
         case .authorizedWhenInUse, .authorizedAlways:
             locationManager.startUpdatingLocation()
@@ -36,7 +34,6 @@ final class LocationManager: NSObject, ObservableObject {
     }
     
     func updateLocation() {
-        print("calling updateLocation")
         locationManager.startUpdatingLocation()
         locationManager.requestLocation()
     }
@@ -44,7 +41,6 @@ final class LocationManager: NSObject, ObservableObject {
 
 extension LocationManager: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        print("calling locationManagerDidChangeAuthorization")
         guard .authorizedWhenInUse == manager.authorizationStatus else { return }
         locationManager.requestLocation()
     }
@@ -54,7 +50,6 @@ extension LocationManager: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("calling didUpdateLocations")
         locationManager.stopUpdatingLocation()
         locations.last.map {
             region = MKCoordinateRegion(
