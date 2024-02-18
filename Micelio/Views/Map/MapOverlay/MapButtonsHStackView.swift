@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct MapButtonsHStackView: View {
-    var addPinToMapCenter: (CGSize) -> MushroomMapAnnotation
+    var addPinToMapCenter: (CGSize) -> Void
     var centerOnUserPosition: () -> Void
     var size: CGSize
     
-    @Binding var mushroomLocations: [MushroomMapAnnotation]
     @Binding var showSheet: Bool
     
     var body: some View {
         HStack {
             CenterMapButtonView(centerOnUserPosition: centerOnUserPosition)
             Spacer()
-            AddPinButtonView(mushroomLocations: $mushroomLocations, showSheet: $showSheet, addPinToMapCenter: addPinToMapCenter, size: size)
+            AddPinButtonView(showSheet: $showSheet, addPinToMapCenter: addPinToMapCenter, size: size)
         }
     }
 }
@@ -27,12 +26,10 @@ struct MapButtonsHStackView: View {
 #Preview {
     func centerOnUserPosition() { }
     
-    func addPinToMapCenter(size: CGSize) -> MushroomMapAnnotation {
-        return MushroomMapAnnotation(latitude: 0, longitude: 0)
-    }
+    func addPinToMapCenter(size: CGSize) { }
     
     return GeometryReader { proxy in
-        MapButtonsHStackView(addPinToMapCenter: addPinToMapCenter, centerOnUserPosition: centerOnUserPosition, size: proxy.size, mushroomLocations: .constant([]), showSheet: .constant(false))
+        MapButtonsHStackView(addPinToMapCenter: addPinToMapCenter, centerOnUserPosition: centerOnUserPosition, size: proxy.size, showSheet: .constant(false))
     }
         
 }

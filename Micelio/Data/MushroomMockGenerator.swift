@@ -42,10 +42,10 @@ private func generateRandomEdibility() -> Edibility {
     return Edibility.allCases.randomElement()!
 }
 
-private func generateRandomEnvironments() -> [Environment] {
-    var environments: [Environment] = []
-    for _ in 1...Int.random(in: 1...Environment.allCases.count) {
-        let environment = Environment.allCases.randomElement()!
+private func generateRandomEnvironments() -> [MushroomEnvironment] {
+    var environments: [MushroomEnvironment] = []
+    for _ in 1...Int.random(in: 1...MushroomEnvironment.allCases.count) {
+        let environment = MushroomEnvironment.allCases.randomElement()!
         if (!environments.contains(environment)) {
             environments.append(environment)
         }

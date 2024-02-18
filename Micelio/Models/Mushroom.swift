@@ -14,7 +14,7 @@ struct Mushroom: Identifiable {
     let veryShortDescription: String
     let shortDescription: String
     let edibility: Edibility
-    let environments: [Environment]
+    let environments: [MushroomEnvironment]
     let seasons: [Season]
     let description: String
     let environmentDescription: String

@@ -20,7 +20,7 @@ struct DetailsView: View {
             )
             DetailGridView(
                 items:
-                    Environment.allCases
+                    MushroomEnvironment.allCases
                     .filter { mushroom.environments.contains($0) }
                     .map{ $0.rawValue }
             )
