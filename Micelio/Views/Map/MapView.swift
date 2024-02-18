@@ -9,12 +9,17 @@ import SwiftUI
 import MapKit
 import CoreLocation
 import CoreLocationUI
+import CoreData
 
 struct MapView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @StateObject var manager = LocationManager()
     @State var longPressLocation = CGPoint.zero
-    @Binding var mushroomLocations: [MushroomMapAnnotation]
-    @Binding var addPinToMapCenterClosure: (CGSize) -> MushroomMapAnnotation
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \MushroomMapAnnotation.id, ascending: false)],
+        animation: .default)
+    private var mushroomMapAnnotations: FetchedResults<MushroomMapAnnotation>
+    @Binding var addPinToMapCenterClosure: (CGSize) -> Void
     @Binding var centerOnUserPositionClosure: () -> Void
     @Binding var showSheet: Bool
     
@@ -24,10 +29,10 @@ struct MapView: View {
         Map(
             coordinateRegion: $manager.region,
             showsUserLocation: true,
-            annotationItems: mushroomLocations,
-            annotationContent: { mushroomLocation in
-                MapAnnotation(coordinate: mushroomLocation.coordinate) {
-                    MushroomPinView()
+            annotationItems: mushroomMapAnnotations,
+            annotationContent: { mushroomMapAnnotation in
+                MapAnnotation(coordinate: mushroomMapAnnotation.coordinate) {
+                    MushroomPinView(mushroomMapAnnotation: mushroomMapAnnotation)
                 }
             }
         )
@@ -42,7 +47,7 @@ struct MapView: View {
                     case .second(true, let drag):
                         longPressLocation = drag?.location ?? .zero
                         let location = convertTapToCoordinate(at: longPressLocation, for: size)
-                        mushroomLocations.append(setPin(at: location))
+                        setPin(at: location)
                     default:
                         break
                     }
@@ -62,11 +67,18 @@ extension MapView {
 }
 
 extension MapView {
-    func setPin(at location: CLLocationCoordinate2D) -> MushroomMapAnnotation {
+    func setPin(at location: CLLocationCoordinate2D) -> () {
         defer {
             feedbackOnPinAdd(at: location)
         }
-        return MushroomMapAnnotation(latitude: location.latitude, longitude: location.longitude)
+        MushroomMapAnnotation.generateRandom(context: viewContext)
+        do {
+            try viewContext.save()
+            showSheet = false
+        } catch {
+            let nsError = error as NSError
+            fatalError("error.coredata.saving \(nsError) \(nsError.userInfo)")
+        }
     }
     
     func convertTapToCoordinate(at point: CGPoint, for mapSize: CGSize) -> CLLocationCoordinate2D {
@@ -86,10 +98,10 @@ extension MapView {
 }
 
 extension MapView {
-    func addPinToMapCenter(for mapSize: CGSize)  -> MushroomMapAnnotation {
+    func addPinToMapCenter(for mapSize: CGSize)  -> () {
         let mapCenter = CGPoint(x: mapSize.width/2, y: mapSize.height/2)
         let location = convertTapToCoordinate(at: mapCenter, for: mapSize)
-        return setPin(at: location)
+        setPin(at: location)
     }
 }
 
@@ -104,11 +116,12 @@ extension MapView {
 #Preview {
     func centerOnUserPosition() { }
     
-    func addPinToMapCenter(size: CGSize) -> MushroomMapAnnotation {
-        return MushroomMapAnnotation(latitude: 0, longitude: 0)
+    func addPinToMapCenter(size: CGSize) -> () {
+        return
     }
     
     return GeometryReader { proxy in
-        MapView(mushroomLocations: .constant([]), addPinToMapCenterClosure: .constant(addPinToMapCenter), centerOnUserPositionClosure: .constant(centerOnUserPosition), showSheet: .constant(false), size: proxy.size)
+        MapView(addPinToMapCenterClosure: .constant(addPinToMapCenter), centerOnUserPositionClosure: .constant(centerOnUserPosition), showSheet: .constant(false), size: proxy.size)
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

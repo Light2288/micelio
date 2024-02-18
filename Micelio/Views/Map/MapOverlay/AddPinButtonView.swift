@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct AddPinButtonView: View {
-    @Binding var mushroomLocations: [MushroomMapAnnotation]
     @Binding var showSheet: Bool
     
-    var addPinToMapCenter: (CGSize) -> MushroomMapAnnotation
+    var addPinToMapCenter: (CGSize) -> Void
     var size: CGSize
     
     var body: some View {
         Button {
-            mushroomLocations.append(addPinToMapCenter(size))
+            addPinToMapCenter(size)
         } label: {
             Image("mushroom-pin")
                 .resizableImageWithShapeBackground(shape: AnyShape(Circle()), frameWidth: Constants.MushroomMap.AddPinButton.frameSize, frameHeight: Constants.MushroomMap.AddPinButton.frameSize, padding: Constants.MushroomMap.AddPinButton.padding)
@@ -25,11 +24,9 @@ struct AddPinButtonView: View {
 }
 
 #Preview {
-    func addPinToMapCenter(size: CGSize) -> MushroomMapAnnotation {
-        return MushroomMapAnnotation(latitude: 0, longitude: 0)
-    }
+    func addPinToMapCenter(size: CGSize) { }
     
     return GeometryReader { proxy in
-        AddPinButtonView(mushroomLocations: .constant([]), showSheet: .constant(false), addPinToMapCenter: addPinToMapCenter, size: proxy.size)
+        AddPinButtonView(showSheet: .constant(false), addPinToMapCenter: addPinToMapCenter, size: proxy.size)
     }
 }

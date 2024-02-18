@@ -13,7 +13,7 @@
 		6B0FBC432ACB677C00FDAA89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B0FBC422ACB677C00FDAA89 /* Preview Assets.xcassets */; };
 		6B0FBC452ACB677C00FDAA89 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FBC442ACB677C00FDAA89 /* Persistence.swift */; };
 		6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FBC462ACB677C00FDAA89 /* Micelio.xcdatamodeld */; };
-		6B239E0C2B6C581F00D7D8EB /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E0B2B6C581E00D7D8EB /* MapAnnotation.swift */; };
+		6B239E0C2B6C581F00D7D8EB /* MushroomMapAnnotation+Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E0B2B6C581E00D7D8EB /* MushroomMapAnnotation+Coordinate.swift */; };
 		6B239E0E2B72F79E00D7D8EB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E0D2B72F79E00D7D8EB /* MapView.swift */; };
 		6B239E102B72FA1D00D7D8EB /* MapOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E0F2B72FA1D00D7D8EB /* MapOverlayView.swift */; };
 		6B239E132B72FA7000D7D8EB /* AddMushroomLocationTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E122B72FA7000D7D8EB /* AddMushroomLocationTextView.swift */; };
@@ -67,9 +67,13 @@
 		6B820A8E2B3088CC00724555 /* ViewWithShapeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820A8D2B3088CC00724555 /* ViewWithShapeBackground.swift */; };
 		6B820B182B3A4BE500724555 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820B172B3A4BE500724555 /* Classifier.swift */; };
 		6B820B1A2B3A4E2400724555 /* MushroomClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820B192B3A4E2400724555 /* MushroomClassifier.swift */; };
+		6B908D492B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D472B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataClass.swift */; };
+		6B908D4A2B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D482B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataProperties.swift */; };
+		6B908D4D2B7E5B46007FC5B7 /* MushroomMapAnnotation+RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D4C2B7E5B46007FC5B7 /* MushroomMapAnnotation+RandomGenerator.swift */; };
+		6B908D512B7E5BCC007FC5B7 /* MushroomMapAnnotation+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D502B7E5BCC007FC5B7 /* MushroomMapAnnotation+Colors.swift */; };
 		6BA8B4C12AD4BDFD005272D2 /* Mushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C02AD4BDFD005272D2 /* Mushroom.swift */; };
 		6BA8B4C32AD586A7005272D2 /* Edibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C22AD586A7005272D2 /* Edibility.swift */; };
-		6BA8B4C52AD5875E005272D2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C42AD5875E005272D2 /* Environment.swift */; };
+		6BA8B4C52AD5875E005272D2 /* MushroomEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C42AD5875E005272D2 /* MushroomEnvironment.swift */; };
 		6BA8B4C72AD588E4005272D2 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C62AD588E4005272D2 /* Season.swift */; };
 		6BA8B4CA2AD60D14005272D2 /* MushroomMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4C92AD60D14005272D2 /* MushroomMockData.swift */; };
 		6BA8B4CC2AD60F0F005272D2 /* MushroomMockGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4CB2AD60F0F005272D2 /* MushroomMockGenerator.swift */; };
@@ -106,7 +110,7 @@
 		6B0FBC422ACB677C00FDAA89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B0FBC442ACB677C00FDAA89 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		6B0FBC472ACB677C00FDAA89 /* Micelio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Micelio.xcdatamodel; sourceTree = "<group>"; };
-		6B239E0B2B6C581E00D7D8EB /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		6B239E0B2B6C581E00D7D8EB /* MushroomMapAnnotation+Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+Coordinate.swift"; sourceTree = "<group>"; };
 		6B239E0D2B72F79E00D7D8EB /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		6B239E0F2B72FA1D00D7D8EB /* MapOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOverlayView.swift; sourceTree = "<group>"; };
 		6B239E122B72FA7000D7D8EB /* AddMushroomLocationTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMushroomLocationTextView.swift; sourceTree = "<group>"; };
@@ -160,9 +164,13 @@
 		6B820A8D2B3088CC00724555 /* ViewWithShapeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithShapeBackground.swift; sourceTree = "<group>"; };
 		6B820B172B3A4BE500724555 /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 		6B820B192B3A4E2400724555 /* MushroomClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomClassifier.swift; sourceTree = "<group>"; };
+		6B908D472B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6B908D482B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6B908D4C2B7E5B46007FC5B7 /* MushroomMapAnnotation+RandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+RandomGenerator.swift"; sourceTree = "<group>"; };
+		6B908D502B7E5BCC007FC5B7 /* MushroomMapAnnotation+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+Colors.swift"; sourceTree = "<group>"; };
 		6BA8B4C02AD4BDFD005272D2 /* Mushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mushroom.swift; sourceTree = "<group>"; };
 		6BA8B4C22AD586A7005272D2 /* Edibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edibility.swift; sourceTree = "<group>"; };
-		6BA8B4C42AD5875E005272D2 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		6BA8B4C42AD5875E005272D2 /* MushroomEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomEnvironment.swift; sourceTree = "<group>"; };
 		6BA8B4C62AD588E4005272D2 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		6BA8B4C92AD60D14005272D2 /* MushroomMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomMockData.swift; sourceTree = "<group>"; };
 		6BA8B4CB2AD60F0F005272D2 /* MushroomMockGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomMockGenerator.swift; sourceTree = "<group>"; };
@@ -221,6 +229,7 @@
 		6B0FBC3A2ACB677B00FDAA89 /* Micelio */ = {
 			isa = PBXGroup;
 			children = (
+				6B908D4B2B7E547D007FC5B7 /* Persistence */,
 				6B3363BC2B3CF5D4002FBAEF /* Extensions */,
 				6B820B142B3A488800724555 /* ML Mushroom Recognise */,
 				6B7CC33B2B0EE8B80042A8E4 /* Images */,
@@ -230,8 +239,6 @@
 				6BA8B4BF2AD4BDEF005272D2 /* Models */,
 				6B0FBC3B2ACB677B00FDAA89 /* MicelioApp.swift */,
 				6B0FBC3F2ACB677C00FDAA89 /* Assets.xcassets */,
-				6B0FBC442ACB677C00FDAA89 /* Persistence.swift */,
-				6B0FBC462ACB677C00FDAA89 /* Micelio.xcdatamodeld */,
 				6B0FBC412ACB677C00FDAA89 /* Preview Content */,
 				6BA95D3F2ACC21C600D7D700 /* Localizable.xcstrings */,
 				6B7CC3582B19134D0042A8E4 /* Constants.swift */,
@@ -273,8 +280,11 @@
 		6B3363BC2B3CF5D4002FBAEF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6B239E0B2B6C581E00D7D8EB /* MushroomMapAnnotation+Coordinate.swift */,
 				6B3363BD2B3CF5E8002FBAEF /* Float+Rounded.swift */,
 				6B7A20002B63288800B62640 /* CGImagePropertyOrientation+Init.swift */,
+				6B908D4C2B7E5B46007FC5B7 /* MushroomMapAnnotation+RandomGenerator.swift */,
+				6B908D502B7E5BCC007FC5B7 /* MushroomMapAnnotation+Colors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -372,17 +382,27 @@
 			path = "ML Mushroom Recognise";
 			sourceTree = "<group>";
 		};
+		6B908D4B2B7E547D007FC5B7 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				6B0FBC462ACB677C00FDAA89 /* Micelio.xcdatamodeld */,
+				6B908D472B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataClass.swift */,
+				6B908D482B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataProperties.swift */,
+				6B0FBC442ACB677C00FDAA89 /* Persistence.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		6BA8B4BF2AD4BDEF005272D2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				6BA8B4C02AD4BDFD005272D2 /* Mushroom.swift */,
 				6BA8B4C22AD586A7005272D2 /* Edibility.swift */,
-				6BA8B4C42AD5875E005272D2 /* Environment.swift */,
+				6BA8B4C42AD5875E005272D2 /* MushroomEnvironment.swift */,
 				6BA8B4C62AD588E4005272D2 /* Season.swift */,
 				6BBEC8BF2AF466D7000720FF /* LegendItem.swift */,
 				6BBEC8C82AF46F49000720FF /* LegendSection.swift */,
 				6B3126532B6AF1900016D701 /* LocationManager.swift */,
-				6B239E0B2B6C581E00D7D8EB /* MapAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -577,6 +597,7 @@
 				6B820A822B2BB80100724555 /* CameraView.swift in Sources */,
 				6BCFBA212B4CCB1F00C6246E /* RecogniseDisclaimerTitleView.swift in Sources */,
 				6BCFB96E2B47810D00C6246E /* RecogniseButtonView.swift in Sources */,
+				6B908D492B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataClass.swift in Sources */,
 				6B239E192B72FB9E00D7D8EB /* AddPinButtonView.swift in Sources */,
 				6BA8B4D42AD8B828005272D2 /* MushroomCatalogView.swift in Sources */,
 				6BCFB9722B47819C00C6246E /* ChooseAnotherPhotoTextView.swift in Sources */,
@@ -586,6 +607,7 @@
 				6BCFBAB12B520BB600C6246E /* MicelioMushroomClassifier_v3.mlmodel in Sources */,
 				6B7A1FF72B5F3DD900B62640 /* ResultItemMushroomNameTextView.swift in Sources */,
 				6B820A882B2CC00500724555 /* ImageRecogniseContainerView.swift in Sources */,
+				6B908D4A2B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataProperties.swift in Sources */,
 				6B7835B22B06D8BC00166DB3 /* AllImagesView.swift in Sources */,
 				6B78357C2AFBDDDC00166DB3 /* TitleView.swift in Sources */,
 				6BCFB90D2B3E41D000C6246E /* ResizableImageWithShapeBackground.swift in Sources */,
@@ -599,17 +621,19 @@
 				6B239E152B72FB6400D7D8EB /* MapButtonsHStackView.swift in Sources */,
 				6B3363BB2B3CF00B002FBAEF /* RecognisedMushroom.swift in Sources */,
 				6BA8B4D72AD8BA8E005272D2 /* MushroomDetailView.swift in Sources */,
-				6B239E0C2B6C581F00D7D8EB /* MapAnnotation.swift in Sources */,
+				6B239E0C2B6C581F00D7D8EB /* MushroomMapAnnotation+Coordinate.swift in Sources */,
 				6B0FBC3E2ACB677B00FDAA89 /* ContentView.swift in Sources */,
 				6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */,
+				6B908D4D2B7E5B46007FC5B7 /* MushroomMapAnnotation+RandomGenerator.swift in Sources */,
 				6B820A8A2B2CC12C00724555 /* AddPhotoButtonsHStackView.swift in Sources */,
 				6BBEC8C72AF46D10000720FF /* LegendListRowView.swift in Sources */,
 				6B7CC3562B141B9B0042A8E4 /* MainAndAllImagesView.swift in Sources */,
-				6BA8B4C52AD5875E005272D2 /* Environment.swift in Sources */,
+				6BA8B4C52AD5875E005272D2 /* MushroomEnvironment.swift in Sources */,
 				6B239E132B72FA7000D7D8EB /* AddMushroomLocationTextView.swift in Sources */,
 				6B7A1FF12B5F370800B62640 /* OtherResultsView.swift in Sources */,
 				6B7835902B043FAD00166DB3 /* ShortDescriptionView.swift in Sources */,
 				6B7835892AFE497C00166DB3 /* DetailGridView.swift in Sources */,
+				6B908D512B7E5BCC007FC5B7 /* MushroomMapAnnotation+Colors.swift in Sources */,
 				6BBEC8C92AF46F49000720FF /* LegendSection.swift in Sources */,
 				6B7A20092B670A9E00B62640 /* MushroomNotDetectedTextView.swift in Sources */,
 				6BB5179E2B75AEF5002A2133 /* MushroomPinView.swift in Sources */,
