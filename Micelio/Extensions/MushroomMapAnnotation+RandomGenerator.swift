@@ -12,6 +12,7 @@ extension MushroomMapAnnotation {
     
     class func generateRandom(context: NSManagedObjectContext) {
         let mushroomMapAnnotation = NSEntityDescription.insertNewObject(forEntityName: "MushroomMapAnnotation", into: context) as? MushroomMapAnnotation
+        mushroomMapAnnotation?.id = UUID()
         mushroomMapAnnotation?.color = MushroomMapAnnotation.colors.randomElement()?.key
         mushroomMapAnnotation?.latitude = Double.random(in: 45.49080961927744 ..< 45.498734555774)
         mushroomMapAnnotation?.longitude = Double.random(in: 9.261367818615799 ..< 9.276388268523824)

@@ -15,17 +15,23 @@ struct MushroomMapView: View {
     @State var addPinToMapCenter: (CGSize) -> Void = { _ in return }
     @State var centerOnUserPosition: () -> Void = { }
     @State var showSheet: Bool = false
+    @State var selectedMushroomAnnotation: MushroomMapAnnotation?
+    @State var isEditAnnotationMode: Bool = false
     
     var body: some View {
         GeometryReader { proxy in
             ZStack() {
-                MapView(addPinToMapCenterClosure: $addPinToMapCenter, centerOnUserPositionClosure: $centerOnUserPosition, showSheet: $showSheet, size: proxy.size)
+                MapView(addPinToMapCenterClosure: $addPinToMapCenter, centerOnUserPositionClosure: $centerOnUserPosition, showSheet: $showSheet, selectedMushroomMapAnnotation: $selectedMushroomAnnotation, isEditAnnotationMode: $isEditAnnotationMode, size: proxy.size)
                 
                 MapOverlayView(size: proxy.size, addPinToMapCenter: addPinToMapCenter, centerOnUserPosition: centerOnUserPosition, showSheet: $showSheet)
             }
         }
-        .sheet(isPresented: $showSheet, content: {
-            Text("Ciao")
+        .sheet(
+            isPresented: $showSheet,
+            onDismiss: {
+                isEditAnnotationMode = false
+        }, content: {
+            MushroomMapAnnotationSheetView(annotation: $selectedMushroomAnnotation, isAnnotationEditMode: $isEditAnnotationMode)
                 .presentationDetents([.medium, .fraction(0.33)])
                 .presentationBackgroundInteraction(.enabled)
         })

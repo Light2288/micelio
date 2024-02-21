@@ -84,6 +84,14 @@ enum Constants {
             public static let maxWidthCorrectionRatio: Double = 1.3
             public static let maxWidth: CGFloat = 400
         }
+        
+        enum AnnotationSheet {
+            public static let vStackSpacing: CGFloat = 15
+            
+            enum ButtonHStack {
+                public static let spacing: CGFloat = 15
+            }
+        }
     }
     
     enum Recognise {
