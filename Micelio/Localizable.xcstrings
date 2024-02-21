@@ -26,10 +26,20 @@
         }
       }
     },
-    "Ciao" : {
+    "Close" : {
 
     },
-    "Close" : {
+    "Coordinate: (lat. %lf ;  lon. %lf)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Coordinate: (lat. %1$lf ;  lon. %2$lf)"
+          }
+        }
+      }
+    },
+    "Edit!" : {
 
     },
     "Fai attenzione quando usi questa funzione! Il riconoscimento automatico non è infallibile, e non tutte le specie di funghi sono identificate dalla app; alcuni funghi commestibili sono molto simili a funghi tossici, e l'app potrebbe confonderli.\n%@" : {
@@ -73,6 +83,9 @@
     "Non è stato possibile riconoscere alcun fungo dalla fotografia utilizzata" : {
 
     },
+    "Note: %@" : {
+
+    },
     "oppure scegli un'altra fotografia:" : {
 
     },
@@ -89,6 +102,9 @@
 
     },
     "Sembra che la foto scelta non contenga funghi.\nPuoi procedere lo stesso con il riconoscimento, ma i risultati potrebbero essere poco attendibili." : {
+
+    },
+    "Tipologia fungo: %@" : {
 
     }
   },

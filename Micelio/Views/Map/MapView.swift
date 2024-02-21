@@ -22,6 +22,8 @@ struct MapView: View {
     @Binding var addPinToMapCenterClosure: (CGSize) -> Void
     @Binding var centerOnUserPositionClosure: () -> Void
     @Binding var showSheet: Bool
+    @Binding var selectedMushroomMapAnnotation: MushroomMapAnnotation?
+    @Binding var isEditAnnotationMode: Bool
     
     var size: CGSize
     
@@ -32,7 +34,7 @@ struct MapView: View {
             annotationItems: mushroomMapAnnotations,
             annotationContent: { mushroomMapAnnotation in
                 MapAnnotation(coordinate: mushroomMapAnnotation.coordinate) {
-                    MushroomPinView(mushroomMapAnnotation: mushroomMapAnnotation)
+                    MushroomPinView(mushroomMapAnnotation: mushroomMapAnnotation, selectedMushroomMapAnnotation: $selectedMushroomMapAnnotation, showSheet: $showSheet, isEditAnnotationMode: $isEditAnnotationMode)
                 }
             }
         )
@@ -71,10 +73,10 @@ extension MapView {
         defer {
             feedbackOnPinAdd(at: location)
         }
-        MushroomMapAnnotation.generateRandom(context: viewContext)
+        let newMushroomMapAnnotation = MushroomMapAnnotation(context: viewContext, location: location)
+        selectedMushroomMapAnnotation = newMushroomMapAnnotation
         do {
             try viewContext.save()
-            showSheet = false
         } catch {
             let nsError = error as NSError
             fatalError("error.coredata.saving \(nsError) \(nsError.userInfo)")
@@ -121,7 +123,7 @@ extension MapView {
     }
     
     return GeometryReader { proxy in
-        MapView(addPinToMapCenterClosure: .constant(addPinToMapCenter), centerOnUserPositionClosure: .constant(centerOnUserPosition), showSheet: .constant(false), size: proxy.size)
+        MapView(addPinToMapCenterClosure: .constant(addPinToMapCenter), centerOnUserPositionClosure: .constant(centerOnUserPosition), showSheet: .constant(false), selectedMushroomMapAnnotation: .constant(nil), isEditAnnotationMode: .constant(false), size: proxy.size)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
