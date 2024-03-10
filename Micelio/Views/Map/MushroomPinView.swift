@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct MushroomPinView: View {
     let mushroomMapAnnotation: MushroomMapAnnotation
     @Binding var selectedMushroomMapAnnotation: MushroomMapAnnotation?
     @Binding var showSheet: Bool
     @Binding var isEditAnnotationMode: Bool
+    
+    let centerOnPinPositionClosure: (CLLocationCoordinate2D, Bool) -> Void
+    let manager: LocationManager
     
     var body: some View {
         Image("mushroom-pin")
@@ -25,10 +29,15 @@ struct MushroomPinView: View {
                 selectedMushroomMapAnnotation = mushroomMapAnnotation
                 showSheet = true
                 isEditAnnotationMode = false
+                centerOnPinPositionClosure(CLLocationCoordinate2D(latitude: mushroomMapAnnotation.latitude-manager.region.span.latitudeDelta/3, longitude: mushroomMapAnnotation.longitude), false)
             }
     }
 }
 
 #Preview {
-    MushroomPinView(mushroomMapAnnotation: MushroomMapAnnotation(context: PersistenceController.preview.container.viewContext), selectedMushroomMapAnnotation: .constant(nil), showSheet: .constant(true), isEditAnnotationMode: .constant(false))
+    func centerOnPinPositionClosure(location: CLLocationCoordinate2D, isEditAnnotationMode: Bool) -> () {
+        return
+    }
+    
+    return MushroomPinView(mushroomMapAnnotation: MushroomMapAnnotation(context: PersistenceController.preview.container.viewContext), selectedMushroomMapAnnotation: .constant(nil), showSheet: .constant(true), isEditAnnotationMode: .constant(false), centerOnPinPositionClosure: centerOnPinPositionClosure, manager: LocationManager())
 }

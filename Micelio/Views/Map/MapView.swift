@@ -34,7 +34,7 @@ struct MapView: View {
             annotationItems: mushroomMapAnnotations,
             annotationContent: { mushroomMapAnnotation in
                 MapAnnotation(coordinate: mushroomMapAnnotation.coordinate) {
-                    MushroomPinView(mushroomMapAnnotation: mushroomMapAnnotation, selectedMushroomMapAnnotation: $selectedMushroomMapAnnotation, showSheet: $showSheet, isEditAnnotationMode: $isEditAnnotationMode)
+                    MushroomPinView(mushroomMapAnnotation: mushroomMapAnnotation, selectedMushroomMapAnnotation: $selectedMushroomMapAnnotation, showSheet: $showSheet, isEditAnnotationMode: $isEditAnnotationMode, centerOnPinPositionClosure: feedbackOnPinAdd, manager: manager)
                 }
             }
         )
@@ -49,7 +49,9 @@ struct MapView: View {
                     case .second(true, let drag):
                         longPressLocation = drag?.location ?? .zero
                         let location = convertTapToCoordinate(at: longPressLocation, for: size)
-                        setPin(at: location)
+                        let correctedCenterLocation = CGPoint(x: longPressLocation.x, y: longPressLocation.y + size.height/4)
+                        let visibleCenterLocation = convertTapToCoordinate(at: correctedCenterLocation, for: size)
+                        setPin(at: location, centerMapAt: visibleCenterLocation)
                     default:
                         break
                     }
@@ -69,9 +71,9 @@ extension MapView {
 }
 
 extension MapView {
-    func setPin(at location: CLLocationCoordinate2D) -> () {
+    func setPin(at location: CLLocationCoordinate2D, centerMapAt visbleCenterLocation: CLLocationCoordinate2D) -> () {
         defer {
-            feedbackOnPinAdd(at: location)
+            feedbackOnPinAdd(centerMapAt: visbleCenterLocation)
         }
         let newMushroomMapAnnotation = MushroomMapAnnotation(context: viewContext, location: location)
         selectedMushroomMapAnnotation = newMushroomMapAnnotation
@@ -103,15 +105,20 @@ extension MapView {
     func addPinToMapCenter(for mapSize: CGSize)  -> () {
         let mapCenter = CGPoint(x: mapSize.width/2, y: mapSize.height/2)
         let location = convertTapToCoordinate(at: mapCenter, for: mapSize)
-        setPin(at: location)
+        let visibleMapCenter = CGPoint(x: mapSize.width/2, y: mapSize.height*3/4)
+        let visibleMapLocation = convertTapToCoordinate(at: visibleMapCenter, for: mapSize)
+        setPin(at: location, centerMapAt: visibleMapLocation)
     }
 }
 
 extension MapView {
-    func feedbackOnPinAdd(at location: CLLocationCoordinate2D) {
+    func feedbackOnPinAdd(centerMapAt location: CLLocationCoordinate2D, isEditAnnotationMode: Bool = true) {
+        self.isEditAnnotationMode = isEditAnnotationMode
         showSheet = true
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-        manager.region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        withAnimation {
+            manager.region = MKCoordinateRegion(center: location, span: manager.region.span)
+        }
     }
 }
 

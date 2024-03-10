@@ -11,13 +11,14 @@ struct AnnotationDisplayView: View {
     var annotation: MushroomMapAnnotation?
     
     var body: some View {
-        Text("Coordinate: (lat. \((annotation?.latitude.roundTo(places: 6) ?? 0)) ;  lon. \(annotation?.longitude.roundTo(places: 6) ?? 0))")
-            .font(.footnote)
-        Text("Tipologia fungo: \(annotation?.mushroomName ?? "")")
-        if let notes = annotation?.notes, !notes.isEmpty {
-            Text("Note: \(notes)")
+        VStack(alignment: .leading, spacing: Constants.MushroomMap.AnnotationSheet.DisplayView.vStackSpacing) {
+            AnnotationCoordinateTextView(annotation: annotation)
+            Text("Tipologia fungo: \(annotation?.mushroomName ?? "")")
+            if let notes = annotation?.notes, !notes.isEmpty {
+                Text("Note: \(notes)")
+            }
         }
-        Spacer()
+        .font(.subheadline)
     }
 }
 

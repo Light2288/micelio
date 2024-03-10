@@ -31,8 +31,8 @@ struct MushroomMapView: View {
             onDismiss: {
                 isEditAnnotationMode = false
         }, content: {
-            MushroomMapAnnotationSheetView(annotation: $selectedMushroomAnnotation, isAnnotationEditMode: $isEditAnnotationMode)
-                .presentationDetents([.medium, .fraction(0.33)])
+            MushroomMapAnnotationSheetView(showSheet: $showSheet, annotation: $selectedMushroomAnnotation, isAnnotationEditMode: $isEditAnnotationMode)
+                .presentationDetents([.large, .fraction(Constants.MushroomMap.sheetFraction)])
                 .presentationBackgroundInteraction(.enabled)
         })
     }

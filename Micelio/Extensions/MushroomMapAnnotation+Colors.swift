@@ -23,6 +23,7 @@ extension MushroomMapAnnotation {
             "mint" : .mint,
             "teal" : .teal,
             "black" : .black,
-            "gray" : .gray        ]
+            "gray" : .gray
+        ]
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MushroomMapAnnotationSheetView: View {
+    @Binding var showSheet: Bool
     @Binding var annotation: MushroomMapAnnotation?
     @Binding var isAnnotationEditMode: Bool
     
@@ -15,15 +16,16 @@ struct MushroomMapAnnotationSheetView: View {
         VStack(alignment: .leading, spacing: Constants.MushroomMap.AnnotationSheet.vStackSpacing) {
             AnnotationSheetButtonHStackView(isAnnotationEditMode: $isAnnotationEditMode)
             if isAnnotationEditMode {
-                AnnotationEditView()
+                AnnotationEditView(annotation: annotation, showSheet: $showSheet)
             } else {
                 AnnotationDisplayView(annotation: annotation)
             }
+            Spacer()
         }
         .padding([.top, .horizontal])
     }
 }
 
 #Preview {
-    MushroomMapAnnotationSheetView(annotation: .constant(nil), isAnnotationEditMode: .constant(false))
+    MushroomMapAnnotationSheetView(showSheet: .constant(true), annotation: .constant(nil), isAnnotationEditMode: .constant(false))
 }

@@ -31,7 +31,7 @@ struct AnnotationSheetButtonHStackView: View {
                     .font(.title)
             })
         }
-        .padding(.bottom)
+        .padding(.bottom, Constants.MushroomMap.AnnotationSheet.ButtonHStack.bottomPadding)
     }
 }
 
