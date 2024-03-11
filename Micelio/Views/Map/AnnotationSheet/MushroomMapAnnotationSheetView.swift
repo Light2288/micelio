@@ -14,7 +14,7 @@ struct MushroomMapAnnotationSheetView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: Constants.MushroomMap.AnnotationSheet.vStackSpacing) {
-            AnnotationSheetButtonHStackView(isAnnotationEditMode: $isAnnotationEditMode)
+            AnnotationSheetButtonHStackView(isAnnotationEditMode: $isAnnotationEditMode, annotation: $annotation, showSheet: $showSheet)
             if isAnnotationEditMode {
                 AnnotationEditView(annotation: annotation, showSheet: $showSheet)
             } else {

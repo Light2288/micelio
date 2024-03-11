@@ -81,7 +81,7 @@ extension MapView {
             try viewContext.save()
         } catch {
             let nsError = error as NSError
-            fatalError("error.coredata.saving \(nsError) \(nsError.userInfo)")
+            fatalError("Errore non risolvibile \(nsError) \(nsError.userInfo)")
         }
     }
     
