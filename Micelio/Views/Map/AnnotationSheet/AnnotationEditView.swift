@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AnnotationEditView: View {
-    var annotation: MushroomMapAnnotation?
+    @Binding var annotation: MushroomMapAnnotation?
     
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
@@ -53,6 +53,7 @@ struct AnnotationEditView: View {
 extension AnnotationEditView {
     func saveAnnotation() {
         defer {
+            annotation = nil
             dismiss()
         }
         annotation?.mushroomName = selectedMushroomName == "Altro" ? otherMushroomNameText : selectedMushroomName
@@ -93,6 +94,6 @@ extension AnnotationEditView {
 #Preview {
     let context = PersistenceController.preview.container.viewContext
     
-    return AnnotationEditView(annotation: MushroomMapAnnotation(context: context))
+    return AnnotationEditView(annotation: .constant(MushroomMapAnnotation(context: context)))
         .environment(\.managedObjectContext, context)
 }

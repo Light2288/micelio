@@ -38,6 +38,7 @@ struct AnnotationSheetButtonHStackView: View {
             })
             Spacer()
             Button(action: {
+                annotation = nil
                 dismiss()
             }, label: {
                 Image(systemName: "xmark.circle")
