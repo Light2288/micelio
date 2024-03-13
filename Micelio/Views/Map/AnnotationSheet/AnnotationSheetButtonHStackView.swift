@@ -10,16 +10,15 @@ import SwiftUI
 struct AnnotationSheetButtonHStackView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.dismiss) private var dismiss
     
     @Binding var isAnnotationEditMode: Bool
     @Binding var annotation: MushroomMapAnnotation?
-    @Binding var showSheet: Bool
     
     @State private var showDeleteAnnotationAlert: Bool = false
     
     var body: some View {
         HStack(spacing: Constants.MushroomMap.AnnotationSheet.ButtonHStack.spacing) {
-            Spacer()
             Button(action: {
                 isAnnotationEditMode.toggle()
             }, label: {
@@ -28,8 +27,8 @@ struct AnnotationSheetButtonHStackView: View {
                     .imageScale(.medium)
                     .font(.title)
             })
-
-            Button(action: {
+            
+            Button(role: .destructive, action: {
                 showDeleteAnnotationAlert.toggle()
             }, label: {
                 Image(systemName: "trash")
@@ -37,23 +36,37 @@ struct AnnotationSheetButtonHStackView: View {
                     .imageScale(.small)
                     .font(.title)
             })
+            Spacer()
+            Button(action: {
+                dismiss()
+            }, label: {
+                Image(systemName: "xmark.circle")
+                    .symbolVariant(.fill)
+                    .imageScale(.medium)
+                    .font(.title)
+            })
         }
         .padding(.bottom, Constants.MushroomMap.AnnotationSheet.ButtonHStack.bottomPadding)
-        .alert("Elimina segnaposto", isPresented: $showDeleteAnnotationAlert, actions: {
-            Button("Elimina", role: .destructive) {
-                delete(annotation)
+        .confirmationDialog(
+            "Elimina segnaposto",
+            isPresented: $showDeleteAnnotationAlert,
+            actions: {
+                Button("Elimina", role: .destructive) {
+                    delete(annotation)
+                }
+                Button("Annulla", role: .cancel) { }
+            },
+            message: {
+                Text("Sei sicuro di voler cancellare questo segnaposto? Verranno cancellate tutte le informazioni e le fotografie associate.")
             }
-            Button("Annulla", role: .cancel) { }
-        }, message: {
-            Text("Sei sicuro di voler cancellare questo segnaposto? Verranno cancellate tutte le informazioni e le fotografie associate.")
-        })
+        )
     }
 }
 
 extension AnnotationSheetButtonHStackView {
     func delete(_ annotation: MushroomMapAnnotation?) {
         defer {
-            showSheet.toggle()
+            dismiss()
         }
         if let annotation = annotation {
             viewContext.delete(annotation)
@@ -68,5 +81,5 @@ extension AnnotationSheetButtonHStackView {
 }
 
 #Preview {
-    AnnotationSheetButtonHStackView(isAnnotationEditMode: .constant(true), annotation: .constant(nil), showSheet: .constant(true))
+    AnnotationSheetButtonHStackView(isAnnotationEditMode: .constant(true), annotation: .constant(nil))
 }

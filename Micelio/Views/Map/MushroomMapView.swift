@@ -30,10 +30,12 @@ struct MushroomMapView: View {
             isPresented: $showSheet,
             onDismiss: {
                 isEditAnnotationMode = false
+                selectedMushroomAnnotation = nil
         }, content: {
-            MushroomMapAnnotationSheetView(showSheet: $showSheet, annotation: $selectedMushroomAnnotation, isAnnotationEditMode: $isEditAnnotationMode)
+            MushroomMapAnnotationSheetView(annotation: $selectedMushroomAnnotation, isAnnotationEditMode: $isEditAnnotationMode)
                 .presentationDetents([.large, .fraction(Constants.MushroomMap.sheetFraction)])
                 .presentationBackgroundInteraction(.enabled)
+                .interactiveDismissDisabled(true)
         })
     }
 }

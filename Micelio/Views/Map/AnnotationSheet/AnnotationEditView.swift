@@ -11,9 +11,8 @@ struct AnnotationEditView: View {
     var annotation: MushroomMapAnnotation?
     
     @Environment(\.managedObjectContext) private var viewContext
-    
-    @Binding var showSheet: Bool
-    
+    @Environment(\.dismiss) private var dismiss
+        
     @State var selectedMushroomName: String = ""
     @State var otherMushroomNameText: String = ""
     @State var notes: String = ""
@@ -54,7 +53,7 @@ struct AnnotationEditView: View {
 extension AnnotationEditView {
     func saveAnnotation() {
         defer {
-            showSheet = false
+            dismiss()
         }
         annotation?.mushroomName = selectedMushroomName == "Altro" ? otherMushroomNameText : selectedMushroomName
         annotation?.notes = notes
@@ -94,6 +93,6 @@ extension AnnotationEditView {
 #Preview {
     let context = PersistenceController.preview.container.viewContext
     
-    return AnnotationEditView(annotation: MushroomMapAnnotation(context: context), showSheet: .constant(true))
+    return AnnotationEditView(annotation: MushroomMapAnnotation(context: context))
         .environment(\.managedObjectContext, context)
 }
