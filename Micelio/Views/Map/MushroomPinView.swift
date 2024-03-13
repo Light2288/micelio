@@ -21,10 +21,12 @@ struct MushroomPinView: View {
         Image("mushroom-pin")
             .resizable()
             .scaledToFit()
+            .scaleEffect(selectedMushroomMapAnnotation == mushroomMapAnnotation ? 1 : 0.6)
             .foregroundStyle(MushroomMapAnnotation.colors[mushroomMapAnnotation.color ?? "accent"] ?? .accent)
             .shadow(color: Color(.systemBackground), radius: Constants.MushroomMap.MushroomPin.shadowRadius)
             .frame(height: Constants.MushroomMap.MushroomPin.frameHeight)
             .offset(y: -Constants.MushroomMap.MushroomPin.frameHeight/2)
+            .animation(.spring(response: 0.30, dampingFraction: 0.25, blendDuration: 0), value: selectedMushroomMapAnnotation)
             .onTapGesture {
                 selectedMushroomMapAnnotation = mushroomMapAnnotation
                 showSheet = true
