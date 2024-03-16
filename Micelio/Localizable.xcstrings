@@ -10,6 +10,9 @@
     "%@" : {
 
     },
+    "Annulla" : {
+
+    },
     "Attendibilità: " : {
 
     },
@@ -39,7 +42,10 @@
         }
       }
     },
-    "Edit!" : {
+    "Elimina" : {
+
+    },
+    "Elimina segnaposto" : {
 
     },
     "Fai attenzione quando usi questa funzione! Il riconoscimento automatico non è infallibile, e non tutte le specie di funghi sono identificate dalla app; alcuni funghi commestibili sono molto simili a funghi tossici, e l'app potrebbe confonderli.\n%@" : {
@@ -56,6 +62,9 @@
       }
     },
     "Il fungo fotografato sembra essere:" : {
+
+    },
+    "Inserisci manualmente la tipologia di fungo" : {
 
     },
     "Legenda" : {
@@ -83,6 +92,9 @@
     "Non è stato possibile riconoscere alcun fungo dalla fotografia utilizzata" : {
 
     },
+    "Note" : {
+
+    },
     "Note: %@" : {
 
     },
@@ -98,10 +110,22 @@
     "Riconosci fungo" : {
 
     },
+    "Salva" : {
+
+    },
     "Scatta una foto o seleziona un'immagine per procedere con il riconoscimento" : {
 
     },
+    "Scegli il colore del segnaposto" : {
+
+    },
+    "Sei sicuro di voler cancellare questo segnaposto? Verranno cancellate tutte le informazioni e le fotografie associate." : {
+
+    },
     "Sembra che la foto scelta non contenga funghi.\nPuoi procedere lo stesso con il riconoscimento, ma i risultati potrebbero essere poco attendibili." : {
+
+    },
+    "Tipologia fungo:" : {
 
     },
     "Tipologia fungo: %@" : {

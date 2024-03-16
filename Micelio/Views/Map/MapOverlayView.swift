@@ -16,7 +16,9 @@ struct MapOverlayView: View {
     
     var body: some View {
         VStack {
-            AddMushroomLocationTextView(size: size)
+            if !showSheet {
+                AddMushroomLocationTextView(size: size)
+            }
             Spacer()
             MapButtonsHStackView(addPinToMapCenter: addPinToMapCenter, centerOnUserPosition: centerOnUserPosition, size: size, showSheet: $showSheet)
         }

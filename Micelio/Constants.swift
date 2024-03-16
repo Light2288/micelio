@@ -61,6 +61,8 @@ enum Constants {
     }
     
     enum MushroomMap {
+        public static let sheetFraction: CGFloat = 0.75
+        
         enum Map {
             public static let longPressMinimumDuration: Double = 0.25
             public static let dragGestureMinimumDistance: Double = 10
@@ -90,6 +92,29 @@ enum Constants {
             
             enum ButtonHStack {
                 public static let spacing: CGFloat = 15
+                public static let bottomPadding: CGFloat = 3
+            }
+            
+            enum DisplayView {
+                public static let vStackSpacing: CGFloat = 10
+            }
+            
+            enum EditView {
+                public static let vStackSpacing: CGFloat = 15
+                
+                enum NotesText {
+                    public static let vStackSpacing: CGFloat = 3
+                }
+                
+                enum PinColorChoiceButton {
+                    public static let cornerRadius: CGSize = CGSize(width: 3, height: 3)
+                    public static let lineWidth: CGFloat = 3
+                    public static let maxHeight: CGFloat = 30
+                }
+                
+                enum SaveAnnotationButton {
+                    public static let labelPadding: CGFloat = 5
+                }
             }
         }
     }

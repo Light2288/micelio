@@ -45,6 +45,9 @@
 		6B7A20052B632D6800B62640 /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A20042B632D6800B62640 /* Prediction.swift */; };
 		6B7A20072B6330AE00B62640 /* MushroomDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A20062B6330AE00B62640 /* MushroomDetector.swift */; };
 		6B7A20092B670A9E00B62640 /* MushroomNotDetectedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A20082B670A9E00B62640 /* MushroomNotDetectedTextView.swift */; };
+		6B7A457C2B9E6465000E3966 /* PinColorChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A457B2B9E6465000E3966 /* PinColorChoiceView.swift */; };
+		6B7A457E2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A457D2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift */; };
+		6B7A45802B9E708A000E3966 /* SaveAnnotationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A457F2B9E708A000E3966 /* SaveAnnotationButtonView.swift */; };
 		6B7CC3462B0EE8E50042A8E4 /* porcino_5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B7CC33C2B0EE8E50042A8E4 /* porcino_5.jpeg */; };
 		6B7CC3472B0EE8E50042A8E4 /* porcino_7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B7CC33D2B0EE8E50042A8E4 /* porcino_7.jpeg */; };
 		6B7CC3482B0EE8E50042A8E4 /* porcino_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B7CC33E2B0EE8E50042A8E4 /* porcino_2.jpeg */; };
@@ -67,6 +70,9 @@
 		6B820A8E2B3088CC00724555 /* ViewWithShapeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820A8D2B3088CC00724555 /* ViewWithShapeBackground.swift */; };
 		6B820B182B3A4BE500724555 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820B172B3A4BE500724555 /* Classifier.swift */; };
 		6B820B1A2B3A4E2400724555 /* MushroomClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B820B192B3A4E2400724555 /* MushroomClassifier.swift */; };
+		6B8E4B7F2B9D256800EAE603 /* MushroomTypePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8E4B7E2B9D256800EAE603 /* MushroomTypePickerView.swift */; };
+		6B8E4B812B9D26F500EAE603 /* MushroomOtherTypeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8E4B802B9D26F500EAE603 /* MushroomOtherTypeTextView.swift */; };
+		6B8E4B832B9D27F500EAE603 /* NotesTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8E4B822B9D27F500EAE603 /* NotesTextView.swift */; };
 		6B908D492B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D472B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataClass.swift */; };
 		6B908D4A2B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D482B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataProperties.swift */; };
 		6B908D4D2B7E5B46007FC5B7 /* MushroomMapAnnotation+RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D4C2B7E5B46007FC5B7 /* MushroomMapAnnotation+RandomGenerator.swift */; };
@@ -86,6 +92,8 @@
 		6BA8B4D42AD8B828005272D2 /* MushroomCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4D32AD8B828005272D2 /* MushroomCatalogView.swift */; };
 		6BA8B4D72AD8BA8E005272D2 /* MushroomDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8B4D62AD8BA8E005272D2 /* MushroomDetailView.swift */; };
 		6BA95D402ACC21C600D7D700 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 6BA95D3F2ACC21C600D7D700 /* Localizable.xcstrings */; };
+		6BB01E242B879B590050A3A4 /* AnnotationCoordinateTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB01E232B879B590050A3A4 /* AnnotationCoordinateTextView.swift */; };
+		6BB01E262B87CD860050A3A4 /* Mushroom+AnnotationMushroomName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB01E252B87CD860050A3A4 /* Mushroom+AnnotationMushroomName.swift */; };
 		6BB5179E2B75AEF5002A2133 /* MushroomPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5179D2B75AEF5002A2133 /* MushroomPinView.swift */; };
 		6BBEC8BE2AF459C1000720FF /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBEC8BD2AF459C1000720FF /* LegendView.swift */; };
 		6BBEC8C02AF466D7000720FF /* LegendItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBEC8BF2AF466D7000720FF /* LegendItem.swift */; };
@@ -147,6 +155,9 @@
 		6B7A20042B632D6800B62640 /* Prediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
 		6B7A20062B6330AE00B62640 /* MushroomDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomDetector.swift; sourceTree = "<group>"; };
 		6B7A20082B670A9E00B62640 /* MushroomNotDetectedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomNotDetectedTextView.swift; sourceTree = "<group>"; };
+		6B7A457B2B9E6465000E3966 /* PinColorChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinColorChoiceView.swift; sourceTree = "<group>"; };
+		6B7A457D2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinColorChoiceButtonLabelView.swift; sourceTree = "<group>"; };
+		6B7A457F2B9E708A000E3966 /* SaveAnnotationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAnnotationButtonView.swift; sourceTree = "<group>"; };
 		6B7CC33C2B0EE8E50042A8E4 /* porcino_5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = porcino_5.jpeg; sourceTree = "<group>"; };
 		6B7CC33D2B0EE8E50042A8E4 /* porcino_7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = porcino_7.jpeg; sourceTree = "<group>"; };
 		6B7CC33E2B0EE8E50042A8E4 /* porcino_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = porcino_2.jpeg; sourceTree = "<group>"; };
@@ -169,6 +180,9 @@
 		6B820A8D2B3088CC00724555 /* ViewWithShapeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithShapeBackground.swift; sourceTree = "<group>"; };
 		6B820B172B3A4BE500724555 /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 		6B820B192B3A4E2400724555 /* MushroomClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomClassifier.swift; sourceTree = "<group>"; };
+		6B8E4B7E2B9D256800EAE603 /* MushroomTypePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomTypePickerView.swift; sourceTree = "<group>"; };
+		6B8E4B802B9D26F500EAE603 /* MushroomOtherTypeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomOtherTypeTextView.swift; sourceTree = "<group>"; };
+		6B8E4B822B9D27F500EAE603 /* NotesTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTextView.swift; sourceTree = "<group>"; };
 		6B908D472B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6B908D482B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6B908D4C2B7E5B46007FC5B7 /* MushroomMapAnnotation+RandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+RandomGenerator.swift"; sourceTree = "<group>"; };
@@ -188,6 +202,8 @@
 		6BA8B4D32AD8B828005272D2 /* MushroomCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomCatalogView.swift; sourceTree = "<group>"; };
 		6BA8B4D62AD8BA8E005272D2 /* MushroomDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomDetailView.swift; sourceTree = "<group>"; };
 		6BA95D3F2ACC21C600D7D700 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		6BB01E232B879B590050A3A4 /* AnnotationCoordinateTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationCoordinateTextView.swift; sourceTree = "<group>"; };
+		6BB01E252B87CD860050A3A4 /* Mushroom+AnnotationMushroomName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mushroom+AnnotationMushroomName.swift"; sourceTree = "<group>"; };
 		6BB5179D2B75AEF5002A2133 /* MushroomPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomPinView.swift; sourceTree = "<group>"; };
 		6BBEC8BD2AF459C1000720FF /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		6BBEC8BF2AF466D7000720FF /* LegendItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendItem.swift; sourceTree = "<group>"; };
@@ -297,6 +313,7 @@
 				6B908D4C2B7E5B46007FC5B7 /* MushroomMapAnnotation+RandomGenerator.swift */,
 				6B908D502B7E5BCC007FC5B7 /* MushroomMapAnnotation+Colors.swift */,
 				6B908D522B840DA6007FC5B7 /* MushroomMapAnnotation+Init.swift */,
+				6BB01E252B87CD860050A3A4 /* Mushroom+AnnotationMushroomName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -394,6 +411,19 @@
 			path = "ML Mushroom Recognise";
 			sourceTree = "<group>";
 		};
+		6B8E4B842B9D28A200EAE603 /* AnnotationEdit */ = {
+			isa = PBXGroup;
+			children = (
+				6B8E4B7E2B9D256800EAE603 /* MushroomTypePickerView.swift */,
+				6B8E4B802B9D26F500EAE603 /* MushroomOtherTypeTextView.swift */,
+				6B8E4B822B9D27F500EAE603 /* NotesTextView.swift */,
+				6B7A457B2B9E6465000E3966 /* PinColorChoiceView.swift */,
+				6B7A457D2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift */,
+				6B7A457F2B9E708A000E3966 /* SaveAnnotationButtonView.swift */,
+			);
+			path = AnnotationEdit;
+			sourceTree = "<group>";
+		};
 		6B908D4B2B7E547D007FC5B7 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +442,8 @@
 				6B908D572B867898007FC5B7 /* AnnotationSheetButtonHStackView.swift */,
 				6B908D592B867ABE007FC5B7 /* AnnotationEditView.swift */,
 				6B908D5B2B867AE6007FC5B7 /* AnnotationDisplayView.swift */,
+				6BB01E232B879B590050A3A4 /* AnnotationCoordinateTextView.swift */,
+				6B8E4B842B9D28A200EAE603 /* AnnotationEdit */,
 			);
 			path = AnnotationSheet;
 			sourceTree = "<group>";
@@ -610,6 +642,7 @@
 				6BCFBA4D2B4E149700C6246E /* ResultsListView.swift in Sources */,
 				6BA8B4C72AD588E4005272D2 /* Season.swift in Sources */,
 				6B7CC3592B19134D0042A8E4 /* Constants.swift in Sources */,
+				6B8E4B7F2B9D256800EAE603 /* MushroomTypePickerView.swift in Sources */,
 				6B7A1FF92B5F3E4700B62640 /* ResultItemMushroomConfidenceTextView.swift in Sources */,
 				6B7A1FEF2B5F367400B62640 /* MainResultView.swift in Sources */,
 				6B7A20072B6330AE00B62640 /* MushroomDetector.swift in Sources */,
@@ -617,7 +650,10 @@
 				6B239E0E2B72F79E00D7D8EB /* MapView.swift in Sources */,
 				6BCFBA232B4CCBDC00C6246E /* RecogniseDisclaimerBodyView.swift in Sources */,
 				6B820B182B3A4BE500724555 /* Classifier.swift in Sources */,
+				6B8E4B832B9D27F500EAE603 /* NotesTextView.swift in Sources */,
+				6BB01E242B879B590050A3A4 /* AnnotationCoordinateTextView.swift in Sources */,
 				6B820A822B2BB80100724555 /* CameraView.swift in Sources */,
+				6B7A457E2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift in Sources */,
 				6BCFBA212B4CCB1F00C6246E /* RecogniseDisclaimerTitleView.swift in Sources */,
 				6BCFB96E2B47810D00C6246E /* RecogniseButtonView.swift in Sources */,
 				6B908D492B7E5379007FC5B7 /* MushroomMapAnnotation+CoreDataClass.swift in Sources */,
@@ -641,11 +677,13 @@
 				6B0FBC452ACB677C00FDAA89 /* Persistence.swift in Sources */,
 				6B820B1A2B3A4E2400724555 /* MushroomClassifier.swift in Sources */,
 				6B8209C12B21504500724555 /* PhotoThumbnailView.swift in Sources */,
+				6B7A457C2B9E6465000E3966 /* PinColorChoiceView.swift in Sources */,
 				6B239E152B72FB6400D7D8EB /* MapButtonsHStackView.swift in Sources */,
 				6B3363BB2B3CF00B002FBAEF /* RecognisedMushroom.swift in Sources */,
 				6BA8B4D72AD8BA8E005272D2 /* MushroomDetailView.swift in Sources */,
 				6B239E0C2B6C581F00D7D8EB /* MushroomMapAnnotation+Coordinate.swift in Sources */,
 				6B0FBC3E2ACB677B00FDAA89 /* ContentView.swift in Sources */,
+				6B7A45802B9E708A000E3966 /* SaveAnnotationButtonView.swift in Sources */,
 				6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */,
 				6B908D4D2B7E5B46007FC5B7 /* MushroomMapAnnotation+RandomGenerator.swift in Sources */,
 				6B820A8A2B2CC12C00724555 /* AddPhotoButtonsHStackView.swift in Sources */,
@@ -658,6 +696,7 @@
 				6B7835892AFE497C00166DB3 /* DetailGridView.swift in Sources */,
 				6B908D532B840DA6007FC5B7 /* MushroomMapAnnotation+Init.swift in Sources */,
 				6B908D512B7E5BCC007FC5B7 /* MushroomMapAnnotation+Colors.swift in Sources */,
+				6B8E4B812B9D26F500EAE603 /* MushroomOtherTypeTextView.swift in Sources */,
 				6BBEC8C92AF46F49000720FF /* LegendSection.swift in Sources */,
 				6B7A20092B670A9E00B62640 /* MushroomNotDetectedTextView.swift in Sources */,
 				6BB5179E2B75AEF5002A2133 /* MushroomPinView.swift in Sources */,
@@ -677,6 +716,7 @@
 				6BA8B4CC2AD60F0F005272D2 /* MushroomMockGenerator.swift in Sources */,
 				6BCFB94B2B462BE600C6246E /* RecogniseImageStyle.swift in Sources */,
 				6B7A1FF52B5F3D0C00B62640 /* ResultItemTextView.swift in Sources */,
+				6BB01E262B87CD860050A3A4 /* Mushroom+AnnotationMushroomName.swift in Sources */,
 				6BBEC8BE2AF459C1000720FF /* LegendView.swift in Sources */,
 				6B908D582B867898007FC5B7 /* AnnotationSheetButtonHStackView.swift in Sources */,
 				6B908D5C2B867AE7007FC5B7 /* AnnotationDisplayView.swift in Sources */,
