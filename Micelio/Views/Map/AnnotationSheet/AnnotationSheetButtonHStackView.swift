@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct AnnotationSheetButtonHStackView: View {
     
@@ -14,6 +15,7 @@ struct AnnotationSheetButtonHStackView: View {
     
     @Binding var isAnnotationEditMode: Bool
     @Binding var annotation: MushroomMapAnnotation?
+    @Binding var centerMapOnLocation: (CLLocationCoordinate2D) -> Void
     
     @State private var showDeleteAnnotationAlert: Bool = false
     
@@ -38,6 +40,10 @@ struct AnnotationSheetButtonHStackView: View {
             })
             Spacer()
             Button(action: {
+                let location = CLLocationCoordinate2D(
+                    latitude: annotation?.latitude ?? 0,
+                    longitude: annotation?.longitude ?? 0)
+                centerMapOnLocation(location)
                 annotation = nil
                 dismiss()
             }, label: {
@@ -82,5 +88,9 @@ extension AnnotationSheetButtonHStackView {
 }
 
 #Preview {
-    AnnotationSheetButtonHStackView(isAnnotationEditMode: .constant(true), annotation: .constant(nil))
+    func animatedCenterMap(on: CLLocationCoordinate2D) -> () {
+        return
+    }
+    
+    return AnnotationSheetButtonHStackView(isAnnotationEditMode: .constant(true), annotation: .constant(nil), centerMapOnLocation: .constant(animatedCenterMap(on:)))
 }

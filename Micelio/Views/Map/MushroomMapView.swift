@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import CoreLocation
 
 struct MushroomMapView: View {
     
@@ -14,6 +15,7 @@ struct MushroomMapView: View {
     
     @State var addPinToMapCenter: (CGSize) -> Void = { _ in return }
     @State var centerOnUserPosition: () -> Void = { }
+    @State var centerMapOnLocation: (CLLocationCoordinate2D) -> Void = { _ in }
     @State var showSheet: Bool = false
     @State var selectedMushroomAnnotation: MushroomMapAnnotation?
     @State var isEditAnnotationMode: Bool = false
@@ -21,7 +23,7 @@ struct MushroomMapView: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack() {
-                MapView(addPinToMapCenterClosure: $addPinToMapCenter, centerOnUserPositionClosure: $centerOnUserPosition, showSheet: $showSheet, selectedMushroomMapAnnotation: $selectedMushroomAnnotation, isEditAnnotationMode: $isEditAnnotationMode, size: proxy.size)
+                MapView(addPinToMapCenterClosure: $addPinToMapCenter, centerOnUserPositionClosure: $centerOnUserPosition, centerMapOnLocationClosure: $centerMapOnLocation, showSheet: $showSheet, selectedMushroomMapAnnotation: $selectedMushroomAnnotation, isEditAnnotationMode: $isEditAnnotationMode, size: proxy.size)
                 
                 MapOverlayView(size: proxy.size, addPinToMapCenter: addPinToMapCenter, centerOnUserPosition: centerOnUserPosition, showSheet: $showSheet)
             }
@@ -31,7 +33,7 @@ struct MushroomMapView: View {
             onDismiss: {
                 isEditAnnotationMode = false
         }, content: {
-            MushroomMapAnnotationSheetView(annotation: $selectedMushroomAnnotation, isAnnotationEditMode: $isEditAnnotationMode)
+            MushroomMapAnnotationSheetView(annotation: $selectedMushroomAnnotation, isAnnotationEditMode: $isEditAnnotationMode, centerMapOnLocation: $centerMapOnLocation)
                 .presentationDetents([.large, .fraction(Constants.MushroomMap.sheetFraction)])
                 .presentationBackgroundInteraction(.enabled)
                 .interactiveDismissDisabled(true)

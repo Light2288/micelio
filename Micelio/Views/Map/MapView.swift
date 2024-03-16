@@ -21,6 +21,7 @@ struct MapView: View {
     private var mushroomMapAnnotations: FetchedResults<MushroomMapAnnotation>
     @Binding var addPinToMapCenterClosure: (CGSize) -> Void
     @Binding var centerOnUserPositionClosure: () -> Void
+    @Binding var centerMapOnLocationClosure: (CLLocationCoordinate2D) -> Void
     @Binding var showSheet: Bool
     @Binding var selectedMushroomMapAnnotation: MushroomMapAnnotation?
     @Binding var isEditAnnotationMode: Bool
@@ -60,6 +61,7 @@ struct MapView: View {
         .onAppear(perform: {
             self.centerOnUserPositionClosure = centerOnUserPosition
             self.addPinToMapCenterClosure = addPinToMapCenter
+            self.centerMapOnLocationClosure = animatedCenterMap(on:)
         })
     }
 }
@@ -116,6 +118,12 @@ extension MapView {
         self.isEditAnnotationMode = isEditAnnotationMode
         showSheet = true
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+        animatedCenterMap(on: location)
+    }
+}
+
+extension MapView {
+    func animatedCenterMap(on location: CLLocationCoordinate2D) {
         withAnimation {
             manager.region = MKCoordinateRegion(center: location, span: manager.region.span)
         }
@@ -129,8 +137,12 @@ extension MapView {
         return
     }
     
+    func animatedCenterMap(on: CLLocationCoordinate2D) -> () {
+        return
+    }
+    
     return GeometryReader { proxy in
-        MapView(addPinToMapCenterClosure: .constant(addPinToMapCenter), centerOnUserPositionClosure: .constant(centerOnUserPosition), showSheet: .constant(false), selectedMushroomMapAnnotation: .constant(nil), isEditAnnotationMode: .constant(false), size: proxy.size)
+        MapView(addPinToMapCenterClosure: .constant(addPinToMapCenter), centerOnUserPositionClosure: .constant(centerOnUserPosition), centerMapOnLocationClosure: .constant(animatedCenterMap(on:)), showSheet: .constant(false), selectedMushroomMapAnnotation: .constant(nil), isEditAnnotationMode: .constant(false), size: proxy.size)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct AnnotationEditView: View {
     @Binding var annotation: MushroomMapAnnotation?
+    @Binding var centerMapOnLocation: (CLLocationCoordinate2D) -> Void
     
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
@@ -53,6 +55,10 @@ struct AnnotationEditView: View {
 extension AnnotationEditView {
     func saveAnnotation() {
         defer {
+            let location = CLLocationCoordinate2D(
+                latitude: annotation?.latitude ?? 0,
+                longitude: annotation?.longitude ?? 0)
+            centerMapOnLocation(location)
             annotation = nil
             dismiss()
         }
@@ -94,6 +100,10 @@ extension AnnotationEditView {
 #Preview {
     let context = PersistenceController.preview.container.viewContext
     
-    return AnnotationEditView(annotation: .constant(MushroomMapAnnotation(context: context)))
+    func animatedCenterMap(on: CLLocationCoordinate2D) -> () {
+        return
+    }
+    
+    return AnnotationEditView(annotation: .constant(MushroomMapAnnotation(context: context)), centerMapOnLocation: .constant(animatedCenterMap(on:)))
         .environment(\.managedObjectContext, context)
 }
