@@ -41,7 +41,7 @@ struct MushroomCatalogView: View {
                     }
                 }
             }
-            .navigationTitle("Mushroom Catalog")
+            .navigationTitle("Lista Funghi")
         }
     }
 }

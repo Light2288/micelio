@@ -20,5 +20,8 @@ struct Mushroom: Identifiable {
     let environmentDescription: String
     let edibilityDescription: String
     let trivia: String
-    let images: [String]
+    
+    var images: [String] {
+        (0...9).map { "\(scientificName.capitalized.filter { !$0.isWhitespace }.lowercaseFirstChar)_\($0)" }
+    }
 }

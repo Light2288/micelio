@@ -35,7 +35,7 @@ struct MushroomDetailView: View {
                         
                         MushroomDetailSectionView(title: "Descrizione", content: mushroom.description, image: "disclosuregroup-description")
                         
-                        MushroomDetailSectionView(title: "Commestibilità", content: mushroom.environmentDescription, image: "disclosuregroup-edibility")
+                        MushroomDetailSectionView(title: "Commestibilità", content: mushroom.edibilityDescription, image: "disclosuregroup-edibility")
                         
                         MushroomDetailSectionView(title: "Habitat", content: mushroom.environmentDescription, image: "disclosuregroup-habitat")
                         
