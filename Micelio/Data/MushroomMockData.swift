@@ -30,6 +30,10 @@ var mushroomMockData: [Mushroom] {
     data.append(russulaFœtens)
     data.append(sclerodermaCitrinum)
     data.append(lepiotaCristata)
+    data.append(lactariusPorninsis)
+    data.append(astræusHygrometricus)
+    data.append(fomesFomentarius)
+    data.append(ganodermaApplanatum)
     data.append(contentsOf: generateMockMushroomArray(length: 20))
     
     return data
