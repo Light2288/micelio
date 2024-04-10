@@ -9,8 +9,7 @@ import Foundation
 
 var mushroomMockData: [Mushroom] {
     var data: [Mushroom] = []
-    let porcino = generateMockMushroom(mushroomScientificName: "boletus edulis", mushroomCommonName: "porcino")
-    data.append(porcino)
+    data.append(boletusEdulis)
     data.append(amanitaGemmata)
     data.append(amanitaMuscaria)
     data.append(amanitaPhalloides)
@@ -34,6 +33,24 @@ var mushroomMockData: [Mushroom] {
     data.append(astræusHygrometricus)
     data.append(fomesFomentarius)
     data.append(ganodermaApplanatum)
+    data.append(amanitaCæsarea)
+    data.append(macrolepiotaProcera)
+    data.append(cyclocybeAegerita)
+    data.append(pleurotusOstreatus)
+    data.append(armillariaMellea)
+    data.append(morchellaEsculenta)
+    data.append(cantharellusCibarius)
+    data.append(agaricusCampestris)
+    data.append(lycoperdonUtriforme)
+    data.append(russulaVirescens)
+    data.append(russulaAurea)
+    data.append(russulaCyanoxantha)
+    data.append(butyriboletusRegius)
+    data.append(lactariusDeliciosus)
+    data.append(craterellusCornucopioides)
+    data.append(amanitaRubescens)
+    data.append(coprinusComatus)
+    data.append(auriculariaAuriculaJudæ)
     data.append(contentsOf: generateMockMushroomArray(length: 20))
     
     return data
