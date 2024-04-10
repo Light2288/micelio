@@ -70,6 +70,9 @@
     "Legenda" : {
 
     },
+    "Lista Funghi" : {
+
+    },
     "Map" : {
       "localizations" : {
         "it" : {
@@ -81,9 +84,6 @@
       }
     },
     "Mostra" : {
-
-    },
-    "Mushroom Catalog" : {
 
     },
     "Nascondi" : {

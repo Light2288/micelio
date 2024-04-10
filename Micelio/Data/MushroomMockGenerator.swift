@@ -28,9 +28,8 @@ func generateMockMushroom(mushroomScientificName: String? = nil, mushroomCommonN
     let environmentDescription = generateParagraph(numberOfWords: 40)
     let edibilityDescription = generateParagraph(numberOfWords: 50)
     let trivia = generateParagraph(numberOfWords: 80)
-    let images = (0...9).map { "\(commonName)_\($0)" }
     
-    return Mushroom(scientificName: scientificName, commonName: commonName, veryShortDescription: veryShortDescription, shortDescription: shortDescription, edibility: edibility, environments: environments, seasons: seasons, description: description, environmentDescription: environmentDescription, edibilityDescription: edibilityDescription, trivia: trivia, images: images)
+    return Mushroom(scientificName: scientificName, commonName: commonName, veryShortDescription: veryShortDescription, shortDescription: shortDescription, edibility: edibility, environments: environments, seasons: seasons, description: description, environmentDescription: environmentDescription, edibilityDescription: edibilityDescription, trivia: trivia)
 }
 
 private func generateRandomString(length: Int) -> String {
