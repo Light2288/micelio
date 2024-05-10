@@ -27,5 +27,5 @@ struct TitleAndDetailsView: View {
 }
 
 #Preview {
-    TitleAndDetailsView(mushroom: mushroomMockData[0], offset: 100)
+    TitleAndDetailsView(mushroom: mushroomData[0], offset: 100)
 }

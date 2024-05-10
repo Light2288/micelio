@@ -7,7 +7,7 @@
 
 import Foundation
 
-let MushroomData: [Mushroom] = [
+let mushroomData: [Mushroom] = [
     amanitaGemmata,
     amanitaMuscaria,
     amanitaPhalloides,
@@ -51,6 +51,7 @@ let MushroomData: [Mushroom] = [
     coprinusComatus,
     auriculariaAuriculaJudæ
 ]
+    .sorted { $0.scientificName < $1.scientificName }
 
 let amanitaGemmata: Mushroom = Mushroom(
     scientificName: "Amanita gemmata",
@@ -601,7 +602,7 @@ let craterellusCornucopioides: Mushroom = Mushroom(
 let amanitaRubescens: Mushroom = Mushroom(
     scientificName: "Amanita rubescens",
     commonName: "Tignosa vinata",
-    veryShortDescription: "Fungo dal cappello rosso e gambo bianco con anello anello, commestibile da cotto.",
+    veryShortDescription: "Fungo dal cappello rosso e gambo bianco con anello, commestibile da cotto",
     shortDescription: "Fungo dal cappello convesso bruno-rossastro con verruche, gambo bianco con anello e carne virante al rosso, commestibile solo dopo cottura prolungata",
     edibility: .edibleAfterCooking,
     environments: [.coniferousForest, .broadLeavedForest],

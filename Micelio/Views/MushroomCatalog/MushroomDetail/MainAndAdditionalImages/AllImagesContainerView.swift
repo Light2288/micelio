@@ -51,6 +51,6 @@ struct AllImagesContainerView: View {
 
 #Preview {
     GeometryReader { proxy in
-        AllImagesContainerView(images: mushroomMockData[0].images, proxyWidth: proxy.size.width, selectedImage: .constant(mushroomMockData[0].images[0]))
+        AllImagesContainerView(images: mushroomData[0].images, proxyWidth: proxy.size.width, selectedImage: .constant(mushroomData[0].images[0]))
     }
 }

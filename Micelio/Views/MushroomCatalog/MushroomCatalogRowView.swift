@@ -28,5 +28,5 @@ struct MushroomCatalogRowView: View {
 }
 
 #Preview {
-    MushroomCatalogRowView(mushroom: mushroomMockData[0], imageSize: 100)
+    MushroomCatalogRowView(mushroom: mushroomData[0], imageSize: 100)
 }

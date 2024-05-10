@@ -21,5 +21,5 @@ struct MushroomDetailSectionView: View {
 }
 
 #Preview {
-    MushroomDetailSectionView(title: "Description", content: mushroomMockData[0].description, image: "disclosuregroup-description")
+    MushroomDetailSectionView(title: "Description", content: mushroomData[0].description, image: "disclosuregroup-description")
 }

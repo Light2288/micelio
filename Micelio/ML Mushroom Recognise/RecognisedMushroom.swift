@@ -15,6 +15,6 @@ struct RecognisedMushroom: Identifiable {
         "\((confidence * 100).roundTo(places: 2))%"
     }
     var mushroomDetail: Mushroom {
-        mushroomMockData.first { $0.scientificName.compare(self.mushroomIdentifier, options: [.caseInsensitive, .diacriticInsensitive]) == .orderedSame }!
+        mushroomData.first { $0.scientificName.compare(self.mushroomIdentifier, options: [.caseInsensitive, .diacriticInsensitive]) == .orderedSame }!
     }
 }

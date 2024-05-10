@@ -21,7 +21,7 @@ struct AnnotationEditView: View {
     @State var selectedColor = ""
     
     var mushroomNames: [String] {
-        var names = mushroomMockData.map { $0.annotationMushroomName }
+        var names = mushroomData.map { $0.annotationMushroomName }
         names.append("Altro")
         return names.reversed()
     }

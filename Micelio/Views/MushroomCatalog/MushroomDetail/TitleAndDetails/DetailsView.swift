@@ -36,5 +36,5 @@ struct DetailsView: View {
 }
 
 #Preview {
-    DetailsView(mushroom: mushroomMockData[0])
+    DetailsView(mushroom: mushroomData[0])
 }

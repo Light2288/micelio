@@ -18,5 +18,5 @@ struct ShortDescriptionView: View {
 }
 
 #Preview {
-    ShortDescriptionView(text: mushroomMockData[0].shortDescription)
+    ShortDescriptionView(text: mushroomData[0].shortDescription)
 }

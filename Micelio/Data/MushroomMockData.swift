@@ -53,5 +53,5 @@ var mushroomMockData: [Mushroom] {
     data.append(auriculariaAuriculaJudæ)
     data.append(contentsOf: generateMockMushroomArray(length: 20))
     
-    return data
+    return data.sorted { $0.scientificName < $1.scientificName }
 }

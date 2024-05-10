@@ -22,5 +22,5 @@ struct MainAndAllImagesView: View {
 }
 
 #Preview {
-    MainAndAllImagesView(images: mushroomMockData[0].images, selectedImage: mushroomMockData[0].images[0])
+    MainAndAllImagesView(images: mushroomData[0].images, selectedImage: mushroomData[0].images[0])
 }

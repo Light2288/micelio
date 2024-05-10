@@ -17,11 +17,12 @@ struct TitleView: View {
             Text("(\(mushroom.commonName.capitalized))")
                 .font(.title2)
         }
+        .multilineTextAlignment(.center)
         .fontWeight(.heavy)
         .foregroundStyle(Color(.accent))
     }
 }
 
 #Preview {
-    TitleView(mushroom: mushroomMockData[0])
+    TitleView(mushroom: mushroomData[0])
 }

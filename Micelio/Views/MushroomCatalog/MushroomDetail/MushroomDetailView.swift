@@ -72,7 +72,7 @@ struct MushroomDetailView: View {
 
 #Preview {
     NavigationView(content: {
-        MushroomDetailView(mushroom: mushroomMockData[0])
+        MushroomDetailView(mushroom: mushroomData[0])
     })
     
 }

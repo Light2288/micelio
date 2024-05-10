@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MushroomCatalogView: View {
-    let mushrooms: [Mushroom] = mushroomMockData
+    let mushrooms: [Mushroom] = mushroomData
     @State private var showLegend: Bool = false
     
     var body: some View {

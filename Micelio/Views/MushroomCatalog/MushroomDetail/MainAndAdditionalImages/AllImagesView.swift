@@ -46,6 +46,6 @@ struct AllImagesView: View {
 
 #Preview {
     return ScrollView {
-        AllImagesView(images: mushroomMockData[0].images, width: 100, height: 100, selectedImage: .constant(mushroomMockData[0].images[0]))
+        AllImagesView(images: mushroomData[0].images, width: 100, height: 100, selectedImage: .constant(mushroomData[0].images[0]))
     }
 }
