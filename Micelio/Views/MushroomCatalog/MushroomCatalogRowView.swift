@@ -16,10 +16,10 @@ struct MushroomCatalogRowView: View {
             PhotoThumbnailView(imageUrl: Bundle.main.url(forResource: mushroom.images[0], withExtension: "jpeg") ?? URL(filePath: ""), width: imageSize, height: imageSize)
             VStack(alignment: .leading, spacing: Constants.MushroomCatalog.MushroomCatalogRow.vStackSpacing, content: {
                 Text(mushroom.scientificName.capitalized)
-                    .font(.title2)
+                    .font(.title3)
                     .fontWeight(.bold)
                 Text(mushroom.veryShortDescription)
-                    .font(.caption)
+                    .font(.caption2)
                     .foregroundStyle(Color.secondary)
             })
             .padding(.vertical, Constants.MushroomCatalog.MushroomCatalogRow.vStackPadding)

@@ -182,7 +182,7 @@ let gyromitraEsculenta: Mushroom = Mushroom(
 let hypholomaFasciculare: Mushroom = Mushroom(
     scientificName: "Hypholoma fasciculare",
     commonName: "Falso chiodino",
-    veryShortDescription: "Fungo simile al chiodino ma non commestibile, che cresce in gruppi",
+    veryShortDescription: "Fungo simile al chiodino ma non commestibile",
     shortDescription: "Fungo cespitoso di colore giallo-zolfo, tossico e dal sapore amaro, spesso scambiato per il chiodino o il pioppino.",
     edibility: .poisonous,
     environments: [.lignicolous],
@@ -518,7 +518,7 @@ let lycoperdonUtriforme: Mushroom = Mushroom(
 let russulaVirescens: Mushroom = Mushroom(
     scientificName: "Russula virescens",
     commonName: "Colombina verde",
-    veryShortDescription: "Fungo dal cappello verde e gambo bianco, ottimo commestibile",
+    veryShortDescription: "Fungo dal cappello verde, ottimo commestibile",
     shortDescription: "Fungo dal cappello verde a macchie e gambo bianco, con lamelle fitte, eccellente da mangiare",
     edibility: .edible,
     environments: [.broadLeavedForest],
@@ -560,7 +560,7 @@ let russulaCyanoxantha: Mushroom = Mushroom(
 let butyriboletusRegius: Mushroom = Mushroom(
     scientificName: "Butyriboletus regius",
     commonName: "Porcino reale",
-    veryShortDescription: "Fungo simile al porcino dal cappello rosso, ottimo da mangiare",
+    veryShortDescription: "Fungo dal cappello rosso, simile al porcino",
     shortDescription: "Fungo dal cappello rosso vellutato, gambo giallo con reticolo, carne gialla, ottimo edule",
     edibility: .edible,
     environments: [.broadLeavedForest],
@@ -602,7 +602,7 @@ let craterellusCornucopioides: Mushroom = Mushroom(
 let amanitaRubescens: Mushroom = Mushroom(
     scientificName: "Amanita rubescens",
     commonName: "Tignosa vinata",
-    veryShortDescription: "Fungo dal cappello rosso e gambo bianco con anello, commestibile da cotto",
+    veryShortDescription: "Fungo dal cappello rosso, commestibile da cotto",
     shortDescription: "Fungo dal cappello convesso bruno-rossastro con verruche, gambo bianco con anello e carne virante al rosso, commestibile solo dopo cottura prolungata",
     edibility: .edibleAfterCooking,
     environments: [.coniferousForest, .broadLeavedForest],
@@ -616,7 +616,7 @@ let amanitaRubescens: Mushroom = Mushroom(
 let coprinusComatus: Mushroom = Mushroom(
     scientificName: "Coprinus comatus",
     commonName: "Fungo dell'inchiostro",
-    veryShortDescription: "Fungo dal cappello bianco squamoso, commestibile da giovane.",
+    veryShortDescription: "Fungo dal cappello bianco squamoso",
     shortDescription: "Fungo dal cappello bianco a forma di campana, gambo slanciato lungo e sottile, commestibile solo da giovane",
     edibility: .edibleWithoutAlcohol,
     environments: [.coniferousForest, .broadLeavedForest, .field],
