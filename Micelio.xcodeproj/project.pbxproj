@@ -237,16 +237,6 @@
 		6B46365D2C093F7C00677B12 /* astræushygrometricus_1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636532C093F7B00677B12 /* astræushygrometricus_1.jpeg */; };
 		6B46365E2C093F7C00677B12 /* astræushygrometricus_7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636542C093F7B00677B12 /* astræushygrometricus_7.jpeg */; };
 		6B46365F2C093F7C00677B12 /* astræushygrometricus_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636552C093F7B00677B12 /* astræushygrometricus_2.jpeg */; };
-		6B46366B2C0943D000677B12 /* lactariusporninsis_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636612C0943CF00677B12 /* lactariusporninsis_4.jpg */; };
-		6B46366C2C0943D000677B12 /* lactariusporninsis_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636622C0943D000677B12 /* lactariusporninsis_3.jpg */; };
-		6B46366D2C0943D000677B12 /* lactariusporninsis_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636632C0943D000677B12 /* lactariusporninsis_2.jpg */; };
-		6B46366E2C0943D000677B12 /* lactariusporninsis_8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636642C0943D000677B12 /* lactariusporninsis_8.jpg */; };
-		6B46366F2C0943D000677B12 /* lactariusporninsis_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636652C0943D000677B12 /* lactariusporninsis_5.jpg */; };
-		6B4636702C0943D000677B12 /* lactariusporninsis_7.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636662C0943D000677B12 /* lactariusporninsis_7.webp */; };
-		6B4636712C0943D000677B12 /* lactariusporninsis_6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636672C0943D000677B12 /* lactariusporninsis_6.jpg */; };
-		6B4636722C0943D000677B12 /* lactariusporninsis_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636682C0943D000677B12 /* lactariusporninsis_1.jpg */; };
-		6B4636732C0943D000677B12 /* lactariusporninsis_9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636692C0943D000677B12 /* lactariusporninsis_9.jpeg */; };
-		6B4636742C0943D000677B12 /* lactariusporninsis_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B46366A2C0943D000677B12 /* lactariusporninsis_0.jpg */; };
 		6B61F6FB2C04CA3100FE7E31 /* cantharelluscibarius_7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B61F6F12C04CA3000FE7E31 /* cantharelluscibarius_7.jpeg */; };
 		6B61F6FC2C04CA3100FE7E31 /* cantharelluscibarius_9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B61F6F22C04CA3100FE7E31 /* cantharelluscibarius_9.jpeg */; };
 		6B61F6FD2C04CA3100FE7E31 /* cantharelluscibarius_4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B61F6F32C04CA3100FE7E31 /* cantharelluscibarius_4.jpeg */; };
@@ -508,6 +498,16 @@
 		6BB01E262B87CD860050A3A4 /* Mushroom+AnnotationMushroomName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB01E252B87CD860050A3A4 /* Mushroom+AnnotationMushroomName.swift */; };
 		6BB5179E2B75AEF5002A2133 /* MushroomPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5179D2B75AEF5002A2133 /* MushroomPinView.swift */; };
 		6BB5576F2C0FBB3300C37AA5 /* ImageSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5576E2C0FBB3300C37AA5 /* ImageSliderView.swift */; };
+		6BB557642C0E870C00C37AA5 /* lactariusporninsis_6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BB5575A2C0E870A00C37AA5 /* lactariusporninsis_6.jpeg */; };
+		6BB557652C0E870C00C37AA5 /* lactariusporninsis_0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BB5575B2C0E870A00C37AA5 /* lactariusporninsis_0.jpeg */; };
+		6BB557662C0E870C00C37AA5 /* lactariusporninsis_9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BB5575C2C0E870A00C37AA5 /* lactariusporninsis_9.jpeg */; };
+		6BB557672C0E870C00C37AA5 /* lactariusporninsis_8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BB5575D2C0E870A00C37AA5 /* lactariusporninsis_8.jpeg */; };
+		6BB557682C0E870C00C37AA5 /* lactariusporninsis_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BB5575E2C0E870B00C37AA5 /* lactariusporninsis_2.jpeg */; };
+		6BB557692C0E870C00C37AA5 /* lactariusporninsis_1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BB5575F2C0E870B00C37AA5 /* lactariusporninsis_1.jpeg */; };
+		6BB5576A2C0E870C00C37AA5 /* lactariusporninsis_4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BB557602C0E870B00C37AA5 /* lactariusporninsis_4.jpeg */; };
+		6BB5576B2C0E870C00C37AA5 /* lactariusporninsis_5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BB557612C0E870B00C37AA5 /* lactariusporninsis_5.jpeg */; };
+		6BB5576C2C0E870C00C37AA5 /* lactariusporninsis_7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BB557622C0E870C00C37AA5 /* lactariusporninsis_7.jpeg */; };
+		6BB5576D2C0E870C00C37AA5 /* lactariusporninsis_3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BB557632C0E870C00C37AA5 /* lactariusporninsis_3.jpeg */; };
 		6BBEC8BE2AF459C1000720FF /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBEC8BD2AF459C1000720FF /* LegendView.swift */; };
 		6BBEC8C02AF466D7000720FF /* LegendItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBEC8BF2AF466D7000720FF /* LegendItem.swift */; };
 		6BBEC8C22AF467CC000720FF /* LegendItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBEC8C12AF467CC000720FF /* LegendItems.swift */; };
@@ -760,16 +760,6 @@
 		6B4636532C093F7B00677B12 /* astræushygrometricus_1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "astræushygrometricus_1.jpeg"; sourceTree = "<group>"; };
 		6B4636542C093F7B00677B12 /* astræushygrometricus_7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "astræushygrometricus_7.jpeg"; sourceTree = "<group>"; };
 		6B4636552C093F7B00677B12 /* astræushygrometricus_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "astræushygrometricus_2.jpeg"; sourceTree = "<group>"; };
-		6B4636612C0943CF00677B12 /* lactariusporninsis_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_4.jpg; sourceTree = "<group>"; };
-		6B4636622C0943D000677B12 /* lactariusporninsis_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_3.jpg; sourceTree = "<group>"; };
-		6B4636632C0943D000677B12 /* lactariusporninsis_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_2.jpg; sourceTree = "<group>"; };
-		6B4636642C0943D000677B12 /* lactariusporninsis_8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_8.jpg; sourceTree = "<group>"; };
-		6B4636652C0943D000677B12 /* lactariusporninsis_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_5.jpg; sourceTree = "<group>"; };
-		6B4636662C0943D000677B12 /* lactariusporninsis_7.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = lactariusporninsis_7.webp; sourceTree = "<group>"; };
-		6B4636672C0943D000677B12 /* lactariusporninsis_6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_6.jpg; sourceTree = "<group>"; };
-		6B4636682C0943D000677B12 /* lactariusporninsis_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_1.jpg; sourceTree = "<group>"; };
-		6B4636692C0943D000677B12 /* lactariusporninsis_9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_9.jpeg; sourceTree = "<group>"; };
-		6B46366A2C0943D000677B12 /* lactariusporninsis_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_0.jpg; sourceTree = "<group>"; };
 		6B61F6F12C04CA3000FE7E31 /* cantharelluscibarius_7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cantharelluscibarius_7.jpeg; sourceTree = "<group>"; };
 		6B61F6F22C04CA3100FE7E31 /* cantharelluscibarius_9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cantharelluscibarius_9.jpeg; sourceTree = "<group>"; };
 		6B61F6F32C04CA3100FE7E31 /* cantharelluscibarius_4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cantharelluscibarius_4.jpeg; sourceTree = "<group>"; };
@@ -1031,6 +1021,16 @@
 		6BB01E252B87CD860050A3A4 /* Mushroom+AnnotationMushroomName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mushroom+AnnotationMushroomName.swift"; sourceTree = "<group>"; };
 		6BB5179D2B75AEF5002A2133 /* MushroomPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomPinView.swift; sourceTree = "<group>"; };
 		6BB5576E2C0FBB3300C37AA5 /* ImageSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderView.swift; sourceTree = "<group>"; };
+		6BB5575A2C0E870A00C37AA5 /* lactariusporninsis_6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_6.jpeg; sourceTree = "<group>"; };
+		6BB5575B2C0E870A00C37AA5 /* lactariusporninsis_0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_0.jpeg; sourceTree = "<group>"; };
+		6BB5575C2C0E870A00C37AA5 /* lactariusporninsis_9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_9.jpeg; sourceTree = "<group>"; };
+		6BB5575D2C0E870A00C37AA5 /* lactariusporninsis_8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_8.jpeg; sourceTree = "<group>"; };
+		6BB5575E2C0E870B00C37AA5 /* lactariusporninsis_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_2.jpeg; sourceTree = "<group>"; };
+		6BB5575F2C0E870B00C37AA5 /* lactariusporninsis_1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_1.jpeg; sourceTree = "<group>"; };
+		6BB557602C0E870B00C37AA5 /* lactariusporninsis_4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_4.jpeg; sourceTree = "<group>"; };
+		6BB557612C0E870B00C37AA5 /* lactariusporninsis_5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_5.jpeg; sourceTree = "<group>"; };
+		6BB557622C0E870C00C37AA5 /* lactariusporninsis_7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_7.jpeg; sourceTree = "<group>"; };
+		6BB557632C0E870C00C37AA5 /* lactariusporninsis_3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_3.jpeg; sourceTree = "<group>"; };
 		6BBEC8BD2AF459C1000720FF /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		6BBEC8BF2AF466D7000720FF /* LegendItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendItem.swift; sourceTree = "<group>"; };
 		6BBEC8C12AF467CC000720FF /* LegendItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendItems.swift; sourceTree = "<group>"; };
@@ -1505,16 +1505,16 @@
 		6B4636602C0943C600677B12 /* lactariusporninsis */ = {
 			isa = PBXGroup;
 			children = (
-				6B4636652C0943D000677B12 /* lactariusporninsis_5.jpg */,
-				6B4636612C0943CF00677B12 /* lactariusporninsis_4.jpg */,
-				6B4636672C0943D000677B12 /* lactariusporninsis_6.jpg */,
-				6B4636692C0943D000677B12 /* lactariusporninsis_9.jpeg */,
-				6B4636682C0943D000677B12 /* lactariusporninsis_1.jpg */,
-				6B4636642C0943D000677B12 /* lactariusporninsis_8.jpg */,
-				6B46366A2C0943D000677B12 /* lactariusporninsis_0.jpg */,
-				6B4636632C0943D000677B12 /* lactariusporninsis_2.jpg */,
-				6B4636622C0943D000677B12 /* lactariusporninsis_3.jpg */,
-				6B4636662C0943D000677B12 /* lactariusporninsis_7.webp */,
+				6BB5575B2C0E870A00C37AA5 /* lactariusporninsis_0.jpeg */,
+				6BB5575F2C0E870B00C37AA5 /* lactariusporninsis_1.jpeg */,
+				6BB5575E2C0E870B00C37AA5 /* lactariusporninsis_2.jpeg */,
+				6BB557632C0E870C00C37AA5 /* lactariusporninsis_3.jpeg */,
+				6BB557602C0E870B00C37AA5 /* lactariusporninsis_4.jpeg */,
+				6BB557612C0E870B00C37AA5 /* lactariusporninsis_5.jpeg */,
+				6BB5575A2C0E870A00C37AA5 /* lactariusporninsis_6.jpeg */,
+				6BB557622C0E870C00C37AA5 /* lactariusporninsis_7.jpeg */,
+				6BB5575D2C0E870A00C37AA5 /* lactariusporninsis_8.jpeg */,
+				6BB5575C2C0E870A00C37AA5 /* lactariusporninsis_9.jpeg */,
 			);
 			path = lactariusporninsis;
 			sourceTree = "<group>";
@@ -2226,7 +2226,6 @@
 				6BA44A892BF57A0E0072155C /* coprinuscomatus_0.jpeg in Resources */,
 				6B61F71B2C0550A000FE7E31 /* morchellaesculenta_9.jpeg in Resources */,
 				6B4635D82C06918600677B12 /* pleurotusostreatus_0.jpeg in Resources */,
-				6B46366D2C0943D000677B12 /* lactariusporninsis_2.jpg in Resources */,
 				6B46361A2C06996900677B12 /* amanitacæsarea_6.jpeg in Resources */,
 				6B4635EE2C06949500677B12 /* cyclocybeaegerita_2.jpeg in Resources */,
 				6BA44AAF2C0140BF0072155C /* craterelluscornucopioides_2.jpeg in Resources */,
@@ -2239,12 +2238,10 @@
 				6B2E882C2BE2E93E002389CB /* lactariusscrobiculatus_3.jpeg in Resources */,
 				6B2E87FC2BE057C0002389CB /* paxillusinvolutus_2.jpeg in Resources */,
 				6B4636352C0938AD00677B12 /* ganodermaapplanatum_4.jpeg in Resources */,
-				6B4636702C0943D000677B12 /* lactariusporninsis_7.webp in Resources */,
 				6B2E876F2BD06FDE002389CB /* lepiotacristata_9.jpeg in Resources */,
 				6BA44B0B2C03F2400072155C /* russulaaurea_0.jpeg in Resources */,
-				6B4636712C0943D000677B12 /* lactariusporninsis_6.jpg in Resources */,
-				6B46366F2C0943D000677B12 /* lactariusporninsis_5.jpg in Resources */,
 				6B2E88102BE2E111002389CB /* omphalotusolearius_7.jpeg in Resources */,
+				6BB5576C2C0E870C00C37AA5 /* lactariusporninsis_7.jpeg in Resources */,
 				6B61F7292C0554DD00FE7E31 /* armillariamellea_3.jpeg in Resources */,
 				6B61F72E2C0554DD00FE7E31 /* armillariamellea_7.jpeg in Resources */,
 				6BA44B1D2C03F41C0072155C /* russulavirescens_7.jpeg in Resources */,
@@ -2273,7 +2270,6 @@
 				6B4636322C0938AD00677B12 /* ganodermaapplanatum_5.jpeg in Resources */,
 				6B2E88172BE2E111002389CB /* omphalotusolearius_4.jpeg in Resources */,
 				6B4636572C093F7C00677B12 /* astræushygrometricus_3.jpeg in Resources */,
-				6B4636742C0943D000677B12 /* lactariusporninsis_0.jpg in Resources */,
 				6B4636412C093BB800677B12 /* fomesfomentarius_9.jpeg in Resources */,
 				6B2E87E92BDF0643002389CB /* ramariaformosa_3.jpeg in Resources */,
 				6BA44A092BEED7D50072155C /* rubroboletussatanas_6.jpeg in Resources */,
@@ -2289,7 +2285,6 @@
 				6B2E87D52BDB08CE002389CB /* ramariapallida_8.jpeg in Resources */,
 				6B4636062C06975200677B12 /* macrolepiotaprocera_0.jpeg in Resources */,
 				6BA44A5D2BF2C7660072155C /* amanitagemmata_2.jpeg in Resources */,
-				6B46366C2C0943D000677B12 /* lactariusporninsis_3.jpg in Resources */,
 				6B4636472C093BB800677B12 /* fomesfomentarius_2.jpeg in Resources */,
 				6B2E87A82BD70BE5002389CB /* russulaemetica_6.jpeg in Resources */,
 				6B4636582C093F7C00677B12 /* astræushygrometricus_8.jpeg in Resources */,
@@ -2309,7 +2304,6 @@
 				6B2E882D2BE2E93E002389CB /* lactariusscrobiculatus_6.jpeg in Resources */,
 				6B2E88032BE057C0002389CB /* paxillusinvolutus_1.jpeg in Resources */,
 				6B2E87EA2BDF0643002389CB /* ramariaformosa_1.jpeg in Resources */,
-				6B46366B2C0943D000677B12 /* lactariusporninsis_4.jpg in Resources */,
 				6B2E88502BEAF085002389CB /* gyromitraesculenta_7.jpeg in Resources */,
 				6B2E884E2BEAF085002389CB /* gyromitraesculenta_8.jpeg in Resources */,
 				6B61F7102C054FD000FE7E31 /* morchellaesculenta_1.jpeg in Resources */,
@@ -2332,6 +2326,7 @@
 				6BA44A8D2BF57A0E0072155C /* coprinuscomatus_9.jpeg in Resources */,
 				6B2E876A2BD06FDE002389CB /* lepiotacristata_4.jpeg in Resources */,
 				6BA44AB52C0140BF0072155C /* craterelluscornucopioides_3.jpeg in Resources */,
+				6BB5576B2C0E870C00C37AA5 /* lactariusporninsis_5.jpeg in Resources */,
 				6BA44A632BF2C7660072155C /* amanitagemmata_6.jpeg in Resources */,
 				6B2E879A2BD5BE69002389CB /* russulafœtens_2.jpeg in Resources */,
 				6BA44ADE2C0145420072155C /* butyriboletusregius_8.jpeg in Resources */,
@@ -2345,8 +2340,8 @@
 				6B2E87982BD5BE69002389CB /* russulafœtens_8.jpeg in Resources */,
 				6BA44A9B2C013EAB0072155C /* amanitarubescens_8.jpeg in Resources */,
 				6B2E88152BE2E111002389CB /* omphalotusolearius_1.jpeg in Resources */,
+				6BB5576D2C0E870C00C37AA5 /* lactariusporninsis_3.jpeg in Resources */,
 				6B4636422C093BB800677B12 /* fomesfomentarius_4.jpeg in Resources */,
-				6B46366E2C0943D000677B12 /* lactariusporninsis_8.jpg in Resources */,
 				6BA44A1E2BEEDACE0072155C /* amanitavirosa_5.jpeg in Resources */,
 				6BA44A332BEEDE160072155C /* amanitaverna_6.jpeg in Resources */,
 				6B2E87D82BDB08CE002389CB /* ramariapallida_7.jpeg in Resources */,
@@ -2358,6 +2353,7 @@
 				6B61F6FC2C04CA3100FE7E31 /* cantharelluscibarius_9.jpeg in Resources */,
 				6BA44AF12C03EF6D0072155C /* russulacyanoxantha_2.jpeg in Resources */,
 				6B2E88692BEC24FB002389CB /* entolomasinuatum_7.jpeg in Resources */,
+				6BB557682C0E870C00C37AA5 /* lactariusporninsis_2.jpeg in Resources */,
 				6BA44A472BF2C5AF0072155C /* amanitaphalloides_0.jpeg in Resources */,
 				6BA44B5F2C03FC980072155C /* agaricuscampestris_4.jpeg in Resources */,
 				6BA44A312BEEDE160072155C /* amanitaverna_3.jpeg in Resources */,
@@ -2398,7 +2394,6 @@
 				6BA44A8C2BF57A0E0072155C /* coprinuscomatus_7.jpeg in Resources */,
 				6B4636332C0938AD00677B12 /* ganodermaapplanatum_8.jpeg in Resources */,
 				6B2E87922BD5BE69002389CB /* russulafœtens_4.jpeg in Resources */,
-				6B4636732C0943D000677B12 /* lactariusporninsis_9.jpeg in Resources */,
 				6BA44B622C03FC980072155C /* agaricuscampestris_8.jpeg in Resources */,
 				6BA44A862BF57A0E0072155C /* coprinuscomatus_3.jpeg in Resources */,
 				6BA44A852BF57A0E0072155C /* coprinuscomatus_1.jpeg in Resources */,
@@ -2421,6 +2416,7 @@
 				6BA44B602C03FC980072155C /* agaricuscampestris_6.jpeg in Resources */,
 				6B4636562C093F7C00677B12 /* astræushygrometricus_9.jpeg in Resources */,
 				6B61F7012C04CA3100FE7E31 /* cantharelluscibarius_2.jpeg in Resources */,
+				6BB557642C0E870C00C37AA5 /* lactariusporninsis_6.jpeg in Resources */,
 				6BA44B412C03FC750072155C /* agaricuscampestris_1.jpeg in Resources */,
 				6B2E88292BE2E93E002389CB /* lactariusscrobiculatus_0.jpeg in Resources */,
 				6BAAEC722BCDD98A00FFA8B1 /* boletusedulis_6.jpeg in Resources */,
@@ -2433,6 +2429,7 @@
 				6B2E87BC2BD714A6002389CB /* amanitamuscaria_8.jpeg in Resources */,
 				6BA44AC82C0142D00072155C /* lactariusdeliciosus_6.jpeg in Resources */,
 				6B2E88662BEC24FB002389CB /* entolomasinuatum_0.jpeg in Resources */,
+				6BB557662C0E870C00C37AA5 /* lactariusporninsis_9.jpeg in Resources */,
 				6BA44A352BEEDE160072155C /* amanitaverna_4.jpeg in Resources */,
 				6B4635F52C06949500677B12 /* cyclocybeaegerita_6.jpeg in Resources */,
 				6B2E87962BD5BE69002389CB /* russulafœtens_1.jpeg in Resources */,
@@ -2443,6 +2440,7 @@
 				6BA44AC42C0142D00072155C /* lactariusdeliciosus_9.jpeg in Resources */,
 				6BAAEC702BCDD98A00FFA8B1 /* boletusedulis_9.jpeg in Resources */,
 				6B2E88682BEC24FB002389CB /* entolomasinuatum_8.jpeg in Resources */,
+				6BB557672C0E870C00C37AA5 /* lactariusporninsis_8.jpeg in Resources */,
 				6BA44AB02C0140BF0072155C /* craterelluscornucopioides_1.jpeg in Resources */,
 				6BA44AF42C03EF6D0072155C /* russulacyanoxantha_4.jpeg in Resources */,
 				6BA44A072BEED7D50072155C /* rubroboletussatanas_9.jpeg in Resources */,
@@ -2504,6 +2502,7 @@
 				6B61F72F2C0554DD00FE7E31 /* armillariamellea_5.jpeg in Resources */,
 				6B4635F32C06949500677B12 /* cyclocybeaegerita_0.jpeg in Resources */,
 				6B2E880F2BE2E111002389CB /* omphalotusolearius_6.jpeg in Resources */,
+				6BB557692C0E870C00C37AA5 /* lactariusporninsis_1.jpeg in Resources */,
 				6B2E88022BE057C0002389CB /* paxillusinvolutus_0.jpeg in Resources */,
 				6BA44A242BEEDACE0072155C /* amanitavirosa_3.jpeg in Resources */,
 				6BA44AF32C03EF6D0072155C /* russulacyanoxantha_3.jpeg in Resources */,
@@ -2556,7 +2555,6 @@
 				6B2E87BB2BD714A6002389CB /* amanitamuscaria_6.jpeg in Resources */,
 				6B2E87BF2BD714A6002389CB /* amanitamuscaria_4.jpeg in Resources */,
 				6BA44A4C2BF2C5AF0072155C /* amanitaphalloides_6.jpeg in Resources */,
-				6B4636722C0943D000677B12 /* lactariusporninsis_1.jpg in Resources */,
 				6B2E87FA2BE057C0002389CB /* paxillusinvolutus_8.jpeg in Resources */,
 				6B2E87D32BDB08CE002389CB /* ramariapallida_4.jpeg in Resources */,
 				6BA44ADA2C0145420072155C /* butyriboletusregius_0.jpeg in Resources */,
@@ -2597,6 +2595,7 @@
 				6BA44A462BF2C5AF0072155C /* amanitaphalloides_8.jpeg in Resources */,
 				6B2E87FB2BE057C0002389CB /* paxillusinvolutus_4.jpeg in Resources */,
 				6B2E887B2BEC2E7C002389CB /* cortinariusrubellus_3.jpeg in Resources */,
+				6BB5576A2C0E870C00C37AA5 /* lactariusporninsis_4.jpeg in Resources */,
 				6B2E87472BD06AD3002389CB /* sclerodermacitrinum_4.jpeg in Resources */,
 				6B4636482C093BB800677B12 /* fomesfomentarius_3.jpeg in Resources */,
 				6BA44A882BF57A0E0072155C /* coprinuscomatus_6.jpeg in Resources */,
@@ -2606,6 +2605,7 @@
 				6B2E87A62BD70BE5002389CB /* russulaemetica_2.jpeg in Resources */,
 				6B2E87D62BDB08CE002389CB /* ramariapallida_0.jpeg in Resources */,
 				6BA44AF02C03EF6D0072155C /* russulacyanoxantha_8.jpeg in Resources */,
+				6BB557652C0E870C00C37AA5 /* lactariusporninsis_0.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
