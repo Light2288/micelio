@@ -188,6 +188,7 @@ enum Constants {
         }
         
         enum TitleAndDetails {
+            public static let maxWidthCorrection: CGFloat = 80
             public static let backgroundCornerSize: CGSize = CGSize(width: 20, height: 10)
             public static let shadowRadius: CGFloat = 5
             public static let shadowY: CGFloat = 3
@@ -209,12 +210,12 @@ enum Constants {
         
         enum MushroomDetail {
             public static let externalVStackSpacing: CGFloat = 20
-            public static let titleAndDetailOffsetCorrection: CGFloat = 70
             public static let internalVStackSpacing: CGFloat = 25
             public static let internalVStackHorizontalPadding: CGFloat = 20
             public static let internalVStackBottomPadding: CGFloat = 50
             public static let internalVStackFrameMaxWidth: CGFloat = 640
-            public static let spacerMinLengthCorrection: CGFloat = 60
+            public static let titleAndDetailsOffsetCorrectionRatio: CGFloat = 1.5
+            public static let spacerMinLengthCorrectionRatio: CGFloat = 2.2
             
             enum MainAndAdditionalImage {
                 enum AllImagesContainer {

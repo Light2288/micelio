@@ -301,7 +301,6 @@
 		6B7A457C2B9E6465000E3966 /* PinColorChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A457B2B9E6465000E3966 /* PinColorChoiceView.swift */; };
 		6B7A457E2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A457D2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift */; };
 		6B7A45802B9E708A000E3966 /* SaveAnnotationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A457F2B9E708A000E3966 /* SaveAnnotationButtonView.swift */; };
-		6B7CC3522B141A210042A8E4 /* MainImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC3512B141A210042A8E4 /* MainImageView.swift */; };
 		6B7CC3542B141ACE0042A8E4 /* AllImagesContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC3532B141ACE0042A8E4 /* AllImagesContainerView.swift */; };
 		6B7CC3562B141B9B0042A8E4 /* MainAndAllImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC3552B141B9B0042A8E4 /* MainAndAllImagesView.swift */; };
 		6B7CC3592B19134D0042A8E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC3582B19134D0042A8E4 /* Constants.swift */; };
@@ -508,6 +507,7 @@
 		6BB01E242B879B590050A3A4 /* AnnotationCoordinateTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB01E232B879B590050A3A4 /* AnnotationCoordinateTextView.swift */; };
 		6BB01E262B87CD860050A3A4 /* Mushroom+AnnotationMushroomName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB01E252B87CD860050A3A4 /* Mushroom+AnnotationMushroomName.swift */; };
 		6BB5179E2B75AEF5002A2133 /* MushroomPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5179D2B75AEF5002A2133 /* MushroomPinView.swift */; };
+		6BB5576F2C0FBB3300C37AA5 /* ImageSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5576E2C0FBB3300C37AA5 /* ImageSliderView.swift */; };
 		6BBEC8BE2AF459C1000720FF /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBEC8BD2AF459C1000720FF /* LegendView.swift */; };
 		6BBEC8C02AF466D7000720FF /* LegendItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBEC8BF2AF466D7000720FF /* LegendItem.swift */; };
 		6BBEC8C22AF467CC000720FF /* LegendItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBEC8C12AF467CC000720FF /* LegendItems.swift */; };
@@ -824,7 +824,6 @@
 		6B7A457B2B9E6465000E3966 /* PinColorChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinColorChoiceView.swift; sourceTree = "<group>"; };
 		6B7A457D2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinColorChoiceButtonLabelView.swift; sourceTree = "<group>"; };
 		6B7A457F2B9E708A000E3966 /* SaveAnnotationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAnnotationButtonView.swift; sourceTree = "<group>"; };
-		6B7CC3512B141A210042A8E4 /* MainImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImageView.swift; sourceTree = "<group>"; };
 		6B7CC3532B141ACE0042A8E4 /* AllImagesContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllImagesContainerView.swift; sourceTree = "<group>"; };
 		6B7CC3552B141B9B0042A8E4 /* MainAndAllImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAndAllImagesView.swift; sourceTree = "<group>"; };
 		6B7CC3582B19134D0042A8E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -1031,6 +1030,7 @@
 		6BB01E232B879B590050A3A4 /* AnnotationCoordinateTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationCoordinateTextView.swift; sourceTree = "<group>"; };
 		6BB01E252B87CD860050A3A4 /* Mushroom+AnnotationMushroomName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mushroom+AnnotationMushroomName.swift"; sourceTree = "<group>"; };
 		6BB5179D2B75AEF5002A2133 /* MushroomPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomPinView.swift; sourceTree = "<group>"; };
+		6BB5576E2C0FBB3300C37AA5 /* ImageSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderView.swift; sourceTree = "<group>"; };
 		6BBEC8BD2AF459C1000720FF /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		6BBEC8BF2AF466D7000720FF /* LegendItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendItem.swift; sourceTree = "<group>"; };
 		6BBEC8C12AF467CC000720FF /* LegendItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendItems.swift; sourceTree = "<group>"; };
@@ -1672,8 +1672,8 @@
 			children = (
 				6B7835B12B06D8BC00166DB3 /* AllImagesView.swift */,
 				6B7CC3532B141ACE0042A8E4 /* AllImagesContainerView.swift */,
-				6B7CC3512B141A210042A8E4 /* MainImageView.swift */,
 				6B7CC3552B141B9B0042A8E4 /* MainAndAllImagesView.swift */,
+				6BB5576E2C0FBB3300C37AA5 /* ImageSliderView.swift */,
 			);
 			path = MainAndAdditionalImages;
 			sourceTree = "<group>";
@@ -2672,6 +2672,7 @@
 				6B239E132B72FA7000D7D8EB /* AddMushroomLocationTextView.swift in Sources */,
 				6B7A1FF12B5F370800B62640 /* OtherResultsView.swift in Sources */,
 				6B7835902B043FAD00166DB3 /* ShortDescriptionView.swift in Sources */,
+				6BB5576F2C0FBB3300C37AA5 /* ImageSliderView.swift in Sources */,
 				6B7835892AFE497C00166DB3 /* DetailGridView.swift in Sources */,
 				6B908D532B840DA6007FC5B7 /* MushroomMapAnnotation+Init.swift in Sources */,
 				6B908D512B7E5BCC007FC5B7 /* MushroomMapAnnotation+Colors.swift in Sources */,
@@ -2684,7 +2685,6 @@
 				6B78358C2AFE6F6A00166DB3 /* LegendItemImageView.swift in Sources */,
 				6B820A8E2B3088CC00724555 /* ViewWithShapeBackground.swift in Sources */,
 				6BCFB9702B47817400C6246E /* RecogniseDisclaimerView.swift in Sources */,
-				6B7CC3522B141A210042A8E4 /* MainImageView.swift in Sources */,
 				6B7835872AFE46DE00166DB3 /* DetailsView.swift in Sources */,
 				6B3922292BA8947C0093961E /* String+LowercaseFirstChar.swift in Sources */,
 				6BA8B4CA2AD60D14005272D2 /* MushroomMockData.swift in Sources */,

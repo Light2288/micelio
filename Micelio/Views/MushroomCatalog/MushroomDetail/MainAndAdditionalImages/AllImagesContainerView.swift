@@ -32,9 +32,7 @@ struct AllImagesContainerView: View {
     var body: some View {
             HStack {
                 Spacer(minLength: proxyWidth - allImagesRectangleBackgroundWidth)
-                VStack() {
-                    Spacer(minLength: proxyWidth - allImagesRectangleBackgroundHeight)
-                    
+                VStack() {                    
                     AllImagesView(images: images, width: smallImageSize, height: smallImageSize, selectedImage: $selectedImage)
                         .background {
                             Rectangle()
