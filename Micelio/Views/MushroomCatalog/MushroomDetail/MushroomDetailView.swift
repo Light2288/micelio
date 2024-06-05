@@ -23,13 +23,13 @@ struct MushroomDetailView: View {
         GeometryReader { proxy in
             ScrollView(.vertical) {
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: Constants.MushroomCatalog.MushroomDetail.externalVStackSpacing, content: {
-                    ZStack(alignment: .bottom) {
-                        MainAndAllImagesView(images: mushroom.images, selectedImage: mushroom.images[0])
-                        TitleAndDetailsView(mushroom: mushroom, offset: proxy.size.width - Constants.MushroomCatalog.MushroomDetail.titleAndDetailOffsetCorrection)
+                    ZStack() {
+                        MainAndAllImagesView(images: mushroom.images, selectedImage: mushroom.images[0], width: proxy.size.width)
+                        TitleAndDetailsView(mushroom: mushroom, offset: proxy.size.width/Constants.MushroomCatalog.MushroomDetail.titleAndDetailsOffsetCorrectionRatio, width: proxy.size.width)
                     }
                     
                     VStack(alignment: .leading, spacing: Constants.MushroomCatalog.MushroomDetail.internalVStackSpacing, content: {
-                        Spacer(minLength: proxy.size.width - Constants.MushroomCatalog.MushroomDetail.spacerMinLengthCorrection)
+                        Spacer(minLength: proxy.size.width/Constants.MushroomCatalog.MushroomDetail.spacerMinLengthCorrectionRatio)
                         
                         ShortDescriptionView(text: mushroom.shortDescription)
                         
