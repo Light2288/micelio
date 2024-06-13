@@ -10,12 +10,20 @@ import SwiftUI
 struct MushroomCatalogView: View {
     let mushrooms: [Mushroom] = mushroomData
     @State private var showLegend: Bool = false
+    @State private var searchTerm: String = ""
+    
+    var filteredMushrooms: [Mushroom] {
+        searchTerm.isEmpty ? mushrooms :
+        mushrooms.filter { mushroom in
+            mushroom.scientificName.localizedCaseInsensitiveContains(searchTerm)
+        }
+    }
     
     var body: some View {
         NavigationStack {
             GeometryReader { proxy in
                 List {
-                    ForEach(mushrooms) { mushroom in
+                    ForEach(filteredMushrooms) { mushroom in
                         NavigationLink {
                             MushroomDetailView(mushroom: mushroom)
                         } label: {
@@ -43,6 +51,7 @@ struct MushroomCatalogView: View {
             }
             .navigationTitle("Lista Funghi")
         }
+        .searchable(text: $searchTerm, prompt: "Cerca per nome scientifico")
     }
 }
 
