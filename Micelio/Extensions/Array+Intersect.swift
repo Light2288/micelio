@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+extension Array where Element : Hashable {
+    func isDisjoint(with secondArray: [Element]) -> Bool {
+        return Set(self).isDisjoint(with: Set(secondArray))
+    }
+}

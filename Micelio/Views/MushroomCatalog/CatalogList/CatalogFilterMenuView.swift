@@ -7,12 +7,23 @@
 
 import SwiftUI
 
-struct CatalogFilterMenuView: View {
+struct CatalogFilterMenuView<T: Identifiable & RawRepresentable & CaseIterable & Hashable> : View where T.AllCases: RandomAccessCollection, T.RawValue == String {
+    
+    let labelText: String
+    let someEnum: T.Type
+    @Binding var filters: [T]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Menu {
+            ForEach(someEnum.allCases.reversed()) { enumCase in
+                CatalogFilterMenuButtonView(enumCase: enumCase, filters: $filters)
+            }
+        } label: {
+            CatalogFilterMenuLabelView(labelText: labelText, filters: filters)
+        }
     }
 }
 
 #Preview {
-    CatalogFilterMenuView()
+    CatalogFilterMenuView<Edibility>(labelText: "Commestibilità", someEnum: Edibility.self, filters: .constant([.edible, .deadly]))
 }

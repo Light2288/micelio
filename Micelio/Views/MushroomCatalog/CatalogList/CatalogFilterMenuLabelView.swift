@@ -7,12 +7,26 @@
 
 import SwiftUI
 
-struct CatalogFilterMenuLabelView: View {
+struct CatalogFilterMenuLabelView<T: Identifiable & RawRepresentable & CaseIterable & Hashable> : View where T.AllCases: RandomAccessCollection, T.RawValue == String {
+    let labelText: String
+    let filters: [T]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(labelText)
+                .font(.caption)
+            if filters.count > 0 {
+                Text(filters.count.description)
+                    .font(.caption2)
+                    .foregroundColor(Color(.systemBackground))
+                    .padding(Constants.MushroomCatalog.CatalogFilter.CatalogFilterMenuLabel.appliedFiltersCountTextPadding)
+                    .background(.primary)
+                    .clipShape(Circle())
+            }
+        }
     }
 }
 
 #Preview {
-    CatalogFilterMenuLabelView()
+    CatalogFilterMenuLabelView(labelText: "Commestibilità", filters: [Edibility.edible, Edibility.noValue])
 }

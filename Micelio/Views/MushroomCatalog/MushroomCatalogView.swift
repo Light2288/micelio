@@ -12,6 +12,18 @@ struct MushroomCatalogView: View {
     @State private var showLegend: Bool = false
     @State private var searchTerm: String = ""
     @State private var groupBy: CatalogGroupBy = .initialLetter
+    @State private var filterBy: CatalogFilterBy = CatalogFilterBy()
+    
+    var areFiltersApplied: Bool {
+        !searchTerm.isEmpty || filterBy.edibilityFilters.count > 0 || filterBy.environmentFilters.count > 0 || filterBy.seasonFilters.count > 0
+    }
+    
+    func isMushroomInFilteredList(_ mushroom: Mushroom) -> Bool {
+        return (searchTerm.isEmpty || mushroom.scientificName.localizedCaseInsensitiveContains(searchTerm)) &&
+        (filterBy.edibilityFilters.isEmpty || filterBy.edibilityFilters.contains(mushroom.edibility)) &&
+        (filterBy.environmentFilters.isEmpty || !mushroom.environments.isDisjoint(with: filterBy.environmentFilters)) &&
+        (filterBy.seasonFilters.isEmpty || !mushroom.seasons.isDisjoint(with: filterBy.seasonFilters))
+    }
     
     var groupedMushrooms: [(key: String, value: [Mushroom])] {
         let groupedList: [String: [Mushroom]] = Dictionary(grouping: mushrooms) { mushroom in
@@ -19,21 +31,21 @@ struct MushroomCatalogView: View {
             case .initialLetter:
                 String(mushroom.scientificName[mushroom.scientificName.startIndex])
             case .edibility:
-                mushroom.edibility.edibilityTitle
+                mushroom.edibility.rawValue
             }
         }
         return groupedList.sorted { $0.key < $1.key }
     }
     
     var filteredGroupedMushrooms: [(key: String, value: [Mushroom])] {
-        return searchTerm.isEmpty ? groupedMushrooms :
+        return !areFiltersApplied ? groupedMushrooms :
         groupedMushrooms
             .map {
                 (
                     key: $0.key,
                     value: $0.value
                         .filter { mushroom in
-                            mushroom.scientificName.localizedCaseInsensitiveContains(searchTerm)
+                            isMushroomInFilteredList(mushroom)
                         }
                 )
             }
@@ -60,6 +72,13 @@ struct MushroomCatalogView: View {
                         
                     }
                 }
+                .overlay(
+                    Group {
+                    if filteredGroupedMushrooms.isEmpty {
+                        NoFilteredResultsOverlayView()
+                    }
+                }
+                )
             }
             .sheet(isPresented: $showLegend, content: {
                 LegendView(showLegend: $showLegend)
@@ -76,21 +95,13 @@ struct MushroomCatalogView: View {
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Menu {
-                        Text("Raggruppa per:")
-                        Picker("", selection: $groupBy) {
-                            ForEach(CatalogGroupBy.allCases) {
-                                Text($0.groupByTitle)
-                                    .tag($0)
-                            }
-                        }
-                        .pickerStyle(.inline)
-                    } label: {
-                        Image(systemName: "list.bullet.circle")
-                    }
+                    GroupByMenuView(groupBy: $groupBy)
                 }
             }
-            .navigationTitle("Lista Funghi")
+            .navigationTitle("Catalogo Funghi")
+            .safeAreaInset(edge: .bottom) {
+                CatalogFiltersView(filterBy: $filterBy)
+            }
         }
         .searchable(text: $searchTerm, prompt: "Cerca per nome scientifico")
     }

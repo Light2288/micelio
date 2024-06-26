@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+import Foundation
+
+extension String {
+    var removeWhitespacesAndLowercase: String {
+        return self.localizedLowercase.filter{ !$0.isWhitespace }
+    }
+}

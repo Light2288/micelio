@@ -9,7 +9,24 @@ import SwiftUI
 
 struct NoFilteredResultsOverlayView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image("noResults")
+                .resizable()
+                .scaledToFit()
+                .frame(
+                    width: Constants.MushroomCatalog.NoFilteredResults.imageFrameDimension,
+                    height: Constants.MushroomCatalog.NoFilteredResults.imageFrameDimension
+                )
+            Text("Ooops!")
+                .font(.title)
+                .padding()
+            Text("Sembra non ci sia nessun fungo che rispetti i filtri applicati")
+                .font(.title3)
+                .multilineTextAlignment(.center)
+            
+        }
+        .padding()
+        .foregroundStyle(.accent)
     }
 }
 

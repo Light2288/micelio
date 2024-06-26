@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct GroupByMenuView: View {
+    @Binding var groupBy: CatalogGroupBy
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Menu {
+            Text("Raggruppa per:")
+            Picker("", selection: $groupBy) {
+                ForEach(CatalogGroupBy.allCases) {
+                    Text($0.groupByTitle)
+                        .tag($0)
+                }
+            }
+            .pickerStyle(.inline)
+        } label: {
+            Image("group-list")
+        }
     }
 }
 
 #Preview {
-    GroupByMenuView()
+    GroupByMenuView(groupBy: .constant(.initialLetter))
 }

@@ -8,18 +8,18 @@
 import SwiftUI
 
 let legendItems: [LegendItem] = [
-    LegendItem(icon: "edible", iconColor: Color("CustomSecondaryColor"), text: Edibility.edible.edibilityTitle, legendSection: legendSections[0]),
-    LegendItem(icon: "edibleAfterCooking", iconColor: Color("CustomSecondaryColor"), text: Edibility.edibleAfterCooking.edibilityTitle, legendSection: legendSections[0]),
-    LegendItem(icon: "edibleWithoutAlcohol", iconColor: Color("CustomSecondaryColor"), text: Edibility.edibleWithoutAlcohol.edibilityTitle, legendSection: legendSections[0]),
-    LegendItem(icon: "noValue", iconColor: .orange, text: Edibility.noValue.edibilityTitle, legendSection: legendSections[0]),
-    LegendItem(icon: "poisonous", iconColor: .red, text: Edibility.poisonous.edibilityTitle, legendSection: legendSections[0]),
-    LegendItem(icon: "deadly", iconColor: .red, text: Edibility.deadly.edibilityTitle, legendSection: legendSections[0]),
-    LegendItem(icon: "broadLeavedForest", iconColor: Color("CustomSecondaryColor"), text: MushroomEnvironment.broadLeavedForest.environmentTitle, legendSection: legendSections[1]),
-    LegendItem(icon: "coniferousForest", iconColor: Color("CustomSecondaryColor"), text: MushroomEnvironment.coniferousForest.environmentTitle, legendSection: legendSections[1]),
-    LegendItem(icon: "field", iconColor: Color("CustomSecondaryColor"), text: MushroomEnvironment.field.environmentTitle, legendSection: legendSections[1]),
-    LegendItem(icon: "lignicolous", iconColor: Color("CustomSecondaryColor"), text: MushroomEnvironment.lignicolous.environmentTitle, legendSection: legendSections[1]),
-    LegendItem(icon: "spring", iconColor: Color("CustomSecondaryColor"), text: Season.spring.seasonTitle, legendSection: legendSections[2]),
-    LegendItem(icon: "summer", iconColor: Color("CustomSecondaryColor"), text: Season.summer.seasonTitle, legendSection: legendSections[2]),
-    LegendItem(icon: "autumn", iconColor: Color("CustomSecondaryColor"), text: Season.autumn.seasonTitle, legendSection: legendSections[2]),
-    LegendItem(icon: "winter", iconColor: Color("CustomSecondaryColor"), text: Season.winter.seasonTitle, legendSection: legendSections[2])
+    LegendItem(icon: Edibility.edible.rawValue.removeWhitespacesAndLowercase, iconColor: Color("CustomSecondaryColor"), text: Edibility.edible.rawValue, legendSection: legendSections[0]),
+    LegendItem(icon: Edibility.edibleAfterCooking.rawValue.removeWhitespacesAndLowercase, iconColor: Color("CustomSecondaryColor"), text: Edibility.edibleAfterCooking.rawValue, legendSection: legendSections[0]),
+    LegendItem(icon: Edibility.edibleWithoutAlcohol.rawValue.removeWhitespacesAndLowercase, iconColor: Color("CustomSecondaryColor"), text: Edibility.edibleWithoutAlcohol.rawValue, legendSection: legendSections[0]),
+    LegendItem(icon: Edibility.noValue.rawValue.removeWhitespacesAndLowercase, iconColor: .orange, text: Edibility.noValue.rawValue, legendSection: legendSections[0]),
+    LegendItem(icon: Edibility.poisonous.rawValue.removeWhitespacesAndLowercase, iconColor: .red, text: Edibility.poisonous.rawValue, legendSection: legendSections[0]),
+    LegendItem(icon: Edibility.deadly.rawValue.removeWhitespacesAndLowercase, iconColor: .red, text: Edibility.deadly.rawValue, legendSection: legendSections[0]),
+    LegendItem(icon: MushroomEnvironment.broadLeavedForest.rawValue.removeWhitespacesAndLowercase, iconColor: Color("CustomSecondaryColor"), text: MushroomEnvironment.broadLeavedForest.rawValue, legendSection: legendSections[1]),
+    LegendItem(icon: MushroomEnvironment.coniferousForest.rawValue.removeWhitespacesAndLowercase, iconColor: Color("CustomSecondaryColor"), text: MushroomEnvironment.coniferousForest.rawValue, legendSection: legendSections[1]),
+    LegendItem(icon: MushroomEnvironment.field.rawValue.removeWhitespacesAndLowercase, iconColor: Color("CustomSecondaryColor"), text: MushroomEnvironment.field.rawValue, legendSection: legendSections[1]),
+    LegendItem(icon: MushroomEnvironment.lignicolous.rawValue.removeWhitespacesAndLowercase, iconColor: Color("CustomSecondaryColor"), text: MushroomEnvironment.lignicolous.rawValue, legendSection: legendSections[1]),
+    LegendItem(icon: Season.spring.rawValue.removeWhitespacesAndLowercase, iconColor: Color("CustomSecondaryColor"), text: Season.spring.rawValue, legendSection: legendSections[2]),
+    LegendItem(icon: Season.summer.rawValue.removeWhitespacesAndLowercase, iconColor: Color("CustomSecondaryColor"), text: Season.summer.rawValue, legendSection: legendSections[2]),
+    LegendItem(icon: Season.autumn.rawValue.removeWhitespacesAndLowercase, iconColor: Color("CustomSecondaryColor"), text: Season.autumn.rawValue, legendSection: legendSections[2]),
+    LegendItem(icon: Season.winter.rawValue.removeWhitespacesAndLowercase, iconColor: Color("CustomSecondaryColor"), text: Season.winter.rawValue, legendSection: legendSections[2])
 ]

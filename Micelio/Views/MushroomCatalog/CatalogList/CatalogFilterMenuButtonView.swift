@@ -7,12 +7,29 @@
 
 import SwiftUI
 
-struct CatalogFilterMenuButtonView: View {
+struct CatalogFilterMenuButtonView<T: Identifiable & RawRepresentable & CaseIterable & Hashable> : View where T.AllCases: RandomAccessCollection, T.RawValue == String {
+    let enumCase: T
+    @Binding var filters: [T]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            if self.filters.contains(enumCase) {
+                self.filters.removeAll(where: { $0 == enumCase })
+            } else {
+                self.filters.append(enumCase)
+            }
+        }, label: {
+            HStack {
+                if self.filters.contains(enumCase) {
+                    Image(systemName: "checkmark")
+                }
+                Text(enumCase.rawValue)
+            }
+            
+        })
     }
 }
 
 #Preview {
-    CatalogFilterMenuButtonView()
+    CatalogFilterMenuButtonView(enumCase: Edibility.edible, filters: .constant([.edible, .deadly]))
 }

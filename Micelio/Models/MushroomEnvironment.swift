@@ -11,22 +11,9 @@ enum MushroomEnvironment: String, CaseIterable, Identifiable {
     
     var id: String { return self.rawValue }
     
-    var environmentTitle: String {
-        switch self {
-        case .broadLeavedForest:
-            "Foreste di latifoglie"
-        case .coniferousForest:
-            "Foreste di conifere"
-        case .field:
-            "Prati"
-        case .lignicolous:
-            "Lignicolo"
-        }
-    }
-    
-    case broadLeavedForest
-    case coniferousForest
-    case field
-    case lignicolous
+    case broadLeavedForest = "Foreste di latifoglie"
+    case coniferousForest = "Foreste di conifere"
+    case field = "Prati"
+    case lignicolous = "Lignicolo"
 
 }

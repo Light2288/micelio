@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct CatalogFilterBy {
+    var edibilityFilters: [Edibility] = []
+    var environmentFilters: [MushroomEnvironment] = []
+    var seasonFilters: [Season] = []
+}
