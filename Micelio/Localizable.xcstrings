@@ -29,6 +29,12 @@
         }
       }
     },
+    "Catalogo Funghi" : {
+
+    },
+    "Cerca per nome scientifico" : {
+
+    },
     "Close" : {
 
     },
@@ -51,6 +57,9 @@
     "Fai attenzione quando usi questa funzione! Il riconoscimento automatico non è infallibile, e non tutte le specie di funghi sono identificate dalla app; alcuni funghi commestibili sono molto simili a funghi tossici, e l'app potrebbe confonderli.\n%@" : {
 
     },
+    "Filtra per:" : {
+
+    },
     "Identify" : {
       "localizations" : {
         "it" : {
@@ -68,9 +77,6 @@
 
     },
     "Legenda" : {
-
-    },
-    "Lista Funghi" : {
 
     },
     "Map" : {
@@ -98,6 +104,9 @@
     "Note: %@" : {
 
     },
+    "Ooops!" : {
+
+    },
     "oppure scegli un'altra fotografia:" : {
 
     },
@@ -105,6 +114,9 @@
 
     },
     "Potrebbe anche essere:" : {
+
+    },
+    "Raggruppa per:" : {
 
     },
     "Riconosci fungo" : {
@@ -123,6 +135,9 @@
 
     },
     "Sembra che la foto scelta non contenga funghi.\nPuoi procedere lo stesso con il riconoscimento, ma i risultati potrebbero essere poco attendibili." : {
+
+    },
+    "Sembra non ci sia nessun fungo che rispetta i filtri applicati" : {
 
     },
     "Tipologia fungo:" : {

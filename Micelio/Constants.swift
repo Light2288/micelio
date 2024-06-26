@@ -179,6 +179,21 @@ enum Constants {
             public static let padding: CGFloat = 4
         }
         
+        enum NoFilteredResults {
+            public static let imageFrameDimension: CGFloat = 200
+        }
+        
+        enum CatalogFilter {
+            public static let vStackSpacing: CGFloat = 5
+            public static let hStackBottomPadding: CGFloat = 8
+            public static let vStackVerticalPadding: CGFloat = 10
+            public static let vStackShadowRadius: CGFloat = 1
+            
+            enum CatalogFilterMenuLabel {
+                public static let appliedFiltersCountTextPadding: CGFloat = 5
+            }
+        }
+        
         enum MushroomCatalogRow {
             public static let imageFrameSize: CGFloat = 80
             public static let clipShapeCornerSize: CGSize = CGSize(width: 20, height: 10)
