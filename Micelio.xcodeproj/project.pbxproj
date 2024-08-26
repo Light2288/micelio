@@ -14,6 +14,8 @@
 		6B0FBC432ACB677C00FDAA89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B0FBC422ACB677C00FDAA89 /* Preview Assets.xcassets */; };
 		6B0FBC452ACB677C00FDAA89 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FBC442ACB677C00FDAA89 /* Persistence.swift */; };
 		6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FBC462ACB677C00FDAA89 /* Micelio.xcdatamodeld */; };
+		6B16ACC32C3DE14F00D59D84 /* SplashScreenMushroomIconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B16ACC22C3DE14F00D59D84 /* SplashScreenMushroomIconsView.swift */; };
+		6B16ACC52C3DE26C00D59D84 /* SplashScreenMushroomIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B16ACC42C3DE26C00D59D84 /* SplashScreenMushroomIconView.swift */; };
 		6B239E0C2B6C581F00D7D8EB /* MushroomMapAnnotation+Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E0B2B6C581E00D7D8EB /* MushroomMapAnnotation+Coordinate.swift */; };
 		6B239E0E2B72F79E00D7D8EB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E0D2B72F79E00D7D8EB /* MapView.swift */; };
 		6B239E102B72FA1D00D7D8EB /* MapOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E0F2B72FA1D00D7D8EB /* MapOverlayView.swift */; };
@@ -511,6 +513,8 @@
 		6BB5576C2C0E870C00C37AA5 /* lactariusporninsis_7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BB557622C0E870C00C37AA5 /* lactariusporninsis_7.jpeg */; };
 		6BB5576D2C0E870C00C37AA5 /* lactariusporninsis_3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BB557632C0E870C00C37AA5 /* lactariusporninsis_3.jpeg */; };
 		6BB5576F2C0FBB3300C37AA5 /* ImageSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5576E2C0FBB3300C37AA5 /* ImageSliderView.swift */; };
+		6BB8A0CC2C375727005F9F92 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB8A0CB2C375727005F9F92 /* SplashScreenView.swift */; };
+		6BB8A0CF2C3DDA39005F9F92 /* SplashScreenBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB8A0CE2C3DDA39005F9F92 /* SplashScreenBackgroundView.swift */; };
 		6BBEC8BE2AF459C1000720FF /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBEC8BD2AF459C1000720FF /* LegendView.swift */; };
 		6BBEC8C02AF466D7000720FF /* LegendItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBEC8BF2AF466D7000720FF /* LegendItem.swift */; };
 		6BBEC8C22AF467CC000720FF /* LegendItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBEC8C12AF467CC000720FF /* LegendItems.swift */; };
@@ -547,6 +551,8 @@
 		6B0FBC422ACB677C00FDAA89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B0FBC442ACB677C00FDAA89 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		6B0FBC472ACB677C00FDAA89 /* Micelio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Micelio.xcdatamodel; sourceTree = "<group>"; };
+		6B16ACC22C3DE14F00D59D84 /* SplashScreenMushroomIconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenMushroomIconsView.swift; sourceTree = "<group>"; };
+		6B16ACC42C3DE26C00D59D84 /* SplashScreenMushroomIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenMushroomIconView.swift; sourceTree = "<group>"; };
 		6B239E0B2B6C581E00D7D8EB /* MushroomMapAnnotation+Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+Coordinate.swift"; sourceTree = "<group>"; };
 		6B239E0D2B72F79E00D7D8EB /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		6B239E0F2B72FA1D00D7D8EB /* MapOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOverlayView.swift; sourceTree = "<group>"; };
@@ -1044,6 +1050,8 @@
 		6BB557622C0E870C00C37AA5 /* lactariusporninsis_7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_7.jpeg; sourceTree = "<group>"; };
 		6BB557632C0E870C00C37AA5 /* lactariusporninsis_3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lactariusporninsis_3.jpeg; sourceTree = "<group>"; };
 		6BB5576E2C0FBB3300C37AA5 /* ImageSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderView.swift; sourceTree = "<group>"; };
+		6BB8A0CB2C375727005F9F92 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		6BB8A0CE2C3DDA39005F9F92 /* SplashScreenBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenBackgroundView.swift; sourceTree = "<group>"; };
 		6BBEC8BD2AF459C1000720FF /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		6BBEC8BF2AF466D7000720FF /* LegendItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendItem.swift; sourceTree = "<group>"; };
 		6BBEC8C12AF467CC000720FF /* LegendItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendItems.swift; sourceTree = "<group>"; };
@@ -2071,6 +2079,7 @@
 				6B820A7E2B2BB6E000724555 /* Recognise */,
 				6BA8B4CE2AD757BD005272D2 /* MushroomCatalog */,
 				6B0FBC3D2ACB677B00FDAA89 /* ContentView.swift */,
+				6BB8A0CD2C3DDA1C005F9F92 /* SplashScreen */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2098,6 +2107,17 @@
 				6B78358E2B043F5100166DB3 /* TitleAndDetails */,
 			);
 			path = MushroomDetail;
+			sourceTree = "<group>";
+		};
+		6BB8A0CD2C3DDA1C005F9F92 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6BB8A0CB2C375727005F9F92 /* SplashScreenView.swift */,
+				6BB8A0CE2C3DDA39005F9F92 /* SplashScreenBackgroundView.swift */,
+				6B16ACC22C3DE14F00D59D84 /* SplashScreenMushroomIconsView.swift */,
+				6B16ACC42C3DE26C00D59D84 /* SplashScreenMushroomIconView.swift */,
+			);
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 		6BBEC8C32AF46C43000720FF /* Legend */ = {
@@ -2710,6 +2730,8 @@
 				6B7A45802B9E708A000E3966 /* SaveAnnotationButtonView.swift in Sources */,
 				6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */,
 				6B908D4D2B7E5B46007FC5B7 /* MushroomMapAnnotation+RandomGenerator.swift in Sources */,
+				6B16ACC52C3DE26C00D59D84 /* SplashScreenMushroomIconView.swift in Sources */,
+				6B16ACC32C3DE14F00D59D84 /* SplashScreenMushroomIconsView.swift in Sources */,
 				6B820A8A2B2CC12C00724555 /* AddPhotoButtonsHStackView.swift in Sources */,
 				6BBEC8C72AF46D10000720FF /* LegendListRowView.swift in Sources */,
 				6B7CC3562B141B9B0042A8E4 /* MainAndAllImagesView.swift in Sources */,
@@ -2741,8 +2763,10 @@
 				6B908D562B8416C0007FC5B7 /* MushroomMapAnnotationSheetView.swift in Sources */,
 				6BA8B4CC2AD60F0F005272D2 /* MushroomMockGenerator.swift in Sources */,
 				6BCFB94B2B462BE600C6246E /* RecogniseImageStyle.swift in Sources */,
+				6BB8A0CC2C375727005F9F92 /* SplashScreenView.swift in Sources */,
 				6B7A1FF52B5F3D0C00B62640 /* ResultItemTextView.swift in Sources */,
 				6BB01E262B87CD860050A3A4 /* Mushroom+AnnotationMushroomName.swift in Sources */,
+				6BB8A0CF2C3DDA39005F9F92 /* SplashScreenBackgroundView.swift in Sources */,
 				6BE713252C2A237E00ABEA55 /* CatalogFiltersView.swift in Sources */,
 				6BE713222C2A22B200ABEA55 /* GroupByMenuView.swift in Sources */,
 				6BBEC8BE2AF459C1000720FF /* LegendView.swift in Sources */,

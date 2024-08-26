@@ -10,22 +10,40 @@ import CoreData
 
 struct ContentView: View {
     
+    @State private var showSplashScreen: Bool = true
+    
+    @MainActor func hideSplashScreen() async {
+        Task(priority: .background) {
+            try? await Task.sleep(nanoseconds: Constants.SplashScreen.hideSplashScreenDelay)
+            withAnimation {
+                showSplashScreen.toggle()
+            }
+        }
+    }
+    
     var body: some View {
-        TabView {
-            MushroomMapView()
-                .tabItem {
-                    Label("Map", image: "mushroom-map")
+        if showSplashScreen {
+            SplashScreenView()
+                .task {
+                    await hideSplashScreen()
                 }
-            
-            RecogniseView()
-                .tabItem {
-                    Label("Identify", image: "mushroom-identify")
-                }
-            
-            MushroomCatalogView()
-                .tabItem {
-                    Label("Catalog", image: "catalog")
-                }
+        } else {
+            TabView {
+                MushroomMapView()
+                    .tabItem {
+                        Label("Map", image: "mushroom-map")
+                    }
+                
+                RecogniseView()
+                    .tabItem {
+                        Label("Identify", image: "mushroom-identify")
+                    }
+                
+                MushroomCatalogView()
+                    .tabItem {
+                        Label("Catalog", image: "catalog")
+                    }
+            }
         }
     }
 }
