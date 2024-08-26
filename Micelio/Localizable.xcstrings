@@ -89,6 +89,9 @@
         }
       }
     },
+    "Micelio" : {
+
+    },
     "Mostra" : {
 
     },
@@ -137,7 +140,7 @@
     "Sembra che la foto scelta non contenga funghi.\nPuoi procedere lo stesso con il riconoscimento, ma i risultati potrebbero essere poco attendibili." : {
 
     },
-    "Sembra non ci sia nessun fungo che rispetta i filtri applicati" : {
+    "Sembra non ci sia nessun fungo che rispetti i filtri applicati" : {
 
     },
     "Tipologia fungo:" : {
