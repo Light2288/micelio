@@ -65,7 +65,7 @@ enum Constants {
         public static let showMainTextAnimationDuration: TimeInterval = 0.6
         public static let showMainTextAnimationDelay: TimeInterval = 0.35
         public static let mainTextFontSize: CGFloat = 60
-        public static let hideSplashScreenDelay: UInt64 = 4300000000
+        public static let hideSplashScreenDelay: UInt64 = 4000000000
         
         enum MushroomIcons {
             public static let showMushroomIconsTaskDelay: UInt64 = 400000000
