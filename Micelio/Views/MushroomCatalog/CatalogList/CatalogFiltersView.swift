@@ -13,11 +13,20 @@ struct CatalogFiltersView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: Constants.MushroomCatalog.CatalogFilter.vStackSpacing) {
             HStack {
-                Image(systemName: "line.3.horizontal.decrease.circle")
-                Text("Filtra per:")
+                Group {
+                    Image(systemName: "line.3.horizontal.decrease.circle")
+                    Text("Filtra per:")
+                }
+                .foregroundStyle(.accent)
+                Spacer()
+                Button("Cancella filtri", systemImage: "trash", role: .destructive) {
+                    filterBy = CatalogFilterBy()
+                }
+                .disabled(filterBy.noFiltersSet)
+                .font(.footnote)
             }
-            .foregroundStyle(.accent)
             .padding(.bottom, Constants.MushroomCatalog.CatalogFilter.hStackBottomPadding)
+            
             HStack {
                 CatalogFilterMenuView(labelText: "Commestibilità", someEnum: Edibility.self, filters: $filterBy.edibilityFilters)
                 CatalogFilterMenuView(labelText: "Habitat", someEnum: MushroomEnvironment.self, filters: $filterBy.environmentFilters)
