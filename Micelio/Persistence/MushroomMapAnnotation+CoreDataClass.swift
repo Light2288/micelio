@@ -2,7 +2,7 @@
 //  MushroomMapAnnotation+CoreDataClass.swift
 //  Micelio
 //
-//  Created by Davide Aliti on 15/02/24.
+//  Created by Davide Aliti on 05/09/24.
 //
 //
 

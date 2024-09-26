@@ -14,11 +14,12 @@ struct AnnotationEditView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
-        
+    
     @State var selectedMushroomName: String = ""
     @State var otherMushroomNameText: String = ""
     @State var notes: String = ""
     @State var selectedColor = ""
+    @State var newAnnotationPhotos = Set<MushroomMapAnnotationPhoto>()
     
     var mushroomNames: [String] {
         var names = mushroomData.map { $0.annotationMushroomName }
@@ -40,6 +41,13 @@ struct AnnotationEditView: View {
                     NotesTextView(notes: $notes)
                     
                     PinColorChoiceView(selectedColor: $selectedColor)
+                    
+                    Text("Aggiungi fino a 5 immagini:")
+                    AnnotationPhotosView(
+                        annotationPhotos: annotation?.mushroomMapAnnotationPhotos?.union(newAnnotationPhotos),
+                        addPhotoView: { AddAnnotationPhotoView(newAnnotationPhotos: $newAnnotationPhotos) }
+                    )
+                    
                 }
             }
             Spacer()
@@ -65,6 +73,7 @@ extension AnnotationEditView {
         annotation?.mushroomName = selectedMushroomName == "Altro" ? otherMushroomNameText : selectedMushroomName
         annotation?.notes = notes
         annotation?.color = selectedColor
+        annotation?.addToMushroomMapAnnotationPhotos(newAnnotationPhotos)
         do {
             defer {
                 UINotificationFeedbackGenerator().notificationOccurred(.success)
@@ -86,12 +95,14 @@ extension AnnotationEditView {
             selectedColor = "accent"
             return
         }
+        
         if mushroomNames.contains(mushroomName) {
             selectedMushroomName = mushroomName
         } else {
             selectedMushroomName = "Altro"
             otherMushroomNameText = mushroomName
         }
+        
         notes = annotationNotes
         selectedColor = annotationColor
     }

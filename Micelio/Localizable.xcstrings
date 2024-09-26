@@ -10,6 +10,22 @@
     "%@" : {
 
     },
+    "%lld/%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/%2$lld"
+          }
+        }
+      }
+    },
+    "Aggiungi fino a 5 immagini:" : {
+
+    },
+    "Aggiungi foto" : {
+
+    },
     "Annulla" : {
 
     },
@@ -57,10 +73,16 @@
     "Elimina segnaposto" : {
 
     },
+    "Errore nel caricamento della foto" : {
+
+    },
     "Fai attenzione quando usi questa funzione! Il riconoscimento automatico non è infallibile, e non tutte le specie di funghi sono identificate dalla app; alcuni funghi commestibili sono molto simili a funghi tossici, e l'app potrebbe confonderli.\n%@" : {
 
     },
     "Filtra per:" : {
+
+    },
+    "Fotocamera" : {
 
     },
     "Identify" : {
@@ -76,10 +98,16 @@
     "Il fungo fotografato sembra essere:" : {
 
     },
+    "Immagini:" : {
+
+    },
     "Inserisci manualmente la tipologia di fungo" : {
 
     },
     "Legenda" : {
+
+    },
+    "Libreria foto" : {
 
     },
     "Map" : {
@@ -101,6 +129,9 @@
     "Nascondi" : {
 
     },
+    "nessuna immagine presente" : {
+
+    },
     "Non è stato possibile riconoscere alcun fungo dalla fotografia utilizzata" : {
 
     },
@@ -116,7 +147,7 @@
     "oppure scegli un'altra fotografia:" : {
 
     },
-    "Per inserire la posizione di un fungo, premi a lungo sulla mappa o usa il tasto in basso a destra" : {
+    "Per inserire la posizione di un fungo, premi due volte sulla mappa o usa il tasto in basso a destra" : {
 
     },
     "Potrebbe anche essere:" : {

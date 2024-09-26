@@ -17,6 +17,13 @@ struct AnnotationDisplayView: View {
             if let notes = annotation?.notes, !notes.isEmpty {
                 Text("Note: \(notes)")
             }
+            HStack(content: {
+                Text("Immagini:")
+                if let annotationPhotos = annotation?.mushroomMapAnnotationPhotos, annotationPhotos.isEmpty {
+                    Text("nessuna immagine presente")
+                }
+            })
+            AnnotationPhotosView(annotationPhotos: annotation?.mushroomMapAnnotationPhotos, addPhotoView: { EmptyView() })
         }
         .font(.subheadline)
     }

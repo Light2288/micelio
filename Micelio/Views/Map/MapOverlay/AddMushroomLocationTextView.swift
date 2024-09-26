@@ -11,7 +11,7 @@ struct AddMushroomLocationTextView: View {
     var size: CGSize
     
     var body: some View {
-        Text("Per inserire la posizione di un fungo, premi a lungo sulla mappa o usa il tasto in basso a destra")
+        Text("Per inserire la posizione di un fungo, premi due volte sulla mappa o usa il tasto in basso a destra")
             .font(.caption2)
             .fontWeight(.semibold)
             .multilineTextAlignment(.center)
