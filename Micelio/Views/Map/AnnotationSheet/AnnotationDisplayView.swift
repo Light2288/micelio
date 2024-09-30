@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AnnotationDisplayView: View {
-    var annotation: MushroomMapAnnotation?
+    @Binding var annotation: MushroomMapAnnotation?
     
     var body: some View {
         VStack(alignment: .leading, spacing: Constants.MushroomMap.AnnotationSheet.DisplayView.vStackSpacing) {
@@ -23,12 +23,12 @@ struct AnnotationDisplayView: View {
                     Text("nessuna immagine presente")
                 }
             })
-            AnnotationPhotosView(annotationPhotos: annotation?.mushroomMapAnnotationPhotos, addPhotoView: { EmptyView() })
+            AnnotationPhotosView(annotation: $annotation, newAnnotationPhotos: .constant([]), photosToDeleteIds: .constant([]), addPhotoView: { EmptyView() })
         }
         .font(.subheadline)
     }
 }
 
 #Preview {
-    AnnotationDisplayView()
+    AnnotationDisplayView(annotation: .constant(nil))
 }

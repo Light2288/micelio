@@ -20,6 +20,7 @@ struct AnnotationEditView: View {
     @State var notes: String = ""
     @State var selectedColor = ""
     @State var newAnnotationPhotos = Set<MushroomMapAnnotationPhoto>()
+    @State var photosToDeleteIds: [UUID] = []
     
     var mushroomNames: [String] {
         var names = mushroomData.map { $0.annotationMushroomName }
@@ -44,7 +45,8 @@ struct AnnotationEditView: View {
                     
                     Text("Aggiungi fino a 5 immagini:")
                     AnnotationPhotosView(
-                        annotationPhotos: annotation?.mushroomMapAnnotationPhotos?.union(newAnnotationPhotos),
+                        annotation: $annotation,
+                        newAnnotationPhotos: $newAnnotationPhotos, photosToDeleteIds: $photosToDeleteIds,
                         addPhotoView: { AddAnnotationPhotoView(newAnnotationPhotos: $newAnnotationPhotos) }
                     )
                     
@@ -52,7 +54,7 @@ struct AnnotationEditView: View {
             }
             Spacer()
             
-            SaveAnnotationButtonView(saveAnnotation: saveAnnotation)
+            ConfirmAnnotationEditButtonView(confirmAnnotationEdit: saveAnnotation)
         }
         .onAppear {
             setupView()
@@ -74,6 +76,7 @@ extension AnnotationEditView {
         annotation?.notes = notes
         annotation?.color = selectedColor
         annotation?.addToMushroomMapAnnotationPhotos(newAnnotationPhotos)
+        annotation?.mushroomMapAnnotationPhotos = annotation?.mushroomMapAnnotationPhotos?.filter({ photosToDeleteIds.contains($0.id!) })
         do {
             defer {
                 UINotificationFeedbackGenerator().notificationOccurred(.success)

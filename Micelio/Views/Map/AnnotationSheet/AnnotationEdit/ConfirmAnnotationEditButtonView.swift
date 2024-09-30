@@ -1,5 +1,5 @@
 //
-//  SaveAnnotationButtonView.swift
+//  ConfirmAnnotationEditButtonView.swift
 //  Micelio
 //
 //  Created by Davide Aliti on 10/03/24.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct SaveAnnotationButtonView: View {
+struct ConfirmAnnotationEditButtonView: View {
     
-    var saveAnnotation: () -> Void
+    var confirmAnnotationEdit: () -> Void
     
     var body: some View {
         Button(action: {
-            saveAnnotation()
+            confirmAnnotationEdit()
         }, label: {
             Text("Salva")
                 .font(.title3)
-                .padding(Constants.MushroomMap.AnnotationSheet.EditView.SaveAnnotationButton.labelPadding)
+                .padding(Constants.MushroomMap.AnnotationSheet.EditView.ConfirmAnnotationEditButton.labelPadding)
                 .frame(maxWidth: .infinity)
         })
         .buttonStyle(.borderedProminent)
@@ -27,5 +27,5 @@ struct SaveAnnotationButtonView: View {
 #Preview {
     func saveAnnotation() { }
     
-    return SaveAnnotationButtonView(saveAnnotation: saveAnnotation)
+    return ConfirmAnnotationEditButtonView(confirmAnnotationEdit: saveAnnotation)
 }

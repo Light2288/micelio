@@ -301,7 +301,7 @@
 		6B7A20092B670A9E00B62640 /* MushroomNotDetectedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A20082B670A9E00B62640 /* MushroomNotDetectedTextView.swift */; };
 		6B7A457C2B9E6465000E3966 /* PinColorChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A457B2B9E6465000E3966 /* PinColorChoiceView.swift */; };
 		6B7A457E2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A457D2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift */; };
-		6B7A45802B9E708A000E3966 /* SaveAnnotationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A457F2B9E708A000E3966 /* SaveAnnotationButtonView.swift */; };
+		6B7A45802B9E708A000E3966 /* ConfirmAnnotationEditButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A457F2B9E708A000E3966 /* ConfirmAnnotationEditButtonView.swift */; };
 		6B7CC3542B141ACE0042A8E4 /* AllImagesContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC3532B141ACE0042A8E4 /* AllImagesContainerView.swift */; };
 		6B7CC3562B141B9B0042A8E4 /* MainAndAllImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC3552B141B9B0042A8E4 /* MainAndAllImagesView.swift */; };
 		6B7CC3592B19134D0042A8E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC3582B19134D0042A8E4 /* Constants.swift */; };
@@ -844,7 +844,7 @@
 		6B7A20082B670A9E00B62640 /* MushroomNotDetectedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomNotDetectedTextView.swift; sourceTree = "<group>"; };
 		6B7A457B2B9E6465000E3966 /* PinColorChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinColorChoiceView.swift; sourceTree = "<group>"; };
 		6B7A457D2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinColorChoiceButtonLabelView.swift; sourceTree = "<group>"; };
-		6B7A457F2B9E708A000E3966 /* SaveAnnotationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAnnotationButtonView.swift; sourceTree = "<group>"; };
+		6B7A457F2B9E708A000E3966 /* ConfirmAnnotationEditButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAnnotationEditButtonView.swift; sourceTree = "<group>"; };
 		6B7CC3532B141ACE0042A8E4 /* AllImagesContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllImagesContainerView.swift; sourceTree = "<group>"; };
 		6B7CC3552B141B9B0042A8E4 /* MainAndAllImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAndAllImagesView.swift; sourceTree = "<group>"; };
 		6B7CC3582B19134D0042A8E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -1756,7 +1756,7 @@
 				6B8E4B822B9D27F500EAE603 /* NotesTextView.swift */,
 				6B7A457B2B9E6465000E3966 /* PinColorChoiceView.swift */,
 				6B7A457D2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift */,
-				6B7A457F2B9E708A000E3966 /* SaveAnnotationButtonView.swift */,
+				6B7A457F2B9E708A000E3966 /* ConfirmAnnotationEditButtonView.swift */,
 				6B283A802C8BAC1F002614A4 /* AddAnnotationImagView.swift */,
 			);
 			path = AnnotationEdit;
@@ -2747,7 +2747,7 @@
 				6B239E0C2B6C581F00D7D8EB /* MushroomMapAnnotation+Coordinate.swift in Sources */,
 				6B0FBC3E2ACB677B00FDAA89 /* ContentView.swift in Sources */,
 				6BFF3A4F2C2CC22B001C91E5 /* NoFilteredResultsOverlayView.swift in Sources */,
-				6B7A45802B9E708A000E3966 /* SaveAnnotationButtonView.swift in Sources */,
+				6B7A45802B9E708A000E3966 /* ConfirmAnnotationEditButtonView.swift in Sources */,
 				6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */,
 				6B908D4D2B7E5B46007FC5B7 /* MushroomMapAnnotation+RandomGenerator.swift in Sources */,
 				6B16ACC52C3DE26C00D59D84 /* SplashScreenMushroomIconView.swift in Sources */,

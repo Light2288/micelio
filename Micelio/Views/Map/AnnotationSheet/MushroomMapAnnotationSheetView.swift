@@ -19,7 +19,7 @@ struct MushroomMapAnnotationSheetView: View {
             if isAnnotationEditMode {
                 AnnotationEditView(annotation: $annotation, centerMapOnLocation: $centerMapOnLocation)
             } else {
-                AnnotationDisplayView(annotation: annotation)
+                AnnotationDisplayView(annotation: $annotation)
             }
             Spacer()
         }
