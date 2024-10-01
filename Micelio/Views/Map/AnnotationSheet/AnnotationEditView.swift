@@ -76,7 +76,7 @@ extension AnnotationEditView {
         annotation?.notes = notes
         annotation?.color = selectedColor
         annotation?.addToMushroomMapAnnotationPhotos(newAnnotationPhotos)
-        annotation?.mushroomMapAnnotationPhotos = annotation?.mushroomMapAnnotationPhotos?.filter({ photosToDeleteIds.contains($0.id!) })
+        annotation?.mushroomMapAnnotationPhotos = annotation?.mushroomMapAnnotationPhotos?.filter({ !photosToDeleteIds.contains($0.id!) })
         do {
             defer {
                 UINotificationFeedbackGenerator().notificationOccurred(.success)

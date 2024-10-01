@@ -65,7 +65,7 @@ struct AnnotationPhotosView<AddPhotoView: View>: View {
                         }
                     }
                 }
-                if let annotationPhotos = annotation?.mushroomMapAnnotationPhotos, annotationPhotos.count < 5 {
+                if let annotationPhotos = annotation?.mushroomMapAnnotationPhotos, (annotationPhotos.count + newAnnotationPhotos.count - photosToDeleteIds.count) < 5 {
                     addPhotoView
                 }
             })
