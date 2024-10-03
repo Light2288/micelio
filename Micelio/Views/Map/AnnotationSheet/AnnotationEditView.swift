@@ -11,6 +11,7 @@ import CoreLocation
 struct AnnotationEditView: View {
     @Binding var annotation: MushroomMapAnnotation?
     @Binding var centerMapOnLocation: (CLLocationCoordinate2D) -> Void
+    @Binding var isEditMode: Bool
     
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
@@ -54,7 +55,7 @@ struct AnnotationEditView: View {
             }
             Spacer()
             
-            ConfirmAnnotationEditButtonView(confirmAnnotationEdit: saveAnnotation)
+            ConfirmAnnotationEditButtonView(confirmAnnotationEdit: confirmAnnotationEdit, cancelAnnotationEdit: cancelAnnotationEdit)
         }
         .onAppear {
             setupView()
@@ -63,14 +64,9 @@ struct AnnotationEditView: View {
 }
 
 extension AnnotationEditView {
-    func saveAnnotation() {
+    func confirmAnnotationEdit() {
         defer {
-            let location = CLLocationCoordinate2D(
-                latitude: annotation?.latitude ?? 0,
-                longitude: annotation?.longitude ?? 0)
-            centerMapOnLocation(location)
-            annotation = nil
-            dismiss()
+            isEditMode.toggle()
         }
         annotation?.mushroomName = selectedMushroomName == "Altro" ? otherMushroomNameText : selectedMushroomName
         annotation?.notes = notes
@@ -87,6 +83,10 @@ extension AnnotationEditView {
             fatalError("Errore non risolvibile \(nsError) \(nsError.userInfo)")
         }
     }
+    
+    func cancelAnnotationEdit() {
+        isEditMode.toggle()
+    }
 }
 
 extension AnnotationEditView {
@@ -99,7 +99,7 @@ extension AnnotationEditView {
             return
         }
         
-        if mushroomNames.contains(mushroomName) {
+        if mushroomNames.filter({ $0 != "Altro" }).contains(mushroomName) {
             selectedMushroomName = mushroomName
         } else {
             selectedMushroomName = "Altro"
@@ -114,10 +114,8 @@ extension AnnotationEditView {
 #Preview {
     let context = PersistenceController.preview.container.viewContext
     
-    func animatedCenterMap(on: CLLocationCoordinate2D) -> () {
-        return
-    }
+    func animatedCenterMap(on: CLLocationCoordinate2D) -> () { }
     
-    return AnnotationEditView(annotation: .constant(MushroomMapAnnotation(context: context)), centerMapOnLocation: .constant(animatedCenterMap(on:)))
+    return AnnotationEditView(annotation: .constant(MushroomMapAnnotation(context: context)), centerMapOnLocation: .constant(animatedCenterMap(on:)), isEditMode: .constant(true))
         .environment(\.managedObjectContext, context)
 }
