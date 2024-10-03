@@ -21,37 +21,44 @@ struct AnnotationSheetButtonHStackView: View {
     
     var body: some View {
         HStack(spacing: Constants.MushroomMap.AnnotationSheet.ButtonHStack.spacing) {
-            Button(action: {
-                isAnnotationEditMode.toggle()
-            }, label: {
-                Image(systemName: "pencil")
-                    .symbolVariant(isAnnotationEditMode ? .slash : .fill)
-                    .imageScale(.medium)
-                    .font(.title)
-            })
+            if !isAnnotationEditMode {
+                Button(action: {
+                    isAnnotationEditMode.toggle()
+                }, label: {
+                    Image(systemName: "pencil")
+                        .imageScale(.medium)
+                        .font(.title)
+                })
+            }
             
-            Button(role: .destructive, action: {
-                showDeleteAnnotationAlert.toggle()
-            }, label: {
-                Image(systemName: "trash")
-                    .symbolVariant(.fill)
-                    .imageScale(.small)
-                    .font(.title)
-            })
+            if isAnnotationEditMode {
+                Button(role: .destructive, action: {
+                    showDeleteAnnotationAlert.toggle()
+                }, label: {
+                    Image(systemName: "trash")
+                        .symbolVariant(.fill)
+                        .imageScale(.small)
+                        .font(.title)
+                })
+            }
+            
             Spacer()
-            Button(action: {
-                let location = CLLocationCoordinate2D(
-                    latitude: annotation?.latitude ?? 0,
-                    longitude: annotation?.longitude ?? 0)
-                centerMapOnLocation(location)
-                annotation = nil
-                dismiss()
-            }, label: {
-                Image(systemName: "xmark.circle")
-                    .symbolVariant(.fill)
-                    .imageScale(.medium)
-                    .font(.title)
-            })
+            
+            if !isAnnotationEditMode {
+                Button(action: {
+                    let location = CLLocationCoordinate2D(
+                        latitude: annotation?.latitude ?? 0,
+                        longitude: annotation?.longitude ?? 0)
+                    centerMapOnLocation(location)
+                    annotation = nil
+                    dismiss()
+                }, label: {
+                    Image(systemName: "xmark.circle")
+                        .symbolVariant(.fill)
+                        .imageScale(.medium)
+                        .font(.title)
+                })
+            }
         }
         .padding(.bottom, Constants.MushroomMap.AnnotationSheet.ButtonHStack.bottomPadding)
         .confirmationDialog(

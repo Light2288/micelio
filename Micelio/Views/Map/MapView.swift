@@ -14,7 +14,7 @@ import CoreData
 struct MapView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @StateObject var manager = LocationManager()
-    @State var longPressLocation = CGPoint.zero
+    @State var doubleTapLocation = CGPoint.zero
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \MushroomMapAnnotation.id, ascending: false)],
         animation: .default)
@@ -40,24 +40,15 @@ struct MapView: View {
             }
         )
         .edgesIgnoringSafeArea([.top, .horizontal])
-        .gesture(
-            LongPressGesture(minimumDuration: Constants.MushroomMap.Map.longPressMinimumDuration)
-                .sequenced(before: DragGesture(
-                    minimumDistance: .zero,
-                    coordinateSpace: .local))
-                .onEnded { value in
-                    switch value {
-                    case .second(true, let drag):
-                        longPressLocation = drag?.location ?? .zero
-                        let location = convertTapToCoordinate(at: longPressLocation, for: size)
-                        let correctedCenterLocation = CGPoint(x: longPressLocation.x, y: longPressLocation.y + size.height/4)
-                        let visibleCenterLocation = convertTapToCoordinate(at: correctedCenterLocation, for: size)
-                        setPin(at: location, centerMapAt: visibleCenterLocation)
-                    default:
-                        break
-                    }
-                })
-        .highPriorityGesture(DragGesture(minimumDistance: Constants.MushroomMap.Map.dragGestureMinimumDistance))
+        .highPriorityGesture(SpatialTapGesture(count: 2, coordinateSpace: .local)
+            .onEnded { event in
+                doubleTapLocation = event.location
+                let location = convertTapToCoordinate(at: doubleTapLocation, for: size)
+                let correctedCenterLocation = CGPoint(x: doubleTapLocation.x, y: doubleTapLocation.y + size.height/4)
+                let visibleCenterLocation = convertTapToCoordinate(at: correctedCenterLocation, for: size)
+                setPin(at: location, centerMapAt: visibleCenterLocation)
+            }
+        )
         .onAppear(perform: {
             self.centerOnUserPositionClosure = centerOnUserPosition
             self.addPinToMapCenterClosure = addPinToMapCenter

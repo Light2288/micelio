@@ -11,14 +11,17 @@ import CoreLocation
 struct AnnotationEditView: View {
     @Binding var annotation: MushroomMapAnnotation?
     @Binding var centerMapOnLocation: (CLLocationCoordinate2D) -> Void
+    @Binding var isEditMode: Bool
     
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
-        
+    
     @State var selectedMushroomName: String = ""
     @State var otherMushroomNameText: String = ""
     @State var notes: String = ""
     @State var selectedColor = ""
+    @State var newAnnotationPhotos = Set<MushroomMapAnnotationPhoto>()
+    @State var photosToDeleteIds: [UUID] = []
     
     var mushroomNames: [String] {
         var names = mushroomData.map { $0.annotationMushroomName }
@@ -40,11 +43,19 @@ struct AnnotationEditView: View {
                     NotesTextView(notes: $notes)
                     
                     PinColorChoiceView(selectedColor: $selectedColor)
+                    
+                    Text("Aggiungi fino a 5 immagini:")
+                    AnnotationPhotosView(
+                        annotation: $annotation,
+                        newAnnotationPhotos: $newAnnotationPhotos, photosToDeleteIds: $photosToDeleteIds,
+                        addPhotoView: { AddAnnotationPhotoView(newAnnotationPhotos: $newAnnotationPhotos) }
+                    )
+                    
                 }
             }
             Spacer()
             
-            SaveAnnotationButtonView(saveAnnotation: saveAnnotation)
+            ConfirmAnnotationEditButtonView(confirmAnnotationEdit: confirmAnnotationEdit, cancelAnnotationEdit: cancelAnnotationEdit)
         }
         .onAppear {
             setupView()
@@ -53,18 +64,15 @@ struct AnnotationEditView: View {
 }
 
 extension AnnotationEditView {
-    func saveAnnotation() {
+    func confirmAnnotationEdit() {
         defer {
-            let location = CLLocationCoordinate2D(
-                latitude: annotation?.latitude ?? 0,
-                longitude: annotation?.longitude ?? 0)
-            centerMapOnLocation(location)
-            annotation = nil
-            dismiss()
+            isEditMode.toggle()
         }
         annotation?.mushroomName = selectedMushroomName == "Altro" ? otherMushroomNameText : selectedMushroomName
         annotation?.notes = notes
         annotation?.color = selectedColor
+        annotation?.addToMushroomMapAnnotationPhotos(newAnnotationPhotos)
+        annotation?.mushroomMapAnnotationPhotos = annotation?.mushroomMapAnnotationPhotos?.filter({ !photosToDeleteIds.contains($0.id!) })
         do {
             defer {
                 UINotificationFeedbackGenerator().notificationOccurred(.success)
@@ -74,6 +82,10 @@ extension AnnotationEditView {
             let nsError = error as NSError
             fatalError("Errore non risolvibile \(nsError) \(nsError.userInfo)")
         }
+    }
+    
+    func cancelAnnotationEdit() {
+        isEditMode.toggle()
     }
 }
 
@@ -86,12 +98,14 @@ extension AnnotationEditView {
             selectedColor = "accent"
             return
         }
-        if mushroomNames.contains(mushroomName) {
+        
+        if mushroomNames.filter({ $0 != "Altro" }).contains(mushroomName) {
             selectedMushroomName = mushroomName
         } else {
             selectedMushroomName = "Altro"
             otherMushroomNameText = mushroomName
         }
+        
         notes = annotationNotes
         selectedColor = annotationColor
     }
@@ -100,10 +114,8 @@ extension AnnotationEditView {
 #Preview {
     let context = PersistenceController.preview.container.viewContext
     
-    func animatedCenterMap(on: CLLocationCoordinate2D) -> () {
-        return
-    }
+    func animatedCenterMap(on: CLLocationCoordinate2D) -> () { }
     
-    return AnnotationEditView(annotation: .constant(MushroomMapAnnotation(context: context)), centerMapOnLocation: .constant(animatedCenterMap(on:)))
+    return AnnotationEditView(annotation: .constant(MushroomMapAnnotation(context: context)), centerMapOnLocation: .constant(animatedCenterMap(on:)), isEditMode: .constant(true))
         .environment(\.managedObjectContext, context)
 }

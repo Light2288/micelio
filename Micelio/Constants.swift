@@ -124,7 +124,7 @@ enum Constants {
                     public static let maxHeight: CGFloat = 30
                 }
                 
-                enum SaveAnnotationButton {
+                enum ConfirmAnnotationEditButton {
                     public static let labelPadding: CGFloat = 5
                 }
             }

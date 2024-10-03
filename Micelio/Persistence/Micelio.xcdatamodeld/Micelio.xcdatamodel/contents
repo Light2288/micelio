@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="23C71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="23G93" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="MushroomMapAnnotation" representedClassName="MushroomMapAnnotation" syncable="YES">
         <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -7,5 +7,12 @@
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="mushroomName" optional="YES" attributeType="String"/>
         <attribute name="notes" optional="YES" attributeType="String"/>
+        <relationship name="mushroomMapAnnotationPhotos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MushroomMapAnnotationPhoto" inverseName="mushroomMapAnnotation" inverseEntity="MushroomMapAnnotationPhoto"/>
+    </entity>
+    <entity name="MushroomMapAnnotationPhoto" representedClassName="MushroomMapAnnotationPhoto" syncable="YES">
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <relationship name="mushroomMapAnnotation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MushroomMapAnnotation" inverseName="mushroomMapAnnotationPhotos" inverseEntity="MushroomMapAnnotation"/>
     </entity>
 </model>
