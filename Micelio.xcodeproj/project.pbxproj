@@ -540,6 +540,7 @@
 		6BCFBA4D2B4E149700C6246E /* ResultsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFBA4C2B4E149700C6246E /* ResultsListView.swift */; };
 		6BCFBAAB2B52001200C6246E /* ResultItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFBAAA2B52001200C6246E /* ResultItemView.swift */; };
 		6BCFBAB12B520BB600C6246E /* MicelioMushroomClassifier_v3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFBAB02B520BB600C6246E /* MicelioMushroomClassifier_v3.mlmodel */; };
+		6BE1332E2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE1332D2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift */; };
 		6BE713222C2A22B200ABEA55 /* GroupByMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE713212C2A22B200ABEA55 /* GroupByMenuView.swift */; };
 		6BE713252C2A237E00ABEA55 /* CatalogFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE713242C2A237E00ABEA55 /* CatalogFiltersView.swift */; };
 		6BE713272C2A276600ABEA55 /* CatalogFilterMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE713262C2A276600ABEA55 /* CatalogFilterMenuView.swift */; };
@@ -1085,6 +1086,7 @@
 		6BCFBA4C2B4E149700C6246E /* ResultsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsListView.swift; sourceTree = "<group>"; };
 		6BCFBAAA2B52001200C6246E /* ResultItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultItemView.swift; sourceTree = "<group>"; };
 		6BCFBAB02B520BB600C6246E /* MicelioMushroomClassifier_v3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MicelioMushroomClassifier_v3.mlmodel; sourceTree = "<group>"; };
+		6BE1332D2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+CreationDateString.swift"; sourceTree = "<group>"; };
 		6BE713212C2A22B200ABEA55 /* GroupByMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupByMenuView.swift; sourceTree = "<group>"; };
 		6BE713242C2A237E00ABEA55 /* CatalogFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFiltersView.swift; sourceTree = "<group>"; };
 		6BE713262C2A276600ABEA55 /* CatalogFilterMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFilterMenuView.swift; sourceTree = "<group>"; };
@@ -1425,6 +1427,7 @@
 				6B3922282BA8947C0093961E /* String+LowercaseFirstChar.swift */,
 				6BE713282C2A33E400ABEA55 /* String+LowercasedNoWhitespaces.swift */,
 				6B5E61822C2B735A00D78B07 /* Array+Intersect.swift */,
+				6BE1332D2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2714,6 +2717,7 @@
 				6BFF3A4D2C2CB968001C91E5 /* CatalogFilterMenuLabelView.swift in Sources */,
 				6B8E4B832B9D27F500EAE603 /* NotesTextView.swift in Sources */,
 				6BB01E242B879B590050A3A4 /* AnnotationCoordinateTextView.swift in Sources */,
+				6BE1332E2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift in Sources */,
 				6B820A822B2BB80100724555 /* CameraView.swift in Sources */,
 				6B7A457E2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift in Sources */,
 				6B3922272BA8871C0093961E /* MushroomData.swift in Sources */,

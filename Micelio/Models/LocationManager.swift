@@ -94,9 +94,10 @@ extension LocationManager: CLLocationManagerDelegate {
 
 extension LocationManager {
     
-    func startMonitoring(annotationCoordinate: CLLocationCoordinate2D, radius: CLLocationDistance) {
-        print("Start monitoring")
-        let region = CLCircularRegion(center: annotationCoordinate, radius: radius, identifier: UUID().uuidString)
+    func startMonitoring(annotation: MushroomMapAnnotation, radius: CLLocationDistance) {
+        let annotationCoordinate = CLLocationCoordinate2D(latitude: annotation.latitude, longitude: annotation.longitude)
+        let identifier = "\(annotation.id?.uuidString ?? "")_\(annotation.mushroomName ?? "")_\(annotation.creationDateString)"
+        let region = CLCircularRegion(center: annotationCoordinate, radius: radius, identifier: identifier)
         region.notifyOnEntry = true
         region.notifyOnExit = false
         
@@ -111,8 +112,18 @@ extension LocationManager {
         }
     }
     
+    private func parseRegionIdentifier(for region: CLRegion) -> [String] {
+        return region.identifier.components(separatedBy: "_")
+    }
+    
     private func handleRegionEvent(for region: CLRegion) {
-        NotificationManager.shared.scheduleNotification(title: "You're near your annotation!", body: "You entered the area of your marked location.")
+        let parsedIdentifier = parseRegionIdentifier(for: region)
+        let id = parsedIdentifier[0]
+        let mushroomName = parsedIdentifier[1]
+        let creationDate = parsedIdentifier[2]
+        let body: String = "Sei nelle vicinanze di una delle tue posizioni contrassegnate, dove il giorno \(creationDate) hai trovato un \(mushroomName)!"
+        
+        NotificationManager.shared.scheduleNotification(id: UUID(uuidString: id) ?? UUID(), title: "Sei vicino a uno dei tuoi segnaposto!", body: body)
     }
     
     func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {

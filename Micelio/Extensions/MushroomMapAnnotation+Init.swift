@@ -15,6 +15,7 @@ extension MushroomMapAnnotation {
         self.init(entity: mushroomMapAnnotation, insertInto: context)
         self.id = UUID()
         self.color = "accentColor"
+        self.creationDate = .now
         self.latitude = location.latitude
         self.longitude = location.longitude
         self.mushroomName = "Boletus Edulis (Porcino)"

@@ -14,6 +14,7 @@ extension MushroomMapAnnotation {
         let mushroomMapAnnotation = NSEntityDescription.insertNewObject(forEntityName: "MushroomMapAnnotation", into: context) as? MushroomMapAnnotation
         mushroomMapAnnotation?.id = UUID()
         mushroomMapAnnotation?.color = MushroomMapAnnotation.colors.randomElement()?.key
+        mushroomMapAnnotation?.creationDate = .now
         mushroomMapAnnotation?.latitude = Double.random(in: 45.49080961927744 ..< 45.498734555774)
         mushroomMapAnnotation?.longitude = Double.random(in: 9.261367818615799 ..< 9.276388268523824)
         mushroomMapAnnotation?.mushroomName = ["Boletus Edulis (Porcino)", "Amanita Muscaria (Ovolo Malefico)"].randomElement()

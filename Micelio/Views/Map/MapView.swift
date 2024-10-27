@@ -13,7 +13,6 @@ import CoreData
 
 struct MapView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @StateObject var locationManager = LocationManager()
     @State var doubleTapLocation = CGPoint.zero
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \MushroomMapAnnotation.id, ascending: false)],
@@ -27,6 +26,7 @@ struct MapView: View {
     @Binding var isEditAnnotationMode: Bool
     
     var size: CGSize
+    @ObservedObject var locationManager: LocationManager
     
     var body: some View {
         Map(
@@ -67,14 +67,13 @@ extension MapView {
 
 extension MapView {
     func setPin(at location: CLLocationCoordinate2D, centerMapAt visbleCenterLocation: CLLocationCoordinate2D) -> () {
-        defer {
-            feedbackOnPinAdd(centerMapAt: visbleCenterLocation)
-            let coordinate = location
-            let radius: CLLocationDistance = Constants.MushroomMap.geofencingDistance
-            locationManager.startMonitoring(annotationCoordinate: coordinate, radius: radius)
-        }
         let newMushroomMapAnnotation = MushroomMapAnnotation(context: viewContext, location: location)
         selectedMushroomMapAnnotation = newMushroomMapAnnotation
+        defer {
+            feedbackOnPinAdd(centerMapAt: visbleCenterLocation)
+            let radius: CLLocationDistance = Constants.MushroomMap.geofencingDistance
+            locationManager.startMonitoring(annotation: newMushroomMapAnnotation, radius: radius)
+        }
         do {
             try viewContext.save()
         } catch {
@@ -127,18 +126,14 @@ extension MapView {
 }
 
 #Preview {
-    func centerOnUserPosition() { }
+    let centerOnUserPosition = { }
     
-    func addPinToMapCenter(size: CGSize) -> () {
-        return
-    }
+    let addPinToMapCenter: (CGSize) -> () = { _ in }
     
-    func animatedCenterMap(on: CLLocationCoordinate2D) -> () {
-        return
-    }
+    let animatedCenterMap: (CLLocationCoordinate2D) -> () = { _ in }
     
-    return GeometryReader { proxy in
-        MapView(addPinToMapCenterClosure: .constant(addPinToMapCenter), centerOnUserPositionClosure: .constant(centerOnUserPosition), centerMapOnLocationClosure: .constant(animatedCenterMap(on:)), showSheet: .constant(false), selectedMushroomMapAnnotation: .constant(nil), isEditAnnotationMode: .constant(false), size: proxy.size)
+    GeometryReader { proxy in
+        MapView(addPinToMapCenterClosure: .constant(addPinToMapCenter), centerOnUserPositionClosure: .constant(centerOnUserPosition), centerMapOnLocationClosure: .constant(animatedCenterMap), showSheet: .constant(false), selectedMushroomMapAnnotation: .constant(nil), isEditAnnotationMode: .constant(false), size: proxy.size, locationManager: LocationManager())
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
