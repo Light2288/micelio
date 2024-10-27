@@ -248,6 +248,7 @@
 		6B46365E2C093F7C00677B12 /* astræushygrometricus_7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636542C093F7B00677B12 /* astræushygrometricus_7.jpeg */; };
 		6B46365F2C093F7C00677B12 /* astræushygrometricus_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636552C093F7B00677B12 /* astræushygrometricus_2.jpeg */; };
 		6B5E61832C2B735A00D78B07 /* Array+Intersect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E61822C2B735A00D78B07 /* Array+Intersect.swift */; };
+		6B6007CF2CB88BD200DCA4CB /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6007CE2CB88BD200DCA4CB /* NotificationManager.swift */; };
 		6B61F6FB2C04CA3100FE7E31 /* cantharelluscibarius_7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B61F6F12C04CA3000FE7E31 /* cantharelluscibarius_7.jpeg */; };
 		6B61F6FC2C04CA3100FE7E31 /* cantharelluscibarius_9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B61F6F22C04CA3100FE7E31 /* cantharelluscibarius_9.jpeg */; };
 		6B61F6FD2C04CA3100FE7E31 /* cantharelluscibarius_4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B61F6F32C04CA3100FE7E31 /* cantharelluscibarius_4.jpeg */; };
@@ -539,6 +540,7 @@
 		6BCFBA4D2B4E149700C6246E /* ResultsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFBA4C2B4E149700C6246E /* ResultsListView.swift */; };
 		6BCFBAAB2B52001200C6246E /* ResultItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFBAAA2B52001200C6246E /* ResultItemView.swift */; };
 		6BCFBAB12B520BB600C6246E /* MicelioMushroomClassifier_v3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFBAB02B520BB600C6246E /* MicelioMushroomClassifier_v3.mlmodel */; };
+		6BE1332E2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE1332D2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift */; };
 		6BE713222C2A22B200ABEA55 /* GroupByMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE713212C2A22B200ABEA55 /* GroupByMenuView.swift */; };
 		6BE713252C2A237E00ABEA55 /* CatalogFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE713242C2A237E00ABEA55 /* CatalogFiltersView.swift */; };
 		6BE713272C2A276600ABEA55 /* CatalogFilterMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE713262C2A276600ABEA55 /* CatalogFilterMenuView.swift */; };
@@ -791,6 +793,8 @@
 		6B4636542C093F7B00677B12 /* astræushygrometricus_7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "astræushygrometricus_7.jpeg"; sourceTree = "<group>"; };
 		6B4636552C093F7B00677B12 /* astræushygrometricus_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "astræushygrometricus_2.jpeg"; sourceTree = "<group>"; };
 		6B5E61822C2B735A00D78B07 /* Array+Intersect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Intersect.swift"; sourceTree = "<group>"; };
+		6B6007CD2CB88AF800DCA4CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6B6007CE2CB88BD200DCA4CB /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		6B61F6F12C04CA3000FE7E31 /* cantharelluscibarius_7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cantharelluscibarius_7.jpeg; sourceTree = "<group>"; };
 		6B61F6F22C04CA3100FE7E31 /* cantharelluscibarius_9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cantharelluscibarius_9.jpeg; sourceTree = "<group>"; };
 		6B61F6F32C04CA3100FE7E31 /* cantharelluscibarius_4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cantharelluscibarius_4.jpeg; sourceTree = "<group>"; };
@@ -1082,6 +1086,7 @@
 		6BCFBA4C2B4E149700C6246E /* ResultsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsListView.swift; sourceTree = "<group>"; };
 		6BCFBAAA2B52001200C6246E /* ResultItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultItemView.swift; sourceTree = "<group>"; };
 		6BCFBAB02B520BB600C6246E /* MicelioMushroomClassifier_v3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MicelioMushroomClassifier_v3.mlmodel; sourceTree = "<group>"; };
+		6BE1332D2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+CreationDateString.swift"; sourceTree = "<group>"; };
 		6BE713212C2A22B200ABEA55 /* GroupByMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupByMenuView.swift; sourceTree = "<group>"; };
 		6BE713242C2A237E00ABEA55 /* CatalogFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFiltersView.swift; sourceTree = "<group>"; };
 		6BE713262C2A276600ABEA55 /* CatalogFilterMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFilterMenuView.swift; sourceTree = "<group>"; };
@@ -1121,6 +1126,7 @@
 		6B0FBC3A2ACB677B00FDAA89 /* Micelio */ = {
 			isa = PBXGroup;
 			children = (
+				6B6007CD2CB88AF800DCA4CB /* Info.plist */,
 				6B908D4B2B7E547D007FC5B7 /* Persistence */,
 				6B3363BC2B3CF5D4002FBAEF /* Extensions */,
 				6B820B142B3A488800724555 /* ML Mushroom Recognise */,
@@ -1421,6 +1427,7 @@
 				6B3922282BA8947C0093961E /* String+LowercaseFirstChar.swift */,
 				6BE713282C2A33E400ABEA55 /* String+LowercasedNoWhitespaces.swift */,
 				6B5E61822C2B735A00D78B07 /* Array+Intersect.swift */,
+				6BE1332D2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2074,6 +2081,7 @@
 				6B3126532B6AF1900016D701 /* LocationManager.swift */,
 				6B83C5FE2C1CB56800902914 /* CatalogGroupBy.swift */,
 				6B0642782C2B63B600553E2A /* CatalogFilterBy.swift */,
+				6B6007CE2CB88BD200DCA4CB /* NotificationManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2709,6 +2717,7 @@
 				6BFF3A4D2C2CB968001C91E5 /* CatalogFilterMenuLabelView.swift in Sources */,
 				6B8E4B832B9D27F500EAE603 /* NotesTextView.swift in Sources */,
 				6BB01E242B879B590050A3A4 /* AnnotationCoordinateTextView.swift in Sources */,
+				6BE1332E2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift in Sources */,
 				6B820A822B2BB80100724555 /* CameraView.swift in Sources */,
 				6B7A457E2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift in Sources */,
 				6B3922272BA8871C0093961E /* MushroomData.swift in Sources */,
@@ -2776,6 +2785,7 @@
 				6BCFB9702B47817400C6246E /* RecogniseDisclaimerView.swift in Sources */,
 				6B7835872AFE46DE00166DB3 /* DetailsView.swift in Sources */,
 				6BFF3A4B2C2CB87F001C91E5 /* CatalogFilterMenuButtonView.swift in Sources */,
+				6B6007CF2CB88BD200DCA4CB /* NotificationManager.swift in Sources */,
 				6B3922292BA8947C0093961E /* String+LowercaseFirstChar.swift in Sources */,
 				6BA8B4CA2AD60D14005272D2 /* MushroomMockData.swift in Sources */,
 				6B7835852AFE464400166DB3 /* TitleAndDetailsView.swift in Sources */,
@@ -2944,8 +2954,11 @@
 				DEVELOPMENT_TEAM = R36C94X925;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Micelio/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Consenti l'accesso alla fotocamera per inserire nell'applicazione le fotografie dei funghi che trovi, e per riconoscere un fungo da una fotografia";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Consenti l'accesso alla tua posizione per inserire nella mappa i luoghi dove hai trovato dei funghi, e per ricevere una notifica quando ti avvicini a uno di questi luoghi";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Consenti l'accesso alla tua posizione per inserire nella mappa i luoghi dove hai trovato dei funghi, e per ricevere una notifica quando ti avvicini a uno di questi luoghi";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Consenti l'accesso alla tua posizione per inserire nella mappa i luoghi dove hai trovato dei funghi, e per ricevere una notifica quando ti avvicini a uno di questi luoghi";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2977,8 +2990,11 @@
 				DEVELOPMENT_TEAM = R36C94X925;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Micelio/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Consenti l'accesso alla fotocamera per inserire nell'applicazione le fotografie dei funghi che trovi, e per riconoscere un fungo da una fotografia";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Consenti l'accesso alla tua posizione per inserire nella mappa i luoghi dove hai trovato dei funghi, e per ricevere una notifica quando ti avvicini a uno di questi luoghi";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Consenti l'accesso alla tua posizione per inserire nella mappa i luoghi dove hai trovato dei funghi, e per ricevere una notifica quando ti avvicini a uno di questi luoghi";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Consenti l'accesso alla tua posizione per inserire nella mappa i luoghi dove hai trovato dei funghi, e per ricevere una notifica quando ti avvicini a uno di questi luoghi";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

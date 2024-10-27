@@ -23,6 +23,8 @@ struct AnnotationEditView: View {
     @State var newAnnotationPhotos = Set<MushroomMapAnnotationPhoto>()
     @State var photosToDeleteIds: [UUID] = []
     
+    let locationManager: LocationManager
+    
     var mushroomNames: [String] {
         var names = mushroomData.map { $0.annotationMushroomName }
         names.append("Altro")
@@ -76,6 +78,11 @@ extension AnnotationEditView {
         do {
             defer {
                 UINotificationFeedbackGenerator().notificationOccurred(.success)
+
+                if let annotation {
+                    let radius: CLLocationDistance = Constants.MushroomMap.geofencingDistance
+                    locationManager.startMonitoring(annotation: annotation, radius: radius)
+                }
             }
             try viewContext.save()
         } catch {
@@ -114,8 +121,8 @@ extension AnnotationEditView {
 #Preview {
     let context = PersistenceController.preview.container.viewContext
     
-    func animatedCenterMap(on: CLLocationCoordinate2D) -> () { }
+    let animatedCenterMap: (CLLocationCoordinate2D) -> () = { _ in }
     
-    return AnnotationEditView(annotation: .constant(MushroomMapAnnotation(context: context)), centerMapOnLocation: .constant(animatedCenterMap(on:)), isEditMode: .constant(true))
+    AnnotationEditView(annotation: .constant(MushroomMapAnnotation(context: context)), centerMapOnLocation: .constant(animatedCenterMap), isEditMode: .constant(true), locationManager: LocationManager())
         .environment(\.managedObjectContext, context)
 }

@@ -13,6 +13,7 @@ struct AnnotationDisplayView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: Constants.MushroomMap.AnnotationSheet.DisplayView.vStackSpacing) {
             AnnotationCoordinateTextView(annotation: annotation)
+            Text("Data creazione: \(annotation?.creationDateString ?? "")")
             Text("Tipologia fungo: \(annotation?.mushroomName ?? "")")
             if let notes = annotation?.notes, !notes.isEmpty {
                 Text("Note: \(notes)")

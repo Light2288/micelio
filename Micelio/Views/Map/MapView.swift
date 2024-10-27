@@ -13,7 +13,6 @@ import CoreData
 
 struct MapView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @StateObject var manager = LocationManager()
     @State var doubleTapLocation = CGPoint.zero
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \MushroomMapAnnotation.id, ascending: false)],
@@ -27,15 +26,16 @@ struct MapView: View {
     @Binding var isEditAnnotationMode: Bool
     
     var size: CGSize
+    @ObservedObject var locationManager: LocationManager
     
     var body: some View {
         Map(
-            coordinateRegion: $manager.region,
+            coordinateRegion: $locationManager.region,
             showsUserLocation: true,
             annotationItems: mushroomMapAnnotations,
             annotationContent: { mushroomMapAnnotation in
                 MapAnnotation(coordinate: mushroomMapAnnotation.coordinate) {
-                    MushroomPinView(mushroomMapAnnotation: mushroomMapAnnotation, selectedMushroomMapAnnotation: $selectedMushroomMapAnnotation, showSheet: $showSheet, isEditAnnotationMode: $isEditAnnotationMode, centerOnPinPositionClosure: feedbackOnPinAdd, manager: manager)
+                    MushroomPinView(mushroomMapAnnotation: mushroomMapAnnotation, selectedMushroomMapAnnotation: $selectedMushroomMapAnnotation, showSheet: $showSheet, isEditAnnotationMode: $isEditAnnotationMode, centerOnPinPositionClosure: feedbackOnPinAdd, manager: locationManager)
                 }
             }
         )
@@ -50,6 +50,7 @@ struct MapView: View {
             }
         )
         .onAppear(perform: {
+            NotificationManager.shared.requestNotificationPermission()
             self.centerOnUserPositionClosure = centerOnUserPosition
             self.addPinToMapCenterClosure = addPinToMapCenter
             self.centerMapOnLocationClosure = animatedCenterMap(on:)
@@ -59,17 +60,20 @@ struct MapView: View {
 
 extension MapView {
     func centerOnUserPosition() {
-        manager.updateLocation()
+        locationManager.shouldCenterOnUser = true
+        locationManager.recenterOnUser()
     }
 }
 
 extension MapView {
     func setPin(at location: CLLocationCoordinate2D, centerMapAt visbleCenterLocation: CLLocationCoordinate2D) -> () {
-        defer {
-            feedbackOnPinAdd(centerMapAt: visbleCenterLocation)
-        }
         let newMushroomMapAnnotation = MushroomMapAnnotation(context: viewContext, location: location)
         selectedMushroomMapAnnotation = newMushroomMapAnnotation
+        defer {
+            feedbackOnPinAdd(centerMapAt: visbleCenterLocation)
+            let radius: CLLocationDistance = Constants.MushroomMap.geofencingDistance
+            locationManager.startMonitoring(annotation: newMushroomMapAnnotation, radius: radius)
+        }
         do {
             try viewContext.save()
         } catch {
@@ -79,16 +83,16 @@ extension MapView {
     }
     
     func convertTapToCoordinate(at point: CGPoint, for mapSize: CGSize) -> CLLocationCoordinate2D {
-        let lat = manager.region.center.latitude
-        let lon = manager.region.center.longitude
+        let lat = locationManager.region.center.latitude
+        let lon = locationManager.region.center.longitude
         
         let mapCenter = CGPoint(x: mapSize.width/2, y: mapSize.height/2)
         
         let xValue = (point.x - mapCenter.x) / mapCenter.x
-        let xSpan = xValue * manager.region.span.longitudeDelta/2
+        let xSpan = xValue * locationManager.region.span.longitudeDelta/2
         
         let yValue = (point.y - mapCenter.y) / mapCenter.y
-        let ySpan = yValue * manager.region.span.latitudeDelta/2
+        let ySpan = yValue * locationManager.region.span.latitudeDelta/2
         
         return CLLocationCoordinate2D(latitude: lat - ySpan, longitude: lon + xSpan)
     }
@@ -116,24 +120,20 @@ extension MapView {
 extension MapView {
     func animatedCenterMap(on location: CLLocationCoordinate2D) {
         withAnimation {
-            manager.region = MKCoordinateRegion(center: location, span: manager.region.span)
+            locationManager.region = MKCoordinateRegion(center: location, span: locationManager.region.span)
         }
     }
 }
 
 #Preview {
-    func centerOnUserPosition() { }
+    let centerOnUserPosition = { }
     
-    func addPinToMapCenter(size: CGSize) -> () {
-        return
-    }
+    let addPinToMapCenter: (CGSize) -> () = { _ in }
     
-    func animatedCenterMap(on: CLLocationCoordinate2D) -> () {
-        return
-    }
+    let animatedCenterMap: (CLLocationCoordinate2D) -> () = { _ in }
     
-    return GeometryReader { proxy in
-        MapView(addPinToMapCenterClosure: .constant(addPinToMapCenter), centerOnUserPositionClosure: .constant(centerOnUserPosition), centerMapOnLocationClosure: .constant(animatedCenterMap(on:)), showSheet: .constant(false), selectedMushroomMapAnnotation: .constant(nil), isEditAnnotationMode: .constant(false), size: proxy.size)
+    GeometryReader { proxy in
+        MapView(addPinToMapCenterClosure: .constant(addPinToMapCenter), centerOnUserPositionClosure: .constant(centerOnUserPosition), centerMapOnLocationClosure: .constant(animatedCenterMap), showSheet: .constant(false), selectedMushroomMapAnnotation: .constant(nil), isEditAnnotationMode: .constant(false), size: proxy.size, locationManager: LocationManager())
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

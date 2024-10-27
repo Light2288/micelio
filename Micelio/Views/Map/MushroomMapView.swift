@@ -13,17 +13,19 @@ struct MushroomMapView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
+    @StateObject var locationManager = LocationManager()
+    
     @State var addPinToMapCenter: (CGSize) -> Void = { _ in return }
     @State var centerOnUserPosition: () -> Void = { }
     @State var centerMapOnLocation: (CLLocationCoordinate2D) -> Void = { _ in }
     @State var showSheet: Bool = false
     @State var selectedMushroomAnnotation: MushroomMapAnnotation?
     @State var isEditAnnotationMode: Bool = false
-    
+        
     var body: some View {
         GeometryReader { proxy in
             ZStack() {
-                MapView(addPinToMapCenterClosure: $addPinToMapCenter, centerOnUserPositionClosure: $centerOnUserPosition, centerMapOnLocationClosure: $centerMapOnLocation, showSheet: $showSheet, selectedMushroomMapAnnotation: $selectedMushroomAnnotation, isEditAnnotationMode: $isEditAnnotationMode, size: proxy.size)
+                MapView(addPinToMapCenterClosure: $addPinToMapCenter, centerOnUserPositionClosure: $centerOnUserPosition, centerMapOnLocationClosure: $centerMapOnLocation, showSheet: $showSheet, selectedMushroomMapAnnotation: $selectedMushroomAnnotation, isEditAnnotationMode: $isEditAnnotationMode, size: proxy.size, locationManager: locationManager)
                 
                 MapOverlayView(size: proxy.size, addPinToMapCenter: addPinToMapCenter, centerOnUserPosition: centerOnUserPosition, showSheet: $showSheet)
             }
@@ -33,7 +35,7 @@ struct MushroomMapView: View {
             onDismiss: {
                 isEditAnnotationMode = false
         }, content: {
-            MushroomMapAnnotationSheetView(annotation: $selectedMushroomAnnotation, isAnnotationEditMode: $isEditAnnotationMode, centerMapOnLocation: $centerMapOnLocation)
+            MushroomMapAnnotationSheetView(annotation: $selectedMushroomAnnotation, isAnnotationEditMode: $isEditAnnotationMode, centerMapOnLocation: $centerMapOnLocation, locationManager: locationManager)
                 .presentationDetents([.large, .fraction(Constants.MushroomMap.sheetFraction)])
                 .presentationBackgroundInteraction(.enabled)
                 .interactiveDismissDisabled(true)

@@ -17,6 +17,7 @@ extension MushroomMapAnnotation {
     }
 
     @NSManaged public var color: String?
+    @NSManaged public var creationDate: Date?
     @NSManaged public var id: UUID?
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double

@@ -74,6 +74,7 @@ enum Constants {
     
     enum MushroomMap {
         public static let sheetFraction: CGFloat = 0.75
+        public static let geofencingDistance: Double = 50
         
         enum Map {
             public static let longPressMinimumDuration: Double = 0.25
