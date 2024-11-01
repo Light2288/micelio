@@ -7,7 +7,8 @@
 
 import Foundation
 
-let mushroomData: [Mushroom] = [
+let mushroomData: [Mushroom] =
+[
     amanitaGemmata,
     amanitaMuscaria,
     amanitaPhalloides,

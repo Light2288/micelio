@@ -22,6 +22,6 @@ struct Mushroom: Identifiable {
     let trivia: String
     
     var images: [String] {
-        (0...9).map { "\(scientificName.lowercased().filter { !$0.isWhitespace })_\($0)" }
+        (0...9).map { "\(scientificName.lowercasedNoWhiteSpaces)_\($0)" }
     }
 }

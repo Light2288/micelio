@@ -42,25 +42,11 @@ private func generateRandomEdibility() -> Edibility {
 }
 
 private func generateRandomEnvironments() -> [MushroomEnvironment] {
-    var environments: [MushroomEnvironment] = []
-    for _ in 1...Int.random(in: 1...MushroomEnvironment.allCases.count) {
-        let environment = MushroomEnvironment.allCases.randomElement()!
-        if (!environments.contains(environment)) {
-            environments.append(environment)
-        }
-    }
-    return environments
+    return MushroomEnvironment.allCases.randomSubset()
 }
 
 private func generateRandomSeasons() -> [Season] {
-    var seasons: [Season] = []
-    for _ in 1...Int.random(in: 1...Season.allCases.count) {
-        let season = Season.allCases.randomElement()!
-        if (!seasons.contains(season)) {
-            seasons.append(season)
-        }
-    }
-    return seasons
+    return Season.allCases.randomSubset()
 }
 
 private func generateParagraph(numberOfWords: Int) -> String {

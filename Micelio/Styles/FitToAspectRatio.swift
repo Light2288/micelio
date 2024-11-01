@@ -22,11 +22,3 @@ struct FitToAspectRatio: ViewModifier {
     }
 
 }
-
-extension Image {
-    func fitToAspect(_ aspectRatio: Double = 1, contentMode: SwiftUI.ContentMode = .fill) -> some View {
-        self.resizable()
-            .scaledToFill()
-            .modifier(FitToAspectRatio(aspectRatio: aspectRatio, contentMode: contentMode))
-    }
-}

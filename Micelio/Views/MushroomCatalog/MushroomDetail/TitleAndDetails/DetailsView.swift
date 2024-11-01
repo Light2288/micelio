@@ -16,19 +16,19 @@ struct DetailsView: View {
                 items:
                     Edibility.allCases
                     .filter { mushroom.edibility == $0 }
-                    .map{ $0.rawValue.removeWhitespacesAndLowercase }
+                    .map{ $0.rawValue.lowercasedNoWhiteSpaces }
             )
             DetailGridView(
                 items:
                     MushroomEnvironment.allCases
                     .filter { mushroom.environments.contains($0) }
-                    .map{ $0.rawValue.removeWhitespacesAndLowercase }
+                    .map{ $0.rawValue.lowercasedNoWhiteSpaces }
             )
             DetailGridView(
                 items:
                     Season.allCases
                     .filter { mushroom.seasons.contains($0) }
-                    .map{ $0.rawValue.removeWhitespacesAndLowercase }
+                    .map{ $0.rawValue.lowercasedNoWhiteSpaces }
             )
         }
         .padding(.bottom, Constants.MushroomCatalog.TitleAndDetails.Details.bottomPadding)

@@ -1,5 +1,5 @@
 {
-  "sourceLanguage" : "en",
+  "sourceLanguage" : "it",
   "strings" : {
     "" : {
 
@@ -12,7 +12,7 @@
     },
     "%lld/%lld" : {
       "localizations" : {
-        "en" : {
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$lld/%2$lld"
@@ -59,7 +59,7 @@
     },
     "Coordinate: (lat. %lf ;  lon. %lf)" : {
       "localizations" : {
-        "en" : {
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Coordinate: (lat. %1$lf ;  lon. %2$lf)"
@@ -86,9 +86,6 @@
 
     },
     "Fotocamera" : {
-
-    },
-    "ID: %@" : {
 
     },
     "Identify" : {
