@@ -17,22 +17,46 @@ struct MushroomPinView: View {
     let centerOnPinPositionClosure: (CLLocationCoordinate2D, Bool) -> Void
     let manager: LocationManager
     
+    private let shadowRadius = Constants.MushroomMap.MushroomPin.shadowRadius
+    private let frameHeight = Constants.MushroomMap.MushroomPin.frameHeight
+    private let selectedScale = Constants.MushroomMap.MushroomPin.selectedScale
+    private let defaultScale = Constants.MushroomMap.MushroomPin.defaultScale
+    private let animationDuration = Constants.MushroomMap.MushroomPin.animationDuration
+    private let animationDamping = Constants.MushroomMap.MushroomPin.animationDamping
+    
+    private var isSelected: Bool {
+        selectedMushroomMapAnnotation == mushroomMapAnnotation
+    }
+    
+    private var pinColor: Color {
+        MushroomMapAnnotation.colors[mushroomMapAnnotation.color ?? "accent"] ?? .accent
+    }
+    
     var body: some View {
         Image("mushroom-pin")
             .resizable()
             .scaledToFit()
-            .scaleEffect(selectedMushroomMapAnnotation == mushroomMapAnnotation ? 1 : 0.6)
-            .foregroundStyle(MushroomMapAnnotation.colors[mushroomMapAnnotation.color ?? "accent"] ?? .accent)
-            .shadow(color: Color(.systemBackground), radius: Constants.MushroomMap.MushroomPin.shadowRadius)
-            .frame(height: Constants.MushroomMap.MushroomPin.frameHeight)
-            .offset(y: -Constants.MushroomMap.MushroomPin.frameHeight/2)
-            .animation(.spring(response: 0.30, dampingFraction: 0.25, blendDuration: 0), value: selectedMushroomMapAnnotation)
-            .onTapGesture {
-                selectedMushroomMapAnnotation = mushroomMapAnnotation
-                showSheet = true
-                isEditAnnotationMode = false
-                centerOnPinPositionClosure(CLLocationCoordinate2D(latitude: mushroomMapAnnotation.latitude-manager.region.span.latitudeDelta/3, longitude: mushroomMapAnnotation.longitude), false)
-            }
+            .scaleEffect(isSelected ? selectedScale : defaultScale)
+            .foregroundStyle(pinColor)
+            .shadow(color: Color(.systemBackground), radius: shadowRadius)
+            .frame(height: frameHeight)
+            .offset(y: -frameHeight / 2)
+            .animation(.spring(response: animationDuration, dampingFraction: animationDamping, blendDuration: 0), value: selectedMushroomMapAnnotation)
+            .onTapGesture(perform: handleTap)
+    }
+    
+    
+    private func handleTap() {
+        selectedMushroomMapAnnotation = mushroomMapAnnotation
+        showSheet = true
+        isEditAnnotationMode = false
+        centerOnPinPositionClosure(
+            CLLocationCoordinate2D(
+                latitude: mushroomMapAnnotation.latitude - manager.region.span.latitudeDelta / 3,
+                longitude: mushroomMapAnnotation.longitude
+            ),
+            false
+        )
     }
 }
 

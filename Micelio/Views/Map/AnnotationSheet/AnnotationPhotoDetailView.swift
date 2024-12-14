@@ -13,45 +13,33 @@ struct AnnotationPhotoDetailView: View {
     var annotationPhotos: [MushroomMapAnnotationPhoto]
     @Binding var selectedPhotoIndex: Int?
     
+    private var currentPhotoData: Data? {
+        guard let index = selectedPhotoIndex, annotationPhotos.indices.contains(index) else {
+            return nil
+        }
+        return annotationPhotos[index].photo
+    }
+    
     var body: some View {
-        if var selectedPhotoIndex = selectedPhotoIndex,
-           let photo = annotationPhotos[selectedPhotoIndex].photo {
-            NavigationView {
-                if let image = UIImage(data: photo) {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                        .navigationBarTitleDisplayMode(.inline)
-                        .toolbar {
-                            ToolbarItem(placement: .principal) {
-                                HStack {
-                                    Button {
-                                        selectedPhotoIndex -= 1
-                                        self.selectedPhotoIndex = selectedPhotoIndex
-                                    } label: {
-                                        Image(systemName: "chevron.left")
-                                    }
-                                    .disabled(selectedPhotoIndex == 0)
-                                    
-                                    Text("\(selectedPhotoIndex + 1)/\(annotationPhotos.count)")
-                                    
-                                    Button {
-                                        selectedPhotoIndex += 1
-                                        self.selectedPhotoIndex = selectedPhotoIndex
-                                    } label: {
-                                        Image(systemName: "chevron.right")
-                                    }
-                                    .disabled(selectedPhotoIndex == annotationPhotos.count - 1)
-                                }
-                            }
+        NavigationView {
+            if let imageData = currentPhotoData, let image = UIImage(data: imageData) {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .principal) {
+                            AnnotationPhotoDetailToolbarView(
+                                annotationPhotosCount: annotationPhotos.count,
+                                selectedPhotoIndex: $selectedPhotoIndex
+                            )
                         }
-                }
+                    }
+            } else {
+                Text("Errore nel caricamento della foto")
+                    .font(.headline)
+                    .multilineTextAlignment(.center)
             }
-            
-        } else {
-            Text("Errore nel caricamento della foto")
-                .font(.headline)
-                .multilineTextAlignment(.center)
         }
     }
 }
@@ -61,3 +49,4 @@ struct AnnotationPhotoDetailView: View {
         AnnotationPhotoDetailView(annotationPhotos: [], selectedPhotoIndex: .constant(nil))
     }
 }
+

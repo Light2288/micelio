@@ -12,71 +12,72 @@ struct AnnotationPhotosView<AddPhotoView: View>: View {
     @Binding var newAnnotationPhotos: Set<MushroomMapAnnotationPhoto>
     @Binding var photosToDeleteIds: [UUID]
     let addPhotoView: AddPhotoView
-    let gridColumns = Array(repeating: GridItem(.flexible(maximum: 200), alignment: .top), count: 5)
-    @State var showPhotoDetailSheet: Bool = false
-    @State var selectedPhotoIndex: Int?
+    private let gridColumns = Array(repeating: GridItem(.flexible(maximum: 200), alignment: .top), count: 5)
+    @State private var showPhotoDetailSheet: Bool = false
+    @State private var selectedPhotoIndex: Int?
     
-    var photosOrderdByDate: [MushroomMapAnnotationPhoto] {
-        annotation?.mushroomMapAnnotationPhotos?.union(newAnnotationPhotos).sorted(by: { $0.creationDate ?? .now < $1.creationDate ?? .now }) ?? []
+    private var photosOrderedByDate: [MushroomMapAnnotationPhoto] {
+        (annotation?.mushroomMapAnnotationPhotos ?? [])
+            .union(newAnnotationPhotos)
+            .sorted(by: { ($0.creationDate ?? .now) < ($1.creationDate ?? .now) })
     }
     
-    var isEditMode: Bool {
+    private var isEditMode: Bool {
         AddPhotoView.self != EmptyView.self
     }
     
-    init(annotation: Binding<MushroomMapAnnotation?>, newAnnotationPhotos: Binding<Set<MushroomMapAnnotationPhoto>>, photosToDeleteIds: Binding<[UUID]>, @ViewBuilder addPhotoView: () -> AddPhotoView) {
+    private var canAddPhoto: Bool {
+        let currentPhotoCount = (annotation?.mushroomMapAnnotationPhotos?.count ?? 0) + newAnnotationPhotos.count - photosToDeleteIds.count
+        return currentPhotoCount < 5
+    }
+    
+    private func handleDeletePhoto(_ photo: MushroomMapAnnotationPhoto) {
+        if let _ = annotation?.mushroomMapAnnotationPhotos?.firstIndex(of: photo) {
+            photosToDeleteIds.append(photo.id ?? UUID())
+        }
+        newAnnotationPhotos.remove(photo)
+    }
+    
+    init(annotation: Binding<MushroomMapAnnotation?>,
+         newAnnotationPhotos: Binding<Set<MushroomMapAnnotationPhoto>>,
+         photosToDeleteIds: Binding<[UUID]>,
+         @ViewBuilder addPhotoView: () -> AddPhotoView) {
+        
         self._annotation = annotation
         self._newAnnotationPhotos = newAnnotationPhotos
         self._photosToDeleteIds = photosToDeleteIds
         self.addPhotoView = addPhotoView()
-        
     }
     
     var body: some View {
         VStack(alignment: .leading) {
-            LazyVGrid(columns: gridColumns, content: {
-                ForEach(Array(photosOrderdByDate.enumerated()), id: \.element) { index, element in
-                    if let photo = element.photo, let image = UIImage(data: photo), !photosToDeleteIds.contains(element.id ?? .init()) {
-                        ZStack {
-                            Image(uiImage: image)
-                                .fitToAspect()
-                                .onTapGesture {
-                                    if !isEditMode {
-                                        selectedPhotoIndex = index
-                                        showPhotoDetailSheet.toggle()
-                                    }
-                                }
-                            if isEditMode {
-                                Button {
-                                    if let _ = annotation?.mushroomMapAnnotationPhotos?.firstIndex(of: element) {
-                                        photosToDeleteIds.append(element.id ?? UUID())
-                                    }
-                                    newAnnotationPhotos.remove(element)
-                                } label: {
-                                    Image(systemName: "trash")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .fontWeight(.bold)
-                                        .tint(.red)
-                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                        .padding()
-                                }
-                            }
+            LazyVGrid(columns: gridColumns) {
+                ForEach(Array(photosOrderedByDate.enumerated()), id: \.element) { index, element in
+                    if let photoData = element.photo, let image = UIImage(data: photoData), !photosToDeleteIds.contains(element.id ?? UUID()) {
+                        AnnotationPhotoThumbnailView(image: image, isEditMode: isEditMode, deleteAction: {
+                            handleDeletePhoto(element)
+                        }) {
+                            selectedPhotoIndex = index
+                            showPhotoDetailSheet.toggle()
                         }
                     }
                 }
-                if let annotationPhotos = annotation?.mushroomMapAnnotationPhotos, (annotationPhotos.count + newAnnotationPhotos.count - photosToDeleteIds.count) < 5 {
+                
+                if canAddPhoto {
                     addPhotoView
                 }
-            })
+            }
             .padding(2)
         }
         .sheet(isPresented: $showPhotoDetailSheet) {
-            AnnotationPhotoDetailView(annotationPhotos: photosOrderdByDate, selectedPhotoIndex: $selectedPhotoIndex)
+            AnnotationPhotoDetailView(annotationPhotos: photosOrderedByDate, selectedPhotoIndex: $selectedPhotoIndex)
         }
     }
 }
 
 #Preview {
-    AnnotationPhotosView<EmptyView>(annotation: .constant(nil), newAnnotationPhotos: .constant(Set<MushroomMapAnnotationPhoto>()), photosToDeleteIds: .constant([]), addPhotoView: { EmptyView() })
+    AnnotationPhotosView<EmptyView>(annotation: .constant(nil),
+                                    newAnnotationPhotos: .constant(Set<MushroomMapAnnotationPhoto>()),
+                                    photosToDeleteIds: .constant([]),
+                                    addPhotoView: { EmptyView() })
 }

@@ -10,6 +10,9 @@
     "%@" : {
 
     },
+    "%@ button" : {
+
+    },
     "%lld/%lld" : {
       "localizations" : {
         "it" : {
@@ -39,6 +42,7 @@
 
     },
     "Catalog" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -57,18 +61,15 @@
     "Close" : {
 
     },
-    "Coordinate: (lat. %lf ;  lon. %lf)" : {
+    "Coordinate: (lat. %@ ; lon. %@)" : {
       "localizations" : {
         "it" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Coordinate: (lat. %1$lf ;  lon. %2$lf)"
+            "value" : "Coordinate: (lat. %1$@ ; lon. %2$@)"
           }
         }
       }
-    },
-    "Data creazione: %@" : {
-
     },
     "Elimina" : {
 
@@ -89,6 +90,7 @@
 
     },
     "Identify" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -104,6 +106,9 @@
     "Immagini:" : {
 
     },
+    "Informazioni aggiuntive" : {
+
+    },
     "Inserisci manualmente la tipologia di fungo" : {
 
     },
@@ -114,6 +119,7 @@
 
     },
     "Map" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -132,16 +138,10 @@
     "Nascondi" : {
 
     },
-    "nessuna immagine presente" : {
-
-    },
     "Non è stato possibile riconoscere alcun fungo dalla fotografia utilizzata" : {
 
     },
     "Note" : {
-
-    },
-    "Note: %@" : {
 
     },
     "Ooops!" : {
@@ -162,9 +162,6 @@
     "Riconosci fungo" : {
 
     },
-    "Salva" : {
-
-    },
     "Scatta una foto o seleziona un'immagine per procedere con il riconoscimento" : {
 
     },
@@ -181,9 +178,6 @@
 
     },
     "Tipologia fungo:" : {
-
-    },
-    "Tipologia fungo: %@" : {
 
     }
   },

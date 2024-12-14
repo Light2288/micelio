@@ -31,10 +31,12 @@ struct AnnotationEditView: View {
         return names.reversed()
     }
     
+    let vStackSpacing = Constants.MushroomMap.AnnotationSheet.EditView.vStackSpacing
+    
     var body: some View {
         VStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: Constants.MushroomMap.AnnotationSheet.EditView.vStackSpacing) {
+                VStack(alignment: .leading, spacing: vStackSpacing) {
                     
                     MushroomTypePickerView(selectedMushroomName: $selectedMushroomName, mushroomNames: mushroomNames)
                     
@@ -47,6 +49,7 @@ struct AnnotationEditView: View {
                     PinColorChoiceView(selectedColor: $selectedColor)
                     
                     Text("Aggiungi fino a 5 immagini:")
+                    
                     AnnotationPhotosView(
                         annotation: $annotation,
                         newAnnotationPhotos: $newAnnotationPhotos, photosToDeleteIds: $photosToDeleteIds,
@@ -57,7 +60,9 @@ struct AnnotationEditView: View {
             }
             Spacer()
             
-            ConfirmAnnotationEditButtonView(confirmAnnotationEdit: confirmAnnotationEdit, cancelAnnotationEdit: cancelAnnotationEdit)
+            AnnotationEditActionButtonsHstackView(
+                confirmAnnotationEdit: confirmAnnotationEdit,
+                cancelAnnotationEdit: cancelAnnotationEdit)
         }
         .onAppear {
             setupView()

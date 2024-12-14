@@ -26,7 +26,7 @@
 		6B239E192B72FB9E00D7D8EB /* AddPinButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B239E182B72FB9E00D7D8EB /* AddPinButtonView.swift */; };
 		6B283A7A2C8A6019002614A4 /* MushroomMapAnnotation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B283A762C8A6019002614A4 /* MushroomMapAnnotation+CoreDataClass.swift */; };
 		6B283A7B2C8A6019002614A4 /* MushroomMapAnnotation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B283A772C8A6019002614A4 /* MushroomMapAnnotation+CoreDataProperties.swift */; };
-		6B283A812C8BAC1F002614A4 /* AddAnnotationImagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B283A802C8BAC1F002614A4 /* AddAnnotationImagView.swift */; };
+		6B283A812C8BAC1F002614A4 /* AddAnnotationPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B283A802C8BAC1F002614A4 /* AddAnnotationPhotoView.swift */; };
 		6B283A832C90FEB7002614A4 /* AnnotationPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B283A822C90FEB7002614A4 /* AnnotationPhotosView.swift */; };
 		6B283A862C9100D4002614A4 /* MushroomMapAnnotationPhoto+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B283A842C9100D4002614A4 /* MushroomMapAnnotationPhoto+CoreDataClass.swift */; };
 		6B283A872C9100D4002614A4 /* MushroomMapAnnotationPhoto+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B283A852C9100D4002614A4 /* MushroomMapAnnotationPhoto+CoreDataProperties.swift */; };
@@ -246,6 +246,13 @@
 		6B46365D2C093F7C00677B12 /* astræushygrometricus_1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636532C093F7B00677B12 /* astræushygrometricus_1.jpeg */; };
 		6B46365E2C093F7C00677B12 /* astræushygrometricus_7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636542C093F7B00677B12 /* astræushygrometricus_7.jpeg */; };
 		6B46365F2C093F7C00677B12 /* astræushygrometricus_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636552C093F7B00677B12 /* astræushygrometricus_2.jpeg */; };
+		6B4EAC1A2D091FED0002ED9F /* AnnotationSheetToolbarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4EAC192D091FED0002ED9F /* AnnotationSheetToolbarButtonView.swift */; };
+		6B5570EE2D012B9F004C6C19 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5570ED2D012B9F004C6C19 /* MainTabView.swift */; };
+		6B5570F02D07A200004C6C19 /* AnnotationEditActionButtonsHstackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5570EF2D07A200004C6C19 /* AnnotationEditActionButtonsHstackView.swift */; };
+		6B5570F22D07A231004C6C19 /* AnnotationEditActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5570F12D07A231004C6C19 /* AnnotationEditActionButtonView.swift */; };
+		6B5570F42D07A554004C6C19 /* AddAnnotationPhotoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5570F32D07A554004C6C19 /* AddAnnotationPhotoButtonView.swift */; };
+		6B5570F62D07A768004C6C19 /* AnnotationPhotoDetailToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5570F52D07A768004C6C19 /* AnnotationPhotoDetailToolbarView.swift */; };
+		6B5570F82D07A80C004C6C19 /* AnnotationPhotoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5570F72D07A80C004C6C19 /* AnnotationPhotoThumbnailView.swift */; };
 		6B5E61832C2B735A00D78B07 /* Array+Intersect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E61822C2B735A00D78B07 /* Array+Intersect.swift */; };
 		6B5ED68E2CD2FE44008AB162 /* View+ShapeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5ED68D2CD2FE44008AB162 /* View+ShapeBackground.swift */; };
 		6B5ED6902CD2FE8A008AB162 /* Image+FitToAspectRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5ED68F2CD2FE8A008AB162 /* Image+FitToAspectRatio.swift */; };
@@ -304,7 +311,6 @@
 		6B7A20092B670A9E00B62640 /* MushroomNotDetectedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A20082B670A9E00B62640 /* MushroomNotDetectedTextView.swift */; };
 		6B7A457C2B9E6465000E3966 /* PinColorChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A457B2B9E6465000E3966 /* PinColorChoiceView.swift */; };
 		6B7A457E2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A457D2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift */; };
-		6B7A45802B9E708A000E3966 /* ConfirmAnnotationEditButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A457F2B9E708A000E3966 /* ConfirmAnnotationEditButtonView.swift */; };
 		6B7CC3542B141ACE0042A8E4 /* AllImagesContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC3532B141ACE0042A8E4 /* AllImagesContainerView.swift */; };
 		6B7CC3562B141B9B0042A8E4 /* MainAndAllImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC3552B141B9B0042A8E4 /* MainAndAllImagesView.swift */; };
 		6B7CC3592B19134D0042A8E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC3582B19134D0042A8E4 /* Constants.swift */; };
@@ -324,7 +330,7 @@
 		6B908D512B7E5BCC007FC5B7 /* MushroomMapAnnotation+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D502B7E5BCC007FC5B7 /* MushroomMapAnnotation+Colors.swift */; };
 		6B908D532B840DA6007FC5B7 /* MushroomMapAnnotation+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D522B840DA6007FC5B7 /* MushroomMapAnnotation+Init.swift */; };
 		6B908D562B8416C0007FC5B7 /* MushroomMapAnnotationSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D552B8416C0007FC5B7 /* MushroomMapAnnotationSheetView.swift */; };
-		6B908D582B867898007FC5B7 /* AnnotationSheetButtonHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D572B867898007FC5B7 /* AnnotationSheetButtonHStackView.swift */; };
+		6B908D582B867898007FC5B7 /* AnnotationSheetButtonsToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D572B867898007FC5B7 /* AnnotationSheetButtonsToolbarView.swift */; };
 		6B908D5A2B867ABE007FC5B7 /* AnnotationEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D592B867ABE007FC5B7 /* AnnotationEditView.swift */; };
 		6B908D5C2B867AE7007FC5B7 /* AnnotationDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D5B2B867AE6007FC5B7 /* AnnotationDisplayView.swift */; };
 		6BA44A062BEED7D50072155C /* rubroboletussatanas_4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BA449FC2BEED7D50072155C /* rubroboletussatanas_4.jpeg */; };
@@ -573,7 +579,7 @@
 		6B239E182B72FB9E00D7D8EB /* AddPinButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinButtonView.swift; sourceTree = "<group>"; };
 		6B283A762C8A6019002614A4 /* MushroomMapAnnotation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6B283A772C8A6019002614A4 /* MushroomMapAnnotation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6B283A802C8BAC1F002614A4 /* AddAnnotationImagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnotationImagView.swift; sourceTree = "<group>"; };
+		6B283A802C8BAC1F002614A4 /* AddAnnotationPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnotationPhotoView.swift; sourceTree = "<group>"; };
 		6B283A822C90FEB7002614A4 /* AnnotationPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationPhotosView.swift; sourceTree = "<group>"; };
 		6B283A842C9100D4002614A4 /* MushroomMapAnnotationPhoto+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotationPhoto+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6B283A852C9100D4002614A4 /* MushroomMapAnnotationPhoto+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotationPhoto+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -793,6 +799,13 @@
 		6B4636532C093F7B00677B12 /* astræushygrometricus_1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "astræushygrometricus_1.jpeg"; sourceTree = "<group>"; };
 		6B4636542C093F7B00677B12 /* astræushygrometricus_7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "astræushygrometricus_7.jpeg"; sourceTree = "<group>"; };
 		6B4636552C093F7B00677B12 /* astræushygrometricus_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "astræushygrometricus_2.jpeg"; sourceTree = "<group>"; };
+		6B4EAC192D091FED0002ED9F /* AnnotationSheetToolbarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationSheetToolbarButtonView.swift; sourceTree = "<group>"; };
+		6B5570ED2D012B9F004C6C19 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		6B5570EF2D07A200004C6C19 /* AnnotationEditActionButtonsHstackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationEditActionButtonsHstackView.swift; sourceTree = "<group>"; };
+		6B5570F12D07A231004C6C19 /* AnnotationEditActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationEditActionButtonView.swift; sourceTree = "<group>"; };
+		6B5570F32D07A554004C6C19 /* AddAnnotationPhotoButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnotationPhotoButtonView.swift; sourceTree = "<group>"; };
+		6B5570F52D07A768004C6C19 /* AnnotationPhotoDetailToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationPhotoDetailToolbarView.swift; sourceTree = "<group>"; };
+		6B5570F72D07A80C004C6C19 /* AnnotationPhotoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationPhotoThumbnailView.swift; sourceTree = "<group>"; };
 		6B5E61822C2B735A00D78B07 /* Array+Intersect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Intersect.swift"; sourceTree = "<group>"; };
 		6B5ED68D2CD2FE44008AB162 /* View+ShapeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ShapeBackground.swift"; sourceTree = "<group>"; };
 		6B5ED68F2CD2FE8A008AB162 /* Image+FitToAspectRatio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+FitToAspectRatio.swift"; sourceTree = "<group>"; };
@@ -852,7 +865,6 @@
 		6B7A20082B670A9E00B62640 /* MushroomNotDetectedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomNotDetectedTextView.swift; sourceTree = "<group>"; };
 		6B7A457B2B9E6465000E3966 /* PinColorChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinColorChoiceView.swift; sourceTree = "<group>"; };
 		6B7A457D2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinColorChoiceButtonLabelView.swift; sourceTree = "<group>"; };
-		6B7A457F2B9E708A000E3966 /* ConfirmAnnotationEditButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAnnotationEditButtonView.swift; sourceTree = "<group>"; };
 		6B7CC3532B141ACE0042A8E4 /* AllImagesContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllImagesContainerView.swift; sourceTree = "<group>"; };
 		6B7CC3552B141B9B0042A8E4 /* MainAndAllImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAndAllImagesView.swift; sourceTree = "<group>"; };
 		6B7CC3582B19134D0042A8E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -872,7 +884,7 @@
 		6B908D502B7E5BCC007FC5B7 /* MushroomMapAnnotation+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+Colors.swift"; sourceTree = "<group>"; };
 		6B908D522B840DA6007FC5B7 /* MushroomMapAnnotation+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+Init.swift"; sourceTree = "<group>"; };
 		6B908D552B8416C0007FC5B7 /* MushroomMapAnnotationSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomMapAnnotationSheetView.swift; sourceTree = "<group>"; };
-		6B908D572B867898007FC5B7 /* AnnotationSheetButtonHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationSheetButtonHStackView.swift; sourceTree = "<group>"; };
+		6B908D572B867898007FC5B7 /* AnnotationSheetButtonsToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationSheetButtonsToolbarView.swift; sourceTree = "<group>"; };
 		6B908D592B867ABE007FC5B7 /* AnnotationEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationEditView.swift; sourceTree = "<group>"; };
 		6B908D5B2B867AE6007FC5B7 /* AnnotationDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationDisplayView.swift; sourceTree = "<group>"; };
 		6BA449FC2BEED7D50072155C /* rubroboletussatanas_4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rubroboletussatanas_4.jpeg; sourceTree = "<group>"; };
@@ -1769,8 +1781,10 @@
 				6B8E4B822B9D27F500EAE603 /* NotesTextView.swift */,
 				6B7A457B2B9E6465000E3966 /* PinColorChoiceView.swift */,
 				6B7A457D2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift */,
-				6B7A457F2B9E708A000E3966 /* ConfirmAnnotationEditButtonView.swift */,
-				6B283A802C8BAC1F002614A4 /* AddAnnotationImagView.swift */,
+				6B283A802C8BAC1F002614A4 /* AddAnnotationPhotoView.swift */,
+				6B5570EF2D07A200004C6C19 /* AnnotationEditActionButtonsHstackView.swift */,
+				6B5570F12D07A231004C6C19 /* AnnotationEditActionButtonView.swift */,
+				6B5570F32D07A554004C6C19 /* AddAnnotationPhotoButtonView.swift */,
 			);
 			path = AnnotationEdit;
 			sourceTree = "<group>";
@@ -1792,13 +1806,16 @@
 			isa = PBXGroup;
 			children = (
 				6B908D552B8416C0007FC5B7 /* MushroomMapAnnotationSheetView.swift */,
-				6B908D572B867898007FC5B7 /* AnnotationSheetButtonHStackView.swift */,
+				6B908D572B867898007FC5B7 /* AnnotationSheetButtonsToolbarView.swift */,
 				6B908D592B867ABE007FC5B7 /* AnnotationEditView.swift */,
 				6B908D5B2B867AE6007FC5B7 /* AnnotationDisplayView.swift */,
 				6BB01E232B879B590050A3A4 /* AnnotationCoordinateTextView.swift */,
 				6B8E4B842B9D28A200EAE603 /* AnnotationEdit */,
 				6B283A822C90FEB7002614A4 /* AnnotationPhotosView.swift */,
 				6BBE30802C9CD538008C26EE /* AnnotationPhotoDetailView.swift */,
+				6B5570F52D07A768004C6C19 /* AnnotationPhotoDetailToolbarView.swift */,
+				6B5570F72D07A80C004C6C19 /* AnnotationPhotoThumbnailView.swift */,
+				6B4EAC192D091FED0002ED9F /* AnnotationSheetToolbarButtonView.swift */,
 			);
 			path = AnnotationSheet;
 			sourceTree = "<group>";
@@ -2111,6 +2128,7 @@
 				6B820A7E2B2BB6E000724555 /* Recognise */,
 				6BA8B4CE2AD757BD005272D2 /* MushroomCatalog */,
 				6B0FBC3D2ACB677B00FDAA89 /* ContentView.swift */,
+				6B5570ED2D012B9F004C6C19 /* MainTabView.swift */,
 				6BB8A0CD2C3DDA1C005F9F92 /* SplashScreen */,
 			);
 			path = Views;
@@ -2711,6 +2729,7 @@
 				6BA8B4C72AD588E4005272D2 /* Season.swift in Sources */,
 				6B7CC3592B19134D0042A8E4 /* Constants.swift in Sources */,
 				6B5ED68E2CD2FE44008AB162 /* View+ShapeBackground.swift in Sources */,
+				6B5570EE2D012B9F004C6C19 /* MainTabView.swift in Sources */,
 				6B8E4B7F2B9D256800EAE603 /* MushroomTypePickerView.swift in Sources */,
 				6B7A1FF92B5F3E4700B62640 /* ResultItemMushroomConfidenceTextView.swift in Sources */,
 				6B7A1FEF2B5F367400B62640 /* MainResultView.swift in Sources */,
@@ -2740,6 +2759,7 @@
 				6BCFBAB12B520BB600C6246E /* MicelioMushroomClassifier_v3.mlmodel in Sources */,
 				6B7A1FF72B5F3DD900B62640 /* ResultItemMushroomNameTextView.swift in Sources */,
 				6B820A882B2CC00500724555 /* ImageRecogniseContainerView.swift in Sources */,
+				6B5570F02D07A200004C6C19 /* AnnotationEditActionButtonsHstackView.swift in Sources */,
 				6B7835B22B06D8BC00166DB3 /* AllImagesView.swift in Sources */,
 				6B78357C2AFBDDDC00166DB3 /* TitleView.swift in Sources */,
 				6BE713272C2A276600ABEA55 /* CatalogFilterMenuView.swift in Sources */,
@@ -2751,6 +2771,7 @@
 				6B7835832AFD98EC00166DB3 /* DisclosureGroupCustomStyle.swift in Sources */,
 				6B0FBC452ACB677C00FDAA89 /* Persistence.swift in Sources */,
 				6B820B1A2B3A4E2400724555 /* MushroomClassifier.swift in Sources */,
+				6B5570F62D07A768004C6C19 /* AnnotationPhotoDetailToolbarView.swift in Sources */,
 				6B2E87332BCF303D002389CB /* MicelioMushroomClassifier_v4.mlmodel in Sources */,
 				6B83C5FF2C1CB56800902914 /* CatalogGroupBy.swift in Sources */,
 				6B5E61832C2B735A00D78B07 /* Array+Intersect.swift in Sources */,
@@ -2761,13 +2782,14 @@
 				6B3363BB2B3CF00B002FBAEF /* RecognisedMushroom.swift in Sources */,
 				6B283A872C9100D4002614A4 /* MushroomMapAnnotationPhoto+CoreDataProperties.swift in Sources */,
 				6BA8B4D72AD8BA8E005272D2 /* MushroomDetailView.swift in Sources */,
+				6B5570F42D07A554004C6C19 /* AddAnnotationPhotoButtonView.swift in Sources */,
 				6B239E0C2B6C581F00D7D8EB /* MushroomMapAnnotation+Coordinate.swift in Sources */,
 				6B0FBC3E2ACB677B00FDAA89 /* ContentView.swift in Sources */,
 				6BFF3A4F2C2CC22B001C91E5 /* NoFilteredResultsOverlayView.swift in Sources */,
-				6B7A45802B9E708A000E3966 /* ConfirmAnnotationEditButtonView.swift in Sources */,
 				6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */,
 				6B908D4D2B7E5B46007FC5B7 /* MushroomMapAnnotation+RandomGenerator.swift in Sources */,
 				6B16ACC52C3DE26C00D59D84 /* SplashScreenMushroomIconView.swift in Sources */,
+				6B4EAC1A2D091FED0002ED9F /* AnnotationSheetToolbarButtonView.swift in Sources */,
 				6B16ACC32C3DE14F00D59D84 /* SplashScreenMushroomIconsView.swift in Sources */,
 				6B820A8A2B2CC12C00724555 /* AddPhotoButtonsHStackView.swift in Sources */,
 				6BBEC8C72AF46D10000720FF /* LegendListRowView.swift in Sources */,
@@ -2797,7 +2819,7 @@
 				6BA8B4CA2AD60D14005272D2 /* MushroomMockData.swift in Sources */,
 				6B7835852AFE464400166DB3 /* TitleAndDetailsView.swift in Sources */,
 				6B3126542B6AF1900016D701 /* LocationManager.swift in Sources */,
-				6B283A812C8BAC1F002614A4 /* AddAnnotationImagView.swift in Sources */,
+				6B283A812C8BAC1F002614A4 /* AddAnnotationPhotoView.swift in Sources */,
 				6B7A1FFD2B63221600B62640 /* ImagePredictor.swift in Sources */,
 				6B0FBC3C2ACB677B00FDAA89 /* MicelioApp.swift in Sources */,
 				6B908D562B8416C0007FC5B7 /* MushroomMapAnnotationSheetView.swift in Sources */,
@@ -2808,9 +2830,11 @@
 				6BB01E262B87CD860050A3A4 /* Mushroom+AnnotationMushroomName.swift in Sources */,
 				6BB8A0CF2C3DDA39005F9F92 /* SplashScreenBackgroundView.swift in Sources */,
 				6BE713252C2A237E00ABEA55 /* CatalogFiltersView.swift in Sources */,
+				6B5570F22D07A231004C6C19 /* AnnotationEditActionButtonView.swift in Sources */,
 				6BE713222C2A22B200ABEA55 /* GroupByMenuView.swift in Sources */,
 				6BBEC8BE2AF459C1000720FF /* LegendView.swift in Sources */,
-				6B908D582B867898007FC5B7 /* AnnotationSheetButtonHStackView.swift in Sources */,
+				6B5570F82D07A80C004C6C19 /* AnnotationPhotoThumbnailView.swift in Sources */,
+				6B908D582B867898007FC5B7 /* AnnotationSheetButtonsToolbarView.swift in Sources */,
 				6B908D5C2B867AE7007FC5B7 /* AnnotationDisplayView.swift in Sources */,
 				6B5ED6902CD2FE8A008AB162 /* Image+FitToAspectRatio.swift in Sources */,
 				6BBEC8CB2AF4705E000720FF /* LegendSections.swift in Sources */,

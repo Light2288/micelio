@@ -11,10 +11,12 @@ struct NotesTextView: View {
     
     @Binding var notes: String
     
+    private let vStackSpacing = Constants.MushroomMap.AnnotationSheet.EditView.NotesText.vStackSpacing
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: Constants.MushroomMap.AnnotationSheet.EditView.NotesText.vStackSpacing) {
+        VStack(alignment: .leading, spacing: vStackSpacing) {
             Text("Note")
-            TextField("", text: $notes, axis: .vertical)
+            TextField("Informazioni aggiuntive", text: $notes, axis: .vertical)
                 .lineLimit(1...4)
                 .textFieldStyle(.roundedBorder)
         }

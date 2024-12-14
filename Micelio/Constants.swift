@@ -84,6 +84,10 @@ enum Constants {
         enum MushroomPin {
             public static let shadowRadius: CGFloat = 3
             public static let frameHeight: CGFloat = 60
+            public static let selectedScale: CGFloat = 1.0
+            public static let defaultScale: CGFloat = 0.6
+            public static let animationDuration: Double = 0.30
+            public static let animationDamping: CGFloat = 0.25
         }
         
         enum CenterMapButton {
@@ -127,6 +131,12 @@ enum Constants {
                 
                 enum ConfirmAnnotationEditButton {
                     public static let labelPadding: CGFloat = 5
+                }
+                
+                enum AddAnnotationPhotoButton {
+                    public static let cornerRadius: CGFloat = 10
+                    public static let lineWidth: CGFloat = 2
+                    public static let dash: CGFloat = 8
                 }
             }
         }

@@ -10,6 +10,8 @@ import SwiftUI
 struct SplashScreenMushroomIconsView: View {
     let proxy: GeometryProxy
     
+    let showMushroomIconsTaskDelay = Constants.SplashScreen.MushroomIcons.showMushroomIconsTaskDelay
+    
     let splashScreenMushrooms : [UIImage] =
     [
         UIImage(named: "splashscreen_mushroom_0")!,
@@ -35,7 +37,7 @@ struct SplashScreenMushroomIconsView: View {
 
     var body: some View {
         ForEach(0 ..< 4) { id in
-            SplashScreenMushroomIconView(image: splashScreenMushrooms[id], width: proxy.size.width/5, height: proxy.size.width/5, offset: mushroomOffsets(proxy)[id], showMushroomIconDelay: showMushroomIconDelay(id), hideMushroomIconDelay: Constants.SplashScreen.MushroomIcons.showMushroomIconsTaskDelay)
+            SplashScreenMushroomIconView(image: splashScreenMushrooms[id], width: proxy.size.width/5, height: proxy.size.width/5, offset: mushroomOffsets(proxy)[id], showMushroomIconDelay: showMushroomIconDelay(id), hideMushroomIconDelay: showMushroomIconsTaskDelay)
         }
     }
 }

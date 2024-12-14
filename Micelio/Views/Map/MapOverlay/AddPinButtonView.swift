@@ -13,12 +13,15 @@ struct AddPinButtonView: View {
     var addPinToMapCenter: (CGSize) -> Void
     var size: CGSize
     
+    private let frameSize: CGFloat = Constants.MushroomMap.AddPinButton.frameSize
+    private let padding: CGFloat = Constants.MushroomMap.AddPinButton.padding
+    
     var body: some View {
         Button {
             addPinToMapCenter(size)
         } label: {
             Image("mushroom-pin")
-                .resizableImageWithShapeBackground(shape: AnyShape(Circle()), frameWidth: Constants.MushroomMap.AddPinButton.frameSize, frameHeight: Constants.MushroomMap.AddPinButton.frameSize, padding: Constants.MushroomMap.AddPinButton.padding)
+                .resizableImageWithShapeBackground(shape: AnyShape(Circle()), frameWidth: frameSize, frameHeight: frameSize, padding: padding)
         }
     }
 }
