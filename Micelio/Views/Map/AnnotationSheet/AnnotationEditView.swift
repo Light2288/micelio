@@ -25,6 +25,8 @@ struct AnnotationEditView: View {
     
     let locationManager: LocationManager
     
+    @State private var initialColor: String = ""
+    
     var mushroomNames: [String] {
         var names = mushroomData.map { $0.annotationMushroomName }
         names.append("Altro")
@@ -47,6 +49,9 @@ struct AnnotationEditView: View {
                     NotesTextView(notes: $notes)
                     
                     PinColorChoiceView(selectedColor: $selectedColor)
+                        .onChange(of: selectedColor) { color in
+                            annotation?.color = color
+                        }
                     
                     Text("Aggiungi fino a 5 immagini:")
                     
@@ -97,6 +102,7 @@ extension AnnotationEditView {
     }
     
     func cancelAnnotationEdit() {
+        annotation?.color = initialColor
         isEditMode.toggle()
     }
 }
@@ -108,6 +114,7 @@ extension AnnotationEditView {
               let annotationNotes = annotation?.notes else {
             selectedMushroomName = mushroomNames[0]
             selectedColor = "accent"
+            initialColor = "accent"
             return
         }
         
@@ -120,6 +127,7 @@ extension AnnotationEditView {
         
         notes = annotationNotes
         selectedColor = annotationColor
+        initialColor = annotationColor
     }
 }
 
