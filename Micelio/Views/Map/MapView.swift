@@ -28,6 +28,8 @@ struct MapView: View {
     var size: CGSize
     @ObservedObject var locationManager: LocationManager
     
+    let geofencingDistance: CLLocationDistance = Constants.MushroomMap.geofencingDistance
+    
     var body: some View {
         Map(
             coordinateRegion: $locationManager.region,
@@ -43,10 +45,7 @@ struct MapView: View {
         .highPriorityGesture(SpatialTapGesture(count: 2, coordinateSpace: .local)
             .onEnded { event in
                 doubleTapLocation = event.location
-                let location = convertTapToCoordinate(at: doubleTapLocation, for: size)
-                let correctedCenterLocation = CGPoint(x: doubleTapLocation.x, y: doubleTapLocation.y + size.height/4)
-                let visibleCenterLocation = convertTapToCoordinate(at: correctedCenterLocation, for: size)
-                setPin(at: location, centerMapAt: visibleCenterLocation)
+                handleDoubleTapGesture(at: doubleTapLocation, mapSize: size)
             }
         )
         .onAppear(perform: {
@@ -71,7 +70,7 @@ extension MapView {
         selectedMushroomMapAnnotation = newMushroomMapAnnotation
         defer {
             feedbackOnPinAdd(centerMapAt: visbleCenterLocation)
-            let radius: CLLocationDistance = Constants.MushroomMap.geofencingDistance
+            let radius: CLLocationDistance = geofencingDistance
             locationManager.startMonitoring(annotation: newMushroomMapAnnotation, radius: radius)
         }
         do {
@@ -122,6 +121,16 @@ extension MapView {
         withAnimation {
             locationManager.region = MKCoordinateRegion(center: location, span: locationManager.region.span)
         }
+    }
+}
+
+extension MapView {
+    func handleDoubleTapGesture(at location: CGPoint, mapSize: CGSize) {
+        let tapCoordinate = convertTapToCoordinate(at: location, for: mapSize)
+        print("tapCoordinate: \(tapCoordinate)")
+        let correctedCenterLocation = CGPoint(x: location.x, y: location.y + mapSize.height / 4)
+        let visibleCenterCoordinate = convertTapToCoordinate(at: correctedCenterLocation, for: mapSize)
+        setPin(at: tapCoordinate, centerMapAt: visibleCenterCoordinate)
     }
 }
 
