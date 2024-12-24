@@ -10,16 +10,20 @@ import SwiftUI
 struct MainResultView: View {
     let firstResult: RecognisedMushroom
     
+    let titleBottomPadding = Constants.Recognise.Results.ResultList.MainResult.titleBottomPadding
+    let vStackBottomPadding = Constants.Recognise.Results.ResultList.MainResult.vStackBottomPadding
+    
+    
     var body: some View {
         VStack {
             Text("Il fungo fotografato sembra essere:")
                 .font(.title3)
                 .multilineTextAlignment(.center)
-                .padding(.bottom, Constants.Recognise.Results.ResultList.MainResult.titleBottomPadding)
+                .padding(.bottom, titleBottomPadding)
             ResultItemView(recognisedMushroom: firstResult)
         }
         .padding(.horizontal)
-        .padding(.bottom, Constants.Recognise.Results.ResultList.MainResult.vStackBottomPadding)
+        .padding(.bottom, vStackBottomPadding)
     }
 }
 

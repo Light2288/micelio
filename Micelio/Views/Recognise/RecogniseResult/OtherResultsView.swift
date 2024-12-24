@@ -10,17 +10,21 @@ import SwiftUI
 struct OtherResultsView: View {
     let otherResults: [RecognisedMushroom]
     
+    private let titleBottomPadding: CGFloat = Constants.Recognise.Results.ResultList.OtherResults.titleBottomPadding
+    private let resultTextMaxHeight: CGFloat = Constants.Recognise.Results.ResultList.OtherResults.resultTextMaxHeight
+    
+    
     var body: some View {
         VStack {
             Text("Potrebbe anche essere:")
                 .font(.callout)
-                .padding(.bottom, Constants.Recognise.Results.ResultList.OtherResults.titleBottomPadding)
+                .padding(.bottom, titleBottomPadding)
             ForEach(otherResults) { recognisedMushroom in
                 ResultItemView(
                     recognisedMushroom: recognisedMushroom,
                     recognisedMushroomNameFont: .footnote,
                     recognisedMushroomConfidenceFont: .caption,
-                    maxHeight: Constants.Recognise.Results.ResultList.OtherResults.resultTextMaxHeight)
+                    maxHeight: resultTextMaxHeight)
                 .padding(.bottom)
             }
         }

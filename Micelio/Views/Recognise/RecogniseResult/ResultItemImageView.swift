@@ -10,13 +10,18 @@ import SwiftUI
 struct ResultItemImageView: View {
     let recognisedMushroom: RecognisedMushroom
     
+    private let overlayCornerRadius: CGFloat = Constants.Recognise.Results.ResultList.ResultItem.overlayCornerRadius
+
+    
     var body: some View {
         GeometryReader { proxy in
-            PhotoThumbnailView(imageUrl: Bundle.main.url(forResource: recognisedMushroom.mushroomDetail.images[0], withExtension: "jpeg") ?? URL(filePath: ""), width: proxy.size.height, height: proxy.size.height)
+            let imageUrl = Bundle.main.url(forResource: recognisedMushroom.mushroomDetail.images[0], withExtension: "jpeg") ?? URL(filePath: "")
+            
+            PhotoThumbnailView(imageUrl: imageUrl, width: proxy.size.height, height: proxy.size.height)
                 .clipShape(
                     .rect(
-                        topLeadingRadius: Constants.Recognise.Results.ResultList.ResultItem.overlayCornerRadius,
-                        bottomLeadingRadius: Constants.Recognise.Results.ResultList.ResultItem.overlayCornerRadius,
+                        topLeadingRadius: overlayCornerRadius,
+                        bottomLeadingRadius: overlayCornerRadius,
                         bottomTrailingRadius: .zero,
                         topTrailingRadius: .zero
                     )

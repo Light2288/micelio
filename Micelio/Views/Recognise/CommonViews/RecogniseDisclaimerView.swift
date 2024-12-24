@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct RecogniseDisclaimerView: View {
+    let cornerSize = Constants.Recognise.RecogniseDisclaimer.backgroundRectangleCornerSize
+    let strokeLineWidth = Constants.Recognise.RecogniseDisclaimer.backgroundRectangleStrokeLineWidth
+    
     var body: some View {
         VStack {
             RecogniseDisclaimerTitleView()
@@ -15,9 +18,9 @@ struct RecogniseDisclaimerView: View {
         }
         .padding()
         .background(
-            RoundedRectangle(cornerSize: Constants.Recognise.RecogniseDisclaimer.backgroundRectangleCornerSize)
-                .stroke(.orange, lineWidth: Constants.Recognise.RecogniseDisclaimer.backgroundRectangleStrokeLineWidth)
-                
+            RoundedRectangle(cornerSize: cornerSize)
+                .stroke(.orange, lineWidth: strokeLineWidth)
+            
         )
         .padding()
     }

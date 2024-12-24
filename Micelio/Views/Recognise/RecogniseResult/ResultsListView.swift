@@ -10,12 +10,16 @@ import SwiftUI
 struct ResultsListView: View {
     var recognisedMushrooms: [RecognisedMushroom]
     
+    var otherResults: [RecognisedMushroom] {
+        Array(recognisedMushrooms.dropFirst())
+    }
+    
     var body: some View {
         if let firstResult = recognisedMushrooms.first {
             VStack {
                 MainResultView(firstResult: firstResult)
                 
-                if recognisedMushrooms.count > 1 {
+                if !otherResults.isEmpty {
                     OtherResultsView(otherResults: Array(recognisedMushrooms.dropFirst()))
                 }
             }

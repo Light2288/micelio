@@ -10,11 +10,13 @@ import SwiftUI
 struct ImageRecogniseContainerView: View {
     @Binding var image: UIImage?
     
+    let imageFrameMaxHeight = Constants.Recognise.Results.imageFrameMaxHeight
+    
     var body: some View {
         if let image = image {
             Image(uiImage: image)
                 .recogniseImageStyle()
-                .frame(maxHeight: Constants.Recognise.Results.imageFrameMaxHeight)
+                .frame(maxHeight: imageFrameMaxHeight)
             
         } else {
             VStack {

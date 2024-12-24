@@ -10,13 +10,18 @@ import SwiftUI
 struct ResultItemMushroomConfidenceTextView: View {
     let recognisedMushroom: RecognisedMushroom
     var recognisedMushroomConfidenceFont: Font
+    
+    private let lowConfidenceUpperLimit = Constants.Recognise.Results.ResultList.ResultItem.MushroomConfidenceText.lowConfidenceUpperLimit
+    private let midConfidenceUpperLimit = Constants.Recognise.Results.ResultList.ResultItem.MushroomConfidenceText.midConfidenceUpperLimit
+    
+    
     var confidenceTextColor: Color {
         switch recognisedMushroom.confidence {
-        case .zero ..< Constants.Recognise.Results.ResultList.ResultItem.MushroomConfidenceText.lowConfidenceUpperLimit :
+        case .zero ..< lowConfidenceUpperLimit :
             return .red
-        case Constants.Recognise.Results.ResultList.ResultItem.MushroomConfidenceText.lowConfidenceUpperLimit ..< Constants.Recognise.Results.ResultList.ResultItem.MushroomConfidenceText.midConfidenceUpperLimit :
+        case lowConfidenceUpperLimit ..< midConfidenceUpperLimit :
             return .orange
-        case Constants.Recognise.Results.ResultList.ResultItem.MushroomConfidenceText.midConfidenceUpperLimit... :
+        case midConfidenceUpperLimit... :
             return .green
         default:
             return Color(.label)
@@ -27,7 +32,7 @@ struct ResultItemMushroomConfidenceTextView: View {
         HStack {
             Text("Attendibilità: ")
                 .foregroundStyle(Color(.label))
-            Text("\(recognisedMushroom.confidencePercentage)")
+            Text(recognisedMushroom.confidencePercentage)
                 .foregroundStyle(confidenceTextColor)
         }
         .font(recognisedMushroomConfidenceFont)
