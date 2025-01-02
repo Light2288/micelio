@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ImageSliderView: View {
-    let images: [String]
-    @Binding var selectedImage: String
+    let imageURLs: [URL]
+    @Binding var selectedImage: URL
     let width: CGFloat
     
     var body: some View {
         TabView(selection: $selectedImage) {
-            ForEach(images, id: \.self) { image in
-                PhotoThumbnailView(imageUrl: Bundle.main.url(forResource: image, withExtension: "jpeg") ?? URL(filePath: ""), width: width, height: width)
+            ForEach(imageURLs, id: \.self) { imageURL in
+                PhotoThumbnailView(
+                    imageUrl: imageURL,
+                    width: width,
+                    height: width
+                )
             }
         }
         .frame(height: width)
@@ -25,6 +29,6 @@ struct ImageSliderView: View {
 
 #Preview {
     GeometryReader { proxy in
-        ImageSliderView(images: mushroomData[0].images, selectedImage: .constant(mushroomData[0].images[0]), width: proxy.size.width)
+        ImageSliderView(imageURLs: mushroomData[0].imageURLs, selectedImage: .constant(mushroomData[0].imageURLs[0]), width: proxy.size.width)
     }
 }

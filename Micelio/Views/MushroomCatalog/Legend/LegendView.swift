@@ -14,11 +14,11 @@ struct LegendView: View {
         NavigationStack {
             List {
                 ForEach(legendSections) { legendSection in
-                    LegendListSectionView(title: legendSection.title, legendItems: legendItems.filter{ $0.legendSection.id == legendSection.id }
+                    LegendListSectionView(
+                        title: legendSection.title,
+                        legendItems: getLegendItems(for: legendSection)
                     )
-                    .alignmentGuide(.listRowSeparatorLeading) { _ in
-                        return 0
-                    }
+                    .alignmentGuide(.listRowSeparatorLeading) { _ in 0 }
                 }
             }
             .navigationTitle("Legenda")
@@ -33,6 +33,10 @@ struct LegendView: View {
                 }
             }
         }
+    }
+    
+    private func getLegendItems(for section: LegendSection) -> [LegendItem] {
+        legendItems.filter { $0.legendSection.id == section.id }
     }
 }
 

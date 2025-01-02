@@ -10,9 +10,11 @@ import SwiftUI
 struct LegendListRowView: View {
     let legendItem: LegendItem
     
+    private let imageSize = Constants.Legend.LegendListRow.imageSize
+    
     var body: some View {
         HStack {
-            LegendItemImageView(legendItem: legendItem, dimension: Constants.Legend.LegendListRow.imageSize)
+            LegendItemImageView(legendItem: legendItem, dimension: imageSize)
             Spacer()
             Text(legendItem.text)
         }

@@ -9,24 +9,46 @@ import SwiftUI
 
 struct DetailGridView: View {
     let items: [String]
+    
+    private let oneColumnMaxWidth: CGFloat = Constants.MushroomCatalog.TitleAndDetails.DetailGrid.oneColumnMaxWidth
+    private let twoColumnsMaxWidth: CGFloat = Constants.MushroomCatalog.TitleAndDetails.DetailGrid.twoColumnsMaxWidth
+    private let gridItemWidth: CGFloat = Constants.MushroomCatalog.TitleAndDetails.DetailGrid.gridItemWidth
+    private let imageSize: CGFloat = Constants.MushroomCatalog.TitleAndDetails.DetailGrid.imageSize
+    private let imagePadding: CGFloat = Constants.MushroomCatalog.TitleAndDetails.DetailGrid.imagePadding
+    private let imageCornerSize: CGSize = Constants.MushroomCatalog.TitleAndDetails.DetailGrid.imageCornerSize
+    private let imageLineWidth: CGFloat = Constants.MushroomCatalog.TitleAndDetails.DetailGrid.imageLineWidth
+    
     var numberOfColumns: Int {
         items.count == 1 ? 1 : 2
     }
+    
     var maxWidth: CGFloat {
-        items.count == 1 ? Constants.MushroomCatalog.TitleAndDetails.DetailGrid.oneColumnMaxWidth : Constants.MushroomCatalog.TitleAndDetails.DetailGrid.twoColumnsMaxWidth
+        items.count == 1 ? oneColumnMaxWidth : twoColumnsMaxWidth
     }
     
     var columns: Array<GridItem> {
-        Array(repeating: GridItem(.fixed(Constants.MushroomCatalog.TitleAndDetails.DetailGrid.gridItemWidth)), count: numberOfColumns)
+        Array(repeating: GridItem(.fixed(gridItemWidth)), count: numberOfColumns)
     }
     
     var body: some View {
         LazyVGrid(columns: columns, content: {
             ForEach(items, id: \.self) { item in
-                LegendItemImageView(legendItem: legendItems.filter { $0.icon == item }.first!, dimension: Constants.MushroomCatalog.TitleAndDetails.DetailGrid.imageSize, padding: Constants.MushroomCatalog.TitleAndDetails.DetailGrid.imagePadding, cornerSize: Constants.MushroomCatalog.TitleAndDetails.DetailGrid.imageCornerSize, lineWidth: Constants.MushroomCatalog.TitleAndDetails.DetailGrid.imageLineWidth)
+                let legendItem = legendItems.filter { $0.icon == item }.first!
+                return createLegendItemView(for: legendItem)
             }
         })
         .frame(maxWidth: maxWidth)
+    }
+    
+    @ViewBuilder
+    private func createLegendItemView(for legendItem: LegendItem) -> some View {
+        LegendItemImageView(
+            legendItem: legendItem,
+            dimension: imageSize,
+            padding: imagePadding,
+            cornerSize: imageCornerSize,
+            lineWidth: imageLineWidth
+        )
     }
 }
 

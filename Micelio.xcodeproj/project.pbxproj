@@ -247,6 +247,11 @@
 		6B46365E2C093F7C00677B12 /* astræushygrometricus_7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636542C093F7B00677B12 /* astræushygrometricus_7.jpeg */; };
 		6B46365F2C093F7C00677B12 /* astræushygrometricus_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4636552C093F7B00677B12 /* astræushygrometricus_2.jpeg */; };
 		6B4EAC1A2D091FED0002ED9F /* AnnotationSheetToolbarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4EAC192D091FED0002ED9F /* AnnotationSheetToolbarButtonView.swift */; };
+		6B4EAC202D1CE0A20002ED9F /* MushroomCatalogRowTextContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4EAC1F2D1CE0A20002ED9F /* MushroomCatalogRowTextContent.swift */; };
+		6B4EAC222D260D5F0002ED9F /* DetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4EAC212D260D5F0002ED9F /* DetailSection.swift */; };
+		6B4EAC242D260DE90002ED9F /* Mushroom+DetailSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4EAC232D260DE90002ED9F /* Mushroom+DetailSections.swift */; };
+		6B4EAC262D2619CA0002ED9F /* ThumbnailImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4EAC252D2619CA0002ED9F /* ThumbnailImageButtonView.swift */; };
+		6B4EAC282D261C0C0002ED9F /* Mushroom+ImageURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4EAC272D261C0C0002ED9F /* Mushroom+ImageURLs.swift */; };
 		6B5570EE2D012B9F004C6C19 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5570ED2D012B9F004C6C19 /* MainTabView.swift */; };
 		6B5570F02D07A200004C6C19 /* AnnotationEditActionButtonsHstackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5570EF2D07A200004C6C19 /* AnnotationEditActionButtonsHstackView.swift */; };
 		6B5570F22D07A231004C6C19 /* AnnotationEditActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5570F12D07A231004C6C19 /* AnnotationEditActionButtonView.swift */; };
@@ -800,6 +805,11 @@
 		6B4636542C093F7B00677B12 /* astræushygrometricus_7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "astræushygrometricus_7.jpeg"; sourceTree = "<group>"; };
 		6B4636552C093F7B00677B12 /* astræushygrometricus_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "astræushygrometricus_2.jpeg"; sourceTree = "<group>"; };
 		6B4EAC192D091FED0002ED9F /* AnnotationSheetToolbarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationSheetToolbarButtonView.swift; sourceTree = "<group>"; };
+		6B4EAC1F2D1CE0A20002ED9F /* MushroomCatalogRowTextContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomCatalogRowTextContent.swift; sourceTree = "<group>"; };
+		6B4EAC212D260D5F0002ED9F /* DetailSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSection.swift; sourceTree = "<group>"; };
+		6B4EAC232D260DE90002ED9F /* Mushroom+DetailSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mushroom+DetailSections.swift"; sourceTree = "<group>"; };
+		6B4EAC252D2619CA0002ED9F /* ThumbnailImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageButtonView.swift; sourceTree = "<group>"; };
+		6B4EAC272D261C0C0002ED9F /* Mushroom+ImageURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mushroom+ImageURLs.swift"; sourceTree = "<group>"; };
 		6B5570ED2D012B9F004C6C19 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		6B5570EF2D07A200004C6C19 /* AnnotationEditActionButtonsHstackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationEditActionButtonsHstackView.swift; sourceTree = "<group>"; };
 		6B5570F12D07A231004C6C19 /* AnnotationEditActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationEditActionButtonView.swift; sourceTree = "<group>"; };
@@ -1446,6 +1456,8 @@
 				6B5ED68D2CD2FE44008AB162 /* View+ShapeBackground.swift */,
 				6B5ED68F2CD2FE8A008AB162 /* Image+FitToAspectRatio.swift */,
 				6B5ED6932CD2FFBF008AB162 /* Array+RandomSubset.swift */,
+				6B4EAC232D260DE90002ED9F /* Mushroom+DetailSections.swift */,
+				6B4EAC272D261C0C0002ED9F /* Mushroom+ImageURLs.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1742,6 +1754,7 @@
 				6B7CC3532B141ACE0042A8E4 /* AllImagesContainerView.swift */,
 				6B7CC3552B141B9B0042A8E4 /* MainAndAllImagesView.swift */,
 				6BB5576E2C0FBB3300C37AA5 /* ImageSliderView.swift */,
+				6B4EAC252D2619CA0002ED9F /* ThumbnailImageButtonView.swift */,
 			);
 			path = MainAndAdditionalImages;
 			sourceTree = "<group>";
@@ -2105,6 +2118,7 @@
 				6B83C5FE2C1CB56800902914 /* CatalogGroupBy.swift */,
 				6B0642782C2B63B600553E2A /* CatalogFilterBy.swift */,
 				6B6007CE2CB88BD200DCA4CB /* NotificationManager.swift */,
+				6B4EAC212D260D5F0002ED9F /* DetailSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2137,12 +2151,13 @@
 		6BA8B4CE2AD757BD005272D2 /* MushroomCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				6BE713232C2A22B800ABEA55 /* CatalogList */,
+				6BBEC8C32AF46C43000720FF /* Legend */,
 				6B78358A2AFE6F2000166DB3 /* CommonViews */,
 				6BA8B4D52AD8BA7B005272D2 /* MushroomDetail */,
 				6BA8B4D12AD75B29005272D2 /* MushroomCatalogRowView.swift */,
 				6BA8B4D32AD8B828005272D2 /* MushroomCatalogView.swift */,
-				6BBEC8C32AF46C43000720FF /* Legend */,
-				6BE713232C2A22B800ABEA55 /* CatalogList */,
+				6B4EAC1F2D1CE0A20002ED9F /* MushroomCatalogRowTextContent.swift */,
 			);
 			path = MushroomCatalog;
 			sourceTree = "<group>";
@@ -2728,6 +2743,7 @@
 				6B283A862C9100D4002614A4 /* MushroomMapAnnotationPhoto+CoreDataClass.swift in Sources */,
 				6BA8B4C72AD588E4005272D2 /* Season.swift in Sources */,
 				6B7CC3592B19134D0042A8E4 /* Constants.swift in Sources */,
+				6B4EAC242D260DE90002ED9F /* Mushroom+DetailSections.swift in Sources */,
 				6B5ED68E2CD2FE44008AB162 /* View+ShapeBackground.swift in Sources */,
 				6B5570EE2D012B9F004C6C19 /* MainTabView.swift in Sources */,
 				6B8E4B7F2B9D256800EAE603 /* MushroomTypePickerView.swift in Sources */,
@@ -2745,7 +2761,9 @@
 				6BB01E242B879B590050A3A4 /* AnnotationCoordinateTextView.swift in Sources */,
 				6BE1332E2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift in Sources */,
 				6B820A822B2BB80100724555 /* CameraView.swift in Sources */,
+				6B4EAC282D261C0C0002ED9F /* Mushroom+ImageURLs.swift in Sources */,
 				6B7A457E2B9E64F0000E3966 /* PinColorChoiceButtonLabelView.swift in Sources */,
+				6B4EAC222D260D5F0002ED9F /* DetailSection.swift in Sources */,
 				6B3922272BA8871C0093961E /* MushroomData.swift in Sources */,
 				6BCFBA212B4CCB1F00C6246E /* RecogniseDisclaimerTitleView.swift in Sources */,
 				6B0642792C2B63B600553E2A /* CatalogFilterBy.swift in Sources */,
@@ -2764,6 +2782,7 @@
 				6B78357C2AFBDDDC00166DB3 /* TitleView.swift in Sources */,
 				6BE713272C2A276600ABEA55 /* CatalogFilterMenuView.swift in Sources */,
 				6BCFB90D2B3E41D000C6246E /* ResizableImageWithShapeBackground.swift in Sources */,
+				6B4EAC202D1CE0A20002ED9F /* MushroomCatalogRowTextContent.swift in Sources */,
 				6BBEC8C52AF46C52000720FF /* LegendListSectionView.swift in Sources */,
 				6B7A1FFB2B6321E700B62640 /* MobileNetV2.mlmodel in Sources */,
 				6B7A1FF32B5F3C9200B62640 /* ResultItemImageView.swift in Sources */,
@@ -2786,6 +2805,7 @@
 				6B239E0C2B6C581F00D7D8EB /* MushroomMapAnnotation+Coordinate.swift in Sources */,
 				6B0FBC3E2ACB677B00FDAA89 /* ContentView.swift in Sources */,
 				6BFF3A4F2C2CC22B001C91E5 /* NoFilteredResultsOverlayView.swift in Sources */,
+				6B4EAC262D2619CA0002ED9F /* ThumbnailImageButtonView.swift in Sources */,
 				6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */,
 				6B908D4D2B7E5B46007FC5B7 /* MushroomMapAnnotation+RandomGenerator.swift in Sources */,
 				6B16ACC52C3DE26C00D59D84 /* SplashScreenMushroomIconView.swift in Sources */,

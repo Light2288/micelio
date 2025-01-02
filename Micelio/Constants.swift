@@ -266,6 +266,7 @@ enum Constants {
                 
                 enum AllImages {
                     public static let rowSpacing: CGFloat = 1
+                    public static let selectedImageBorderWidth: CGFloat = 4
                 }
             }
         }

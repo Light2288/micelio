@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct MainAndAllImagesView: View {
-    let images: [String]
-    @State var selectedImage: String
+    let imageURLs: [URL]
+    @State var selectedImageURL: URL
     let width: CGFloat
     
     var body: some View {
         ZStack {
-            ImageSliderView(images: images, selectedImage: $selectedImage, width: width)
-                AllImagesContainerView(images: images, proxyWidth: width, selectedImage: $selectedImage)
+            ImageSliderView(imageURLs: imageURLs, selectedImage: $selectedImageURL, width: width)
+            AllImagesContainerView(imageURLs: imageURLs, proxyWidth: width, selectedImageURL: $selectedImageURL)
         }
     }
 }
 
 #Preview {
     GeometryReader { proxy in
-        MainAndAllImagesView(images: mushroomData[0].images, selectedImage: mushroomData[0].images[0], width: proxy.size.width)
+        MainAndAllImagesView(imageURLs: mushroomData[0].imageURLs, selectedImageURL: mushroomData[0].imageURLs[0], width: proxy.size.width)
     }
 }

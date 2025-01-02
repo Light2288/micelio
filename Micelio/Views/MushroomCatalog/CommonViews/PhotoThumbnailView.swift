@@ -14,7 +14,8 @@ struct PhotoThumbnailView: View {
     
     var body: some View {
         AsyncImage(url: imageUrl) { phase in
-            if let image = phase.image {
+            switch phase {
+            case .success(let image):
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -23,10 +24,13 @@ struct PhotoThumbnailView: View {
                         height: height
                     )
                     .clipped()
-            } else if phase.error != nil {
+            case .failure:
                 Image(systemName: "eye.slash")
                     .frame(width: width, height: height)
-            } else {
+            case .empty:
+                ProgressView()
+                    .frame(width: width, height: height)
+            @unknown default:
                 ProgressView()
                     .frame(width: width, height: height)
             }

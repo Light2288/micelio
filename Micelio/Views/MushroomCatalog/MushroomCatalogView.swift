@@ -14,6 +14,8 @@ struct MushroomCatalogView: View {
     @State private var groupBy: CatalogGroupBy = .initialLetter
     @State private var filterBy: CatalogFilterBy = CatalogFilterBy()
     
+    private let rowEdgeInsets = Constants.MushroomCatalog.MushroomCatalogRow.rowEdgeInsets
+    
     var areFiltersApplied: Bool {
         !searchTerm.isEmpty || filterBy.edibilityFilters.count > 0 || filterBy.environmentFilters.count > 0 || filterBy.seasonFilters.count > 0
     }
@@ -38,8 +40,8 @@ struct MushroomCatalogView: View {
     }
     
     var filteredGroupedMushrooms: [(key: String, value: [Mushroom])] {
-        return !areFiltersApplied ? groupedMushrooms :
-        groupedMushrooms
+        guard areFiltersApplied else { return  groupedMushrooms }
+        return groupedMushrooms
             .map {
                 (
                     key: $0.key,
@@ -65,45 +67,47 @@ struct MushroomCatalogView: View {
                                     MushroomCatalogRowView(mushroom: mushroom, imageSize: proxy.size.width/3)
                                 }
                             }
-                            .listRowInsets(Constants.MushroomCatalog.MushroomCatalogRow.rowEdgeInsets)
+                            .listRowInsets(rowEdgeInsets)
                         } header: {
                             Text(section.key)
                         }
                         
                     }
                 }
-                .overlay(
-                    Group {
-                    if filteredGroupedMushrooms.isEmpty {
-                        NoFilteredResultsOverlayView()
-                    }
-                }
-                )
+                .overlay(emptyResultsOverlay)
             }
             .sheet(isPresented: $showLegend, content: {
                 LegendView(showLegend: $showLegend)
             })
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        showLegend.toggle()
-                    } label: {
-                        Image(systemName: "info.circle")
-                    }
-                    .transaction { transaction in
-                        transaction.animation = nil
-                    }
-                }
-                ToolbarItem(placement: .topBarTrailing) {
-                    GroupByMenuView(groupBy: $groupBy)
-                }
-            }
+            .toolbar { toolbarContent }
             .navigationTitle("Catalogo Funghi")
             .safeAreaInset(edge: .bottom) {
                 CatalogFiltersView(filterBy: $filterBy)
             }
         }
         .searchable(text: $searchTerm, prompt: "Cerca per nome scientifico")
+    }
+}
+
+extension MushroomCatalogView {
+    @ViewBuilder
+    private var emptyResultsOverlay: some View {
+        if filteredGroupedMushrooms.isEmpty {
+            NoFilteredResultsOverlayView()
+        }
+    }
+    
+    @ToolbarContentBuilder
+    private var toolbarContent: some ToolbarContent {
+        ToolbarItem(placement: .topBarLeading) {
+            Button(action: { showLegend.toggle() }) {
+                Image(systemName: "info.circle")
+            }
+        }
+        
+        ToolbarItem(placement: .topBarTrailing) {
+            GroupByMenuView(groupBy: $groupBy)
+        }
     }
 }
 
