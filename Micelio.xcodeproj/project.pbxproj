@@ -252,6 +252,8 @@
 		6B4EAC242D260DE90002ED9F /* Mushroom+DetailSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4EAC232D260DE90002ED9F /* Mushroom+DetailSections.swift */; };
 		6B4EAC262D2619CA0002ED9F /* ThumbnailImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4EAC252D2619CA0002ED9F /* ThumbnailImageButtonView.swift */; };
 		6B4EAC282D261C0C0002ED9F /* Mushroom+ImageURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4EAC272D261C0C0002ED9F /* Mushroom+ImageURLs.swift */; };
+		6B50BE4C2D2759CC0007929C /* CatalogFilterOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B50BE4B2D2759CC0007929C /* CatalogFilterOptionsView.swift */; };
+		6B50BE542D2765D60007929C /* CatalogFilterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B50BE532D2765D60007929C /* CatalogFilterHeaderView.swift */; };
 		6B5570EE2D012B9F004C6C19 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5570ED2D012B9F004C6C19 /* MainTabView.swift */; };
 		6B5570F02D07A200004C6C19 /* AnnotationEditActionButtonsHstackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5570EF2D07A200004C6C19 /* AnnotationEditActionButtonsHstackView.swift */; };
 		6B5570F22D07A231004C6C19 /* AnnotationEditActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5570F12D07A231004C6C19 /* AnnotationEditActionButtonView.swift */; };
@@ -810,6 +812,8 @@
 		6B4EAC232D260DE90002ED9F /* Mushroom+DetailSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mushroom+DetailSections.swift"; sourceTree = "<group>"; };
 		6B4EAC252D2619CA0002ED9F /* ThumbnailImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageButtonView.swift; sourceTree = "<group>"; };
 		6B4EAC272D261C0C0002ED9F /* Mushroom+ImageURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mushroom+ImageURLs.swift"; sourceTree = "<group>"; };
+		6B50BE4B2D2759CC0007929C /* CatalogFilterOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFilterOptionsView.swift; sourceTree = "<group>"; };
+		6B50BE532D2765D60007929C /* CatalogFilterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFilterHeaderView.swift; sourceTree = "<group>"; };
 		6B5570ED2D012B9F004C6C19 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		6B5570EF2D07A200004C6C19 /* AnnotationEditActionButtonsHstackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationEditActionButtonsHstackView.swift; sourceTree = "<group>"; };
 		6B5570F12D07A231004C6C19 /* AnnotationEditActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationEditActionButtonView.swift; sourceTree = "<group>"; };
@@ -2243,6 +2247,8 @@
 				6BFF3A4A2C2CB87F001C91E5 /* CatalogFilterMenuButtonView.swift */,
 				6BFF3A4C2C2CB968001C91E5 /* CatalogFilterMenuLabelView.swift */,
 				6BFF3A4E2C2CC22B001C91E5 /* NoFilteredResultsOverlayView.swift */,
+				6B50BE4B2D2759CC0007929C /* CatalogFilterOptionsView.swift */,
+				6B50BE532D2765D60007929C /* CatalogFilterHeaderView.swift */,
 			);
 			path = CatalogList;
 			sourceTree = "<group>";
@@ -2811,6 +2817,7 @@
 				6B16ACC52C3DE26C00D59D84 /* SplashScreenMushroomIconView.swift in Sources */,
 				6B4EAC1A2D091FED0002ED9F /* AnnotationSheetToolbarButtonView.swift in Sources */,
 				6B16ACC32C3DE14F00D59D84 /* SplashScreenMushroomIconsView.swift in Sources */,
+				6B50BE4C2D2759CC0007929C /* CatalogFilterOptionsView.swift in Sources */,
 				6B820A8A2B2CC12C00724555 /* AddPhotoButtonsHStackView.swift in Sources */,
 				6BBEC8C72AF46D10000720FF /* LegendListRowView.swift in Sources */,
 				6B7CC3562B141B9B0042A8E4 /* MainAndAllImagesView.swift in Sources */,
@@ -2829,6 +2836,7 @@
 				6B7A20092B670A9E00B62640 /* MushroomNotDetectedTextView.swift in Sources */,
 				6BB5179E2B75AEF5002A2133 /* MushroomPinView.swift in Sources */,
 				6B3363BE2B3CF5E8002FBAEF /* FloatingPoint+Rounded.swift in Sources */,
+				6B50BE542D2765D60007929C /* CatalogFilterHeaderView.swift in Sources */,
 				6B7835802AFBE1F400166DB3 /* MushroomDetailSectionView.swift in Sources */,
 				6B78358C2AFE6F6A00166DB3 /* LegendItemImageView.swift in Sources */,
 				6B820A8E2B3088CC00724555 /* ViewWithShapeBackground.swift in Sources */,

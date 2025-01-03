@@ -10,37 +10,22 @@ import SwiftUI
 struct CatalogFiltersView: View {
     @Binding var filterBy: CatalogFilterBy
     
+    private let spacing: CGFloat = Constants.MushroomCatalog.CatalogFilter.vStackSpacing
+    private let verticalPadding: CGFloat = Constants.MushroomCatalog.CatalogFilter.vStackVerticalPadding
+    private let shadowRadius: CGFloat = Constants.MushroomCatalog.CatalogFilter.vStackShadowRadius
+    
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: Constants.MushroomCatalog.CatalogFilter.vStackSpacing) {
-            HStack {
-                Group {
-                    Image(systemName: "line.3.horizontal.decrease.circle")
-                    Text("Filtra per:")
-                }
-                .foregroundStyle(.accent)
-                Spacer()
-                Button("Cancella filtri", systemImage: "trash", role: .destructive) {
-                    filterBy = CatalogFilterBy()
-                }
-                .disabled(filterBy.noFiltersSet)
-                .font(.footnote)
-            }
-            .padding(.bottom, Constants.MushroomCatalog.CatalogFilter.hStackBottomPadding)
+        VStack(alignment: .leading, spacing: spacing) {
+            CatalogFilterHeaderView(filterBy: $filterBy)
             
-            HStack {
-                CatalogFilterMenuView(labelText: "Commestibilità", someEnum: Edibility.self, filters: $filterBy.edibilityFilters)
-                CatalogFilterMenuView(labelText: "Habitat", someEnum: MushroomEnvironment.self, filters: $filterBy.environmentFilters)
-                CatalogFilterMenuView(labelText: "Stagione", someEnum: Season.self, filters: $filterBy.seasonFilters)
-                Spacer()
-            }
-            .buttonStyle(.bordered)
-            .controlSize(.mini)
+            CatalogFilterOptionsView(filterBy: $filterBy)
         }
         .padding(.horizontal)
-        .padding(.vertical, Constants.MushroomCatalog.CatalogFilter.vStackVerticalPadding)
+        .padding(.vertical, verticalPadding)
         .background(Material.regular)
         .compositingGroup()
-        .shadow(radius: Constants.MushroomCatalog.CatalogFilter.vStackShadowRadius)
+        .shadow(radius: shadowRadius)
     }
 }
 
