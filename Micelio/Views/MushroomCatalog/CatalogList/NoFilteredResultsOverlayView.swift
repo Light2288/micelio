@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct NoFilteredResultsOverlayView: View {
+    private let imageFrameDimension = Constants.MushroomCatalog.NoFilteredResults.imageFrameDimension
+    
     var body: some View {
         VStack {
             Image("noResults")
                 .resizable()
                 .scaledToFit()
                 .frame(
-                    width: Constants.MushroomCatalog.NoFilteredResults.imageFrameDimension,
-                    height: Constants.MushroomCatalog.NoFilteredResults.imageFrameDimension
+                    width: imageFrameDimension,
+                    height: imageFrameDimension
                 )
             Text("Ooops!")
                 .font(.title)

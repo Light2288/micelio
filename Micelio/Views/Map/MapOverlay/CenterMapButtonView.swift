@@ -10,12 +10,14 @@ import SwiftUI
 struct CenterMapButtonView: View {
     var centerOnUserPosition: () -> Void
     
+    private let frameSize: CGFloat = Constants.MushroomMap.CenterMapButton.frameSize
+    
     var body: some View {
         Button {
             centerOnUserPosition()
         } label: {
             Image(systemName: "location.fill")
-                .resizableImageWithShapeBackground(shape: AnyShape(Circle()), frameWidth: Constants.MushroomMap.CenterMapButton.frameSize, frameHeight: Constants.MushroomMap.CenterMapButton.frameSize, padding: .zero)
+                .resizableImageWithShapeBackground(shape: AnyShape(Circle()), frameWidth: frameSize, frameHeight: frameSize, padding: .zero)
         }
     }
 }

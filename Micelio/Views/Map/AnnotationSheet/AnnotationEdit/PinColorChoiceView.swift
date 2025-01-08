@@ -10,12 +10,14 @@ import SwiftUI
 struct PinColorChoiceView: View {
     @Binding var selectedColor: String
     
+    private let colorKeys: [String] = MushroomMapAnnotation.colors.keys.sorted()
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Scegli il colore del segnaposto")
                 .font(.subheadline)
             HStack {
-                ForEach(Array(MushroomMapAnnotation.colors.keys.sorted()), id: \.self) { colorString in
+                ForEach(colorKeys, id: \.self) { colorString in
                     Button(action: {
                         selectedColor = colorString
                     }, label: {

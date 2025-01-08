@@ -13,17 +13,29 @@ struct PinColorChoiceButtonLabelView: View {
     
     @Binding var selectedColor: String
     
+    private var isSelected: Bool {
+        colorString == selectedColor
+    }
+    
+    private var color: Color {
+        MushroomMapAnnotation.colors[colorString] ?? .accent
+    }
+    
+    private let cornerRadius = Constants.MushroomMap.AnnotationSheet.EditView.PinColorChoiceButton.cornerRadius
+    private let lineWidth = Constants.MushroomMap.AnnotationSheet.EditView.PinColorChoiceButton.lineWidth
+    private let maxHeight = Constants.MushroomMap.AnnotationSheet.EditView.PinColorChoiceButton.maxHeight
+    
     var body: some View {
-        RoundedRectangle(cornerSize: Constants.MushroomMap.AnnotationSheet.EditView.PinColorChoiceButton.cornerRadius)
+        RoundedRectangle(cornerSize: cornerRadius)
             .strokeBorder(
-                colorString == selectedColor ? Color("CustomSecondaryColor") : .clear,
-                lineWidth: Constants.MushroomMap.AnnotationSheet.EditView.PinColorChoiceButton.lineWidth
+                isSelected ? Color("CustomSecondaryColor") : .clear,
+                lineWidth: lineWidth
             )
             .background(
-                RoundedRectangle(cornerSize: Constants.MushroomMap.AnnotationSheet.EditView.PinColorChoiceButton.cornerRadius)
-                .foregroundColor(MushroomMapAnnotation.colors[colorString] ?? .accent)
+                RoundedRectangle(cornerSize: cornerRadius)
+                .foregroundColor(color)
             )
-            .frame(maxHeight: Constants.MushroomMap.AnnotationSheet.EditView.PinColorChoiceButton.maxHeight)
+            .frame(maxHeight: maxHeight)
             .aspectRatio(1.0, contentMode: .fit)
     }
 }

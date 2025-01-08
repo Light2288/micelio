@@ -10,10 +10,13 @@ import SwiftUI
 struct RecogniseButtonView: View {
     let image: UIImage
     
+    let capsuleButtonWidth = Constants.Recognise.RecogniseButton.capsuleButtonWidth
+    let roundButtonSize = Constants.Recognise.RecogniseButton.roundButtonSize
+    
     var body: some View {
         NavigationLink(destination: RecogniseMushroomResultView(image: image)) {
             Text("Riconosci fungo")
-                .viewWithShapeBackground(shape: AnyShape(Capsule()), width: Constants.Recognise.RecogniseButton.capsuleButtonWidth, height: Constants.Recognise.RecogniseButton.roundButtonSize)
+                .viewWithShapeBackground(shape: AnyShape(Capsule()), width: capsuleButtonWidth, height: roundButtonSize)
         }
     }
 }

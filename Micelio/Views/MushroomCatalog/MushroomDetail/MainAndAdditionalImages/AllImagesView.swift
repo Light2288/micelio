@@ -8,36 +8,25 @@
 import SwiftUI
 
 struct AllImagesView: View {
-    let images: [String]
-    let width: CGFloat
-    let height: CGFloat
+    let imageURLS: [URL]
+    let thumbnailSize: CGSize
     
-    @Binding var selectedImage: String
-    @State var isExpanded: Bool = true
+    @Binding var selectedImageURL: URL
     
-    var columns: Array<GridItem> {
-        Array(
-            repeating: GridItem(
-                .flexible()
-            ),
-            count: 1
-        )
-    }
+    let rowSpacing = Constants.MushroomCatalog.MushroomDetail
+        .MainAndAdditionalImage.AllImages.rowSpacing
     
     var body: some View {
         LazyVGrid(
-            columns: columns,
-            spacing: Constants.MushroomCatalog.MushroomDetail.MainAndAdditionalImage.AllImages.rowSpacing
+            columns: [GridItem(.flexible())],
+            spacing: rowSpacing
         ) {
-            ForEach(images, id: \.self) { image in
-                Button {
-                    selectedImage = image
-                } label: {
-                    PhotoThumbnailView(
-                        imageUrl: Bundle.main.url(forResource: image, withExtension: "jpeg") ?? URL(filePath: ""),
-                        width: width, height: height
-                    )
-                    .border(image == selectedImage ? .accent : .clear, width: 4)
+            ForEach(imageURLS, id: \.self) { imageURL in
+                ThumbnailImageButtonView(
+                    imageUrl: imageURL, thumbnailSize: thumbnailSize,
+                    isSelected: imageURL == selectedImageURL
+                ) {
+                    selectedImageURL = imageURL
                 }
             }
         }
@@ -45,7 +34,9 @@ struct AllImagesView: View {
 }
 
 #Preview {
-    return ScrollView {
-        AllImagesView(images: mushroomData[0].images, width: 100, height: 100, selectedImage: .constant(mushroomData[0].images[0]))
+    ScrollView {
+        AllImagesView(
+            imageURLS: mushroomData[0].imageURLs, thumbnailSize: CGSize(width: 100, height: 100),
+            selectedImageURL: .constant(mushroomData[0].imageURLs[0]))
     }
 }

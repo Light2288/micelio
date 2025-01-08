@@ -11,11 +11,13 @@ struct ResultItemMushroomNameTextView: View {
     let recognisedMushroom: RecognisedMushroom
     var recognisedMushroomNameFont: Font
     
+    let padding = Constants.Recognise.Results.ResultList.ResultItem.MushroomNameText.padding
+    
     var body: some View {
-        Text("\(recognisedMushroom.mushroomDetail.scientificName.capitalized )")
+        Text(recognisedMushroom.mushroomDetail.scientificName.capitalized)
             .font(recognisedMushroomNameFont)
             .fontWeight(.bold)
-            .padding(Constants.Recognise.Results.ResultList.ResultItem.MushroomNameText.padding)
+            .padding(padding)
     }
 }
 

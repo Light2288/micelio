@@ -11,18 +11,17 @@ struct MushroomCatalogRowView: View {
     let mushroom: Mushroom
     let imageSize: CGFloat
     
+    private var imageUrl: URL {
+        Bundle.main.url(forResource: mushroom.images.first ?? "", withExtension: "jpeg") ?? URL(filePath: "")
+    }
+    
     var body: some View {
         HStack(alignment: .center, content: {
-            PhotoThumbnailView(imageUrl: Bundle.main.url(forResource: mushroom.images[0], withExtension: "jpeg") ?? URL(filePath: ""), width: imageSize, height: imageSize)
-            VStack(alignment: .leading, spacing: Constants.MushroomCatalog.MushroomCatalogRow.vStackSpacing, content: {
-                Text(mushroom.scientificName.capitalized)
-                    .font(.title3)
-                    .fontWeight(.bold)
-                Text(mushroom.veryShortDescription)
-                    .font(.caption2)
-                    .foregroundStyle(Color.secondary)
-            })
-            .padding(.vertical, Constants.MushroomCatalog.MushroomCatalogRow.vStackPadding)
+            PhotoThumbnailView(imageUrl: imageUrl, width: imageSize, height: imageSize)
+            MushroomCatalogRowTextContent(
+                scientificName: mushroom.scientificName.capitalized,
+                veryShortDescription: mushroom.veryShortDescription
+            )
         })
     }
 }

@@ -1,5 +1,5 @@
 {
-  "sourceLanguage" : "en",
+  "sourceLanguage" : "it",
   "strings" : {
     "" : {
 
@@ -7,12 +7,12 @@
     "(%@)" : {
 
     },
-    "%@" : {
+    "%@ button" : {
 
     },
     "%lld/%lld" : {
       "localizations" : {
-        "en" : {
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$lld/%2$lld"
@@ -39,6 +39,7 @@
 
     },
     "Catalog" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -57,18 +58,15 @@
     "Close" : {
 
     },
-    "Coordinate: (lat. %lf ;  lon. %lf)" : {
+    "Coordinate: (lat. %@ ; lon. %@)" : {
       "localizations" : {
-        "en" : {
+        "it" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Coordinate: (lat. %1$lf ;  lon. %2$lf)"
+            "value" : "Coordinate: (lat. %1$@ ; lon. %2$@)"
           }
         }
       }
-    },
-    "Data creazione: %@" : {
-
     },
     "Elimina" : {
 
@@ -88,10 +86,8 @@
     "Fotocamera" : {
 
     },
-    "ID: %@" : {
-
-    },
     "Identify" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -107,6 +103,9 @@
     "Immagini:" : {
 
     },
+    "Informazioni aggiuntive" : {
+
+    },
     "Inserisci manualmente la tipologia di fungo" : {
 
     },
@@ -117,6 +116,7 @@
 
     },
     "Map" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -135,16 +135,10 @@
     "Nascondi" : {
 
     },
-    "nessuna immagine presente" : {
-
-    },
     "Non è stato possibile riconoscere alcun fungo dalla fotografia utilizzata" : {
 
     },
     "Note" : {
-
-    },
-    "Note: %@" : {
 
     },
     "Ooops!" : {
@@ -165,9 +159,6 @@
     "Riconosci fungo" : {
 
     },
-    "Salva" : {
-
-    },
     "Scatta una foto o seleziona un'immagine per procedere con il riconoscimento" : {
 
     },
@@ -184,9 +175,6 @@
 
     },
     "Tipologia fungo:" : {
-
-    },
-    "Tipologia fungo: %@" : {
 
     }
   },

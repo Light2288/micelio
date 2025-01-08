@@ -11,6 +11,10 @@ struct RecogniseMushroomResultView: View {
     var image: UIImage
     @ObservedObject var classifier = MushroomClassifier()
     
+    let imageFrameMaxHeight = Constants.Recognise.Results.imageFrameMaxHeight
+    let vStackFrameMaxHeight = Constants.Recognise.Results.vStackFrameMaxHeight
+    
+    
     var body: some View {
         ScrollView {
             HStack {
@@ -18,12 +22,12 @@ struct RecogniseMushroomResultView: View {
                 VStack(content: {
                     Image(uiImage: image)
                         .recogniseImageStyle()
-                        .frame(maxHeight: Constants.Recognise.Results.imageFrameMaxHeight)
+                        .frame(maxHeight: imageFrameMaxHeight)
                     ResultsListView(recognisedMushrooms: classifier.recognisedMushrooms)
                     RecogniseDisclaimerView()
                     
                 })
-                .frame(maxWidth: Constants.Recognise.Results.vStackFrameMaxHeight)
+                .frame(maxWidth: vStackFrameMaxHeight)
                 .onAppear {
                     classifier.recogniseMushroom(uiImage: image)
                 }

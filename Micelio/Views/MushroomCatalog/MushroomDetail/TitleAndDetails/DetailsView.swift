@@ -10,28 +10,27 @@ import SwiftUI
 struct DetailsView: View {
     let mushroom: Mushroom
     
+    private let bottomPadding: CGFloat = Constants.MushroomCatalog.TitleAndDetails.Details.bottomPadding
+    
     var body: some View {
         HStack(alignment: .top) {
-            DetailGridView(
-                items:
-                    Edibility.allCases
-                    .filter { mushroom.edibility == $0 }
-                    .map{ $0.rawValue.removeWhitespacesAndLowercase }
-            )
-            DetailGridView(
-                items:
-                    MushroomEnvironment.allCases
-                    .filter { mushroom.environments.contains($0) }
-                    .map{ $0.rawValue.removeWhitespacesAndLowercase }
-            )
-            DetailGridView(
-                items:
-                    Season.allCases
-                    .filter { mushroom.seasons.contains($0) }
-                    .map{ $0.rawValue.removeWhitespacesAndLowercase }
-            )
+            createDetailGridView(for: Edibility.allCases, matching: { $0 == mushroom.edibility })
+            createDetailGridView(for: MushroomEnvironment.allCases, matching: { mushroom.environments.contains($0) })
+            createDetailGridView(for: Season.allCases, matching: { mushroom.seasons.contains($0) })
         }
-        .padding(.bottom, Constants.MushroomCatalog.TitleAndDetails.Details.bottomPadding)
+        .padding(.bottom, bottomPadding)
+    }
+    
+    @ViewBuilder
+    private func createDetailGridView<T: RawRepresentable>(
+        for cases: [T],
+        matching predicate: (T) -> Bool
+    ) -> some View where T.RawValue == String {
+        let filteredItems = cases
+            .filter(predicate)
+            .map { $0.rawValue.lowercasedNoWhiteSpaces }
+        
+        DetailGridView(items: filteredItems)
     }
 }
 

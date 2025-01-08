@@ -11,15 +11,18 @@ struct CatalogFilterMenuLabelView<T: Identifiable & RawRepresentable & CaseItera
     let labelText: String
     let filters: [T]
     
+    private let countPadding: CGFloat = Constants.MushroomCatalog.CatalogFilter.CatalogFilterMenuLabel.appliedFiltersCountTextPadding
+
+    
     var body: some View {
         HStack {
             Text(labelText)
                 .font(.caption)
-            if filters.count > 0 {
+            if !filters.isEmpty {
                 Text(filters.count.description)
                     .font(.caption2)
                     .foregroundColor(Color(.systemBackground))
-                    .padding(Constants.MushroomCatalog.CatalogFilter.CatalogFilterMenuLabel.appliedFiltersCountTextPadding)
+                    .padding(countPadding)
                     .background(.primary)
                     .clipShape(Circle())
             }

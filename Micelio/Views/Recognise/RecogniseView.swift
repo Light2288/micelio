@@ -15,6 +15,8 @@ struct RecogniseView: View {
     @ObservedObject var classifier = MushroomClassifier()
     @ObservedObject var mushroomDetector = MushroomDetector()
     
+    let maxWidth = Constants.Recognise.maxWidth
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -33,11 +35,11 @@ struct RecogniseView: View {
                 AddPhotoButtonsHStackView(image: $image, isSheetVisible: $isSheetVisible)
             }
             .onChange(of: image) { newValue in
-                if let image = image {
+                if let image = newValue {
                     mushroomDetector.detectMushroom(uiImage: image)
                 }
             }
-            .frame(maxWidth: Constants.Recognise.maxWidth)
+            .frame(maxWidth: maxWidth)
             .sheet(isPresented: $isSheetVisible, content: {
                 CameraView(selectedImage: $image, isSheetVisible: $isSheetVisible)
                     .background(.black)

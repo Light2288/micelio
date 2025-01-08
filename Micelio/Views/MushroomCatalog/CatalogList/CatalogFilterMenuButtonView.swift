@@ -11,22 +11,30 @@ struct CatalogFilterMenuButtonView<T: Identifiable & RawRepresentable & CaseIter
     let enumCase: T
     @Binding var filters: [T]
     
+    private var isFilterSelected: Bool {
+        filters.contains(enumCase)
+    }
+    
     var body: some View {
         Button(action: {
-            if self.filters.contains(enumCase) {
-                self.filters.removeAll(where: { $0 == enumCase })
-            } else {
-                self.filters.append(enumCase)
-            }
+            toggleFilterSelection()
         }, label: {
             HStack {
-                if self.filters.contains(enumCase) {
+                if isFilterSelected {
                     Image(systemName: "checkmark")
                 }
                 Text(enumCase.rawValue)
             }
             
         })
+    }
+    
+    private func toggleFilterSelection() {
+        if isFilterSelected {
+            filters.removeAll { $0 == enumCase }
+        } else {
+            filters.append(enumCase)
+        }
     }
 }
 

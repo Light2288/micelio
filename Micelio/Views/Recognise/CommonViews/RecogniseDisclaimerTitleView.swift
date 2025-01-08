@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RecogniseDisclaimerTitleView: View {
+    let bottomPadding = Constants.Recognise.RecogniseDisclaimer.Title.bottomPadding
+    
     var body: some View {
         HStack {
             Spacer()
@@ -20,7 +22,7 @@ struct RecogniseDisclaimerTitleView: View {
         }
         .font(.body)
         .fontWeight(.bold)
-        .padding(.bottom, Constants.Recognise.RecogniseDisclaimer.Title.bottomPadding)
+        .padding(.bottom, bottomPadding)
     }
 }
 

@@ -13,31 +13,43 @@ struct AddPhotoButtonsHStackView: View {
     @Binding var isSheetVisible: Bool
     @State private var selectedItem: PhotosPickerItem? = nil
     
+    let roundButtonSize = Constants.Recognise.AddPhotoButtons.roundButtonSize
+    let horizontalBottomPadding = Constants.Recognise.AddPhotoButtons.horizontalBottomPadding
+    
+    
     var body: some View {
         HStack(content: {
             Button(action: {
                 isSheetVisible.toggle()
             }, label: {
                 Image("recognise-camera")
-                    .resizableImageWithShapeBackground(shape: AnyShape(Circle()), frameWidth: Constants.Recognise.AddPhotoButtons.roundButtonSize, frameHeight: Constants.Recognise.AddPhotoButtons.roundButtonSize)
+                    .resizableImageWithShapeBackground(
+                        shape: AnyShape(Circle()),
+                        frameWidth: roundButtonSize,
+                        frameHeight: roundButtonSize
+                    )
             })
             
             Spacer()
             
             PhotosPicker(selection: $selectedItem, matching: .images) {
                 Image("recognise-gallery")
-                    .resizableImageWithShapeBackground(shape: AnyShape(Circle()), frameWidth: Constants.Recognise.AddPhotoButtons.roundButtonSize, frameHeight: Constants.Recognise.AddPhotoButtons.roundButtonSize)
+                    .resizableImageWithShapeBackground(
+                        shape: AnyShape(Circle()),
+                        frameWidth: roundButtonSize,
+                        frameHeight: roundButtonSize
+                    )
             }
-            .onChange(of: selectedItem, perform: { value in
+            .onChange(of: selectedItem, perform: { newValue in
                 Task {
-                    if let data = try? await selectedItem?.loadTransferable(type: Data.self) {
+                    if let data = try? await newValue?.loadTransferable(type: Data.self) {
                         image = UIImage(data: data)
                     }
                 }
             })
             
         })
-        .padding([.horizontal, .bottom], Constants.Recognise.AddPhotoButtons.horizontalBottomPadding)
+        .padding([.horizontal, .bottom], horizontalBottomPadding)
     }
 }
 

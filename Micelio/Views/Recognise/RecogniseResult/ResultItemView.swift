@@ -13,6 +13,10 @@ struct ResultItemView: View {
     var recognisedMushroomConfidenceFont: Font = .subheadline
     var maxHeight: CGFloat = Constants.Recognise.Results.ResultList.ResultItem.defaultMaxHeight
     
+    let overlayCornerRadius = Constants.Recognise.Results.ResultList.ResultItem.overlayCornerRadius
+    let overlayLineWidth = Constants.Recognise.Results.ResultList.ResultItem.overlayLineWidth
+    
+    
     var body: some View {
         NavigationLink {
             MushroomDetailView(mushroom: recognisedMushroom.mushroomDetail)
@@ -31,8 +35,8 @@ struct ResultItemView: View {
             }
             .padding(.trailing)
             .overlay(
-                RoundedRectangle(cornerRadius: Constants.Recognise.Results.ResultList.ResultItem.overlayCornerRadius)
-                    .stroke(.accent, lineWidth: Constants.Recognise.Results.ResultList.ResultItem.overlayLineWidth)
+                RoundedRectangle(cornerRadius: overlayCornerRadius)
+                    .stroke(.accent, lineWidth: overlayLineWidth)
                 
             )
         }

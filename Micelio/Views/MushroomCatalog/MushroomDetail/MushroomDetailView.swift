@@ -9,41 +9,54 @@ import SwiftUI
 
 struct ScrollOffsetPreferenceKey: PreferenceKey {
     static var defaultValue: CGPoint = .zero
-
+    
     static func reduce(value: inout CGPoint, nextValue: () -> CGPoint) {
     }
 }
 
 struct MushroomDetailView: View {
     let mushroom: Mushroom
+    
     @State private var initialScrollValue: CGFloat = .zero
     @State private var scrollPosition: CGPoint = .zero
+    
+    private let externalVStackSpacing = Constants.MushroomCatalog.MushroomDetail.externalVStackSpacing
+    private let internalVStackSpacing = Constants.MushroomCatalog.MushroomDetail.internalVStackSpacing
+    private let horizontalPadding = Constants.MushroomCatalog.MushroomDetail.internalVStackHorizontalPadding
+    private let bottomPadding = Constants.MushroomCatalog.MushroomDetail.internalVStackBottomPadding
+    private let maxInternalWidth = Constants.MushroomCatalog.MushroomDetail.internalVStackFrameMaxWidth
+    private let offsetCorrectionRatio = Constants.MushroomCatalog.MushroomDetail.titleAndDetailsOffsetCorrectionRatio
+    private let spacerCorrectionRatio = Constants.MushroomCatalog.MushroomDetail.spacerMinLengthCorrectionRatio
+    
+    var detailSections: [DetailSection] {
+        mushroom.detailSections()
+    }
     
     var body: some View {
         GeometryReader { proxy in
             ScrollView(.vertical) {
-                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: Constants.MushroomCatalog.MushroomDetail.externalVStackSpacing, content: {
+                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: externalVStackSpacing, content: {
                     ZStack() {
-                        MainAndAllImagesView(images: mushroom.images, selectedImage: mushroom.images[0], width: proxy.size.width)
-                        TitleAndDetailsView(mushroom: mushroom, offset: proxy.size.width/Constants.MushroomCatalog.MushroomDetail.titleAndDetailsOffsetCorrectionRatio, width: proxy.size.width)
+                        MainAndAllImagesView(imageURLs: mushroom.imageURLs, selectedImageURL: mushroom.imageURLs[0], width: proxy.size.width)
+                        TitleAndDetailsView(mushroom: mushroom, offset: proxy.size.width / offsetCorrectionRatio, width: proxy.size.width)
                     }
                     
-                    VStack(alignment: .leading, spacing: Constants.MushroomCatalog.MushroomDetail.internalVStackSpacing, content: {
-                        Spacer(minLength: proxy.size.width/Constants.MushroomCatalog.MushroomDetail.spacerMinLengthCorrectionRatio)
+                    VStack(alignment: .leading, spacing: internalVStackSpacing, content: {
+                        Spacer(minLength: proxy.size.width / spacerCorrectionRatio)
                         
                         ShortDescriptionView(text: mushroom.shortDescription)
                         
-                        MushroomDetailSectionView(title: "Descrizione", content: mushroom.description, image: "disclosuregroup-description")
-                        
-                        MushroomDetailSectionView(title: "Commestibilità", content: mushroom.edibilityDescription, image: "disclosuregroup-edibility")
-                        
-                        MushroomDetailSectionView(title: "Habitat", content: mushroom.environmentDescription, image: "disclosuregroup-habitat")
-                        
-                        MushroomDetailSectionView(title: "Curiosità", content: mushroom.trivia, image: "disclosuregroup-trivia")
+                        ForEach(detailSections) { section in
+                            MushroomDetailSectionView(
+                                title: section.title,
+                                content: section.content,
+                                image: section.image
+                            )
+                        }
                     })
-                    .padding(.horizontal, Constants.MushroomCatalog.MushroomDetail.internalVStackHorizontalPadding)
-                    .padding(.bottom, Constants.MushroomCatalog.MushroomDetail.internalVStackBottomPadding)
-                    .frame(maxWidth: Constants.MushroomCatalog.MushroomDetail.internalVStackFrameMaxWidth, alignment: .center)
+                    .padding(.horizontal, horizontalPadding)
+                    .padding(.bottom, bottomPadding)
+                    .frame(maxWidth: maxInternalWidth, alignment: .center)
                 })
                 .background(GeometryReader { geometry in
                     Color.clear

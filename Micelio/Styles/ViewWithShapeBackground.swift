@@ -23,9 +23,3 @@ struct ViewWithShapeBackground: ViewModifier {
             .shadow(radius: Constants.Styles.ViewWithShapeBackground.shadowRadius)
     }
 }
-
-extension View {
-    func viewWithShapeBackground(shape: AnyShape, width: CGFloat, height: CGFloat) -> some View {
-        modifier(ViewWithShapeBackground(shape: shape, frameWidth: width, frameHeight: height))
-    }
-}

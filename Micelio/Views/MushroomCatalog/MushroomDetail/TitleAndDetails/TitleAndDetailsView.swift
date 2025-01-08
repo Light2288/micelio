@@ -11,8 +11,14 @@ struct TitleAndDetailsView: View {
     let mushroom: Mushroom
     let offset: CGFloat
     let width: CGFloat
+    
+    private let maxWidthCorrection: CGFloat = Constants.MushroomCatalog.TitleAndDetails.maxWidthCorrection
+    private let backgroundCornerSize: CGSize = Constants.MushroomCatalog.TitleAndDetails.backgroundCornerSize
+    private let shadowRadius: CGFloat = Constants.MushroomCatalog.TitleAndDetails.shadowRadius
+    private let shadowY: CGFloat = Constants.MushroomCatalog.TitleAndDetails.shadowY
+    
     var maxWidth: CGFloat {
-        width - Constants.MushroomCatalog.TitleAndDetails.maxWidthCorrection > 0 ? width - Constants.MushroomCatalog.TitleAndDetails.maxWidthCorrection : 0
+        max(width - maxWidthCorrection, 0)
     }
     
     var body: some View {
@@ -23,9 +29,9 @@ struct TitleAndDetailsView: View {
         }
         .frame(maxWidth: maxWidth)
         .background(
-            RoundedRectangle(cornerSize: Constants.MushroomCatalog.TitleAndDetails.backgroundCornerSize, style: .continuous)
+            RoundedRectangle(cornerSize: backgroundCornerSize, style: .continuous)
                 .fill(.background)
-                .shadow(color: .gray, radius: Constants.MushroomCatalog.TitleAndDetails.shadowRadius, y: Constants.MushroomCatalog.TitleAndDetails.shadowY)
+                .shadow(color: .gray, radius: shadowRadius, y: shadowY)
         )
         .offset(y: offset)
     }

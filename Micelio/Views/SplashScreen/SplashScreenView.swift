@@ -11,14 +11,18 @@ struct SplashScreenView: View {
     
     @State private var mainIconOpacity: CGFloat = 0
     @State private var textOpacity: CGFloat = 0
+    
+    let showMainIconTaskDelay = Constants.SplashScreen.showMainIconTaskDelay
+    let showMainTextAnimationDuration = Constants.SplashScreen.showMainTextAnimationDuration
+    let mainTextFontSize = Constants.SplashScreen.mainTextFontSize
         
     @MainActor func showMainIconAndText() async {
-        try? await Task.sleep(nanoseconds: Constants.SplashScreen.showMainIconTaskDelay)
+        try? await Task.sleep(nanoseconds: showMainIconTaskDelay)
         withAnimation() {
             mainIconOpacity = 1
         }
         
-        let appearAnimation = Animation.easeInOut(duration: Constants.SplashScreen.showMainTextAnimationDuration)
+        let appearAnimation = Animation.easeInOut(duration: showMainTextAnimationDuration)
         withAnimation(appearAnimation) {
             textOpacity = 1
         }
@@ -39,7 +43,7 @@ struct SplashScreenView: View {
                         .offset(CGSizeMake(proxy.size.width/4,  proxy.size.height/3))
                         .opacity(mainIconOpacity)
                     Text("Micelio")
-                        .font(.system(size: Constants.SplashScreen.mainTextFontSize))
+                        .font(.system(size: mainTextFontSize))
                         .fontWeight(.bold)
                         .foregroundStyle(.accent)
                         .offset(CGSizeMake(proxy.size.width/4,  proxy.size.height/3))
