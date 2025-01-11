@@ -45,14 +45,11 @@ struct MushroomDetailView: View {
                         Spacer(minLength: proxy.size.width / spacerCorrectionRatio)
                         
                         ShortDescriptionView(text: mushroom.shortDescription)
+                        MushroomDetailSectionView(detailSection: detailSections[0])
+                        MushroomDetailSectionView(detailSection: detailSections[1])
+                        MushroomDetailSectionView(detailSection: detailSections[2])
+                        MushroomDetailSectionView(detailSection: detailSections[3])
                         
-                        ForEach(detailSections) { section in
-                            MushroomDetailSectionView(
-                                title: section.title,
-                                content: section.content,
-                                image: section.image
-                            )
-                        }
                     })
                     .padding(.horizontal, horizontalPadding)
                     .padding(.bottom, bottomPadding)
