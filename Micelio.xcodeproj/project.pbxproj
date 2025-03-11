@@ -3011,7 +3011,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Micelio/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_CFBundleDisplayName = Micelio;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Consenti l'accesso alla fotocamera per inserire nell'applicazione le fotografie dei funghi che trovi, e per riconoscere un fungo da una fotografia";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Consenti l'accesso alla tua posizione per inserire nella mappa i luoghi dove hai trovato dei funghi, e per ricevere una notifica quando ti avvicini a uno di questi luoghi";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Consenti l'accesso alla tua posizione per inserire nella mappa i luoghi dove hai trovato dei funghi, e per ricevere una notifica quando ti avvicini a uno di questi luoghi";
@@ -3026,7 +3027,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.limulus.Micelio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -3047,7 +3048,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Micelio/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_CFBundleDisplayName = Micelio;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Consenti l'accesso alla fotocamera per inserire nell'applicazione le fotografie dei funghi che trovi, e per riconoscere un fungo da una fotografia";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Consenti l'accesso alla tua posizione per inserire nella mappa i luoghi dove hai trovato dei funghi, e per ricevere una notifica quando ti avvicini a uno di questi luoghi";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Consenti l'accesso alla tua posizione per inserire nella mappa i luoghi dove hai trovato dei funghi, e per ricevere una notifica quando ti avvicini a uno di questi luoghi";
@@ -3062,7 +3064,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.limulus.Micelio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
