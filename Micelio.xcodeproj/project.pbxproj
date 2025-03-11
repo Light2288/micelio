@@ -14,6 +14,7 @@
 		6B0FBC432ACB677C00FDAA89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B0FBC422ACB677C00FDAA89 /* Preview Assets.xcassets */; };
 		6B0FBC452ACB677C00FDAA89 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FBC442ACB677C00FDAA89 /* Persistence.swift */; };
 		6B0FBC482ACB677C00FDAA89 /* Micelio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FBC462ACB677C00FDAA89 /* Micelio.xcdatamodeld */; };
+		6B107F442D7A80CB00E6A33D /* MicelioMushroomClassifier_v5.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6B107F432D7A80CB00E6A33D /* MicelioMushroomClassifier_v5.mlmodel */; };
 		6B16ACC32C3DE14F00D59D84 /* SplashScreenMushroomIconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B16ACC22C3DE14F00D59D84 /* SplashScreenMushroomIconsView.swift */; };
 		6B16ACC52C3DE26C00D59D84 /* SplashScreenMushroomIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B16ACC42C3DE26C00D59D84 /* SplashScreenMushroomIconView.swift */; };
 		6B1902B22C941CFF005352F7 /* FitToAspectRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1902B12C941CFF005352F7 /* FitToAspectRatio.swift */; };
@@ -30,7 +31,6 @@
 		6B283A832C90FEB7002614A4 /* AnnotationPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B283A822C90FEB7002614A4 /* AnnotationPhotosView.swift */; };
 		6B283A862C9100D4002614A4 /* MushroomMapAnnotationPhoto+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B283A842C9100D4002614A4 /* MushroomMapAnnotationPhoto+CoreDataClass.swift */; };
 		6B283A872C9100D4002614A4 /* MushroomMapAnnotationPhoto+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B283A852C9100D4002614A4 /* MushroomMapAnnotationPhoto+CoreDataProperties.swift */; };
-		6B2E87332BCF303D002389CB /* MicelioMushroomClassifier_v4.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6B2E87322BCF303D002389CB /* MicelioMushroomClassifier_v4.mlmodel */; };
 		6B2E873F2BD06AD3002389CB /* sclerodermacitrinum_6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B2E87352BD06AD3002389CB /* sclerodermacitrinum_6.jpeg */; };
 		6B2E87402BD06AD3002389CB /* sclerodermacitrinum_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B2E87362BD06AD3002389CB /* sclerodermacitrinum_2.jpeg */; };
 		6B2E87412BD06AD3002389CB /* sclerodermacitrinum_5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B2E87372BD06AD3002389CB /* sclerodermacitrinum_5.jpeg */; };
@@ -554,7 +554,6 @@
 		6BCFBA232B4CCBDC00C6246E /* RecogniseDisclaimerBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFBA222B4CCBDC00C6246E /* RecogniseDisclaimerBodyView.swift */; };
 		6BCFBA4D2B4E149700C6246E /* ResultsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFBA4C2B4E149700C6246E /* ResultsListView.swift */; };
 		6BCFBAAB2B52001200C6246E /* ResultItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFBAAA2B52001200C6246E /* ResultItemView.swift */; };
-		6BCFBAB12B520BB600C6246E /* MicelioMushroomClassifier_v3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFBAB02B520BB600C6246E /* MicelioMushroomClassifier_v3.mlmodel */; };
 		6BE1332E2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE1332D2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift */; };
 		6BE713222C2A22B200ABEA55 /* GroupByMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE713212C2A22B200ABEA55 /* GroupByMenuView.swift */; };
 		6BE713252C2A237E00ABEA55 /* CatalogFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE713242C2A237E00ABEA55 /* CatalogFiltersView.swift */; };
@@ -574,6 +573,7 @@
 		6B0FBC422ACB677C00FDAA89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B0FBC442ACB677C00FDAA89 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		6B0FBC472ACB677C00FDAA89 /* Micelio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Micelio.xcdatamodel; sourceTree = "<group>"; };
+		6B107F432D7A80CB00E6A33D /* MicelioMushroomClassifier_v5.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MicelioMushroomClassifier_v5.mlmodel; sourceTree = "<group>"; };
 		6B16ACC22C3DE14F00D59D84 /* SplashScreenMushroomIconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenMushroomIconsView.swift; sourceTree = "<group>"; };
 		6B16ACC42C3DE26C00D59D84 /* SplashScreenMushroomIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenMushroomIconView.swift; sourceTree = "<group>"; };
 		6B1902B12C941CFF005352F7 /* FitToAspectRatio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitToAspectRatio.swift; sourceTree = "<group>"; };
@@ -590,7 +590,6 @@
 		6B283A822C90FEB7002614A4 /* AnnotationPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationPhotosView.swift; sourceTree = "<group>"; };
 		6B283A842C9100D4002614A4 /* MushroomMapAnnotationPhoto+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotationPhoto+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6B283A852C9100D4002614A4 /* MushroomMapAnnotationPhoto+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotationPhoto+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6B2E87322BCF303D002389CB /* MicelioMushroomClassifier_v4.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MicelioMushroomClassifier_v4.mlmodel; sourceTree = "<group>"; };
 		6B2E87352BD06AD3002389CB /* sclerodermacitrinum_6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sclerodermacitrinum_6.jpeg; sourceTree = "<group>"; };
 		6B2E87362BD06AD3002389CB /* sclerodermacitrinum_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sclerodermacitrinum_2.jpeg; sourceTree = "<group>"; };
 		6B2E87372BD06AD3002389CB /* sclerodermacitrinum_5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sclerodermacitrinum_5.jpeg; sourceTree = "<group>"; };
@@ -1115,7 +1114,6 @@
 		6BCFBA222B4CCBDC00C6246E /* RecogniseDisclaimerBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecogniseDisclaimerBodyView.swift; sourceTree = "<group>"; };
 		6BCFBA4C2B4E149700C6246E /* ResultsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsListView.swift; sourceTree = "<group>"; };
 		6BCFBAAA2B52001200C6246E /* ResultItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultItemView.swift; sourceTree = "<group>"; };
-		6BCFBAB02B520BB600C6246E /* MicelioMushroomClassifier_v3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MicelioMushroomClassifier_v3.mlmodel; sourceTree = "<group>"; };
 		6BE1332D2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+CreationDateString.swift"; sourceTree = "<group>"; };
 		6BE713212C2A22B200ABEA55 /* GroupByMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupByMenuView.swift; sourceTree = "<group>"; };
 		6BE713242C2A237E00ABEA55 /* CatalogFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFiltersView.swift; sourceTree = "<group>"; };
@@ -1778,8 +1776,7 @@
 			isa = PBXGroup;
 			children = (
 				6B7A1FFA2B6321E700B62640 /* MobileNetV2.mlmodel */,
-				6BCFBAB02B520BB600C6246E /* MicelioMushroomClassifier_v3.mlmodel */,
-				6B2E87322BCF303D002389CB /* MicelioMushroomClassifier_v4.mlmodel */,
+				6B107F432D7A80CB00E6A33D /* MicelioMushroomClassifier_v5.mlmodel */,
 				6B7A1FFC2B63221600B62640 /* ImagePredictor.swift */,
 				6B820B172B3A4BE500724555 /* Classifier.swift */,
 				6B820B192B3A4E2400724555 /* MushroomClassifier.swift */,
@@ -2780,7 +2777,6 @@
 				6BCFBAAB2B52001200C6246E /* ResultItemView.swift in Sources */,
 				6B7A20052B632D6800B62640 /* Prediction.swift in Sources */,
 				6B7CC3542B141ACE0042A8E4 /* AllImagesContainerView.swift in Sources */,
-				6BCFBAB12B520BB600C6246E /* MicelioMushroomClassifier_v3.mlmodel in Sources */,
 				6B7A1FF72B5F3DD900B62640 /* ResultItemMushroomNameTextView.swift in Sources */,
 				6B820A882B2CC00500724555 /* ImageRecogniseContainerView.swift in Sources */,
 				6B5570F02D07A200004C6C19 /* AnnotationEditActionButtonsHstackView.swift in Sources */,
@@ -2797,7 +2793,6 @@
 				6B0FBC452ACB677C00FDAA89 /* Persistence.swift in Sources */,
 				6B820B1A2B3A4E2400724555 /* MushroomClassifier.swift in Sources */,
 				6B5570F62D07A768004C6C19 /* AnnotationPhotoDetailToolbarView.swift in Sources */,
-				6B2E87332BCF303D002389CB /* MicelioMushroomClassifier_v4.mlmodel in Sources */,
 				6B83C5FF2C1CB56800902914 /* CatalogGroupBy.swift in Sources */,
 				6B5E61832C2B735A00D78B07 /* Array+Intersect.swift in Sources */,
 				6B5ED6942CD2FFBF008AB162 /* Array+RandomSubset.swift in Sources */,
@@ -2858,6 +2853,7 @@
 				6BB01E262B87CD860050A3A4 /* Mushroom+AnnotationMushroomName.swift in Sources */,
 				6BB8A0CF2C3DDA39005F9F92 /* SplashScreenBackgroundView.swift in Sources */,
 				6BE713252C2A237E00ABEA55 /* CatalogFiltersView.swift in Sources */,
+				6B107F442D7A80CB00E6A33D /* MicelioMushroomClassifier_v5.mlmodel in Sources */,
 				6B5570F22D07A231004C6C19 /* AnnotationEditActionButtonView.swift in Sources */,
 				6BE713222C2A22B200ABEA55 /* GroupByMenuView.swift in Sources */,
 				6BBEC8BE2AF459C1000720FF /* LegendView.swift in Sources */,
