@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -1124,6 +1124,10 @@
 		6BFF3A4E2C2CC22B001C91E5 /* NoFilteredResultsOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFilteredResultsOverlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		6B107F492D88E90700E6A33D /* docs */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = docs; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		6B0FBC352ACB677B00FDAA89 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -1138,6 +1142,7 @@
 		6B0FBC2F2ACB677B00FDAA89 = {
 			isa = PBXGroup;
 			children = (
+				6B107F492D88E90700E6A33D /* docs */,
 				6B0FBC3A2ACB677B00FDAA89 /* Micelio */,
 				6B0FBC392ACB677B00FDAA89 /* Products */,
 			);
