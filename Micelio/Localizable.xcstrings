@@ -20,6 +20,9 @@
         }
       }
     },
+    "%lld°C" : {
+
+    },
     "Aggiungi fino a 5 immagini:" : {
 
     },
@@ -125,6 +128,9 @@
           }
         }
       }
+    },
+    "MiCalendario" : {
+
     },
     "Micelio" : {
 

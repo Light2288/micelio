@@ -8,9 +8,10 @@
 import SwiftUI
 
 enum TabConstants {
-    static let map = "Map"
-    static let identify = "Identify"
-    static let catalog = "Catalog"
+    static let map = "Mappa"
+    static let identify = "Identifica"
+    static let catalog = "Catalogo"
+    static let calendario = "MiCalendario"
 }
 
 struct MainTabView: View {
@@ -31,6 +32,10 @@ struct MainTabView: View {
             MushroomCatalogView()
                 .tabItem {
                     Label(TabConstants.catalog, image: "catalog")
+                }
+            MiCalendarView()
+                .tabItem {
+                    Label(TabConstants.calendario, image: "mushroom-calendar")
                 }
         }
     }
