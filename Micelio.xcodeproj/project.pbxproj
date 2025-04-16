@@ -556,8 +556,10 @@
 		6BCFBAAB2B52001200C6246E /* ResultItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCFBAAA2B52001200C6246E /* ResultItemView.swift */; };
 		6BD201F02D9F470E0042F936 /* MiCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD201EF2D9F470E0042F936 /* MiCalendarView.swift */; };
 		6BD201F22D9F48B70042F936 /* MiCalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD201F12D9F48B00042F936 /* MiCalendarDay.swift */; };
-		6BD201F42D9F49400042F936 /* DayClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD201F32D9F493B0042F936 /* DayClassification.swift */; };
-		6BD201F92DA57DF60042F936 /* MushroomDayEvalutaionRulesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD201F82DA57DF60042F936 /* MushroomDayEvalutaionRulesConfig.swift */; };
+		6BD201F42D9F49400042F936 /* MiCalendarDayClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD201F32D9F493B0042F936 /* MiCalendarDayClassification.swift */; };
+		6BD201F92DA57DF60042F936 /* MiCalendarDayRulesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD201F82DA57DF60042F936 /* MiCalendarDayRulesConfig.swift */; };
+		6BD201FB2DADBBE60042F936 /* MiCalendarDayRulesConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD201FA2DADBBE60042F936 /* MiCalendarDayRulesConfigManager.swift */; };
+		6BD201FD2DADBDCD0042F936 /* MiCalendarSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD201FC2DADBDCD0042F936 /* MiCalendarSettingsView.swift */; };
 		6BE1332E2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE1332D2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift */; };
 		6BE713222C2A22B200ABEA55 /* GroupByMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE713212C2A22B200ABEA55 /* GroupByMenuView.swift */; };
 		6BE713252C2A237E00ABEA55 /* CatalogFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE713242C2A237E00ABEA55 /* CatalogFiltersView.swift */; };
@@ -1120,9 +1122,11 @@
 		6BCFBAAA2B52001200C6246E /* ResultItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultItemView.swift; sourceTree = "<group>"; };
 		6BD201EF2D9F470E0042F936 /* MiCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCalendarView.swift; sourceTree = "<group>"; };
 		6BD201F12D9F48B00042F936 /* MiCalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCalendarDay.swift; sourceTree = "<group>"; };
-		6BD201F32D9F493B0042F936 /* DayClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayClassification.swift; sourceTree = "<group>"; };
+		6BD201F32D9F493B0042F936 /* MiCalendarDayClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCalendarDayClassification.swift; sourceTree = "<group>"; };
 		6BD201F52DA41B060042F936 /* Micelio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Micelio.entitlements; sourceTree = "<group>"; };
-		6BD201F82DA57DF60042F936 /* MushroomDayEvalutaionRulesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomDayEvalutaionRulesConfig.swift; sourceTree = "<group>"; };
+		6BD201F82DA57DF60042F936 /* MiCalendarDayRulesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCalendarDayRulesConfig.swift; sourceTree = "<group>"; };
+		6BD201FA2DADBBE60042F936 /* MiCalendarDayRulesConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCalendarDayRulesConfigManager.swift; sourceTree = "<group>"; };
+		6BD201FC2DADBDCD0042F936 /* MiCalendarSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCalendarSettingsView.swift; sourceTree = "<group>"; };
 		6BE1332D2CC409D60031D34E /* MushroomMapAnnotation+CreationDateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MushroomMapAnnotation+CreationDateString.swift"; sourceTree = "<group>"; };
 		6BE713212C2A22B200ABEA55 /* GroupByMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupByMenuView.swift; sourceTree = "<group>"; };
 		6BE713242C2A237E00ABEA55 /* CatalogFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFiltersView.swift; sourceTree = "<group>"; };
@@ -2124,7 +2128,7 @@
 		6BA8B4BF2AD4BDEF005272D2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6BD201F32D9F493B0042F936 /* DayClassification.swift */,
+				6BD201F32D9F493B0042F936 /* MiCalendarDayClassification.swift */,
 				6BD201F12D9F48B00042F936 /* MiCalendarDay.swift */,
 				6BA8B4C02AD4BDFD005272D2 /* Mushroom.swift */,
 				6BA8B4C22AD586A7005272D2 /* Edibility.swift */,
@@ -2137,7 +2141,8 @@
 				6B0642782C2B63B600553E2A /* CatalogFilterBy.swift */,
 				6B6007CE2CB88BD200DCA4CB /* NotificationManager.swift */,
 				6B4EAC212D260D5F0002ED9F /* DetailSection.swift */,
-				6BD201F82DA57DF60042F936 /* MushroomDayEvalutaionRulesConfig.swift */,
+				6BD201F82DA57DF60042F936 /* MiCalendarDayRulesConfig.swift */,
+				6BD201FA2DADBBE60042F936 /* MiCalendarDayRulesConfigManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2258,6 +2263,7 @@
 			isa = PBXGroup;
 			children = (
 				6BD201EF2D9F470E0042F936 /* MiCalendarView.swift */,
+				6BD201FC2DADBDCD0042F936 /* MiCalendarSettingsView.swift */,
 			);
 			path = MiCalendar;
 			sourceTree = "<group>";
@@ -2784,6 +2790,7 @@
 				6BBE30812C9CD538008C26EE /* AnnotationPhotoDetailView.swift in Sources */,
 				6B239E0E2B72F79E00D7D8EB /* MapView.swift in Sources */,
 				6BCFBA232B4CCBDC00C6246E /* RecogniseDisclaimerBodyView.swift in Sources */,
+				6BD201FB2DADBBE60042F936 /* MiCalendarDayRulesConfigManager.swift in Sources */,
 				6B820B182B3A4BE500724555 /* Classifier.swift in Sources */,
 				6BE713292C2A33E400ABEA55 /* String+LowercasedNoWhitespaces.swift in Sources */,
 				6BFF3A4D2C2CB968001C91E5 /* CatalogFilterMenuLabelView.swift in Sources */,
@@ -2873,7 +2880,7 @@
 				6B283A812C8BAC1F002614A4 /* AddAnnotationPhotoView.swift in Sources */,
 				6BD201F02D9F470E0042F936 /* MiCalendarView.swift in Sources */,
 				6B7A1FFD2B63221600B62640 /* ImagePredictor.swift in Sources */,
-				6BD201F42D9F49400042F936 /* DayClassification.swift in Sources */,
+				6BD201F42D9F49400042F936 /* MiCalendarDayClassification.swift in Sources */,
 				6B0FBC3C2ACB677B00FDAA89 /* MicelioApp.swift in Sources */,
 				6B908D562B8416C0007FC5B7 /* MushroomMapAnnotationSheetView.swift in Sources */,
 				6BA8B4CC2AD60F0F005272D2 /* MushroomMockGenerator.swift in Sources */,
@@ -2883,7 +2890,7 @@
 				6BB01E262B87CD860050A3A4 /* Mushroom+AnnotationMushroomName.swift in Sources */,
 				6BB8A0CF2C3DDA39005F9F92 /* SplashScreenBackgroundView.swift in Sources */,
 				6BE713252C2A237E00ABEA55 /* CatalogFiltersView.swift in Sources */,
-				6BD201F92DA57DF60042F936 /* MushroomDayEvalutaionRulesConfig.swift in Sources */,
+				6BD201F92DA57DF60042F936 /* MiCalendarDayRulesConfig.swift in Sources */,
 				6B5570F22D07A231004C6C19 /* AnnotationEditActionButtonView.swift in Sources */,
 				6BD201F22D9F48B70042F936 /* MiCalendarDay.swift in Sources */,
 				6BE713222C2A22B200ABEA55 /* GroupByMenuView.swift in Sources */,
@@ -2891,6 +2898,7 @@
 				6B5570F82D07A80C004C6C19 /* AnnotationPhotoThumbnailView.swift in Sources */,
 				6B908D582B867898007FC5B7 /* AnnotationSheetButtonsToolbarView.swift in Sources */,
 				6B908D5C2B867AE7007FC5B7 /* AnnotationDisplayView.swift in Sources */,
+				6BD201FD2DADBDCD0042F936 /* MiCalendarSettingsView.swift in Sources */,
 				6B5ED6902CD2FE8A008AB162 /* Image+FitToAspectRatio.swift in Sources */,
 				6BBEC8CB2AF4705E000720FF /* LegendSections.swift in Sources */,
 				6B239E102B72FA1D00D7D8EB /* MapOverlayView.swift in Sources */,

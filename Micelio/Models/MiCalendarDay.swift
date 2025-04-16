@@ -6,14 +6,15 @@
 //
 
 import Foundation
+import WeatherKit
 
 struct MiCalendarDay: Identifiable {
     let id = UUID()
     let date: Date
-    let temperature: Double
-//    let humidity: Double
-    let precipitation: String
-    let weatherCondition: String
-    let moonPhase: String
-    let classification: DayClassification
+    let temperature: Measurement<UnitTemperature>
+    let humidity: Double?
+    let precipitation: Precipitation
+    let weatherCondition: WeatherCondition
+    let moonPhase: MoonPhase
+    let classification: MiCalendarDayClassification
 }

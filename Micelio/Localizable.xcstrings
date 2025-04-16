@@ -83,7 +83,13 @@
     "Fai attenzione quando usi questa funzione! Il riconoscimento automatico non è infallibile, e non tutte le specie di funghi sono identificate dalla app; alcuni funghi commestibili sono molto simili a funghi tossici, e l'app potrebbe confonderli.\n%@" : {
 
     },
+    "Fase lunare" : {
+
+    },
     "Filtra per:" : {
+
+    },
+    "Filtri Giorni Funghi" : {
 
     },
     "Fotocamera" : {
@@ -156,6 +162,9 @@
     "Per inserire la posizione di un fungo, premi due volte sulla mappa o usa il tasto in basso a destra" : {
 
     },
+    "Pioggia seguita da sole" : {
+
+    },
     "Potrebbe anche essere:" : {
 
     },
@@ -180,7 +189,25 @@
     "Sembra non ci sia nessun fungo che rispetti i filtri applicati" : {
 
     },
+    "Temperatura ideale" : {
+
+    },
+    "Temperature estreme" : {
+
+    },
     "Tipologia fungo:" : {
+
+    },
+    "Troppa pioggia" : {
+
+    },
+    "Troppo sole" : {
+
+    },
+    "Umidità alta" : {
+
+    },
+    "Vento nei giorni precedenti" : {
 
     }
   },

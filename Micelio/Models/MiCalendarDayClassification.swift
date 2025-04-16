@@ -1,5 +1,5 @@
 //
-//  DayClassification.swift
+//  MiCalendarDayClassification.swift
 //  Micelio
 //
 //  Created by Davide Aliti on 04/04/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum DayClassification {
+enum MiCalendarDayClassification {
     case good, medium, bad
 
     var icon: String {

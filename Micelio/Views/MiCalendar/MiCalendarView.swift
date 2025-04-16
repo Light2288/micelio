@@ -12,12 +12,12 @@ import CoreLocation
 struct MiCalendarView: View {
     @State private var forecastDays: [MiCalendarDay] = []
     @State private var showFilters = false
-    @State private var filters: Set<String> = ["temperature", "humidity", "precipitation", "wind", "moonPhase"]
     
+    @StateObject private var configManager = MiCalendarDayRulesConfigManager()
     @StateObject var locationManager = LocationManager()
-
+    
     private let weatherService = WeatherService()
-
+    
     var body: some View {
         NavigationStack {
             Spacer()
@@ -30,7 +30,7 @@ struct MiCalendarView: View {
                                     .font(.headline)
                                 Image(systemName: day.classification.icon)
                                     .foregroundColor(day.classification.color)
-                                Text("\(Int(day.temperature))°C")
+                                Text("\(Int(day.temperature.value))°C")
                             }
                             .padding()
                         }
@@ -44,7 +44,7 @@ struct MiCalendarView: View {
             .navigationTitle("MiCalendario")
             .toolbar { toolbarContent }
             .sheet(isPresented: $showFilters) {
-    //            FungoFilterView(filters: $filters, updateForecast: fetchWeatherForecast)
+                MiCalendarSettingsView(configManager: configManager)
             }
             .task {
                 fetchWeatherForecast()
@@ -52,82 +52,11 @@ struct MiCalendarView: View {
             
         }
     }
-
-    func fetchWeatherForecast() {
-        guard let location = locationManager.userLocation else {
-            print("Location not found")
-            return
-        }
-        let weatherLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
-
-        Task {
-            do {
-                print("Enter task")
-                let weather = try await weatherService.weather(for: weatherLocation)
-                
-                let startDate = Calendar.current.date(byAdding: .day, value: -7, to: .now)!
-                let endDate = Calendar.current.date(byAdding: .day, value: 9, to: .now)!
-                let weatherForecast = try await weatherService.weather(for: weatherLocation, including: .daily(startDate: startDate, endDate: endDate)).forecast
-                
-                print(weatherForecast)
-                
-                let currentWeather = weather.currentWeather
-                // let humidity = currentWeather.humidity
-                
-                var days: [MiCalendarDay] = []
-                
-                for weather in weatherForecast {
-                    if Calendar.current.startOfDay(for: weather.date) >= Calendar.current.startOfDay(for: .now) {
-                        let isOptimal = evaluateFungoDay(weather: weather)
-                        days.append(
-                            MiCalendarDay(
-                                date: weather.date,
-                                temperature: weather.highTemperature.value,
-                                //                            humidity: weather.maximumHumidity,
-                                precipitation: weather.precipitation.description,
-                                weatherCondition: weather.condition.description,
-                                moonPhase: weather.moon.phase.description,
-                                classification: isOptimal
-                            )
-                        )
-                    }
-                }
-                
-                print("days.count: \(days.count)")
-                
-                DispatchQueue.main.async {
-                    self.forecastDays = days
-                }
-            } catch {
-                print("Errore nel recupero meteo: \(error)")
-            }
-        }
-    }
-
-    func evaluateFungoDay(weather: DayWeather) -> DayClassification {
-        let temp = weather.highTemperature.value
-        //let humidity = weather
-        let precipitation = weather.precipitation
-        let condition = weather.condition.description
-        let moonPhase = weather.moon.phase.description
-
-        var score = 0
-//        if filters.contains("temperature") && (10...25).contains(temp) { score += 1 }
-//        if filters.contains("humidity") && humidity > 70 { score += 1 }
-//        if filters.contains("precipitation") && precipitation > 0.3 { score += 1 }
-//        if filters.contains("wind") && forecast.windSpeed < 10 { score += 1 }
-//        if filters.contains("moonPhase") && (moonPhase.contains("Waxing") || moonPhase.contains("Full")) { score += 1 }
-
-        switch score {
-        case 4...: return .good
-        case 2...3: return .medium
-        default: return .bad
-        }
-    }
-
+    
     func showDayDetail(_ day: MiCalendarDay) {
         // Mostra dettagli in un Action Sheet
     }
+    
 }
 
 extension MiCalendarView {
@@ -137,6 +66,96 @@ extension MiCalendarView {
             Button(action: { showFilters.toggle() }) {
                 Image(systemName: "gear")
             }
+        }
+    }
+}
+
+extension MiCalendarView {
+    func fetchWeatherForecast() {
+        guard let location = locationManager.userLocation else {
+            print("Location not found")
+            return
+        }
+        let weatherLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        
+        Task {
+            do {
+                let weather = try await weatherService.weather(for: weatherLocation)
+                
+                var calendar = Calendar.current
+                calendar.timeZone = TimeZone(identifier: "UTC")!
+                
+                let startDate = Calendar.current.date(byAdding: .day, value: -7, to: .now)!
+                let endDate = Calendar.current.date(byAdding: .day, value: 9, to: .now)!
+                let weatherForecast = try await weatherService.weather(for: weatherLocation, including: .daily(startDate: startDate, endDate: endDate)).forecast
+                                
+                let currentWeather = weather.currentWeather
+                let humidity = currentWeather.humidity
+                
+                var days: [MiCalendarDay] = []
+                
+                for weather in weatherForecast {
+                    if Calendar.current.startOfDay(for: weather.date) >= Calendar.current.startOfDay(for: .now) {
+                        days.append(
+                            MiCalendarDay(
+                                date: weather.date,
+                                temperature: weather.highTemperature,
+                                humidity: calendar.isDateInToday(weather.date) ? humidity : nil,
+                                precipitation: weather.precipitation,
+                                weatherCondition: weather.condition,
+                                moonPhase: weather.moon.phase,
+                                classification: evaluateMiCalendarDay(for: weather.date, basedOn: weatherForecast, humidity: humidity)
+                            )
+                        )
+                    }
+                }
+                                
+                DispatchQueue.main.async {
+                    self.forecastDays = days
+                }
+            } catch {
+                print("Errore nel recupero meteo: \(error)")
+            }
+        }
+    }
+}
+
+extension MiCalendarView {
+    func evaluateMiCalendarDay(for day: Date, basedOn weatherForecast: [DayWeather], humidity: Double?) -> MiCalendarDayClassification {
+        guard let index = weatherForecast.firstIndex(where: { $0.date == day }) else {
+            return .medium
+        }
+        
+        let past7DaysForecast = weatherForecast.prefix(upTo: index).suffix(7)
+        let past5DaysForecast = weatherForecast.prefix(upTo: index).suffix(5)
+
+        var score = 0
+        
+        if configManager.configs.sunAfterRainEnabled && past5DaysForecast.count == 5 {
+            let isRainyDays = past5DaysForecast.map { $0.precipitationAmount.value > 0 }
+            
+            if (2...3).contains(isRainyDays.filter { $0 == true }.count),
+               let lastRainIndex = past5DaysForecast.lastIndex(where: { $0.precipitationAmount.value > 0 }),
+               lastRainIndex < past5DaysForecast.indices.last! {
+                
+                // Ensure all days after lastRainIndex are sunny
+                let daysAfterRainForecast = past5DaysForecast[(lastRainIndex + 1)...]
+                let allSunny = daysAfterRainForecast.allSatisfy {
+                    [.clear, .mostlyClear, .mostlyCloudy, .partlyCloudy, .breezy, .windy, .hot].contains($0.condition) && $0.precipitation == .none
+                }
+                if allSunny {
+                    score += 1
+                }
+            }
+        }
+        
+        switch score {
+        case 2...:
+            return .good
+        case 1:
+            return .medium
+        default:
+            return .bad
         }
     }
 }
