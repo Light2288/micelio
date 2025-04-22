@@ -14,7 +14,7 @@ struct MiCalendarSettingsView: View {
         Form {
             Toggle("Pioggia seguita da sole", isOn: $configManager.configs.sunAfterRainEnabled)
             Toggle("Temperatura ideale", isOn: $configManager.configs.idealTemperatureEnabled)
-            Toggle("Temperature estreme", isOn: $configManager.configs.extremTemperatureEnabled)
+            Toggle("Temperature estreme", isOn: $configManager.configs.extremeTemperatureEnabled)
             Toggle("Umidità alta", isOn: $configManager.configs.highHumidityEnabled)
             Toggle("Vento nei giorni precedenti", isOn: $configManager.configs.windInPreviousDaysEnabled)
             Toggle("Troppa pioggia", isOn: $configManager.configs.tooMuchRainEnabled)

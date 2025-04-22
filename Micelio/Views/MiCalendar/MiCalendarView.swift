@@ -104,7 +104,13 @@ extension MiCalendarView {
                                 precipitation: weather.precipitation,
                                 weatherCondition: weather.condition,
                                 moonPhase: weather.moon.phase,
-                                classification: evaluateMiCalendarDay(for: weather.date, basedOn: weatherForecast, humidity: humidity)
+//                                classification: evaluateMiCalendarDay(for: weather.date, basedOn: weatherForecast, humidity: humidity)
+                                classification: MiCalendarDayEvaluator.evaluate(
+                                    for: weather.date,
+                                    weatherForecast: weatherForecast,
+                                    humidity: humidity,
+                                    config: configManager.configs
+                                )
                             )
                         )
                     }
@@ -120,45 +126,45 @@ extension MiCalendarView {
     }
 }
 
-extension MiCalendarView {
-    func evaluateMiCalendarDay(for day: Date, basedOn weatherForecast: [DayWeather], humidity: Double?) -> MiCalendarDayClassification {
-        guard let index = weatherForecast.firstIndex(where: { $0.date == day }) else {
-            return .medium
-        }
-        
-        let past7DaysForecast = weatherForecast.prefix(upTo: index).suffix(7)
-        let past5DaysForecast = weatherForecast.prefix(upTo: index).suffix(5)
-
-        var score = 0
-        
-        if configManager.configs.sunAfterRainEnabled && past5DaysForecast.count == 5 {
-            let isRainyDays = past5DaysForecast.map { $0.precipitationAmount.value > 0 }
-            
-            if (2...3).contains(isRainyDays.filter { $0 == true }.count),
-               let lastRainIndex = past5DaysForecast.lastIndex(where: { $0.precipitationAmount.value > 0 }),
-               lastRainIndex < past5DaysForecast.indices.last! {
-                
-                // Ensure all days after lastRainIndex are sunny
-                let daysAfterRainForecast = past5DaysForecast[(lastRainIndex + 1)...]
-                let allSunny = daysAfterRainForecast.allSatisfy {
-                    [.clear, .mostlyClear, .mostlyCloudy, .partlyCloudy, .breezy, .windy, .hot].contains($0.condition) && $0.precipitation == .none
-                }
-                if allSunny {
-                    score += 1
-                }
-            }
-        }
-        
-        switch score {
-        case 2...:
-            return .good
-        case 1:
-            return .medium
-        default:
-            return .bad
-        }
-    }
-}
+//extension MiCalendarView {
+//    func evaluateMiCalendarDay(for day: Date, basedOn weatherForecast: [DayWeather], humidity: Double?) -> MiCalendarDayClassification {
+//        guard let index = weatherForecast.firstIndex(where: { $0.date == day }) else {
+//            return .medium
+//        }
+//        
+//        let past7DaysForecast = weatherForecast.prefix(upTo: index).suffix(7)
+//        let past5DaysForecast = weatherForecast.prefix(upTo: index).suffix(5)
+//
+//        var score = 0
+//        
+//        if configManager.configs.sunAfterRainEnabled && past5DaysForecast.count == 5 {
+//            let isRainyDays = past5DaysForecast.map { $0.precipitationAmount.value > 0 }
+//            
+//            if (2...3).contains(isRainyDays.filter { $0 == true }.count),
+//               let lastRainIndex = past5DaysForecast.lastIndex(where: { $0.precipitationAmount.value > 0 }),
+//               lastRainIndex < past5DaysForecast.indices.last! {
+//                
+//                // Ensure all days after lastRainIndex are sunny
+//                let daysAfterRainForecast = past5DaysForecast[(lastRainIndex + 1)...]
+//                let allSunny = daysAfterRainForecast.allSatisfy {
+//                    [.clear, .mostlyClear, .mostlyCloudy, .partlyCloudy, .breezy, .windy, .hot].contains($0.condition) && $0.precipitation == .none
+//                }
+//                if allSunny {
+//                    score += 1
+//                }
+//            }
+//        }
+//        
+//        switch score {
+//        case 2...:
+//            return .good
+//        case 1:
+//            return .medium
+//        default:
+//            return .bad
+//        }
+//    }
+//}
 
 #Preview {
     MiCalendarView()
