@@ -14,8 +14,7 @@ struct SunAfterRainRule: MiCalendarDayRule {
     func evaluate(
         currentIndex: Int,
         weatherForecast: [DayWeather],
-        humidity: Double?,
-        moonPhase: MoonPhase
+        humidity: Double?
     ) -> Int {
         print("Evaluating sunAfterRainRule")
         let slice = weatherForecast.prefix(upTo: currentIndex).suffix(5)

@@ -13,7 +13,6 @@ protocol MiCalendarDayRule {
     func evaluate(
         currentIndex: Int,
         weatherForecast: [DayWeather],
-        humidity: Double?,
-        moonPhase: MoonPhase
+        humidity: Double?
     ) -> Int
 }

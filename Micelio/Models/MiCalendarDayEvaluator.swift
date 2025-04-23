@@ -20,17 +20,17 @@ struct MiCalendarDayEvaluator {
             return .medium
         }
 
-        let currentDay = weatherForecast[index]
         let rules = config.activeRules
         
         let totalScore = rules.reduce(0) { score, rule in
             score + rule.evaluate(
                 currentIndex: index,
                 weatherForecast: weatherForecast,
-                humidity: humidity,
-                moonPhase: currentDay.moon.phase
+                humidity: humidity
             )
         }
+        
+        print("\(day): \(totalScore)")
         
         switch totalScore {
         case 2...:

@@ -23,9 +23,9 @@ struct MiCalendarDayRulesConfig: Codable {
         if sunAfterRainEnabled {
             rules.append(SunAfterRainRule())
         }
-//        if idealTemperatureEnabled {
-//            rules.append(TemperatureRangeRule())
-//        }
+        if idealTemperatureEnabled {
+            rules.append(IdealTemperatureRule())
+        }
 //        if extremeTemperatureEnabled {
 //            rules.append(ExtremeTemperatureRule())
 //        }
