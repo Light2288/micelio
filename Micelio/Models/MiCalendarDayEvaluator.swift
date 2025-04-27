@@ -23,19 +23,20 @@ struct MiCalendarDayEvaluator {
         let rules = config.activeRules
         
         let totalScore = rules.reduce(0) { score, rule in
-            score + rule.evaluate(
+            print("\(rule.id): \(rule.evaluate(currentIndex: index, weatherForecast: weatherForecast, humidity: humidity))")
+            return score + rule.evaluate(
                 currentIndex: index,
                 weatherForecast: weatherForecast,
                 humidity: humidity
             )
         }
         
-        print("\(day): \(totalScore)")
+        print("\(day): \(totalScore), humidity: \(humidity?.description ?? "nil")")
         
         switch totalScore {
-        case 2...:
+        case 3...:
             return .good
-        case 1:
+        case 2:
             return .medium
         default:
             return .bad

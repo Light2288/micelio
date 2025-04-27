@@ -16,7 +16,6 @@ struct SunAfterRainRule: MiCalendarDayRule {
         weatherForecast: [DayWeather],
         humidity: Double?
     ) -> Int {
-        print("Evaluating sunAfterRainRule")
         let slice = weatherForecast.prefix(upTo: currentIndex).suffix(5)
         guard slice.count == 5 else { return 0 }
         

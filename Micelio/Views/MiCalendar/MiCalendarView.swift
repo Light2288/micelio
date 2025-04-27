@@ -90,17 +90,17 @@ extension MiCalendarView {
                 let weatherForecast = try await weatherService.weather(for: weatherLocation, including: .daily(startDate: startDate, endDate: endDate)).forecast
                                 
                 let currentWeather = weather.currentWeather
-                let humidity = currentWeather.humidity
                 
                 var days: [MiCalendarDay] = []
                 
                 for weather in weatherForecast {
                     if Calendar.current.startOfDay(for: weather.date) >= Calendar.current.startOfDay(for: .now) {
+                        let humidity = calendar.isDateInToday(weather.date) ? currentWeather.humidity : nil
                         days.append(
                             MiCalendarDay(
                                 date: weather.date,
                                 temperature: weather.highTemperature,
-                                humidity: calendar.isDateInToday(weather.date) ? humidity : nil,
+                                humidity: humidity,
                                 precipitation: weather.precipitation,
                                 weatherCondition: weather.condition,
                                 moonPhase: weather.moon.phase,

@@ -26,24 +26,24 @@ struct MiCalendarDayRulesConfig: Codable {
         if idealTemperatureEnabled {
             rules.append(IdealTemperatureRule())
         }
-//        if extremeTemperatureEnabled {
-//            rules.append(ExtremeTemperatureRule())
-//        }
-//        if highHumidityEnabled {
-//            rules.append(HighHumidityRule())
-//        }
-//        if windInPreviousDaysEnabled {
-//            rules.append(WindyDaysRule())
-//        }
-//        if tooMuchRainEnabled {
-//            rules.append(TooMuchRainRule())
-//        }
-//        if tooMuchSunEnabled {
-//            rules.append(AlwaysSunnyRule())
-//        }
-//        if moonPhaseEnabled {
-//            rules.append(MoonPhaseRule())
-//        }
+        if extremeTemperatureEnabled {
+            rules.append(ExtremeTemperatureRule())
+        }
+        if highHumidityEnabled {
+            rules.append(HighHumidityRule())
+        }
+        if windInPreviousDaysEnabled {
+            rules.append(WindyDaysRule())
+        }
+        if tooMuchRainEnabled {
+            rules.append(TooMuchRainRule())
+        }
+        if tooMuchSunEnabled {
+            rules.append(AlwaysSunnyRule())
+        }
+        if moonPhaseEnabled {
+            rules.append(MoonPhaseRule())
+        }
         
         return rules
     }

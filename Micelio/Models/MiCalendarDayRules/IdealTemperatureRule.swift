@@ -16,7 +16,6 @@ struct IdealTemperatureRule: MiCalendarDayRule {
             weatherForecast: [DayWeather],
             humidity: Double?
         ) -> Int {
-            print("Evaluating idealTemperatureRule")
             let slice = weatherForecast.prefix(upTo: currentIndex).suffix(5)
             guard slice.count == 5 else { return 0 }
             
