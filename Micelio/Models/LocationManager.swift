@@ -23,6 +23,14 @@ final class LocationManager: NSObject, ObservableObject {
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.pausesLocationUpdatesAutomatically = false
+        
+#if DEBUG
+        if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+            // We are running inside a Preview!
+            self.userLocation = CLLocationCoordinate2D(latitude: 45.4642, longitude: 9.19)
+        }
+#endif
+        
         self.setup()
     }
     

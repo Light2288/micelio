@@ -340,6 +340,7 @@
 		6B908D582B867898007FC5B7 /* AnnotationSheetButtonsToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D572B867898007FC5B7 /* AnnotationSheetButtonsToolbarView.swift */; };
 		6B908D5A2B867ABE007FC5B7 /* AnnotationEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D592B867ABE007FC5B7 /* AnnotationEditView.swift */; };
 		6B908D5C2B867AE7007FC5B7 /* AnnotationDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B908D5B2B867AE6007FC5B7 /* AnnotationDisplayView.swift */; };
+		6B99F5852DC04342008A4DF1 /* MiCalendarSettingsToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B99F5842DC04342008A4DF1 /* MiCalendarSettingsToggleView.swift */; };
 		6BA44A062BEED7D50072155C /* rubroboletussatanas_4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BA449FC2BEED7D50072155C /* rubroboletussatanas_4.jpeg */; };
 		6BA44A072BEED7D50072155C /* rubroboletussatanas_9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BA449FD2BEED7D50072155C /* rubroboletussatanas_9.jpeg */; };
 		6BA44A082BEED7D50072155C /* rubroboletussatanas_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BA449FE2BEED7D50072155C /* rubroboletussatanas_2.jpeg */; };
@@ -916,6 +917,7 @@
 		6B908D572B867898007FC5B7 /* AnnotationSheetButtonsToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationSheetButtonsToolbarView.swift; sourceTree = "<group>"; };
 		6B908D592B867ABE007FC5B7 /* AnnotationEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationEditView.swift; sourceTree = "<group>"; };
 		6B908D5B2B867AE6007FC5B7 /* AnnotationDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationDisplayView.swift; sourceTree = "<group>"; };
+		6B99F5842DC04342008A4DF1 /* MiCalendarSettingsToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCalendarSettingsToggleView.swift; sourceTree = "<group>"; };
 		6BA449FC2BEED7D50072155C /* rubroboletussatanas_4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rubroboletussatanas_4.jpeg; sourceTree = "<group>"; };
 		6BA449FD2BEED7D50072155C /* rubroboletussatanas_9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rubroboletussatanas_9.jpeg; sourceTree = "<group>"; };
 		6BA449FE2BEED7D50072155C /* rubroboletussatanas_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rubroboletussatanas_2.jpeg; sourceTree = "<group>"; };
@@ -2284,6 +2286,7 @@
 			children = (
 				6BD201EF2D9F470E0042F936 /* MiCalendarView.swift */,
 				6BD201FC2DADBDCD0042F936 /* MiCalendarSettingsView.swift */,
+				6B99F5842DC04342008A4DF1 /* MiCalendarSettingsToggleView.swift */,
 			);
 			path = MiCalendar;
 			sourceTree = "<group>";
@@ -2829,6 +2832,7 @@
 				6B820A802B2BB6FB00724555 /* RecogniseView.swift in Sources */,
 				6BBE30812C9CD538008C26EE /* AnnotationPhotoDetailView.swift in Sources */,
 				6B239E0E2B72F79E00D7D8EB /* MapView.swift in Sources */,
+				6B99F5852DC04342008A4DF1 /* MiCalendarSettingsToggleView.swift in Sources */,
 				6BCFBA232B4CCBDC00C6246E /* RecogniseDisclaimerBodyView.swift in Sources */,
 				6BD201FB2DADBBE60042F936 /* MiCalendarDayRulesConfigManager.swift in Sources */,
 				6B820B182B3A4BE500724555 /* Classifier.swift in Sources */,
