@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct MiCalendarDayRulesConfig: Codable {
+struct MiCalendarRulesConfig: Codable {
     var sunAfterRainEnabled = true
     var idealTemperatureEnabled = true
     var extremeTemperatureEnabled = true
@@ -17,8 +18,8 @@ struct MiCalendarDayRulesConfig: Codable {
     var tooMuchSunEnabled = true
     var moonPhaseEnabled = true
     
-    var activeRules: [MiCalendarDayRule] {
-        var rules: [MiCalendarDayRule] = []
+    var activeRules: [MiCalendarRule] {
+        var rules: [MiCalendarRule] = []
         
         if sunAfterRainEnabled {
             rules.append(SunAfterRainRule())
@@ -47,4 +48,8 @@ struct MiCalendarDayRulesConfig: Codable {
         
         return rules
     }
+
 }
+
+
+

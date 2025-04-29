@@ -8,8 +8,8 @@
 import Foundation
 import WeatherKit
 
-protocol MiCalendarDayRule {
-    var id: String { get }
+protocol MiCalendarRule {
+    static var id: String { get }
     func evaluate(
         currentIndex: Int,
         weatherForecast: [DayWeather],

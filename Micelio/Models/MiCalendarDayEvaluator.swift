@@ -13,7 +13,7 @@ struct MiCalendarDayEvaluator {
         for day: Date,
         weatherForecast: [DayWeather],
         humidity: Double?,
-        config: MiCalendarDayRulesConfig
+        config: MiCalendarRulesConfig
     ) -> MiCalendarDayClassification {
         
         guard let index = weatherForecast.firstIndex(where: { $0.date == day }) else {
@@ -23,7 +23,6 @@ struct MiCalendarDayEvaluator {
         let rules = config.activeRules
         
         let totalScore = rules.reduce(0) { score, rule in
-            print("\(rule.id): \(rule.evaluate(currentIndex: index, weatherForecast: weatherForecast, humidity: humidity))")
             return score + rule.evaluate(
                 currentIndex: index,
                 weatherForecast: weatherForecast,

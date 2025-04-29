@@ -13,7 +13,7 @@ struct MiCalendarView: View {
     @State private var forecastDays: [MiCalendarDay] = []
     @State private var showFilters = false
     
-    @StateObject private var configManager = MiCalendarDayRulesConfigManager()
+    @StateObject private var configManager = MiCalendarRulesConfigManager()
     @StateObject var locationManager = LocationManager()
     
     private let weatherService = WeatherService()

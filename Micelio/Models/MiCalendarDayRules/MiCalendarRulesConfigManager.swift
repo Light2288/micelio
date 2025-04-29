@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-class MiCalendarDayRulesConfigManager: ObservableObject {
-    @Published var configs: MiCalendarDayRulesConfig {
+class MiCalendarRulesConfigManager: ObservableObject {
+    @Published var configs: MiCalendarRulesConfig {
         didSet {
             save()
         }
@@ -18,10 +18,10 @@ class MiCalendarDayRulesConfigManager: ObservableObject {
     
     init() {
         if let data = UserDefaults.standard.data(forKey: key),
-           let decoded = try? JSONDecoder().decode(MiCalendarDayRulesConfig.self, from: data) {
+           let decoded = try? JSONDecoder().decode(MiCalendarRulesConfig.self, from: data) {
             self.configs = decoded
         } else {
-            self.configs = MiCalendarDayRulesConfig()
+            self.configs = MiCalendarRulesConfig()
         }
     }
     

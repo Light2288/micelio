@@ -8,8 +8,8 @@
 import Foundation
 import WeatherKit
 
-struct IdealTemperatureRule: MiCalendarDayRule {
-    let id = "idealTemperature"
+struct IdealTemperatureRule: MiCalendarRule {
+    static let id = "idealTemperature"
     
     func evaluate(
             currentIndex: Int,

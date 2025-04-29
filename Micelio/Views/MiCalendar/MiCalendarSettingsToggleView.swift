@@ -17,7 +17,7 @@ struct MiCalendarSettingsToggleView: View {
         Toggle(isOn: $isEnabled) {
             Label {
                 Text(title)
-                Text(description)
+                Text(description).font(.caption2)
             } icon: {
                 Image(systemName: image)
             }

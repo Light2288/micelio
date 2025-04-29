@@ -9,8 +9,8 @@
 import Foundation
 import WeatherKit
 
-struct MoonPhaseRule: MiCalendarDayRule {
-    let id = "moonPhase"
+struct MoonPhaseRule: MiCalendarRule {
+    static let id = "moonPhase"
 
     func evaluate(
         currentIndex: Int,

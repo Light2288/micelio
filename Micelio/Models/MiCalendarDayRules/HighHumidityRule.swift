@@ -9,8 +9,8 @@
 import Foundation
 import WeatherKit
 
-struct HighHumidityRule: MiCalendarDayRule {
-    let id = "highHumidity"
+struct HighHumidityRule: MiCalendarRule {
+    static let id = "highHumidity"
     
     func evaluate(
         currentIndex: Int,
