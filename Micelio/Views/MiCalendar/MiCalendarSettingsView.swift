@@ -18,6 +18,7 @@ struct MiCalendarSettingsView: View {
                     ForEach(makeMiCalendarRuleTogglesData(configs: $configManager.configs), id: \.id) { toggle in
                         MiCalendarSettingsToggleView(
                             isEnabled: toggle.isEnabled,
+                            id: toggle.id,
                             title: toggle.title,
                             description: toggle.description,
                             image: toggle.image

@@ -28,7 +28,7 @@ func makeMiCalendarRuleTogglesData(configs: Binding<MiCalendarRulesConfig>) -> [
             id: ExtremeTemperatureRule.id,
             title: "Temperature estreme",
             description: "Temperature < 5°C o > 30°C per più di 2 giorni nei 5 giorni precedenti: condizioni sfavorevoli per i funghi",
-            image: "thermometer.snowflake",
+            image: "extreme-temperature",
             isEnabled: configs.extremeTemperatureEnabled
         ),
         .init(

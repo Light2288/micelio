@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MiCalendarSettingsToggleView: View {
     @Binding var isEnabled: Bool
+    let id: String
     let title: String
     let description: String
     let image: String
@@ -19,12 +20,15 @@ struct MiCalendarSettingsToggleView: View {
                 Text(title)
                 Text(description).font(.caption2)
             } icon: {
-                Image(systemName: image)
+                id == ExtremeTemperatureRule.id ? Image(image) : Image(systemName: image)
             }
         }
     }
 }
 
 #Preview {
-    MiCalendarSettingsToggleView(isEnabled: .constant(true), title: "Pioggia seguita da sole", description: "Almeno due giorni di pioggia seguiti da giorni di sole", image: "sun.rain.fill")
+    Form {
+        MiCalendarSettingsToggleView(isEnabled: .constant(true), id: SunAfterRainRule.id, title: "Pioggia seguita da sole", description: "Almeno due giorni di pioggia seguiti da giorni di sole", image: "sun.rain.fill")
+        MiCalendarSettingsToggleView(isEnabled: .constant(true), id: ExtremeTemperatureRule.id, title: "Temperature estreme", description: "Temperature < 5°C o > 30°C per più di 2 giorni nei 5 giorni precedenti: condizioni sfavorevoli per i funghi", image: "extreme-temperature")
+    }
 }
