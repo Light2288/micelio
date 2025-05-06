@@ -12,6 +12,8 @@ import CoreLocation
 struct MiCalendarView: View {
     @State private var forecastDays: [MiCalendarDay] = []
     @State private var showFilters = false
+    @State private var showDayDetail = false
+    @State private var selectedDay: MiCalendarDay? = nil
     
     @StateObject private var configManager = MiCalendarRulesConfigManager()
     @StateObject var locationManager = LocationManager()
@@ -24,18 +26,7 @@ struct MiCalendarView: View {
             ScrollView {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 2), count: 3), spacing: 2) {
                     ForEach(forecastDays) { day in
-                        Button(action: { showDayDetail(day) }) {
-                            VStack {
-                                Text(day.date, style: .date)
-                                    .font(.headline)
-                                Image(systemName: day.classification.icon)
-                                    .foregroundColor(day.classification.color)
-                                Text("\(Int(day.temperature.value))°C")
-                            }
-                            .padding()
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(day.classification.color.opacity(0.3))
+                        MiCalendarDayView(day: day, showDayDetail: $showDayDetail, selectedDay: $selectedDay)
                     }
                     
                 }
@@ -46,6 +37,9 @@ struct MiCalendarView: View {
             .sheet(isPresented: $showFilters) {
                 MiCalendarSettingsView(configManager: configManager)
             }
+            .sheet(isPresented: $showDayDetail, content: {
+                MiCalendarDayDetailView(day: $selectedDay)
+            })
             .task {
                 fetchWeatherForecast()
             }
