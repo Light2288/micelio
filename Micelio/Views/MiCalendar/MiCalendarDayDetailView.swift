@@ -9,9 +9,33 @@ import SwiftUI
 
 struct MiCalendarDayDetailView: View {
     @Binding var day: MiCalendarDay?
+    @ObservedObject var configManager: MiCalendarRulesConfigManager
     
     var body: some View {
-        Text("Day Detail View \(day?.date)")
+        if let day = day {
+            VStack(alignment: .leading, spacing: 16) {
+                Text(day.date.formatted(date: .long, time: .omitted))
+                    .font(.title)
+                    .bold()
+                    .padding(.top)
+                    .padding(.horizontal)
+                List {
+                    EvaluationSectionView(evaluation: day.evaluation, config: configManager.configs)
+                    WeatherDetailSectionView(day: day)
+                }
+            }
+        } else {
+            Text("Errore nel recupero delle informazioni di dettaglio di questa giornata")
+        }
+    }
+    
+    @ViewBuilder
+    func section<Content: View>(label: String, systemImage: String, @ViewBuilder content: () -> Content) -> some View {
+        LabeledContent {
+            content()
+        } label: {
+            Label(label, systemImage: systemImage)
+        }
     }
 }
 
@@ -23,7 +47,7 @@ struct MiCalendarDayDetailView: View {
         precipitation: .rain,
         weatherCondition: .heavyRain,
         moonPhase: .firstQuarter,
-        classification: .medium
+        evaluation: MiCalendarDayEvaluationResult(classification: .medium, positiveRules: ["sunAfterRain", "highHumidity"], negativeRules: ["windyDays", "alwaysSunny"])
     )
-    MiCalendarDayDetailView(day: .constant(day))
+    MiCalendarDayDetailView(day: .constant(day), configManager: MiCalendarRulesConfigManager())
 }

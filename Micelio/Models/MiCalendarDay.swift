@@ -16,5 +16,5 @@ struct MiCalendarDay: Identifiable {
     let precipitation: Precipitation
     let weatherCondition: WeatherCondition
     let moonPhase: MoonPhase
-    let classification: MiCalendarDayClassification
+    let evaluation: MiCalendarDayEvaluationResult
 }

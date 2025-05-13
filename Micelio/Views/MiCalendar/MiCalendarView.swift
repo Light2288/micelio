@@ -38,7 +38,7 @@ struct MiCalendarView: View {
                 MiCalendarSettingsView(configManager: configManager)
             }
             .sheet(isPresented: $showDayDetail, content: {
-                MiCalendarDayDetailView(day: $selectedDay)
+                MiCalendarDayDetailView(day: $selectedDay, configManager: configManager)
             })
             .task {
                 fetchWeatherForecast()
@@ -66,14 +66,14 @@ extension MiCalendarView {
 
 extension MiCalendarView {
     func fetchWeatherForecast() {
-        guard let location = locationManager.userLocation else {
-            print("Location not found")
-            return
-        }
-        let weatherLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
-        
         Task {
             do {
+                guard let location = locationManager.userLocation else {
+                    print("Location not found")
+                    return
+                }
+                let weatherLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+                
                 let weather = try await weatherService.weather(for: weatherLocation)
                 
                 var calendar = Calendar.current
@@ -82,7 +82,7 @@ extension MiCalendarView {
                 let startDate = Calendar.current.date(byAdding: .day, value: -7, to: .now)!
                 let endDate = Calendar.current.date(byAdding: .day, value: 9, to: .now)!
                 let weatherForecast = try await weatherService.weather(for: weatherLocation, including: .daily(startDate: startDate, endDate: endDate)).forecast
-                                
+                
                 let currentWeather = weather.currentWeather
                 
                 var days: [MiCalendarDay] = []
@@ -98,7 +98,7 @@ extension MiCalendarView {
                                 precipitation: weather.precipitation,
                                 weatherCondition: weather.condition,
                                 moonPhase: weather.moon.phase,
-                                classification: MiCalendarDayEvaluator.evaluate(
+                                evaluation: MiCalendarDayEvaluator.evaluate(
                                     for: weather.date,
                                     weatherForecast: weatherForecast,
                                     humidity: humidity,
@@ -108,7 +108,7 @@ extension MiCalendarView {
                         )
                     }
                 }
-                                
+                
                 DispatchQueue.main.async {
                     self.forecastDays = days
                 }

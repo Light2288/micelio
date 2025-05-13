@@ -176,6 +176,9 @@
 		6B3363BB2B3CF00B002FBAEF /* RecognisedMushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3363BA2B3CF00B002FBAEF /* RecognisedMushroom.swift */; };
 		6B3363BE2B3CF5E8002FBAEF /* FloatingPoint+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3363BD2B3CF5E8002FBAEF /* FloatingPoint+Rounded.swift */; };
 		6B3922272BA8871C0093961E /* MushroomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3922262BA8871C0093961E /* MushroomData.swift */; };
+		6B41FEF82DD40561003CD0FE /* EvaluationSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41FEF72DD40561003CD0FE /* EvaluationSectionView.swift */; };
+		6B41FEFA2DD40578003CD0FE /* RulesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41FEF92DD40578003CD0FE /* RulesListView.swift */; };
+		6B41FEFC2DD405A0003CD0FE /* WeatherDetailSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41FEFB2DD405A0003CD0FE /* WeatherDetailSectionView.swift */; };
 		6B4635D82C06918600677B12 /* pleurotusostreatus_0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4635CE2C06918500677B12 /* pleurotusostreatus_0.jpeg */; };
 		6B4635D92C06918600677B12 /* pleurotusostreatus_3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4635CF2C06918500677B12 /* pleurotusostreatus_3.jpeg */; };
 		6B4635DA2C06918600677B12 /* pleurotusostreatus_6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4635D02C06918500677B12 /* pleurotusostreatus_6.jpeg */; };
@@ -254,6 +257,7 @@
 		6B4EAC282D261C0C0002ED9F /* Mushroom+ImageURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4EAC272D261C0C0002ED9F /* Mushroom+ImageURLs.swift */; };
 		6B501E022DCAC6AE0076F89B /* MiCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B501E012DCAC6AE0076F89B /* MiCalendarDayView.swift */; };
 		6B501E042DCAC7540076F89B /* MiCalendarDayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B501E032DCAC7540076F89B /* MiCalendarDayDetailView.swift */; };
+		6B501E062DD2A1040076F89B /* MiCalendarDayEvaluationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B501E052DD2A1040076F89B /* MiCalendarDayEvaluationResult.swift */; };
 		6B50BE4C2D2759CC0007929C /* CatalogFilterOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B50BE4B2D2759CC0007929C /* CatalogFilterOptionsView.swift */; };
 		6B50BE542D2765D60007929C /* CatalogFilterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B50BE532D2765D60007929C /* CatalogFilterHeaderView.swift */; };
 		6B5570EE2D012B9F004C6C19 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5570ED2D012B9F004C6C19 /* MainTabView.swift */; };
@@ -756,6 +760,9 @@
 		6B3363BA2B3CF00B002FBAEF /* RecognisedMushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognisedMushroom.swift; sourceTree = "<group>"; };
 		6B3363BD2B3CF5E8002FBAEF /* FloatingPoint+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Rounded.swift"; sourceTree = "<group>"; };
 		6B3922262BA8871C0093961E /* MushroomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomData.swift; sourceTree = "<group>"; };
+		6B41FEF72DD40561003CD0FE /* EvaluationSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationSectionView.swift; sourceTree = "<group>"; };
+		6B41FEF92DD40578003CD0FE /* RulesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesListView.swift; sourceTree = "<group>"; };
+		6B41FEFB2DD405A0003CD0FE /* WeatherDetailSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailSectionView.swift; sourceTree = "<group>"; };
 		6B4635CE2C06918500677B12 /* pleurotusostreatus_0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pleurotusostreatus_0.jpeg; sourceTree = "<group>"; };
 		6B4635CF2C06918500677B12 /* pleurotusostreatus_3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pleurotusostreatus_3.jpeg; sourceTree = "<group>"; };
 		6B4635D02C06918500677B12 /* pleurotusostreatus_6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pleurotusostreatus_6.jpeg; sourceTree = "<group>"; };
@@ -834,6 +841,7 @@
 		6B4EAC272D261C0C0002ED9F /* Mushroom+ImageURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mushroom+ImageURLs.swift"; sourceTree = "<group>"; };
 		6B501E012DCAC6AE0076F89B /* MiCalendarDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCalendarDayView.swift; sourceTree = "<group>"; };
 		6B501E032DCAC7540076F89B /* MiCalendarDayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCalendarDayDetailView.swift; sourceTree = "<group>"; };
+		6B501E052DD2A1040076F89B /* MiCalendarDayEvaluationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCalendarDayEvaluationResult.swift; sourceTree = "<group>"; };
 		6B50BE4B2D2759CC0007929C /* CatalogFilterOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFilterOptionsView.swift; sourceTree = "<group>"; };
 		6B50BE532D2765D60007929C /* CatalogFilterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFilterHeaderView.swift; sourceTree = "<group>"; };
 		6B5570ED2D012B9F004C6C19 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -2161,6 +2169,7 @@
 				6BD202002DB82DCF0042F936 /* MiCalendarDayRules */,
 				6BD201F32D9F493B0042F936 /* MiCalendarDayClassification.swift */,
 				6BD202032DB830E30042F936 /* MiCalendarDayEvaluator.swift */,
+				6B501E052DD2A1040076F89B /* MiCalendarDayEvaluationResult.swift */,
 				6BD201F12D9F48B00042F936 /* MiCalendarDay.swift */,
 				6BA8B4C02AD4BDFD005272D2 /* Mushroom.swift */,
 				6BA8B4C22AD586A7005272D2 /* Edibility.swift */,
@@ -2298,6 +2307,9 @@
 				6B99F5842DC04342008A4DF1 /* MiCalendarSettingsToggleView.swift */,
 				6B501E012DCAC6AE0076F89B /* MiCalendarDayView.swift */,
 				6B501E032DCAC7540076F89B /* MiCalendarDayDetailView.swift */,
+				6B41FEF72DD40561003CD0FE /* EvaluationSectionView.swift */,
+				6B41FEF92DD40578003CD0FE /* RulesListView.swift */,
+				6B41FEFB2DD405A0003CD0FE /* WeatherDetailSectionView.swift */,
 			);
 			path = MiCalendar;
 			sourceTree = "<group>";
@@ -2842,11 +2854,13 @@
 				6B7A1FEF2B5F367400B62640 /* MainResultView.swift in Sources */,
 				6B7A20072B6330AE00B62640 /* MushroomDetector.swift in Sources */,
 				6B820A802B2BB6FB00724555 /* RecogniseView.swift in Sources */,
+				6B41FEF82DD40561003CD0FE /* EvaluationSectionView.swift in Sources */,
 				6BBE30812C9CD538008C26EE /* AnnotationPhotoDetailView.swift in Sources */,
 				6B239E0E2B72F79E00D7D8EB /* MapView.swift in Sources */,
 				6B99F5852DC04342008A4DF1 /* MiCalendarSettingsToggleView.swift in Sources */,
 				6BCFBA232B4CCBDC00C6246E /* RecogniseDisclaimerBodyView.swift in Sources */,
 				6BD201FB2DADBBE60042F936 /* MiCalendarRulesConfigManager.swift in Sources */,
+				6B41FEFA2DD40578003CD0FE /* RulesListView.swift in Sources */,
 				6B820B182B3A4BE500724555 /* Classifier.swift in Sources */,
 				6BE713292C2A33E400ABEA55 /* String+LowercasedNoWhitespaces.swift in Sources */,
 				6BFF3A4D2C2CB968001C91E5 /* CatalogFilterMenuLabelView.swift in Sources */,
@@ -2882,6 +2896,7 @@
 				6B7A1FFB2B6321E700B62640 /* MobileNetV2.mlmodel in Sources */,
 				6B7A1FF32B5F3C9200B62640 /* ResultItemImageView.swift in Sources */,
 				6B283A7A2C8A6019002614A4 /* MushroomMapAnnotation+CoreDataClass.swift in Sources */,
+				6B501E062DD2A1040076F89B /* MiCalendarDayEvaluationResult.swift in Sources */,
 				6B7835832AFD98EC00166DB3 /* DisclosureGroupCustomStyle.swift in Sources */,
 				6B99F5892DC15FE0008A4DF1 /* MiCalendarRuleTogglesData.swift in Sources */,
 				6B0FBC452ACB677C00FDAA89 /* Persistence.swift in Sources */,
@@ -2934,6 +2949,7 @@
 				6B78358C2AFE6F6A00166DB3 /* LegendItemImageView.swift in Sources */,
 				6B820A8E2B3088CC00724555 /* ViewWithShapeBackground.swift in Sources */,
 				6BD201FF2DB82DA70042F936 /* MiCalendarRule.swift in Sources */,
+				6B41FEFC2DD405A0003CD0FE /* WeatherDetailSectionView.swift in Sources */,
 				6BD202082DBEE7920042F936 /* ExtremeTemperatureRule.swift in Sources */,
 				6BCFB9702B47817400C6246E /* RecogniseDisclaimerView.swift in Sources */,
 				6B7835872AFE46DE00166DB3 /* DetailsView.swift in Sources */,

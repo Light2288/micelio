@@ -27,6 +27,7 @@ final class LocationManager: NSObject, ObservableObject {
 #if DEBUG
         if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
             // We are running inside a Preview!
+            print("Running inside preview!")
             self.userLocation = CLLocationCoordinate2D(latitude: 45.4642, longitude: 9.19)
         }
 #endif

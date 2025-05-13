@@ -21,14 +21,14 @@ struct MiCalendarDayView: View {
             VStack {
                 Text(day.date, style: .date)
                     .font(.headline)
-                Image(systemName: day.classification.icon)
-                    .foregroundColor(day.classification.color)
+                Image(systemName: day.evaluation.classification.icon)
+                    .foregroundColor(day.evaluation.classification.color)
                 Text("\(Int(day.temperature.value))°C")
             }
             .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(day.classification.color.opacity(0.3))
+        .background(day.evaluation.classification.color.opacity(0.3))
     }
 }
 
@@ -40,7 +40,7 @@ struct MiCalendarDayView: View {
         precipitation: .rain,
         weatherCondition: .heavyRain,
         moonPhase: .firstQuarter,
-        classification: .medium
+        evaluation: MiCalendarDayEvaluationResult(classification: .medium, positiveRules: ["sunAfterRain", "highHumidity"], negativeRules: ["windyDays", "alwaysSunny"])
     )
     MiCalendarDayView(day: day, showDayDetail: .constant(true), selectedDay: .constant(nil))
 }

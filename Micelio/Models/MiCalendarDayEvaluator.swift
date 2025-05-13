@@ -14,31 +14,50 @@ struct MiCalendarDayEvaluator {
         weatherForecast: [DayWeather],
         humidity: Double?,
         config: MiCalendarRulesConfig
-    ) -> MiCalendarDayClassification {
+    ) -> MiCalendarDayEvaluationResult {
         
         guard let index = weatherForecast.firstIndex(where: { $0.date == day }) else {
-            return .medium
+            return MiCalendarDayEvaluationResult(classification: .medium, positiveRules: [], negativeRules: [])
         }
-
+        
         let rules = config.activeRules
         
-        let totalScore = rules.reduce(0) { score, rule in
-            return score + rule.evaluate(
+        var totalScore = 0
+        var positiveRules: [String] = []
+        var negativeRules: [String] = []
+        
+        for rule in rules {
+            let impact = rule.evaluate(
                 currentIndex: index,
                 weatherForecast: weatherForecast,
                 humidity: humidity
             )
+            
+            totalScore += impact
+            
+            if impact > 0 {
+                positiveRules.append(type(of: rule).id)
+            } else if impact < 0 {
+                negativeRules.append(type(of: rule).id)
+            }
         }
         
-        print("\(day): \(totalScore), humidity: \(humidity?.description ?? "nil")")
-        
+        let classification: MiCalendarDayClassification
         switch totalScore {
         case 3...:
-            return .good
+            classification = .good
         case 2:
-            return .medium
+            classification = .medium
         default:
-            return .bad
+            classification = .bad
         }
+        
+        print("\(day): \(totalScore), humidity: \(humidity?.description ?? "nil"), positive rules count: \(positiveRules.count), negative rules count: \(negativeRules.count)")
+        
+        return MiCalendarDayEvaluationResult(
+            classification: classification,
+            positiveRules: positiveRules,
+            negativeRules: negativeRules
+        )
     }
 }
