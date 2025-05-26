@@ -8,7 +8,11 @@
 import Foundation
 import WeatherKit
 
-struct MiCalendarDay: Identifiable {
+struct MiCalendarDay: Identifiable, Equatable {
+    static func == (lhs: MiCalendarDay, rhs: MiCalendarDay) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     let id = UUID()
     let date: Date
     let temperature: Measurement<UnitTemperature>

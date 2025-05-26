@@ -14,6 +14,7 @@ struct MiCalendarView: View {
     @State private var showFilters = false
     @State private var showDayDetail = false
     @State private var selectedDay: MiCalendarDay? = nil
+    @State private var isLoading = true
     
     @StateObject private var configManager = MiCalendarRulesConfigManager()
     @StateObject var locationManager = LocationManager()
@@ -22,18 +23,21 @@ struct MiCalendarView: View {
     
     var body: some View {
         NavigationStack {
-            Spacer()
             ScrollView {
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 2), count: 3), spacing: 2) {
-                    ForEach(forecastDays) { day in
-                        MiCalendarDayView(day: day, showDayDetail: $showDayDetail, selectedDay: $selectedDay)
-                    }
-                    
+                if isLoading {
+                    MiCalendarGridLoaderView()
+                } else {
+                    MiCalendarGridView(
+                        forecastDays: forecastDays,
+                        showDayDetail: $showDayDetail,
+                        selectedDay: $selectedDay
+                    )
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             .navigationTitle("MiCalendario")
-            .toolbar { toolbarContent }
+            .toolbar {
+                MiCalendarToolbar(showFilters: $showFilters)
+            }
             .sheet(isPresented: $showFilters) {
                 MiCalendarSettingsView(configManager: configManager)
             }
@@ -44,22 +48,6 @@ struct MiCalendarView: View {
                 fetchWeatherForecast()
             }
             
-        }
-    }
-    
-    func showDayDetail(_ day: MiCalendarDay) {
-        // Mostra dettagli in un Action Sheet
-    }
-    
-}
-
-extension MiCalendarView {
-    @ToolbarContentBuilder
-    private var toolbarContent: some ToolbarContent {
-        ToolbarItem(placement: .topBarTrailing) {
-            Button(action: { showFilters.toggle() }) {
-                Image(systemName: "gear")
-            }
         }
     }
 }
@@ -109,8 +97,13 @@ extension MiCalendarView {
                     }
                 }
                 
-                DispatchQueue.main.async {
-                    self.forecastDays = days
+                try? await Task.sleep(nanoseconds: 1_000_000_000)
+                
+                await MainActor.run {
+                    withAnimation(.easeOut(duration: 0.5)) {
+                        self.forecastDays = days
+                        self.isLoading = false
+                    }
                 }
             } catch {
                 print("Errore nel recupero meteo: \(error)")

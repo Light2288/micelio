@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum MiCalendarDayClassification {
+enum MiCalendarDayClassification: CaseIterable {
     case good, medium, bad
     
     var icon: String {
