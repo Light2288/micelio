@@ -38,7 +38,9 @@ struct MiCalendarView: View {
             .toolbar {
                 MiCalendarToolbar(showFilters: $showFilters)
             }
-            .sheet(isPresented: $showFilters) {
+            .sheet(isPresented: $showFilters, onDismiss: {
+                fetchWeatherForecast()
+            }) {
                 MiCalendarSettingsView(configManager: configManager)
             }
             .sheet(isPresented: $showDayDetail, content: {
@@ -60,6 +62,9 @@ extension MiCalendarView {
                     print("Location not found")
                     return
                 }
+                
+                isLoading = true
+                
                 let weatherLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
                 
                 let weather = try await weatherService.weather(for: weatherLocation)
@@ -97,7 +102,7 @@ extension MiCalendarView {
                     }
                 }
                 
-                try? await Task.sleep(nanoseconds: 1_000_000_000)
+                try? await Task.sleep(nanoseconds: 500_000_000)
                 
                 await MainActor.run {
                     withAnimation(.easeOut(duration: 0.5)) {

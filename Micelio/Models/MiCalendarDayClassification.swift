@@ -12,16 +12,16 @@ enum MiCalendarDayClassification: CaseIterable {
     
     var icon: String {
         switch self {
-        case .good: return "mushroom.fill"
-        case .medium: return "cloud.sun"
-        case .bad: return "exclamationmark.triangle.fill"
+        case .good: return "micalendar_good_day"
+        case .medium: return "micalendar_medium_day"
+        case .bad: return "micalendar_bad_day"
         }
     }
     
     var color: Color {
         switch self {
         case .good: return .green
-        case .medium: return .yellow
+        case .medium: return .orange
         case .bad: return .red
         }
     }

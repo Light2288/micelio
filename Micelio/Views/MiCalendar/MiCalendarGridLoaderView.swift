@@ -16,7 +16,7 @@ struct MiCalendarGridLoaderView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Color.gray.opacity(0.2))
-                        .frame(height: 100)
+                        .aspectRatio(1.0, contentMode: .fit)
                     
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: .gray))

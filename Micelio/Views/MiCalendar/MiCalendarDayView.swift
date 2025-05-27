@@ -21,14 +21,14 @@ struct MiCalendarDayView: View {
             VStack {
                 Text(day.date, style: .date)
                     .font(.headline)
-                Image(systemName: day.evaluation.classification.icon)
-                    .foregroundColor(day.evaluation.classification.color)
+                Image(day.evaluation.classification.icon)
+                    .foregroundColor(day.evaluation.classification.color.opacity(0.8))
                 Text("\(Int(day.temperature.value))°C")
             }
             .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(day.evaluation.classification.color.opacity(0.3))
+        .background(day.evaluation.classification.color.opacity(0.2))
         .cornerRadius(8)
     }
 }
