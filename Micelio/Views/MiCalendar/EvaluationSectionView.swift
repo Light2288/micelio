@@ -14,8 +14,11 @@ struct EvaluationSectionView: View {
     var body: some View {
         Section {
             VStack(alignment: .leading, spacing: 8) {
-                Label("Condizioni per la ricerca dei funghi", systemImage: "leaf.fill")
-                    .font(.headline)
+                Label {
+                    Text("Condizioni per la ricerca dei funghi")
+                } icon: {
+                    Image(evaluation.classification.icon)
+                }
                 Text(evaluation.classification.description)
                     .font(.body)
                 

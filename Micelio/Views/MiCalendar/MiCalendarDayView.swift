@@ -18,9 +18,12 @@ struct MiCalendarDayView: View {
             selectedDay = day
             showDayDetail.toggle()
         }) {
-            VStack {
+            VStack(spacing: 2) {
                 Text(day.date, style: .date)
                     .font(.headline)
+//                    .scaledToFit()
+                    .minimumScaleFactor(0.7)
+                    .lineLimit(nil)
                 Image(day.evaluation.classification.icon)
                     .foregroundColor(day.evaluation.classification.color.opacity(0.8))
                 Text("\(Int(day.temperature.value))°C")
@@ -28,6 +31,7 @@ struct MiCalendarDayView: View {
             .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .aspectRatio(1, contentMode: .fit)
         .background(day.evaluation.classification.color.opacity(0.2))
         .cornerRadius(8)
     }
