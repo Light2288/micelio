@@ -19,11 +19,20 @@ struct MiCalendarView: View {
     @StateObject private var configManager = MiCalendarRulesConfigManager()
     @StateObject var locationManager = LocationManager()
     
+    @ObservedObject private var miCalendarLocationManager = MiCalendarLocationManager.shared
+    @State private var showLocationSheet = false
+    
+    // Used to show only city name
+    var currentCityName: String {
+        miCalendarLocationManager.selectedLocation?.name ?? "Posizione attuale"
+    }
+    
     private let weatherService = WeatherService()
     
     var body: some View {
         NavigationStack {
             ScrollView {
+                MiCalendarLocationView(currentCityName: currentCityName, showLocationSheet: $showLocationSheet)
                 if isLoading {
                     MiCalendarGridLoaderView()
                 } else {
@@ -46,6 +55,9 @@ struct MiCalendarView: View {
             .sheet(isPresented: $showDayDetail, content: {
                 MiCalendarDayDetailView(day: $selectedDay, configManager: configManager)
             })
+            .sheet(isPresented: $showLocationSheet) {
+                LocationSearchSheetView()
+            }
             .task {
                 fetchWeatherForecast()
             }
