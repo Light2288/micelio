@@ -18,7 +18,6 @@ struct LocationSearchSheetView: View {
     @State private var query = ""
     @State private var searchResults: [MiCalendarSavedLocation] = []
     @State private var searchCompleter = MKLocalSearchCompleter()
-    @State private var debounceWorkItem: DispatchWorkItem?
     @State private var searchCompleterDelegate: SearchCompleterDelegate? = nil
 
     // NEW: Throttling logic
@@ -29,54 +28,29 @@ struct LocationSearchSheetView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                TextField("Cerca città", text: $query)
-                    .textFieldStyle(.roundedBorder)
-                    .padding()
-                    .onChange(of: query) { newValue in
-                        guard newValue.count >= 3 else { return }
-                        debounceWorkItem?.cancel()
-
-                        let workItem = DispatchWorkItem {
-                            searchCompleter.queryFragment = newValue
-                        }
-
-                        debounceWorkItem = workItem
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: workItem) // Increased delay
-                    }
+                LocationSearchInputView(query: $query, searchCompleter: $searchCompleter)
 
                 List {
-                    if !query.isEmpty {
-                        Section(header: Text("Risultati")) {
-                            ForEach(searchResults, id: \.self) { location in
-                                Button(location.name) {
-                                    miCalendarLocationManager.setSelectedLocation(location)
-                                    dismiss()
-                                }
-                            }
-                        }
-                    }
+                    LocationSheetSearchResultSectionView(
+                        title: "Risultati",
+                        setSelectedLocation: miCalendarLocationManager.setSelectedLocation,
+                        isListDeletable: false,
+                        locations: $searchResults
+                    )
 
-                    if !miCalendarLocationManager.favorites.isEmpty {
-                        Section(header: Text("Preferiti")) {
-                            ForEach(miCalendarLocationManager.favorites, id: \.self) { location in
-                                Button(location.name) {
-                                    miCalendarLocationManager.setSelectedLocation(location)
-                                    dismiss()
-                                }
-                            }
-                        }
-                    }
-
-                    if !miCalendarLocationManager.recent.isEmpty {
-                        Section(header: Text("Recenti")) {
-                            ForEach(miCalendarLocationManager.recent, id: \.self) { location in
-                                Button(location.name) {
-                                    miCalendarLocationManager.setSelectedLocation(location)
-                                    dismiss()
-                                }
-                            }
-                        }
-                    }
+                    LocationSheetSearchResultSectionView(
+                        title: "Preferiti",
+                        setSelectedLocation: miCalendarLocationManager.setSelectedLocation,
+                        isListDeletable: false,
+                        locations: $miCalendarLocationManager.favorites
+                    )
+                    
+                    LocationSheetSearchResultSectionView(
+                        title: "Recenti",
+                        setSelectedLocation: miCalendarLocationManager.setSelectedLocation,
+                        isListDeletable: true,
+                        locations: $miCalendarLocationManager.recents,
+                    )
                 }
             }
             .navigationTitle("Cerca luogo")

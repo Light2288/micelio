@@ -12,7 +12,7 @@ final class MiCalendarLocationManager: ObservableObject {
     static let shared = MiCalendarLocationManager()
 
     @Published var favorites: [MiCalendarSavedLocation] = []
-    @Published var recent: [MiCalendarSavedLocation] = []
+    @Published var recents: [MiCalendarSavedLocation] = []
 
     @Published var selectedLocation: MiCalendarSavedLocation?
 
@@ -36,9 +36,9 @@ final class MiCalendarLocationManager: ObservableObject {
     }
 
     func addToRecent(_ location: MiCalendarSavedLocation) {
-        recent.removeAll { $0 == location }
-        recent.insert(location, at: 0)
-        recent = Array(recent.prefix(10))
+        recents.removeAll { $0 == location }
+        recents.insert(location, at: 0)
+        recents = Array(recents.prefix(10))
         save()
     }
 
@@ -55,7 +55,7 @@ final class MiCalendarLocationManager: ObservableObject {
     private func save() {
         let encoder = JSONEncoder()
         UserDefaults.standard.set(try? encoder.encode(favorites), forKey: favoritesKey)
-        UserDefaults.standard.set(try? encoder.encode(recent), forKey: recentKey)
+        UserDefaults.standard.set(try? encoder.encode(recents), forKey: recentKey)
         UserDefaults.standard.set(try? encoder.encode(selectedLocation), forKey: selectedKey)
     }
 
@@ -68,7 +68,7 @@ final class MiCalendarLocationManager: ObservableObject {
 
         if let recentData = UserDefaults.standard.data(forKey: recentKey),
            let decodedRecent = try? decoder.decode([MiCalendarSavedLocation].self, from: recentData) {
-            self.recent = decodedRecent
+            self.recents = decodedRecent
         }
 
         if let selectedData = UserDefaults.standard.data(forKey: selectedKey),

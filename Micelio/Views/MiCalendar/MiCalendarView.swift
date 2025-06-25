@@ -17,7 +17,6 @@ struct MiCalendarView: View {
     @State private var isLoading = true
     
     @StateObject private var configManager = MiCalendarRulesConfigManager()
-    @StateObject var locationManager = LocationManager()
     
     @ObservedObject private var miCalendarLocationManager = MiCalendarLocationManager.shared
     @State private var showLocationSheet = false
@@ -47,15 +46,14 @@ struct MiCalendarView: View {
             .toolbar {
                 MiCalendarToolbar(showFilters: $showFilters)
             }
-            .sheet(isPresented: $showFilters, onDismiss: {
-                fetchWeatherForecast()
-            }) {
+            .sheet(isPresented: $showFilters, onDismiss:
+                fetchWeatherForecast) {
                 MiCalendarSettingsView(configManager: configManager)
             }
             .sheet(isPresented: $showDayDetail, content: {
                 MiCalendarDayDetailView(day: $selectedDay, configManager: configManager)
             })
-            .sheet(isPresented: $showLocationSheet) {
+            .sheet(isPresented: $showLocationSheet, onDismiss: fetchWeatherForecast) {
                 LocationSearchSheetView()
             }
             .task {
@@ -70,7 +68,7 @@ extension MiCalendarView {
     func fetchWeatherForecast() {
         Task {
             do {
-                guard let location = locationManager.userLocation else {
+                guard let location = miCalendarLocationManager.selectedLocation else {
                     print("Location not found")
                     return
                 }
