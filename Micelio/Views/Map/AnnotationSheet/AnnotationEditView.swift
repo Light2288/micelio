@@ -23,7 +23,7 @@ struct AnnotationEditView: View {
     @State var newAnnotationPhotos = Set<MushroomMapAnnotationPhoto>()
     @State var photosToDeleteIds: [UUID] = []
     
-    let locationManager: LocationManager
+    let locationManager = LocationManager.shared
     
     @State private var initialColor: String = ""
     
@@ -136,6 +136,6 @@ extension AnnotationEditView {
     
     let animatedCenterMap: (CLLocationCoordinate2D) -> () = { _ in }
     
-    AnnotationEditView(annotation: .constant(MushroomMapAnnotation(context: context)), centerMapOnLocation: .constant(animatedCenterMap), isEditMode: .constant(true), locationManager: LocationManager())
+    AnnotationEditView(annotation: .constant(MushroomMapAnnotation(context: context)), centerMapOnLocation: .constant(animatedCenterMap), isEditMode: .constant(true))
         .environment(\.managedObjectContext, context)
 }

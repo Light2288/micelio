@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MiCalendarLocationView: View {
-    @ObservedObject private var miCalendarLocationManager = MiCalendarLocationManager.shared
+    @EnvironmentObject private var miCalendarLocationManager: MiCalendarLocationManager
     var currentCityName: String
     @Binding var showLocationSheet: Bool
     
@@ -31,6 +31,7 @@ struct MiCalendarLocationView: View {
             Text(currentCityName)
                 .font(.title2)
                 .bold()
+                .multilineTextAlignment(.center)
             
             Button {
                 showLocationSheet = true

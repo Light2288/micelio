@@ -26,7 +26,7 @@ struct MapView: View {
     @Binding var isEditAnnotationMode: Bool
     
     var size: CGSize
-    @ObservedObject var locationManager: LocationManager
+    @EnvironmentObject private var locationManager: LocationManager
     
     let geofencingDistance: CLLocationDistance = Constants.MushroomMap.geofencingDistance
     
@@ -37,7 +37,7 @@ struct MapView: View {
             annotationItems: mushroomMapAnnotations,
             annotationContent: { mushroomMapAnnotation in
                 MapAnnotation(coordinate: mushroomMapAnnotation.coordinate) {
-                    MushroomPinView(mushroomMapAnnotation: mushroomMapAnnotation, selectedMushroomMapAnnotation: $selectedMushroomMapAnnotation, showSheet: $showSheet, isEditAnnotationMode: $isEditAnnotationMode, centerOnPinPositionClosure: feedbackOnPinAdd, manager: locationManager)
+                    MushroomPinView(mushroomMapAnnotation: mushroomMapAnnotation, selectedMushroomMapAnnotation: $selectedMushroomMapAnnotation, showSheet: $showSheet, isEditAnnotationMode: $isEditAnnotationMode, centerOnPinPositionClosure: feedbackOnPinAdd)
                 }
             }
         )
@@ -142,7 +142,7 @@ extension MapView {
     let animatedCenterMap: (CLLocationCoordinate2D) -> () = { _ in }
     
     GeometryReader { proxy in
-        MapView(addPinToMapCenterClosure: .constant(addPinToMapCenter), centerOnUserPositionClosure: .constant(centerOnUserPosition), centerMapOnLocationClosure: .constant(animatedCenterMap), showSheet: .constant(false), selectedMushroomMapAnnotation: .constant(nil), isEditAnnotationMode: .constant(false), size: proxy.size, locationManager: LocationManager())
+        MapView(addPinToMapCenterClosure: .constant(addPinToMapCenter), centerOnUserPositionClosure: .constant(centerOnUserPosition), centerMapOnLocationClosure: .constant(animatedCenterMap), showSheet: .constant(false), selectedMushroomMapAnnotation: .constant(nil), isEditAnnotationMode: .constant(false), size: proxy.size)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

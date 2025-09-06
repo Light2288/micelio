@@ -10,25 +10,41 @@ import MapKit
 
 struct LocationSearchInputView: View {
     @State private var debounceWorkItem: DispatchWorkItem? = nil
+    @Environment(\.dismiss) private var dismiss
     
     @Binding var query: String
     @Binding var searchCompleter: MKLocalSearchCompleter
-    
+    @EnvironmentObject private var miCalendarLocationManager: MiCalendarLocationManager
+        
     var body: some View {
-        TextField("Cerca città", text: $query)
-            .textFieldStyle(.roundedBorder)
-            .padding()
-            .onChange(of: query) { newValue in
-                guard newValue.count >= 3 else { return }
-                debounceWorkItem?.cancel()
-                
-                let workItem = DispatchWorkItem {
-                    searchCompleter.queryFragment = newValue
+        HStack {
+            TextField("Cerca città", text: $query)
+                .textFieldStyle(.roundedBorder)
+                .padding(.leading)
+                .onChange(of: query) { newValue in
+                    guard newValue.count >= 3 else { return }
+                    debounceWorkItem?.cancel()
+                    
+                    let workItem = DispatchWorkItem {
+                        searchCompleter.queryFragment = newValue
+                    }
+                    
+                    debounceWorkItem = workItem
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: workItem)
                 }
-                
-                debounceWorkItem = workItem
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: workItem)
+            Button {
+                Task {
+                    if let cityLocation = await miCalendarLocationManager.resolveUserCityLocation() {
+                        miCalendarLocationManager.setSelectedLocation(cityLocation)
+                        dismiss()
+                    }
+                }
+            } label: {
+                Image(systemName: "location.fill")
             }
+            .padding(.trailing)
+            .accessibilityLabel("Usa la posizione attuale")
+        }
     }
 }
 

@@ -13,7 +13,7 @@ struct RulesListView: View {
     let label: String
     let systemImage: String
     let color: Color
-
+    
     var body: some View {
         let toggles = makeMiCalendarRuleTogglesData(configs: .constant(config))
         
@@ -22,7 +22,25 @@ struct RulesListView: View {
                 .foregroundColor(color)
                 .font(.headline)
             ForEach(rules, id: \.self) { ruleId in
-                Text(toggles.first(where: { $0.id == ruleId })?.title ?? ruleId)
+                Label {
+                    Text(toggles.first(where: { $0.id == ruleId })?.title ?? ruleId)
+                } icon: {
+                    if ruleId == ExtremeTemperatureRule.id {
+                        Image(toggles.first(where: { $0.id == ruleId })!.image)
+                    } else {
+                        Image(systemName: toggles.first(where: { $0.id == ruleId })!.image)
+                    }
+                }
+                .font(.subheadline)
+                
+                //                HStack {
+                //                    if ruleId == ExtremeTemperatureRule.id {
+                //                        Image(toggles.first(where: { $0.id == ruleId })!.image)
+                //                    } else {
+                //                        Image(systemName: toggles.first(where: { $0.id == ruleId })!.image)
+                //                    }
+                //                    Text(toggles.first(where: { $0.id == ruleId })?.title ?? ruleId)
+                //                }
             }
         }
     }

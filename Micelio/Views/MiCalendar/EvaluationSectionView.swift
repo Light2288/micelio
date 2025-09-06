@@ -13,14 +13,13 @@ struct EvaluationSectionView: View {
     
     var body: some View {
         Section {
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 20) {
                 Label {
-                    Text("Condizioni per la ricerca dei funghi")
+                    Text(evaluation.classification.description)
+                        .font(.body)
                 } icon: {
                     Image(evaluation.classification.icon)
                 }
-                Text(evaluation.classification.description)
-                    .font(.body)
                 
                 if !evaluation.positiveRules.isEmpty {
                     RulesListView(

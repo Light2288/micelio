@@ -13,7 +13,7 @@ struct MushroomMapView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    @StateObject var locationManager = LocationManager()
+    @EnvironmentObject private var locationManager: LocationManager
     
     @State var addPinToMapCenter: (CGSize) -> Void = { _ in return }
     @State var centerOnUserPosition: () -> Void = { }
@@ -25,7 +25,8 @@ struct MushroomMapView: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack() {
-                MapView(addPinToMapCenterClosure: $addPinToMapCenter, centerOnUserPositionClosure: $centerOnUserPosition, centerMapOnLocationClosure: $centerMapOnLocation, showSheet: $showSheet, selectedMushroomMapAnnotation: $selectedMushroomAnnotation, isEditAnnotationMode: $isEditAnnotationMode, size: proxy.size, locationManager: locationManager)
+                MapView(addPinToMapCenterClosure: $addPinToMapCenter, centerOnUserPositionClosure: $centerOnUserPosition, centerMapOnLocationClosure: $centerMapOnLocation, showSheet: $showSheet, selectedMushroomMapAnnotation: $selectedMushroomAnnotation, isEditAnnotationMode: $isEditAnnotationMode, size: proxy.size)
+                    .environmentObject(LocationManager.shared)
                 
                 MapOverlayView(size: proxy.size, addPinToMapCenter: addPinToMapCenter, centerOnUserPosition: centerOnUserPosition, showSheet: $showSheet)
             }
@@ -35,7 +36,7 @@ struct MushroomMapView: View {
             onDismiss: {
                 isEditAnnotationMode = false
         }, content: {
-            MushroomMapAnnotationSheetView(annotation: $selectedMushroomAnnotation, isAnnotationEditMode: $isEditAnnotationMode, centerMapOnLocation: $centerMapOnLocation, locationManager: locationManager)
+            MushroomMapAnnotationSheetView(annotation: $selectedMushroomAnnotation, isAnnotationEditMode: $isEditAnnotationMode, centerMapOnLocation: $centerMapOnLocation)
                 .presentationDetents([.large, .fraction(Constants.MushroomMap.sheetFraction)])
                 .presentationBackgroundInteraction(.enabled)
                 .interactiveDismissDisabled(true)

@@ -80,9 +80,6 @@
     "Close" : {
 
     },
-    "Condizioni per la ricerca dei funghi" : {
-
-    },
     "Coordinate: (lat. %@ ; lon. %@)" : {
       "localizations" : {
         "it" : {
@@ -97,6 +94,9 @@
 
     },
     "Elimina segnaposto" : {
+
+    },
+    "Eliminare l'intera lista?" : {
 
     },
     "Errore nel caricamento della foto" : {
@@ -224,6 +224,9 @@
 
     },
     "Tipologia fungo:" : {
+
+    },
+    "Usa la posizione attuale" : {
 
     }
   },

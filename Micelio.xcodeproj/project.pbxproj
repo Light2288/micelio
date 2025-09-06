@@ -1199,6 +1199,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6B107F492D88E90700E6A33D /* docs */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = docs; sourceTree = "<group>"; };
+		6BAA3BA32E11F8A200544675 /* Modifiers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Modifiers; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1524,6 +1525,7 @@
 		6B3363BC2B3CF5D4002FBAEF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6BAA3BA32E11F8A200544675 /* Modifiers */,
 				6B239E0B2B6C581E00D7D8EB /* MushroomMapAnnotation+Coordinate.swift */,
 				6B3363BD2B3CF5E8002FBAEF /* FloatingPoint+Rounded.swift */,
 				6B7A20002B63288800B62640 /* CGImagePropertyOrientation+Init.swift */,
@@ -2395,6 +2397,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6BAA3BA32E11F8A200544675 /* Modifiers */,
 			);
 			name = Micelio;
 			productName = Micelio;

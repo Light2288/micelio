@@ -44,9 +44,9 @@ struct MiCalendarDayEvaluator {
         
         let classification: MiCalendarDayClassification
         switch totalScore {
-        case 3...:
+        case 2...:
             classification = .good
-        case 2:
+        case 0...1:
             classification = .medium
         default:
             classification = .bad

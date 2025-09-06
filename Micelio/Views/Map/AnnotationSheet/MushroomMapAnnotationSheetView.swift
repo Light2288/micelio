@@ -13,13 +13,13 @@ struct MushroomMapAnnotationSheetView: View {
     @Binding var isAnnotationEditMode: Bool
     @Binding var centerMapOnLocation: (CLLocationCoordinate2D) -> Void
     
-    let locationManager: LocationManager
+    let locationManager = LocationManager.shared
     
     var body: some View {
         VStack(alignment: .leading, spacing: Constants.MushroomMap.AnnotationSheet.vStackSpacing) {
             AnnotationSheetButtonsToolbarView(isAnnotationEditMode: $isAnnotationEditMode, annotation: $annotation, centerMapOnLocation: $centerMapOnLocation)
             if isAnnotationEditMode {
-                AnnotationEditView(annotation: $annotation, centerMapOnLocation: $centerMapOnLocation, isEditMode: $isAnnotationEditMode, locationManager: locationManager)
+                AnnotationEditView(annotation: $annotation, centerMapOnLocation: $centerMapOnLocation, isEditMode: $isAnnotationEditMode)
             } else {
                 AnnotationDisplayView(annotation: $annotation)
             }
@@ -32,5 +32,5 @@ struct MushroomMapAnnotationSheetView: View {
 #Preview {
     let animatedCenterMap: (CLLocationCoordinate2D) -> () = { _ in }
     
-    MushroomMapAnnotationSheetView(annotation: .constant(nil), isAnnotationEditMode: .constant(false), centerMapOnLocation: .constant(animatedCenterMap), locationManager: LocationManager())
+    MushroomMapAnnotationSheetView(annotation: .constant(nil), isAnnotationEditMode: .constant(false), centerMapOnLocation: .constant(animatedCenterMap))
 }

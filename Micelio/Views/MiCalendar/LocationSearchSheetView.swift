@@ -13,7 +13,7 @@ import MapKit
 
 struct LocationSearchSheetView: View {
     @Environment(\.dismiss) private var dismiss
-    @ObservedObject private var miCalendarLocationManager = MiCalendarLocationManager.shared
+    @EnvironmentObject private var miCalendarLocationManager: MiCalendarLocationManager
 
     @State private var query = ""
     @State private var searchResults: [MiCalendarSavedLocation] = []
@@ -28,13 +28,20 @@ struct LocationSearchSheetView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                LocationSearchInputView(query: $query, searchCompleter: $searchCompleter)
+                LocationSearchInputView(
+                    query: $query,
+                    searchCompleter: $searchCompleter,
+                )
+                .environmentObject(miCalendarLocationManager)
 
                 List {
                     LocationSheetSearchResultSectionView(
                         title: "Risultati",
                         setSelectedLocation: miCalendarLocationManager.setSelectedLocation,
                         isListDeletable: false,
+                        isListElementDeletable: false,
+                        onDelete: { _ in },
+                        onClearAll: {},
                         locations: $searchResults
                     )
 
@@ -42,14 +49,22 @@ struct LocationSearchSheetView: View {
                         title: "Preferiti",
                         setSelectedLocation: miCalendarLocationManager.setSelectedLocation,
                         isListDeletable: false,
+                        isListElementDeletable: true,
+                        onDelete: miCalendarLocationManager.removeFromFavorites,
+                        onClearAll: {},
                         locations: $miCalendarLocationManager.favorites
                     )
-                    
+
                     LocationSheetSearchResultSectionView(
                         title: "Recenti",
                         setSelectedLocation: miCalendarLocationManager.setSelectedLocation,
                         isListDeletable: true,
-                        locations: $miCalendarLocationManager.recents,
+                        isListElementDeletable: true,
+                        onDelete: miCalendarLocationManager.removeFromRecents,
+                        onClearAll: {
+                            miCalendarLocationManager.clearRecents()
+                        },
+                        locations: $miCalendarLocationManager.recents
                     )
                 }
             }
@@ -114,6 +129,7 @@ struct LocationSearchSheetView: View {
 
             return MiCalendarSavedLocation(
                 name: name,
+                shortName: locality,
                 latitude: item.placemark.coordinate.latitude,
                 longitude: item.placemark.coordinate.longitude
             )

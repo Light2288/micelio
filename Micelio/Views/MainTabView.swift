@@ -20,6 +20,7 @@ struct MainTabView: View {
     var body: some View {
         TabView {
             MushroomMapView()
+                .environmentObject(LocationManager.shared)
                 .tabItem {
                     Label(TabConstants.map, image: "mushroom-map")
                 }
