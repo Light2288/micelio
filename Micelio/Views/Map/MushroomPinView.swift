@@ -15,7 +15,7 @@ struct MushroomPinView: View {
     @Binding var isEditAnnotationMode: Bool
     
     let centerOnPinPositionClosure: (CLLocationCoordinate2D, Bool) -> Void
-    let manager: LocationManager
+    let locationManager = LocationManager.shared
     
     private let shadowRadius = Constants.MushroomMap.MushroomPin.shadowRadius
     private let frameHeight = Constants.MushroomMap.MushroomPin.frameHeight
@@ -52,7 +52,7 @@ struct MushroomPinView: View {
         isEditAnnotationMode = false
         centerOnPinPositionClosure(
             CLLocationCoordinate2D(
-                latitude: mushroomMapAnnotation.latitude - manager.region.span.latitudeDelta / 3,
+                latitude: mushroomMapAnnotation.latitude - locationManager.region.span.latitudeDelta / 3,
                 longitude: mushroomMapAnnotation.longitude
             ),
             false
@@ -65,5 +65,5 @@ struct MushroomPinView: View {
         return
     }
     
-    return MushroomPinView(mushroomMapAnnotation: MushroomMapAnnotation(context: PersistenceController.preview.container.viewContext), selectedMushroomMapAnnotation: .constant(nil), showSheet: .constant(true), isEditAnnotationMode: .constant(false), centerOnPinPositionClosure: centerOnPinPositionClosure, manager: LocationManager())
+    return MushroomPinView(mushroomMapAnnotation: MushroomMapAnnotation(context: PersistenceController.preview.container.viewContext), selectedMushroomMapAnnotation: .constant(nil), showSheet: .constant(true), isEditAnnotationMode: .constant(false), centerOnPinPositionClosure: centerOnPinPositionClosure)
 }

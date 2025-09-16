@@ -10,6 +10,16 @@
     "%@ button" : {
 
     },
+    "%@%@" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@%2$@"
+          }
+        }
+      }
+    },
     "%lld/%lld" : {
       "localizations" : {
         "it" : {
@@ -20,7 +30,13 @@
         }
       }
     },
-    "Aggiungi fino a 5 immagini:" : {
+    "%lld%%" : {
+
+    },
+    "%lld°C" : {
+
+    },
+    "Aggiungi fino a %lld immagini:" : {
 
     },
     "Aggiungi foto" : {
@@ -52,6 +68,12 @@
     "Catalogo Funghi" : {
 
     },
+    "Cerca città" : {
+
+    },
+    "Cerca luogo" : {
+
+    },
     "Cerca per nome scientifico" : {
 
     },
@@ -74,7 +96,13 @@
     "Elimina segnaposto" : {
 
     },
+    "Eliminare l'intera lista?" : {
+
+    },
     "Errore nel caricamento della foto" : {
+
+    },
+    "Errore nel recupero delle informazioni di dettaglio di questa giornata" : {
 
     },
     "Fai attenzione quando usi questa funzione! Il riconoscimento automatico non è infallibile, e non tutte le specie di funghi sono identificate dalla app; alcuni funghi commestibili sono molto simili a funghi tossici, e l'app potrebbe confonderli.\n%@" : {
@@ -103,6 +131,9 @@
     "Immagini:" : {
 
     },
+    "Imposta regole" : {
+
+    },
     "Informazioni aggiuntive" : {
 
     },
@@ -126,13 +157,25 @@
         }
       }
     },
+    "MiCalendario" : {
+
+    },
     "Micelio" : {
 
     },
     "Mostra" : {
 
     },
+    "N/A" : {
+
+    },
     "Nascondi" : {
+
+    },
+    "Nessuna regola applicata" : {
+
+    },
+    "No" : {
 
     },
     "Non è stato possibile riconoscere alcun fungo dalla fotografia utilizzata" : {
@@ -165,6 +208,9 @@
     "Scegli il colore del segnaposto" : {
 
     },
+    "Scegli le regole da applicare per determinare se una giornata è favorevole alla crescita e alla raccolta dei funghi." : {
+
+    },
     "Sei sicuro di voler cancellare questo segnaposto? Verranno cancellate tutte le informazioni e le fotografie associate." : {
 
     },
@@ -174,7 +220,13 @@
     "Sembra non ci sia nessun fungo che rispetti i filtri applicati" : {
 
     },
+    "Sì" : {
+
+    },
     "Tipologia fungo:" : {
+
+    },
+    "Usa la posizione attuale" : {
 
     }
   },

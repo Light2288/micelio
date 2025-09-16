@@ -24,9 +24,14 @@ enum Constants {
         ]
     }
     
+    enum MushroomDetector {
+        public static let minConfidence: Float = 0.2
+    }
+    
     enum Styles {
         enum DisclosureGroupCustomStyle {
             public static let imageDimension: CGFloat = 30
+            public static let expandedTopPadding: CGFloat = 1
         }
         
         enum ResizableImageWithShapeBackground {
@@ -138,6 +143,12 @@ enum Constants {
                     public static let lineWidth: CGFloat = 2
                     public static let dash: CGFloat = 8
                 }
+            }
+            
+            enum AnnotationPhotoView {
+                public static let maxPhotosNumber: Int = 5
+                public static let maxGridWidth: CGFloat = 200
+                public static let gridPadding: CGFloat = 2
             }
         }
     }
@@ -272,5 +283,67 @@ enum Constants {
         }
     }
     
-    
+    enum MiCalendar {
+        enum MiCalendarView {
+            public static let startDays: Int = -7
+            public static let endDays: Int = 9
+            public static let taskSleep: UInt64 = 500_000_000
+            public static let easeOutDuration: Double = 0.5
+        }
+        
+        enum MiCalendarDay {
+            public static let buttonVStackSpacing: CGFloat = 2
+            public static let buttonTextMinScaleFactor: CGFloat = 0.7
+            public static let buttonImageForegroundColorOpacity: CGFloat = 0.8
+            public static let buttonBackgroundColorOpacity: CGFloat = 0.2
+            public static let buttonCornerRadius: CGFloat = 8
+        }
+        
+        enum MiCalendarDayDetail {
+            public static let vStackSpacing: CGFloat = 16
+        }
+        
+        enum EvaluationSection {
+            public static let vStackSpacing: CGFloat = 20
+            public static let vStackPadding: CGFloat = 4
+        }
+        
+        enum RulesList {
+            public static let vStackSpacing: CGFloat = 8
+        }
+        
+        enum MiCalendarGrid {
+            public static let gridSpacing: CGFloat = 2
+            public static let gridColumnCount: Int = 3
+            public static let lazyVGridSpacing: CGFloat = 2
+            public static let cellAnimationDuration: CGFloat = 0.4
+            public static let cellAnimationDelay: CGFloat = 0.03
+            public static let lazyVGridPadding: CGFloat = 4
+        }
+        
+        enum MiCalendarGridLoader {
+            public static let gridSpacing: CGFloat = 2
+            public static let gridColumnCount: Int = 3
+            public static let lazyVGridSpacing: CGFloat = 2
+            public static let roundedRectangleCornerRadius: CGFloat = 8
+            public static let roundedRectangleFillOpacity: CGFloat = 0.2
+            public static let roundedRectangleAspectRatio: CGFloat = 1.0
+            public static let lazyVGridHorizontalPadding: CGFloat = 4
+            public static let lazyVGridTopPadding: CGFloat = 16
+        }
+        
+        enum LocationSearchSheet {
+            public static let resolveThrottleInterval: TimeInterval = 1.0
+            public static let dictionaryCount: Int = 5
+        }
+        
+        enum LocationView {
+            public static let hStackSpacing: CGFloat = 10
+        }
+        
+        enum LocationSearchInput {
+            public static let minCharacterCount: Int = 3
+            public static let dispatchQueueDelay: TimeInterval = 0.8
+        }
+    }
 }
