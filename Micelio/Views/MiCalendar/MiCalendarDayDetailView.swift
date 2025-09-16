@@ -13,7 +13,7 @@ struct MiCalendarDayDetailView: View {
     
     var body: some View {
         if let day = day {
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: Constants.MiCalendar.MiCalendarDayDetail.vStackSpacing) {
                 Text(day.date.formatted(date: .long, time: .omitted))
                     .font(.title)
                     .bold()

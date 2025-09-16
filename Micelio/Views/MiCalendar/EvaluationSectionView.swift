@@ -13,7 +13,7 @@ struct EvaluationSectionView: View {
     
     var body: some View {
         Section {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .leading, spacing: Constants.MiCalendar.EvaluationSection.vStackSpacing) {
                 Label {
                     Text(evaluation.classification.description)
                         .font(.body)
@@ -46,7 +46,7 @@ struct EvaluationSectionView: View {
                         .foregroundColor(.secondary)
                 }
             }
-            .padding(.vertical, 4)
+            .padding(.vertical, Constants.MiCalendar.EvaluationSection.vStackPadding)
         }
     }
 }

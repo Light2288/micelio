@@ -13,29 +13,30 @@ struct MiCalendarGridView: View {
     @Binding var selectedDay: MiCalendarDay?
     @State var isVisible: Bool = false
     
-    private let columns = Array(repeating: GridItem(.flexible(), spacing: 2), count: 3)
+    private let columns = Array(
+        repeating:
+            GridItem(
+                .flexible(),
+                spacing: Constants.MiCalendar.MiCalendarGrid.gridSpacing
+            ), count: Constants.MiCalendar.MiCalendarGrid.gridColumnCount)
     
     var body: some View {
-        LazyVGrid(columns: columns, spacing: 2) {
+        LazyVGrid(columns: columns, spacing: Constants.MiCalendar.MiCalendarGrid.lazyVGridSpacing) {
             ForEach(Array(forecastDays.enumerated()), id: \.element.id) { index, day in
                 MiCalendarDayView(day: day, showDayDetail: $showDayDetail, selectedDay: $selectedDay)
                     .opacity(isVisible ? 1 : 0)
                     .onAppear {
-                        withAnimation(.easeIn(duration: 0.4).delay(0.03 * Double(index))) {
+                        withAnimation(
+                            .easeIn(duration: Constants.MiCalendar.MiCalendarGrid.cellAnimationDuration)
+                            .delay(Constants.MiCalendar.MiCalendarGrid.cellAnimationDelay * Double(index))
+                        ) {
                             isVisible = true
                         }
                     }
             }
         }
-        .padding(.horizontal, 4)
+        .padding(.horizontal, Constants.MiCalendar.MiCalendarGrid.lazyVGridPadding)
     }
-}
-
-extension Date {
-  static func random() -> Date {
-    let randomTime = TimeInterval(Int32.random(in: 0...Int32.max))
-    return Date(timeIntervalSince1970: randomTime)
-  }
 }
 
 #Preview {

@@ -12,7 +12,12 @@ struct AnnotationPhotosView<AddPhotoView: View>: View {
     @Binding var newAnnotationPhotos: Set<MushroomMapAnnotationPhoto>
     @Binding var photosToDeleteIds: [UUID]
     let addPhotoView: AddPhotoView
-    private let gridColumns = Array(repeating: GridItem(.flexible(maximum: 200), alignment: .top), count: 5)
+    private let gridColumns = Array(
+        repeating: GridItem(
+            .flexible(maximum: Constants.MushroomMap.AnnotationSheet.AnnotationPhotoView.maxGridWidth),
+            alignment: .top
+        ),
+        count: Constants.MushroomMap.AnnotationSheet.AnnotationPhotoView.maxPhotosNumber)
     @State private var showPhotoDetailSheet: Bool = false
     @State private var selectedPhotoIndex: Int?
     
@@ -28,7 +33,7 @@ struct AnnotationPhotosView<AddPhotoView: View>: View {
     
     private var canAddPhoto: Bool {
         let currentPhotoCount = (annotation?.mushroomMapAnnotationPhotos?.count ?? 0) + newAnnotationPhotos.count - photosToDeleteIds.count
-        return currentPhotoCount < 5
+        return currentPhotoCount < Constants.MushroomMap.AnnotationSheet.AnnotationPhotoView.maxPhotosNumber
     }
     
     private func handleDeletePhoto(_ photo: MushroomMapAnnotationPhoto) {
@@ -67,7 +72,7 @@ struct AnnotationPhotosView<AddPhotoView: View>: View {
                     addPhotoView
                 }
             }
-            .padding(2)
+            .padding(Constants.MushroomMap.AnnotationSheet.AnnotationPhotoView.gridPadding)
         }
         .sheet(isPresented: $showPhotoDetailSheet) {
             AnnotationPhotoDetailView(annotationPhotos: photosOrderedByDate, selectedPhotoIndex: $selectedPhotoIndex)

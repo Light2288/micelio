@@ -22,7 +22,7 @@ struct LocationSearchInputView: View {
                 .textFieldStyle(.roundedBorder)
                 .padding(.leading)
                 .onChange(of: query) { newValue in
-                    guard newValue.count >= 3 else { return }
+                    guard newValue.count >= Constants.MiCalendar.LocationSearchInput.minCharacterCount else { return }
                     debounceWorkItem?.cancel()
                     
                     let workItem = DispatchWorkItem {
@@ -30,7 +30,10 @@ struct LocationSearchInputView: View {
                     }
                     
                     debounceWorkItem = workItem
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: workItem)
+                    DispatchQueue.main.asyncAfter(
+                        deadline: .now() + Constants.MiCalendar.LocationSearchInput.dispatchQueueDelay,
+                        execute: workItem
+                    )
                 }
             Button {
                 Task {

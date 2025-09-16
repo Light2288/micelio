@@ -17,7 +17,7 @@ struct RulesListView: View {
     var body: some View {
         let toggles = makeMiCalendarRuleTogglesData(configs: .constant(config))
         
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: Constants.MiCalendar.RulesList.vStackSpacing) {
             Label(label, systemImage: systemImage)
                 .foregroundColor(color)
                 .font(.headline)
@@ -32,15 +32,6 @@ struct RulesListView: View {
                     }
                 }
                 .font(.subheadline)
-                
-                //                HStack {
-                //                    if ruleId == ExtremeTemperatureRule.id {
-                //                        Image(toggles.first(where: { $0.id == ruleId })!.image)
-                //                    } else {
-                //                        Image(systemName: toggles.first(where: { $0.id == ruleId })!.image)
-                //                    }
-                //                    Text(toggles.first(where: { $0.id == ruleId })?.title ?? ruleId)
-                //                }
             }
         }
     }

@@ -36,7 +36,7 @@ struct DisclosureGroupCustomStyle: DisclosureGroupStyle {
             .buttonStyle(.plain)
             if configuration.isExpanded {
                 configuration.content
-                    .padding(.top, 1)
+                    .padding(.top, Constants.Styles.DisclosureGroupCustomStyle.expandedTopPadding)
             }
         }
     }

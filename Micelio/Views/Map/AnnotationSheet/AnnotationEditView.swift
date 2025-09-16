@@ -53,7 +53,7 @@ struct AnnotationEditView: View {
                             annotation?.color = color
                         }
                     
-                    Text("Aggiungi fino a 5 immagini:")
+                    Text("Aggiungi fino a \(Constants.MushroomMap.AnnotationSheet.AnnotationPhotoView.maxPhotosNumber) immagini:")
                     
                     AnnotationPhotosView(
                         annotation: $annotation,

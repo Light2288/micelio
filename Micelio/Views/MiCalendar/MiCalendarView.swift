@@ -85,8 +85,8 @@ extension MiCalendarView {
                 var calendar = Calendar.current
                 calendar.timeZone = TimeZone(identifier: "UTC")!
                 
-                let startDate = Calendar.current.date(byAdding: .day, value: -7, to: .now)!
-                let endDate = Calendar.current.date(byAdding: .day, value: 9, to: .now)!
+                let startDate = Calendar.current.date(byAdding: .day, value: Constants.MiCalendar.MiCalendarView.startDays, to: .now)!
+                let endDate = Calendar.current.date(byAdding: .day, value: Constants.MiCalendar.MiCalendarView.endDays, to: .now)!
                 let weatherForecast = try await weatherService.weather(for: weatherLocation, including: .daily(startDate: startDate, endDate: endDate)).forecast
                 
                 let currentWeather = weather.currentWeather
@@ -115,10 +115,10 @@ extension MiCalendarView {
                     }
                 }
                 
-                try? await Task.sleep(nanoseconds: 500_000_000)
+                try? await Task.sleep(nanoseconds: Constants.MiCalendar.MiCalendarView.taskSleep)
                 
                 await MainActor.run {
-                    withAnimation(.easeOut(duration: 0.5)) {
+                    withAnimation(.easeOut(duration: Constants.MiCalendar.MiCalendarView.easeOutDuration)) {
                         self.forecastDays = days
                         self.isLoading = false
                     }

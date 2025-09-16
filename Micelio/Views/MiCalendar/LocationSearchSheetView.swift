@@ -20,9 +20,9 @@ struct LocationSearchSheetView: View {
     @State private var searchCompleter = MKLocalSearchCompleter()
     @State private var searchCompleterDelegate: SearchCompleterDelegate? = nil
 
-    // NEW: Throttling logic
+    // Throttling logic
     @State private var lastResolveTimestamp: Date = .distantPast
-    private let resolveThrottleInterval: TimeInterval = 1.0
+    private let resolveThrottleInterval: TimeInterval = Constants.MiCalendar.LocationSearchSheet.resolveThrottleInterval
     @State private var lastResolvedQuery: String = ""
 
     var body: some View {
@@ -82,7 +82,12 @@ struct LocationSearchSheetView: View {
                     lastResolvedQuery = query
 
                     // Deduplicate by title (reduce similar entries)
-                    let uniqueByTitle = Dictionary(grouping: completions.prefix(5), by: { $0.title })
+                    let uniqueByTitle = Dictionary(
+                        grouping: completions.prefix(
+                            Constants.MiCalendar.LocationSearchSheet.dictionaryCount
+                        ),
+                        by: { $0.title }
+                    )
                         .compactMapValues { $0.first }
                         .values
 

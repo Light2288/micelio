@@ -595,6 +595,7 @@
 		6BE713252C2A237E00ABEA55 /* CatalogFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE713242C2A237E00ABEA55 /* CatalogFiltersView.swift */; };
 		6BE713272C2A276600ABEA55 /* CatalogFilterMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE713262C2A276600ABEA55 /* CatalogFilterMenuView.swift */; };
 		6BE713292C2A33E400ABEA55 /* String+LowercasedNoWhitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE713282C2A33E400ABEA55 /* String+LowercasedNoWhitespaces.swift */; };
+		6BF7A9BC2E7230AB00CE0239 /* Date+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF7A9BB2E7230AB00CE0239 /* Date+Random.swift */; };
 		6BFF3A4B2C2CB87F001C91E5 /* CatalogFilterMenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFF3A4A2C2CB87F001C91E5 /* CatalogFilterMenuButtonView.swift */; };
 		6BFF3A4D2C2CB968001C91E5 /* CatalogFilterMenuLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFF3A4C2C2CB968001C91E5 /* CatalogFilterMenuLabelView.swift */; };
 		6BFF3A4F2C2CC22B001C91E5 /* NoFilteredResultsOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFF3A4E2C2CC22B001C91E5 /* NoFilteredResultsOverlayView.swift */; };
@@ -1192,6 +1193,7 @@
 		6BE713242C2A237E00ABEA55 /* CatalogFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFiltersView.swift; sourceTree = "<group>"; };
 		6BE713262C2A276600ABEA55 /* CatalogFilterMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFilterMenuView.swift; sourceTree = "<group>"; };
 		6BE713282C2A33E400ABEA55 /* String+LowercasedNoWhitespaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LowercasedNoWhitespaces.swift"; sourceTree = "<group>"; };
+		6BF7A9BB2E7230AB00CE0239 /* Date+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Random.swift"; sourceTree = "<group>"; };
 		6BFF3A4A2C2CB87F001C91E5 /* CatalogFilterMenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFilterMenuButtonView.swift; sourceTree = "<group>"; };
 		6BFF3A4C2C2CB968001C91E5 /* CatalogFilterMenuLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFilterMenuLabelView.swift; sourceTree = "<group>"; };
 		6BFF3A4E2C2CC22B001C91E5 /* NoFilteredResultsOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFilteredResultsOverlayView.swift; sourceTree = "<group>"; };
@@ -1543,6 +1545,7 @@
 				6B4EAC272D261C0C0002ED9F /* Mushroom+ImageURLs.swift */,
 				6BAA3B972DFF870B00544675 /* Array+Uniques.swift */,
 				6BAA3B9B2E00E46F00544675 /* MKCoordinateRegion+BoundingBox.swift */,
+				6BF7A9BB2E7230AB00CE0239 /* Date+Random.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2888,6 +2891,7 @@
 				6B5ED68E2CD2FE44008AB162 /* View+ShapeBackground.swift in Sources */,
 				6B5570EE2D012B9F004C6C19 /* MainTabView.swift in Sources */,
 				6BAA3B9E2E03860A00544675 /* MiCalendarLocationView.swift in Sources */,
+				6BF7A9BC2E7230AB00CE0239 /* Date+Random.swift in Sources */,
 				6B8E4B7F2B9D256800EAE603 /* MushroomTypePickerView.swift in Sources */,
 				6B7A1FF92B5F3E4700B62640 /* ResultItemMushroomConfidenceTextView.swift in Sources */,
 				6BD2020E2DBEF0970042F936 /* TooMuchRainRule.swift in Sources */,

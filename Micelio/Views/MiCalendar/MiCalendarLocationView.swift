@@ -13,7 +13,7 @@ struct MiCalendarLocationView: View {
     @Binding var showLocationSheet: Bool
     
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: Constants.MiCalendar.LocationView.hStackSpacing) {
             Button {
                 if let location = miCalendarLocationManager.selectedLocation {
                     if miCalendarLocationManager.isFavorite(location) {

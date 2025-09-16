@@ -17,7 +17,7 @@ class MushroomDetector: ObservableObject {
     
     var mushroomDetected: Bool {
         self.predictions
-            .filter { $0.confidence >= 0.2 }
+            .filter { $0.confidence >= Constants.MushroomDetector.minConfidence }
             .map {  Constants.MushroomClassifier.mobileNetMushroomClassifications.contains(where: $0.classification.lowercased().contains) }
             .contains(true)
             

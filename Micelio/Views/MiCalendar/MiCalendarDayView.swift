@@ -18,22 +18,29 @@ struct MiCalendarDayView: View {
             selectedDay = day
             showDayDetail.toggle()
         }) {
-            VStack(spacing: 2) {
+            VStack(spacing: Constants.MiCalendar.MiCalendarDay.buttonVStackSpacing) {
                 Text(day.date, style: .date)
                     .font(.headline)
-//                    .scaledToFit()
-                    .minimumScaleFactor(0.7)
+                    .minimumScaleFactor(Constants.MiCalendar.MiCalendarDay.buttonTextMinScaleFactor)
                     .lineLimit(nil)
                 Image(day.evaluation.classification.icon)
-                    .foregroundColor(day.evaluation.classification.color.opacity(0.8))
+                    .foregroundColor(
+                        day.evaluation.classification.color.opacity(
+                            Constants.MiCalendar.MiCalendarDay.buttonImageForegroundColorOpacity
+                        )
+                    )
                 Text("\(Int(day.temperature.value))°C")
             }
             .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .aspectRatio(1, contentMode: .fit)
-        .background(day.evaluation.classification.color.opacity(0.2))
-        .cornerRadius(8)
+        .background(
+            day.evaluation.classification.color.opacity(
+                Constants.MiCalendar.MiCalendarDay.buttonBackgroundColorOpacity
+            )
+        )
+        .cornerRadius(Constants.MiCalendar.MiCalendarDay.buttonCornerRadius)
     }
 }
 
