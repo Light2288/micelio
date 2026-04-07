@@ -1,5 +1,17 @@
 # 🍄 Micelio
 
+<div align="center">
+  <img src="Micelio/Assets.xcassets/AppIcon.appiconset/1024.png" alt="Micelio Logo" width="200"/>
+  
+  **Your Personal Mushroom Identification and Tracking Companion**
+  
+  [![Platform](https://img.shields.io/badge/platform-iOS%2015%2B-blue.svg)](https://www.apple.com/ios/)
+  [![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://swift.org)
+  [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+  
+  *Never miss a mushroom spot again* 🍄
+</div>
+
 **Micelio** is an iOS mushroom tracking and recognition application that helps mushroom enthusiasts identify, catalog, and track their fungal findings. The name "Micelio" means "mycelium" in Italian/Spanish, referring to the underground fungal network that connects mushrooms.
 
 > ⚠️ **Note**: This app is currently not available on the App Store. See the [Build & Installation](#-build--installation) section below to install it on your device.
